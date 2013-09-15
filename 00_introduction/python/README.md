@@ -72,15 +72,38 @@ shortcut. When it opens, you should see `C:\Users\<your user>\ > `. Type `python
 
 ### Editor
 
+An editor is a program you'll use to write the source code of your programs.
+It's different from a word processor in that only the characters you type go
+into the program file. For instance, a word program will have information about
+what is a heading, where the tab stops are, and where any tables might be. In
+contrast, the text editor only saves the actual letters and tab you'd type. Any
+formatting or coloring you see is added after-the-fact, and is not part of the
+original source code.
 
-Let's write our first program. Open your text editor (gedit), and type the following:
+There are numerous code editors available, ranging from free to hundreds of
+dollars, and from having almost no features to being able to write significant
+portions of your source code and manage large peices of your program for you. We
+are going to choose a free editor with many nice features, but one that still
+makes you handle most of the programming yourself. Managing your project on your
+own will help you be a better programmer later.
+
+We'll use [gedit](https://projects.gnome.org/gedit/) as our text editor. It's
+available by default on Ubuntu, and you can download it for
+[Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe)
+or for
+[OSX](http://ftp.gnome.org/pub/GNOME/binaries/mac/gedit/3.2/).
+
+Once gedit is installed, open it and type the following two lines:
+
 
 ```
 print "Hello, world!"
 print 2 + 3, 10/7, 152 * 12.6
 ```
 
-Save the program on your hard drive with the name `hello.python`.
+Save the program on your hard drive with the name `hello.python`. I create a
+folder called `devel` in my home folder (My Documents on Windows), and a folder
+for the project inside that (intro_hello for this file),
 
 ### Running the program
 Open your console. Switch to the directory you saved the program in, and type `python hello.python`
