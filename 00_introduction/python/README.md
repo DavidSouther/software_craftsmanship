@@ -138,3 +138,10 @@ Hello, world!
 ```
 
 Congratulations! You've written your first program!
+
+### Oh no! Something went wrong!
+
+This is a lot of new activity for many readers, and it's ok if something went
+wrong. I'll go through the most common issues here. Keep this page handy,
+because even if you don't have any of these problems this time, they may
+accidentally come up again later.
