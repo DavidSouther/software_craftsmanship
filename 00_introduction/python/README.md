@@ -21,11 +21,10 @@ you.
 
 ## python
 
-Python is included with OSX, and every mainstream Linux distribution. 
-
-_On Windows, you will need to [download](http://www.python.org/download/) and run
+Python is included with OSX, and every mainstream Linux distribution. On
+Windows, you will need to [download](http://www.python.org/download/) and run
 [the installer](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
-([64-bit](http://www.python.org/ftp/python/2.7.5/python-2.7.5.amd64.msi))._
+([64-bit](http://www.python.org/ftp/python/2.7.5/python-2.7.5.amd64.msi)).
 
 
 ## First Program
