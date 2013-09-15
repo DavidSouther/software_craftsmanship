@@ -42,6 +42,8 @@ the Terminal was at the end of a connection to a phone line that the display and
 keyboard connected to the mainframe over. It is also sometimes called a shell. The
 three terms are used interchangeably.
 
+*TODO Add pictures for all of these.*
+
 #### Linux
 
 Most newcomers to Linux will be using Ubuntu Linux, so any linux instructions are for
