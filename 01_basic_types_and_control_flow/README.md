@@ -165,8 +165,7 @@ another character set called UNICODE that defines over 4 million possible
 characters, enough to satisfy human languages for some time. We will not go
 into the details of Unicode here.
 
-%TODO Picture of ASCII 0 - 127
-\input{./01_basic_types_and_control_flow/ascii}
+![ASCII Code Chart](./800px-ASCII_Code_Chart.png)
 
 Let's take a closer look at some features of the ASCII character set. First,
 notice that uppercase and lowercase characters are represented distinctly.
