@@ -32,42 +32,43 @@ _On Windows, you will need to [download](http://www.python.org/download/) and ru
 
 ### Terminal
 
-Throughout the book, we will be using an editor and a command prompt almost exclusively
-to write and run our programs, so we'll take some time now to work through using
-each one. We'll start with the command prompt.
+Throughout the book, we will be using an editor and a command prompt almost
+exclusively to write and run our programs, so we'll take some time now to work
+through using each one. We'll start with the command prompt.
 
-*Terminal? Command Prompt? Which is it?* It's both. It's a command prompt because
-it's a program that Prompts you for Commands. It's a Terminal because historically,
-the Terminal was at the end of a connection to a phone line that the display and
-keyboard connected to the mainframe over. It is also sometimes called a shell. The
-three terms are used interchangeably.
+*Terminal? Command Prompt? Which is it?* It's both. It's a command prompt
+because it's a program that Prompts you for Commands. It's a Terminal because
+historically, the Terminal was at the end of a connection to a phone line that
+the display and keyboard connected to the mainframe over. It is also sometimes
+called a shell. The three terms are used interchangeably.
 
 *TODO Add pictures for all of these.*
 
 #### Linux
 
-Most newcomers to Linux will be using Ubuntu Linux, so any linux instructions are for
-Ubuntu. If you're using a different flavor, the instructions should be straightforward
-to cross apply.
+Most newcomers to Linux will be using Ubuntu Linux, so any linux instructions
+are for Ubuntu. If you're using a different flavor, the instructions should be
+straightforward to cross apply.
 
-The command prompt in Linux is a terminal emulator. In Unity Dash, type Terminal into
-the search box and the application will show up. Click it. When the program launches,
-you will be prompted to enter a command with a `$ ` character. Type `python --version`.
-You should see `Python 2.7.5`.
+The command prompt in Linux is a terminal emulator. In Unity Dash, type Terminal
+into the search box and the application will show up. Click it. When the program
+launches, you will be prompted to enter a command with a `$ ` character. Type
+`python --version`. You should see `Python 2.7.5`.
 
 #### OSX
 
-OSX includes an app called Terminal. It is either available under Applications / System
-Tools, or through Spotlight.  When the program launches, you will be prompted to enter
-a command with a `$ ` character. Type `python --version`. You should see `Python 2.7.5`.
+OSX includes an app called Terminal. It is either available under Applications /
+System Tools, or through Spotlight.  When the program launches, you will be
+prompted to enter a command with a `$ ` character. Type `python --version`. You
+should see `Python 2.7.5`.
 
 #### Windows
 
-The windows terminal is a command prompt called 'command' or 'cmd', depending on your
-version of Windows. To launch the command prompt in Windows Vista or later, open the
-Start Menu, type cmd or command in the search box, and then click the shortcut. When it
-opens, you should see `C:\Users\<your user>\ > `. Type `python --version`. You should see
-`Python 2.7.5`.
+The windows terminal is a command prompt called 'command' or 'cmd', depending on
+your version of Windows. To launch the command prompt in Windows Vista or later,
+open the Start Menu, type cmd or command in the search box, and then click the
+shortcut. When it opens, you should see `C:\Users\<your user>\ > `. Type `python
+--version`. You should see `Python 2.7.5`.
 
 ### Editor
 
