@@ -116,13 +116,13 @@ from making some very costly mistakes.
 This section explains some complicated math.
 
 Our everyday number system is a base-10 number system. When you write your
-numbers, you write `1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ...` . Notice how
-starting at 10 we use two characters to represent the number- 1 and 0. "Well,
-duh" you might say. In fact, there is a very specific reason we need two
-numbers at this point. What 10 means is `(1 * 10^1) + (0 * 10^0)`. This is the
-base-10 system- each character in the numer means `a * 10 ^ p` where 'a` is
-the number, and `p` is its position (starting from 0). So, the number 347 is
-`(3 * 10 ^ 2) + (4 * 10 ^ 1) + (7 * 10^0)`. In a computer, we use binary, or a
+numbers, you write `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`
+... . Notice how starting at 10 we use two characters to represent the number- 1
+and 0. "Well, duh" you might say. In fact, there is a very specific reason we
+need two numbers at this point. What 10 means is `(1 * 10^1) + (0 * 10^0)`. This
+is the base-10 system- each character in the numer means `a * 10 ^ p` where `a`
+is the number, and `p` is its position (starting from 0). So, the number `347`
+is `(3 * 10 ^ 2) + (4 * 10 ^ 1) + (7 * 10^0)`. A computer uses binary, or a
 base-2 number  system. Instead of writing numbers as `a * 10^p`, we write them
 as `a * 2 ^ p`. So, to get 12, we need to write 1100, or `(1 * 2 ^ 3) + (1 *
 2^2) + (0*2^1) + (0 * 2 ^ 0) = (1 * 8) + (1 * 4) + (0 * 2) + (0 * 1) = 8 + 4 +
