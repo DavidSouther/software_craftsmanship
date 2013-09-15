@@ -276,7 +276,7 @@ Python. If you've gotten through the book, try redoing the exercieses in
 Coffee, then C.
 
 * [Intro: Python](./python/README.md)
-* [Intro: Coffee](./coffeescript/README.md)
-* [Intro: C](./c/README.md)
+* ~~[Intro: Coffee](./coffeescript/README.md)~~ Coming soon!
+* ~~[Intro: C](./c/README.md)~~ Coming soon!
 
 ## [Next: Data Types](../01_basic_types_and_control_flow/README.md)
