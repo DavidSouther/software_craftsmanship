@@ -145,3 +145,20 @@ This is a lot of new activity for many readers, and it's ok if something went
 wrong. I'll go through the most common issues here. Keep this page handy,
 because even if you don't have any of these problems this time, they may
 accidentally come up again later.
+
+## Exercises
+
+1. **Say more things** Make your program say
+	1. "Time for Breakfast!"
+	1. "Goodnight, world."
+	1. "Programming is fun!"
+1. **Say even more things!** Make your program say another five things.
+1. **Say some math.** Make your program add some numbers together. We'll cover
+	arithmetic more in the next chapter.
+1. **Configure gedit** gedit is very customizable, from font and color to tab
+	width and auto saves. Try out some of the settings. See the chapter on
+	[editors](coming_soon) for my favorite gedit settings.
+1. **Try Sublime** (Optional) Sublime is another fantastic editor, and many
+	developers (myself included) have switched to it as a primary editor. It is
+	a paid program, so I don't recommend it for this book, but you can evaluate
+	it for 30 days.
