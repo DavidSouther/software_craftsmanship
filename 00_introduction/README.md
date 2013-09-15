@@ -244,7 +244,7 @@ not strictly critical for learning software programming as a craft, but
 hopefully you will be interested enough by the end of the book to want to take
 a deeper look at what's going on.
 
-## Workbooks
+## Practice
 
 Like any skill, software craftsmanship takes practice. The workbooks are
 designed to highlight the concepts presented in the text, while giving you an
@@ -259,3 +259,15 @@ few exerices to work with the new concepts in the lesson, and combine them
 with what you learned and wrote previously. Some of the lesson exercises will
 involve conducting research on the internet. Being able to find help with
 programming questions is another invaluable skill as a software developer.
+
+### Exercise: Hello World
+
+If this is your first time programming, I'd recommend doing the exercises in
+Python. If you've gotten through the book, try redoing the exercieses in
+Coffee, then C.
+
+* [Intro: Python](./python/README.md)
+* [Intro: Coffee](./coffeescript/README.md)
+* [Intro: C](./c/README.md)
+
+## [Next: Data Types](../01_basic_types_and_control_flow/README.md)
