@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 int main()
 {
@@ -38,13 +39,24 @@ int main()
 
 	printf("%d, %f\n", average, average_2);
 
+	float a = 3.0;
+	float b = 8.6;
+	float c = 2.12;
+
+	float discriminant = sqrt(b * b - 4 * a * c);
+	float denominator = 2 * a;
+	float x1 = (-b + discriminant) / denominator;
+	float x2 = (-b - discriminant) / denominator;
+
+	printf("%f %f", x1, x2);
+
 	char* a = "Hello, world";
 	char* c = "This is", " more text";
 
 	printf("%s\n", a);
 	printf("%s\n", c);
 
-	printf("%d\n", strlen(a));
+	printf("%d %d\n", strlen(a), strlen(c));
 
 /*	printf(a.substring(4), b.substring(-4), c.substring(2, 9));*/
 

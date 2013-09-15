@@ -17,7 +17,7 @@ done = False
 
 while not done:
     guesses = 0
-    number = random.randint(1, 100)
+    number = random.randint(1, 10)
     lost = False
 
     while not lost:

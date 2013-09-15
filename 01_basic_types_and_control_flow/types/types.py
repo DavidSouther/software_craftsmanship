@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 print "Hello, world"
 
 print 'Hello, again'
@@ -37,6 +35,18 @@ average_2 = (i + j + k) / 3.0
 
 print average, average_2
 
+a = 3
+b = 8.6
+c = 2.12
+
+import math
+discriminant = Math.sqrt(b * b - 4 * a * c)
+denominator = 2 * a
+x1 = (-b + discriminant) / denominator
+x2 = (-b - discriminant) / denominator
+
+print x1, x2
+
 a = "Hello, world"
 b = 'Hello, world'
 c = "This is" + " more text"
@@ -55,7 +65,8 @@ if( (current_balance - transaction_amount) < MIN_BALANCE):
 	print "This transaction is too large."
 else:
 	current_balance -= transaction_amount
+
 print "Your current balance is: $" + str(current_balance)
 
-for i=0; i < 10; i++:
+for i in range(0, 10):
 	print i;
