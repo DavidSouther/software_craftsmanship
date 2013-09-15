@@ -168,23 +168,22 @@ into the details of Unicode here.
 ![ASCII Code Chart](./800px-ASCII_Code_Chart.png)
 
 Let's take a closer look at some features of the ASCII character set. First,
-notice that uppercase and lowercase characters are represented distinctly.
-This is why case sensitivity is important on computers. Second, 0 through 31
-look really funky. That's because these are called control characters, not
-printing characters. Most of these control characters are no longer used in
-today's computers (they were used to literally control printers and other
-devices in the 70s and 80s), but there are some that warrant special
-attention. The first is NULL, 0. NULL is used in C to represent the end of an
-array (see Chapter 2). 10, `\n` or Newline, is used to make the
-computer put a line break in a program's output; otherwise, everything would
-show up on one long horizontal line. Second is 15, `\r` or Carriage
-Return. This goes back to when computer printers were fancy typewriters, which
-required a special operation to move the carriage back to the starting position.
-While I can't think of any printers today that need this fuctionality, it is
-not uncommon to see `\r\n` as a legacy pair of
-characters in many programs. The last control character that is interesting to
-us is 9, `\t`, horizontal tab. The horizontal tab tells the
-computer that we want a lot of whitespace (usually 4 or 8 spaces worth).
+notice that uppercase and lowercase characters are represented distinctly. This
+is why case sensitivity is important on computers. Second, 0 through 31 look
+really funky. These are called control characters, not printing characters. Most
+of these control characters are no longer used in today's computers (they were
+used to literally control printers and other devices in the 70s and 80s), but
+there are some that warrant special attention. The first is NULL, 0. NULL is
+used in C to represent the end of an array (see Chapter 2). 10, `\n` or Newline,
+is used to make the computer put a line break in a program's output; otherwise,
+everything would show up on one long horizontal line. Second is 15, `\r` or
+Carriage Return. This goes back to when computer printers were fancy
+typewriters, which required a special operation to move the carriage back to the
+starting position. While I can't think of any printers today that need this
+fuctionality, it is not uncommon to see `\r\n` as a legacy pair of characters in
+many programs. The last control character that is interesting to us is 9, `\t`,
+horizontal tab. The horizontal tab tells the computer that we want a lot of
+whitespace (usually 8 spaces worth).
 
 ### Strings
 
