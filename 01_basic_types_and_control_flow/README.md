@@ -124,9 +124,12 @@ is the base-10 system- each character in the numer means `a * 10 ^ p` where `a`
 is the number, and `p` is its position (starting from 0). So, the number `347`
 is `(3 * 10 ^ 2) + (4 * 10 ^ 1) + (7 * 10^0)`. A computer uses binary, or a
 base-2 number  system. Instead of writing numbers as `a * 10^p`, we write them
-as `a * 2 ^ p`. So, to get 12, we need to write 1100, or `(1 * 2 ^ 3) + (1 *
-2^2) + (0*2^1) + (0 * 2 ^ 0) = (1 * 8) + (1 * 4) + (0 * 2) + (0 * 1) = 8 + 4 +
-0 + 0 = 12 (base 10)`.
+as `a * 2 ^ p`. So, to get 12, we need to write 1100, or
+
+`(1 * 2 ^ 3) + (1 * 2^2) + (0*2^1) + (0 * 2 ^ 0)`
+`= (1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)`
+`= 8 + 4 + 0 + 0`
+`= 12 (base 10)`
 
 We can talk about decimal numbers like 1.56 in the same way -  `(1 * 10 ^ 0) +
 (5 * 10 ^ -1) * (6 * 10 ^ -2) = 1 + 5/10 + 6/100 = 100/100 + 50/100 + 6/100} =
