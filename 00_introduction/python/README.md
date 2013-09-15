@@ -106,7 +106,31 @@ folder called `devel` in my home folder (My Documents on Windows), and a folder
 for the project inside that (intro_hello for this file),
 
 ### Running the program
-Open your console. Switch to the directory you saved the program in, and type `python hello.python`
+
+Open your console. Switch to the directory you saved the program in. Your shell
+operates in one directory at a time, called the "Current Directory". To change
+where the shell currently is, use the command `cd`. For where I saved the file,
+on Linux and OSX the command is
+
+```
+cd ~/devel/intro_hello
+```
+
+The `~` means "My home directory."
+
+On Windows, I need the more explicit
+
+```
+cd "C:\Users\southerd\My Documents\devel\intro_hello"
+```
+
+Now, type
+
+```
+python hello.python
+```
+
+And you should see the output
 
 ```
 Hello, world!
