@@ -202,29 +202,10 @@ in detail in the workbook.
 
 ### Practice
 
-Work with the `types` program in the workbook of your choice.
+Work with the `types` program in the language of your choice.
 
-## Control Flow
+* [Python](types/python.md)
+* [CoffeeScript](types/coffee.md)
+* [C](types/c.md)
 
-### Blocks
-
-#### Expression
-
-#### Statement
-
-### Branching
-
-#### If-Then-Else
-
-%#### Cases
-
-### Looping
-
-#### For Range
-
-#### While
-
-## Comments
-
-There is one last piece of a program we need to mention. Comments are text in
-our programs that are not used by the computer, but are purely for
+## [Next: Control Flow](controlflow.md)
