@@ -39,7 +39,7 @@ Information is a critical piece of today's infrastructure. How people  use
 information is part of the field of Computer Science. Computer Science is on
 the one hand deeply seated in mathematics, and on the other, firmly rooted in
 practicality. The computer itself is simply a tool, like a band saw or plasma
-torch, which do amazing things with this data. Whether used in large-scale
+torch, which does amazing things with this data. Whether used in large-scale
 data mining and predictions for financial institutions, determining exactly
 what websites have what content, or creating a side show of family photos. At
 the end of the day, the laptop or desktop sitting in front of you is just a
@@ -143,7 +143,7 @@ mature, and actively used in a variety of projects today.
 ### C
 
 C started its life at Bell Labs in 1973. C was written by Dennis Kernighan and
-Brian Ritchie as a language to write the Unix operating system in. Before C,
+Brian Ritchie as a language to write the Unix operating system. Before C,
 operating systems (the program enabling all the other programs to run) were
 written in an assembly language for each computer Unix would run on. However,
 no two brands of computers had the same assembly language, so any time someone
@@ -153,13 +153,13 @@ take millions of lines of assembly to code Windows or Linux. C was designed to
 be a consistent language that, rather than being run on a computer as is,
 would first be compiled into the appropriate assembly code.
 
-C is widely considered the "lowest-level" of today's common programming
+C is widely considered the _lowest-level_ of today's common programming
 languages, meaning C is as close to running "on the hardware" as you can get.
 When writing C, the programmer has to deal with many aspects of computer
 memory management. There are few utilities to achieve all but the most common
-tasks (though there are a wealth of "libraries" to fill the gap). C is the
+tasks (though there are a wealth of _libraries_ to fill the gap). C is the
 only language used in this book that must be compiled before being run. This
-"low-level" nature of C makes it a very powerful language, especially when
+_low-level_ nature of C makes it a very powerful language, especially when
 faced with requirements to interact directly with hardware, or when hardware
 is in short supply (embedded on robots or cell phones). That power comes with
 great responsibility for writing the program correctly.
@@ -170,15 +170,15 @@ Python is a programming language developed by Guido van Rossum in the late
 1980s. Python has gone through two major revisions since its first release,
 and now is widely available on nearly any computing platform. Today, Python is
 used by many Linux distributions to write a variety of their higher-level
-tools. Organizations from Google to NASA use Python for a variety of their
+tools. Organizations from Google to NASA use Python for numerous
 mission-critical applications.
 
-Python was designed to be a very flexible language, and as such is high-level
+Python was designed to be a very flexible language, and as such is _high-level_
 compared to C. Python was also designed to be a fun language to use - the name
 Python refers not to the snake, but to Monty Python's Flying Circus. Python
 has a certain culture around its use not seen in many other programming
 languages. In Python, the prevailing wisdom is "there should be one - and
-preferable only one - obvious way to do it."
+preferably only one - obvious way to do it."
 
 ### Javascript
 
