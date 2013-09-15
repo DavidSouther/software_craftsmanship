@@ -201,8 +201,17 @@ of code needed to do the same thing (click a button) can often be an order of
 magnitude less than a similar program in C.
 
 
-### Coffeescript
-TODO
+#### Coffeescript
+Coffee Script is a dialect of Javascript, developed by Jeremy Ashkenas at the
+New York Times in 2009. Because of the rushed nature of the original development
+of Javascript, Coffeescript aims to provide a streamlined syntax, while removing
+many features of Javascript that are considered "harmful" by the community -
+that is, features that allow or even encourage programmers to write code that
+will perform incorrectly.
+
+In the past five years, Coffeescript has seen tremendous growth, and is in my
+opinion the most enjoyable of the languages to work in, though it does not have
+quite the level of community support that Python has.
 
 ## Overview of the Text
 
