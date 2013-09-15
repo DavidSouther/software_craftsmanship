@@ -153,8 +153,8 @@ accidentally come up again later.
 	1. "Goodnight, world."
 	1. "Programming is fun!"
 1. **Say even more things!** Make your program say another five things.
-1. **Say some math.** Make your program add some numbers together. We'll cover
-	arithmetic more in the next chapter.
+1. **Say some math.** Make your program say the results of more mathematical
+	expressions. We'll cover arithmetic more in the next chapter.
 1. **Configure gedit** gedit is very customizable, from font and color to tab
 	width and auto saves. Try out some of the settings. See the chapter on
 	[editors](coming_soon) for my favorite gedit settings.
