@@ -127,13 +127,16 @@ base-2 number  system. Instead of writing numbers as `a * 10^p`, we write them
 as `a * 2 ^ p`. So, to get 12, we need to write 1100, or
 
 `(1 * 2 ^ 3) + (1 * 2^2) + (0*2^1) + (0 * 2 ^ 0)`
-`= (1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)`
-`= 8 + 4 + 0 + 0`
-`= 12 (base 10)`
+= `(1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)`
+= `8 + 4 + 0 + 0`
+= `12 (base 10)`
 
-We can talk about decimal numbers like 1.56 in the same way -  `(1 * 10 ^ 0) +
-(5 * 10 ^ -1) * (6 * 10 ^ -2) = 1 + 5/10 + 6/100 = 100/100 + 50/100 + 6/100} =
-156/100 = 39/25`.
+We can talk about decimal numbers like 1.56 in the same way -
+
+`(1 * 10 ^ 0) + (5 * 10 ^ -1) * (6 * 10 ^ -2)`
+= `1 + 5/10 + 6/100`
+= `100/100 + 50/100 + 6/100`
+= `156 / 100` = `39/25`.
 
 While this math might be disheartening, it is important to remember that
 computers do work in this fashion under the hood. That said, this is the only
