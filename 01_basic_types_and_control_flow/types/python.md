@@ -323,10 +323,11 @@ You should do each of these exercises in their own files.
 		* Calculate the standard deviation for the sample data - `2, 4, 4,
 			4, 5, 7, 9 = 5`
 		* Given the height of an adult male in inches, calculate which
-			deviation he is in (mean = 70, deviation = 3)
-			* `71 = 1`
-			* `68 = -1`
-			* `78 = 3`
+			deviation he is in (mean = 70, deviation = 3). Try using
+			the modulus operator.
+			* `71 = 1/3`
+			* `68 = - 2/3`
+			* `78 = 2 2/3`
 
 	1. [Projectile Distance](https://en.wikipedia.org/wiki/Range_of_a_projectile)
 		One of the first applied uses of computing machines was in naval
