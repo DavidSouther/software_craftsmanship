@@ -244,6 +244,7 @@ You should do each of these exercises in their own files.
 	when thrown with a certain force.
 
 	Solve the quadratic equation for:
+	
 	1. A = -2, B = 5, C = 3. [x1 = -0.5, x2 = 3](http://www.wolframalpha.com/input/?i=-2+*+x+%5E+2+%2B+5+*+x+%2B+3)
 	1. A = 1.5, B = -6, C = 4.25. [x1 = 0.919877, x2 = 3.08012](http://www.wolframalpha.com/input/?i=1.5+*+x+%5E+2+-6+*+x+%2B+4.25)
 	1. A = 1, B = 200, C = -0.000015. [x1 = 7.50000026528e-08, x2 = -200.000000075](http://www.wolframalpha.com/input/?i=x+%5E+2+%2B+200+x+-+0.000015) (x1 = 7.5*10^-8, x2 = -200)
