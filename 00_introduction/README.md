@@ -3,14 +3,14 @@
 Human endeavors rest on the backs of the hard-working crafters. From stone-
 movers of the Egyptian pyramids to steel-workers on today's oil rigs, skilled
 workers built civilization with their hands. Stone, steel, lumber, and leather
-have for centuries been the foundation of human enterprise. In the 21st
-century, there is a new medium demanding attention: information. The data
-flying across the Internet is the backbone of international trade and
-commerce, and needs skilled craftspeople to shape it. Yet even as professional
-carpenters build masterwork cabinetry for law firms and movie stars, there are
-laymen working on the same craft with the same tools in their garage. This is
-no less true for computers  -  the relatively low cost of consumer software
-gives hobbyist programmers the same tools to work with as the professional.
+have for centuries been the foundation of human enterprise. In the 21st century,
+there is a new medium demanding attention: information. The data flying across
+the Internet is the backbone of international trade and commerce, and needs
+skilled craftspeople to shape it. Yet even as professional carpenters build
+masterwork cabinetry for law firms and movie stars, there are laymen working on
+the same craft with the same tools in their garage. This is no less true for
+computers  -  the relatively low cost of consumer software gives hobbyist
+programmers the same tools to work with as the professional.
 
 This book is aimed at those who are interested in this new medium as a
 potential hobby or curiosity. The book begins assuming the reader knows how to
@@ -26,12 +26,6 @@ most out of the text,  I recommended readers work through the companion
 workbook. Like any craft, to get good at software development you need to
 develop software. The workbooks lead you through developing software, in a way
 highlights the concepts presented in the text.
-
-If the book seems hard, fear not. Rome wasn't built in a day, and research
-shows it takes ten years of practicing a skill to truly develop expertise.
-This book is one way to approach learning this subject, which hopefully will
-work for you. If not, one of the many references in the bibliography might
-provide a different approach that works better for you.
 
 ## Computers Are Tools
 
@@ -70,15 +64,18 @@ accountant's office, you would say 5. This statement is *ambiguous*  -  it
 could mean more than one thing. The programmer's job is to decide if the
 statement should be `(4 + 6) / 2 = 5` or `4 + (6 / 2) = 7`.
 
-Of course, this is a minor pedantic exercise. As software gets more complex,
-the question becomes "how does the computer help people interact with their
-data?" Facebook is an excellent tool for managing data regarding many aspects
-of your relationships with friends and relatives online, by making it very
-easy to share photos and other tidbits of information. Microsoft Word is an
-excellent program to enable people to write documents, vital pieces of data
-for business, education, and private correspondence. Clearly, there is much to
-consider when writing a program  -  when using the tools of software
-craftsmanship.
+This is a pedantic exercise. As software gets more complex, softare engineers
+are responsible for deciding how the computer helps people interact with their
+data. In everyday life, Facebook and Microsoft Word are two programs used by
+hundreds of millions of people daily, both of which software engineers had to
+write every single feature they expose.  Facebook is an excellent tool for
+managing data regarding many aspects of your relationships with friends and
+relatives online, by making it very easy to share photos and other tidbits of
+information. Microsoft Word is an excellent program to enable people to write
+documents, vital pieces of data for business, education, and private
+correspondence. Ultimately, any software developer can be making decisions
+that have a direct influence on people half a planet away interact with the
+world around them.
 
 ### Sharing this tool
 
@@ -123,10 +120,11 @@ computer is to do - add two numbers, print those numbers to the screen, ask
 the user for confirmation. C, JavaScript, and Python are all imperative
 languages. Functional languages embrace the mathematics of computer science.
 Functional languages often use similar syntactic constucts as imperative
-languages, but with fundamental underlying differences. Haskell is a
-functional programming language. Logical programming languages have little to
-do with either imperative or functional programming. Prolog is a logical
-programming language. Logical programming will not be discussed in this book.
+languages, but with fundamental underlying differences. Haskell, Erlang, and
+List are functional programming languages. Logical programming languages have
+little to do with either imperative or functional programming. Prolog is a
+logical programming language. Logical programming will not be discussed in
+this book.
 
 Expressivity is notion for the ratio of amount of programming code written to
 how much the computer does. Languages with the least amount of expressivity
@@ -155,13 +153,13 @@ would first be compiled into the appropriate assembly code.
 
 C is widely considered the _lowest-level_ of today's common programming
 languages, meaning C is as close to running "on the hardware" as you can get.
-When writing C, the programmer has to deal with many aspects of computer
-memory management. There are few utilities to achieve all but the most common
-tasks (though there are a wealth of _libraries_ to fill the gap). C is the
-only language used in this book that must be compiled before being run. This
+When writing C, the programmer has to deal with many aspects of computer memory
+management. There are few utilities to achieve all but the most common tasks
+(though there are a wealth of _libraries_ to fill the gap). C is the only
+language used in this book that must be compiled before being run. This
 _low-level_ nature of C makes it a very powerful language, especially when
-faced with requirements to interact directly with hardware, or when hardware
-is in short supply (embedded on robots or cell phones). That power comes with
+faced with requirements to interact directly with hardware, or when hardware is
+in short supply (embedded on robots or cell phones). That power comes with
 great responsibility for writing the program correctly.
 
 ### Python
