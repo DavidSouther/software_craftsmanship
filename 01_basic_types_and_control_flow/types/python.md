@@ -12,7 +12,7 @@ a hint on what they are expected to do!
 Looking back on the steps from the introduction "Hello, World!", start by
 opening your text editor (probably gedit), and write these two lines of code:
 
-```
+```python
 print "Hello, world"
 print 'Hello, again'
 ```
@@ -30,7 +30,7 @@ If you have trouble with these steps, go back to
 [the first exercise](../../00_introduction/python) and follow the instructions
 there, but for this program. When you have it running, do these next few lines:
 
-```
+```python
 print 2, 3, 5, 7, 11
 
 print 0.5, 1.27, 3.146
@@ -58,7 +58,7 @@ The next block is a bit bigger. I would recommend only doing a section at a time
 before running the program - the sooner you catch a mistake, the easier it will
 be to correct!
 
-```
+```python
 i = 2
 j = 3
 k = 5
@@ -92,7 +92,7 @@ h e l l o
 
 Moving a bit faster, for the biggest section yet:
 
-```
+```python
 circumference_1 = pi * y
 circumference_2 = pi * n
 
@@ -137,7 +137,7 @@ Let's skip ahead of math for awhile, and look at those strings again. We're
 going to cover what, exactly, this notation means in the next chapter, but for
 now practice the typing and think about what the output means the code is doing.
 
-```
+```python
 a = "Hello, world"
 b = 'Hello, world'
 c = "This is" + " more text"
@@ -175,7 +175,7 @@ is is m
 One last Monkey-see-monkey-do exercise, practicing typing full statements rather
 than simple expressions:
 
-```
+```python
 MIN_BALANCE = 25
 current_balance = 30
 transaction_amount = 10
@@ -238,13 +238,13 @@ You should do each of these exercises in their own files.
 	1. Circular, 1.5 foot radius (3 feet across).  ($35.34)
 
 1. **Harder Math**  You might recognize the math section in the middle of the
-	program (where we use the 'discriminant' variable) as the quadratic equation
-	- a formula mathemeticians use to determine where a parabola has the value
-	zero, and that physicists use to calculate where a baskbetball will land
+	program (where we use the 'discriminant' variable) as the quadratic equation - 
+	a formula mathemeticians use to determine where a parabola has the value
+	zero - and that physicists use to calculate where a baskbetball will land
 	when thrown with a certain force.
 
 	Solve the quadratic equation for:
-	
+
 	1. A = -2, B = 5, C = 3. [x1 = -0.5, x2 = 3](http://www.wolframalpha.com/input/?i=-2+*+x+%5E+2+%2B+5+*+x+%2B+3)
 	1. A = 1.5, B = -6, C = 4.25. [x1 = 0.919877, x2 = 3.08012](http://www.wolframalpha.com/input/?i=1.5+*+x+%5E+2+-6+*+x+%2B+4.25)
 	1. A = 1, B = 200, C = -0.000015. [x1 = 7.50000026528e-08, x2 = -200.000000075](http://www.wolframalpha.com/input/?i=x+%5E+2+%2B+200+x+-+0.000015) (x1 = 7.5*10^-8, x2 = -200)
@@ -256,9 +256,16 @@ You should do each of these exercises in their own files.
 	might not look like more than a peculiarity today, it is a serious issue in
 	many branches of software engineering.
 
-	Rerun the last calculation using the following formula:
+	Rerun the last calculation using the [following formula (7)](http://people.csail.mit.edu/bkph/articles/Quadratics.pdf):
 
-	[TODO Numerically stable quadratic]
+	```
+	basis = -b - discriminant
+	x1 = basis / (2 * a)
+	x2 = (2 * c) / basis
+	```
+	
+	Notice how it is closer to the exact values provided by Wolfram Alpha, but
+	still slightly incorrect.
 
 	In this exercise, the details of the math aren't particularly important. The
 	important piece is recognizing there are situations where the first, obvious
@@ -282,7 +289,45 @@ You should do each of these exercises in their own files.
 	In this exercise, choose one or more of these formulas and implement it,
 	using several sets of numbers. For more practice, do more of these!
 
-	1. [Board-foot](https://en.wikipedia.org/wiki/Board_foot)
+	1. [Board-foot](https://en.wikipedia.org/wiki/Board_foot) Calculate the
+		board-footage for several types of boards, including 
+			* 350 feet of 2x4 (233.33333333333334)
+			* 100 feet of 2x6 (100)
+			* 20 sheets of 8 foot by 4 foot half-inch plywood (320)
+
+	1. [Simplified Division Algorithm](https://en.wikipedia.org/wiki/Division_algorithm)
+		When you divide two numbers, there are many ways to express the
+		result. So far, we've been using the floating point format, with
+		some number of decimals after the number. That leads to some odd
+		answers, like with the board-foot calculation being 233.33333333333334.
+		In ancient Greece, Euclid showed how to determine the "remainder"
+		of a division - in this case, remainder 1 when dividing by 3.
+		In Python, there is an operator called "modulus" which returns
+		the remainder of dividing two numbers. It's typed as `%`, as in
+		`3 % 2`, which would be `1`. Try putting `print 5 % 3` in your
+		python program, and see that it prints 2.
+
+		Use the modulus operator to improve your board-foot calculations.
+		Come up with new board-foot calculations that need remainders
+		to be sensible.
+
 	1. [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation#Basic_examples)
+		* Calculate the standard deviation for the sample data - `2, 4, 4,
+			4, 5, 7, 9 = 5`
+		* Given the height of an adult male in inches, calculate which
+			deviation he is in (mean = 70, deviation = 3)
+			* `71 = 1`
+			* `68 = -1`
+			* `78 = 3`
+
 	1. [Projectile Distance](https://en.wikipedia.org/wiki/Range_of_a_projectile)
-	1. [Simplified Division Algorithm](https://en.wikipedia.org/wiki/Board_foot)
+		One of the first applied uses of computing machines was in naval
+		[artillery situations](https://en.wikipedia.org/wiki/Ship_gun_fire-control_system#Analogue_computed_fire_control).
+		Write some code to calculate the range of a projectile fired at
+		various velocities and angles (in [radians](https://en.wikipedia.org/wiki/Radian))
+		from ground level. To calculate sine, use `math.sin(x)`. Assume
+		velocity is in meters per second, so `g = 9.81` in the simplified
+		formula on the wikipedia page.
+		* `v = 100, theta = 0.1745; D = 348.581308308` (theta is ~10 degrees)
+		* `v = 1000, theta = 0.1745; D = 34858.1308308`
+		* `v = 250, theta = 0.6981; D = 6274.18922949` (theta is ~40 degrees)
