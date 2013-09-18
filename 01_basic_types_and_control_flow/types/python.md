@@ -237,6 +237,14 @@ You should do each of these exercises in their own files.
 	1. Rectangular, 3 feet by 5 feet. ($125)
 	1. Circular, 1.5 foot radius (3 feet across).  ($35.34)
 
+1. **Advanced rugs** The rug company loves your code! They want you to add another
+	feature! They now offer edges on their rugs. Edging costs $1/foot of
+	edge. The same rugs, with edging, should be
+	1. $9
+	2. $41.25
+	3. $141
+	4. $44.77
+
 1. **Harder Math**  You might recognize the math section in the middle of the
 	program (where we use the 'discriminant' variable) as the quadratic equation - 
 	a formula mathemeticians use to determine where a parabola has the value
