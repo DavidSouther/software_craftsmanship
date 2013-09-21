@@ -55,7 +55,7 @@ potentially avoiding a costly transaction.
 
 ### Using this tool
 
-Software craftsman use this tool by writing programs. A program is a document
+Software craftsmen use this tool by writing programs. A program is a document
 both written and read by human beings, while telling the computer
 unambiguously what to do. Take this example: `4 + 6 / 2`. Is the answer 7 or
 5? If you remembered something like "Please Remember My Dear Aunt Sally" from
@@ -64,18 +64,17 @@ accountant's office, you would say 5. This statement is *ambiguous*  -  it
 could mean more than one thing. The programmer's job is to decide if the
 statement should be `(4 + 6) / 2 = 5` or `4 + (6 / 2) = 7`.
 
-This is a pedantic exercise. As software gets more complex, softare engineers
+This is a pedantic exercise. As software gets more complex, software engineers
 are responsible for deciding how the computer helps people interact with their
-data. In everyday life, Facebook and Microsoft Word are two programs used by
-hundreds of millions of people daily, both of which software engineers had to
-write every single feature they expose.  Facebook is an excellent tool for
-managing data regarding many aspects of your relationships with friends and
-relatives online, by making it very easy to share photos and other tidbits of
-information. Microsoft Word is an excellent program to enable people to write
-documents, vital pieces of data for business, education, and private
-correspondence. Ultimately, any software developer can be making decisions
-that have a direct influence on people half a planet away interact with the
-world around them.
+data. Consider the difference in organ donor rates between the United States
+and Sweden. In the book [Nudge](http://nudges.org/), the authors contend the
+difference is in "presumed consent" - that is, DMVs in the United States
+require drivers to Opt In to being an organ donor, while Swedish DMVs require
+patients to Opt Out. If you were writing a web page to take DMV registration
+information, the difference in those conditions is eight characters - adding
+"checked" to the Organ Donor input. With that minuscule change in a program,
+the software craftsman has the potential for enormous influence on the lives
+of millions of people.
 
 ### Sharing this tool
 
