@@ -104,15 +104,16 @@ expression ends and the next begins. Usually, statements group qjblocks of code.
 An expression will run to check a condition of the program, and some number of
 blocks of code are executed in some way. The complete collection of the
 expression and the blocks are the statement. Of course, the blocks in the
-statement are statements themselves.
+statement are statements themselves. Branching and looping, discussed next, are
+the best ways to see how statements combine to form a program.
 
 ### Branching
 
 With the concept of a block of code being a logical chunk of code, combining
-them in interesting ways gives programs their power. The number one most common
-piece of control flow is the logical branch. A logical branch examines some
-condition of the program's data, and runs one or another block of code depending
-on whether that condition is true.
+them in interesting ways gives programs their power. The most common piece of
+control flow is the logical branch. A logical branch examines some condition of
+the program's data, and runs one or another block of code depending on whether
+that condition is true.
 
 #### If-Then-Else
 
@@ -147,7 +148,7 @@ example is common, but think about a security card scanner.
 		ELSE
 			flash "Unauthorized Access" on the keypad
 	ELSE
-		Do nothing (so the theif doesn't even know they can't get in)
+		Do nothing (so the thief doesn't even know they can't get in)
 `
 
 Notice how the first IF clause has a second IF inside it. By nesting these
@@ -156,13 +157,22 @@ of true/false is valid to write a program to manage.
 
 ### Looping
 
-
+Where branching runs a block of code based on some condition of the state of the
+program, looping runs the same block of code multiple times. Looping comes,
+broadly, in two flavors. When the number of iterations is known, the loop is a
+*for* loop. When the number of iterations is based on some changing condition
+of the program, the loop is a *while* loop. 
 
 #### For Range
 
+
+
 #### While
+
+
 
 ## Comments
 
 There is one last piece of a program we need to mention. Comments are text in
-our programs that are not used by the computer, but are purely for
+our programs that are not used by the computer, but purely for a programmer to
+explain a particular piece of code. 
