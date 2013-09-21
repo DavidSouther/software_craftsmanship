@@ -61,9 +61,9 @@ used in elementary school. This is because a single `=` sign is an
 operator used to assign values to a variable. Multiplication is a star, {\tt
 *}. While `x` was used in elementary school, we use `*` for our
 programs because `x` could be a variable, and we need to be unambiguous in
-what the program means. There is no `\le` on a common keyboard, so programs
-use the two character combinations of `<=` and `>=` to do comparisons.
-There are other operators that will be covered as they are needed.
+what the program means. There is no `less-than-equal-to` on a common keyboard,
+so programs use the two character combinations of `<=` and `>=` to do
+comparisons. There are other operators that will be covered as they are needed.
 
 ## Basic Types
 

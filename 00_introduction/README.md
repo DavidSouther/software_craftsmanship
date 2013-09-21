@@ -90,7 +90,7 @@ large for one person to handle alone.
 
 Many computer science courses ignore this aspect of programming, which I
 believe is a real detriment to the students. Many computer science students
-can go their entire undergraduate careers without ever looking at their peer's
+can go their entire undergraduate careers without ever looking at their peers'
 code, and only having their program reviewed by the instructors. Craftsman of
 all fields can drastically improve their work by meeting and sharing ideas.
 Building partnerships with other craftsmen is one of the most rewarding ways
@@ -107,9 +107,9 @@ Computer languages are the tie between the world of everyday common sense
 conversation and the exact stupidity of the computer. There are hundreds, if
 not thousands, of different programming languages today. Many are "toy"
 languages, built for a fun exercise or class project and are not intended for
-wide-scale use. There are other languages that are proven as the working
-horses of computers, and are used everywhere from your cell phone to robots
-running on Mars.
+wide-scale use. There are other languages that are proven as the workhorses
+of computers, and are used everywhere from your cell phone to robots running
+on Mars.
 
 Languages are often classed based on their style of programming, and their
 level of expressivity. There are, broadly, three styles of programming:
@@ -118,9 +118,9 @@ cookbook recipe. They describe, one statement at a time, the "things" a
 computer is to do - add two numbers, print those numbers to the screen, ask
 the user for confirmation. C, JavaScript, and Python are all imperative
 languages. Functional languages embrace the mathematics of computer science.
-Functional languages often use similar syntactic constucts as imperative
+Functional languages often use similar syntactic constructs as imperative
 languages, but with fundamental underlying differences. Haskell, Erlang, and
-List are functional programming languages. Logical programming languages have
+Lisp are functional programming languages. Logical programming languages have
 little to do with either imperative or functional programming. Prolog is a
 logical programming language. Logical programming will not be discussed in
 this book.
@@ -261,15 +261,15 @@ exactly as written. Do not copy and paste the code. Much of programming
 involves paying very close attention to a myriad of small details, and every
 character has meaning. This discipline in typing code exactly as presented
 will pay off in your programming future. The second part of each lesson is a
-few exerices to work with the new concepts in the lesson, and combine them
+few exercises to work with the new concepts in the lesson, and combine them
 with what you learned and wrote previously. Some of the lesson exercises will
-involve conducting research on the internet. Being able to find help with
+involve conducting research on the Internet. Being able to find help with
 programming questions is another invaluable skill as a software developer.
 
 ### Exercise: Hello World
 
 If this is your first time programming, I'd recommend doing the exercises in
-Python. If you've gotten through the book, try redoing the exercieses in
+Python. If you've gotten through the book, try redoing the exercises in
 Coffee, then C.
 
 * [Intro: Python](./python/README.md)
