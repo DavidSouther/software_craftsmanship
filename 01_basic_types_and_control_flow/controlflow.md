@@ -72,7 +72,7 @@ steps will execute first. In the quadratic equation example, the
 `(-b + discriminant) / (2 * c)` made it certain that the addition and
 multiplication would be performed first. Without those, the implicit order from
 the program would have been `- b + ((discriminant / 2) * c)`. It is always good
-form to use parentesis to group operations, even if the language itself would
+form to use parenthesis to group operations, even if the language itself would
 order your operations correctly.
 
 When working with multiple logical conditions, the three operations `!` not,
@@ -100,7 +100,7 @@ there are ways to assign to several variables at a single time.
 
 A statement is the smallest executable chunk of code. In C, making a statement
 is as easy as adding a `;` to the end of an expression, delineating where one
-expression ends and the next begins. Usually, statements group qjblocks of code.
+expression ends and the next begins. Usually, statements group blocks of code.
 An expression will run to check a condition of the program, and some number of
 blocks of code are executed in some way. The complete collection of the
 expression and the blocks are the statement. Of course, the blocks in the
@@ -122,7 +122,7 @@ from the truthy block by the word "Then". Even if the "Then" is not in the
 programming language, it's still discussed as such.
 
 There was an example of an "If/Else" statement in the examples for the first
-part of this chapter. In common English, the statment reads:
+part of this chapter. In common English, the statement reads:
 
 ```
 Check the expected result of the Transaction.
