@@ -165,14 +165,54 @@ of the program, the loop is a *while* loop.
 
 #### For Range
 
+The most common looping construct repeats a block of code some discrete number
+of times, usually changing the value of one or two variables each time the loop
+repeats. Take the example of summing several numbers:
 
+`
+Let the variable "sum" be set to 0
+FOR i taking values between 1 and 3, inclusive
+	Set sum to be the current value of sum plus the value of i
+Print sum
+`
+
+Implementing this program would print `6`. Going through it line by line, the
+program would:
+
+1. Set `sum` to 0
+1. Set `i` to 1
+1. Add the value of `i` (1) to `sum`, and store it - `sum` equals 1.
+1. Set `i` to 2 (jumping back to the next iteration).
+1. Add the value of `i` (2) to `sum`, and store it - `sum` equals 3.
+1. Set `i` to 3 (the start of the next iteration).
+1. Add `i` (3) to `sum` (3) - `sum` equals 6.
+1. There are no more numbers to iterate over
+1. Print `sum` (6)
+
+This wouldn't be too hard to write the three additions by hand. When the
+operation is taking the product of the numbers, or grows to summing hundreds of
+numbers, loops become very attractive.
+
+Finally, when we move to handling lists and groups of data in the next chapter,
+the number of iterations is unknown when writing the program but is defined
+when running the program. Loops are the only way to work on all those pieces of
+data.
 
 #### While
 
-
+There are other times when a program needs to perform an operation many times,
+but must make a decision every time it repeats. In the HiLo game example, the
+loop repeats as often as the user continues entering "yes" when asked if they
+want to play again.
 
 ## Comments
 
 There is one last piece of a program we need to mention. Comments are text in
 our programs that are not used by the computer, but purely for a programmer to
-explain a particular piece of code. 
+explain a particular piece of code. Comments have a checkered position in the
+software development community. Because comments aren't part of the execution of
+a program, they have a tendency to drift from the original implementation, after
+programs have been in development for some time. Comments can also be useless -
+in C, `x = x + 1; // Add one to x`. Even with their faults, a well-written and
+well placed comment can be invaluable in aiding other programmers understanding
+some code.
