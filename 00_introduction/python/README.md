@@ -1,14 +1,14 @@
 # Introduction
 
-Welcome to the Software Craftsmanship Python exampels. These examples will
+Welcome to the Software Craftsmanship Python examples. These examples will
 lead you through a variety of programming exercises in conjunction with the main
 Software Craftsmanship lessons. Programming is a skill, and like any other skill,
-it takes practice to become truly profficient. The exercises in these examples range
+it takes practice to become truly proficient. The exercises in these examples range
 from "monkey-see-monkey-do" problems getting you used to typing exactly as a
 computer expects, to free-ranging ideas on programs you might be interested in
 writing for yourself. 
 
-You will want to complete every "MSMD" section exxctly as written. Computers
+You will want to complete every "MSMD" section exactly as written. Computers
 are not forgiving when it comes to what you type in your program, and these
 exercises are a safe way to begin exploring the world of computer programming.
 The exercises for each chapter build on the MSMD section, and are opportunities
@@ -81,7 +81,7 @@ original source code.
 
 There are numerous code editors available, ranging from free to hundreds of
 dollars, and from having almost no features to being able to write significant
-portions of your source code and manage large peices of your program for you. We
+portions of your source code and manage large pieces of your program for you. We
 are going to choose a free editor with many nice features, but one that still
 makes you handle most of the programming yourself. Managing your project on your
 own will help you be a better programmer later.
