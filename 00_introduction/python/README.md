@@ -51,23 +51,36 @@ straightforward to cross apply.
 
 The command prompt in Linux is a terminal emulator. In Unity Dash, type Terminal
 into the search box and the application will show up. Click it. When the program
-launches, you will be prompted to enter a command with a `$ ` character. Type
-`python --version`. You should see `Python 2.7.5`.
+launches, you will be prompted to enter a command with a `$ ` character.
+
+Type `python --version`.
+
+You should see `Python 2.7.5`. The last number might be different, but the `2.7`
+is the important part.
 
 #### OSX
 
 OSX includes an app called Terminal. It is either available under Applications /
-System Tools, or through Spotlight.  When the program launches, you will be
-prompted to enter a command with a `$ ` character. Type `python --version`. You
-should see `Python 2.7.5`.
+Utilities, or through Spotlight.  When the program launches, you will be
+prompted to enter a command with a `$ ` character.
+
+Type `python --version`.
+
+You should see `Python 2.7.5`. The last number might be different, but the `2.7`
+is the important part.
 
 #### Windows
 
 The windows terminal is a command prompt called 'command' or 'cmd', depending on
 your version of Windows. To launch the command prompt in Windows Vista or later,
 open the Start Menu, type cmd or command in the search box, and then click the
-shortcut. When it opens, you should see `C:\Users\<your user>\ > `. Type `python
---version`. You should see `Python 2.7.5`.
+shortcut.
+
+When it opens, you should see `C:\Users\<your user>\ > `.
+
+Type `python --version`.
+
+You should see `Python 2.7.5`.
 
 ### Editor
 
@@ -89,8 +102,7 @@ own will help you be a better programmer later.
 We'll use [gedit](https://projects.gnome.org/gedit/) as our text editor. It's
 available by default on Ubuntu, and you can download it for
 [Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe)
-or for
-[OSX](http://ftp.gnome.org/pub/GNOME/binaries/mac/gedit/3.2/).
+or for [OSX](http://ftp.gnome.org/pub/GNOME/binaries/mac/gedit/3.2/).
 
 Once gedit is installed, open it and type the following two lines:
 
@@ -100,7 +112,7 @@ print "Hello, world!"
 print 2 + 3, 10/7, 152 * 12.6
 ```
 
-Save the program on your hard drive with the name `hello.python`. I create a
+Save the program on your hard drive with the name `hello.py`. I create a
 folder called `devel` in my home folder (My Documents on Windows), and a folder
 for the project inside that (intro_hello for this file),
 
@@ -126,7 +138,7 @@ cd "C:\Users\southerd\My Documents\devel\intro_hello"
 Now, type
 
 ```
-python hello.python
+python hello.py
 ```
 
 And you should see the output
@@ -144,6 +156,13 @@ This is a lot of new activity for many readers, and it's ok if something went
 wrong. I'll go through the most common issues here. Keep this page handy,
 because even if you don't have any of these problems this time, they may
 accidentally come up again later.
+
+1. **OSX: gedit unidentified developer** Change your security settings to allow
+applications from "anywhere". This is not ideal - as I find ways to run gedit
+more securely, this section will get updated.
+
+*Early readers: Please send me a message with any problems you have, so I can
+include them here.*
 
 ## Exercises
 
