@@ -216,3 +216,13 @@ programs have been in development for some time. Comments can also be useless -
 in C, `x = x + 1; // Add one to x`. Even with their faults, a well-written and
 well placed comment can be invaluable in aiding other programmers understanding
 some code.
+
+## Practice
+
+Work with the `control flow` program in the language of your choice.
+
+* [Python](control/python.md)
+* ~[CoffeeScript](control/coffee.md)~
+* ~[C](control/c.md)~
+
+## [Next: HiLo](hilo/README.md)
