@@ -124,12 +124,12 @@ programming language, it's still discussed as such.
 There was an example of an "If/Else" statement in the examples for the first
 part of this chapter. In common English, the statment reads:
 
-`
-	Check the expected result of the Transaction.
-	IF the result of the transaction is greater than the account balance
-	THEN warn the teller the transaction is too large
-	ELSE execute the banking transaction.
-`
+```
+Check the expected result of the Transaction.
+IF the result of the transaction is greater than the account balance
+THEN warn the teller the transaction is too large
+ELSE execute the banking transaction.
+```
 
 If/Else statements are very regularly used when interacting with users. The
 program will ask the user for some input - "Would you like to run again? (Y/n)"
@@ -139,17 +139,17 @@ and exists.
 Many business requirements can be expressed with If/Else logic - the transaction
 example is common, but think about a security card scanner.
 
-`
-	IF the scanned card has an employee ID
+```
+IF the scanned card has an employee ID
+THEN
+	IF the employee id is allowed in this building,
 	THEN
-		IF the employee id is allowed in this building,
-		THEN
-			the door is unlocked for 10 seconds
-		ELSE
-			flash "Unauthorized Access" on the keypad
+		the door is unlocked for 10 seconds
 	ELSE
-		Do nothing (so the thief doesn't even know they can't get in)
-`
+		flash "Unauthorized Access" on the keypad
+ELSE
+	Do nothing (so the thief doesn't even know they can't get in)
+```
 
 Notice how the first IF clause has a second IF inside it. By nesting these
 statements as deep as needed, any business rule that can be expressed in terms
@@ -169,12 +169,12 @@ The most common looping construct repeats a block of code some discrete number
 of times, usually changing the value of one or two variables each time the loop
 repeats. Take the example of summing several numbers:
 
-`
+```
 Let the variable "sum" be set to 0
 FOR i taking values between 1 and 3, inclusive
 	Set sum to be the current value of sum plus the value of i
 Print sum
-`
+```
 
 Implementing this program would print `6`. Going through it line by line, the
 program would:
@@ -222,7 +222,7 @@ some code.
 Work with the `control flow` program in the language of your choice.
 
 * [Python](control/python.md)
-* ~[CoffeeScript](control/coffee.md)~
-* ~[C](control/c.md)~
+* ~~[CoffeeScript](control/coffee.md)~~
+* ~~[C](control/c.md)~~
 
 ## [Next: HiLo](hilo/README.md)
