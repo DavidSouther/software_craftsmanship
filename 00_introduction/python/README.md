@@ -32,7 +32,9 @@ Windows, you will need to [download](http://www.python.org/download/) and run
 ### Terminal
 
 Throughout the book, we will be using an editor and a command prompt almost
-exclusively to write and run our programs, so we'll take some time now to work
+exclusively to write and run our programs. The command prompt offers many
+advantages over 
+ so we'll take some time now to work
 through using each one. We'll start with the command prompt.
 
 *Terminal? Command Prompt? Which is it?* It's both. It's a command prompt
@@ -61,13 +63,21 @@ is the important part.
 #### OSX
 
 OSX includes an app called Terminal. It is either available under Applications /
-Utilities, or through Spotlight.  When the program launches, you will be
+Utilities, or through Spotlight.
+
+![OSX Launch Terminal](./00_osx_terminal.png)
+
+When the program launches, you will be
 prompted to enter a command with a `$ ` character.
+
+![OSX Terminal Prompt](./01_empty_prompt.png)
 
 Type `python --version`.
 
-You should see `Python 2.7.5`. The last number might be different, but the `2.7`
-is the important part.
+![OSX Python Version](./02_python_version.png)
+
+You should see `Python 2.7.5`. The last two numbers might be different, but as
+long as the version is at least `Python 2.6.0` you will be fine.
 
 #### Windows
 
@@ -112,9 +122,13 @@ print "Hello, world!"
 print 2 + 3, 10/7, 152 * 12.6
 ```
 
+![GEdit Hello World](./21_hello_py.png)
+
 Save the program on your hard drive with the name `hello.py`. I create a
 folder called `devel` in my home folder (My Documents on Windows), and a folder
 for the project inside that (intro_hello for this file),
+
+![Hello World Save As in ~/devel/intro_hello](./20_save_as.png)
 
 ### Running the program
 
@@ -128,6 +142,7 @@ cd ~/devel/intro_hello
 ```
 
 The `~` means "My home directory."
+
 
 On Windows, I need the more explicit
 
@@ -150,6 +165,8 @@ Hello, world!
 
 Congratulations! You've written your first program!
 
+![cd to and run program](./22_hello_py_run.png)
+
 ### Oh no! Something went wrong!
 
 This is a lot of new activity for many readers, and it's ok if something went
@@ -160,6 +177,8 @@ accidentally come up again later.
 1. **OSX: gedit unidentified developer** Change your security settings to allow
 applications from "anywhere". This is not ideal - as I find ways to run gedit
 more securely, this section will get updated.
+
+![OSX Application Security Settings](./10_osx_application_security.png)
 
 *Early readers: Please send me a message with any problems you have, so I can
 include them here.*
