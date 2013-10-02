@@ -32,18 +32,32 @@ Windows, you will need to [download](http://www.python.org/download/) and run
 ### Terminal
 
 Throughout the book, we will be using an editor and a command prompt almost
-exclusively to write and run our programs. The command prompt offers many
-advantages over 
- so we'll take some time now to work
-through using each one. We'll start with the command prompt.
+exclusively to write and run our programs. A simple command prompt and text
+editor offer numerous advantages over other programming setups like
+Integrated Development Environments (IDEs) and visual programming tools. All
+the reasons stem from the fact that the command prompt is much closer to the
+code than any of the other tools allow. While many common operations are
+streamlined, knowing how to use the command line effectively is crucial to
+overcoming many of the common problems you will encounter in the course of
+your programming.
+
+#### [Command Line Primer for Beginners](http://lifehacker.com/5633909/who-needs-a-mouse-learn-to-use-the-command-line-for-almost-anything)
+
+To get started with using the command line on Linux and OSX, I highly
+recommend LifeHacker's command line primer.
+The most important sections are listing files, changing directories, creating
+and removing files and folders, and using shortcut keys. The other sections
+are useful, but we won't be using them in this book. (Be especially careful
+of the "Running a Script" section, because it is kind of wrong, for reasons
+you can read about in the
+[Linux appendix](https://github.com/DavidSouther/software_craftsmanship/tree/master/A2_linux).)
 
 *Terminal? Command Prompt? Which is it?* It's both. It's a command prompt
 because it's a program that Prompts you for Commands. It's a Terminal because
 historically, the Terminal was at the end of a connection to a phone line that
 the display and keyboard connected to the mainframe over. It is also sometimes
-called a shell. The three terms are used interchangeably.
-
-*TODO Add pictures for all of these.*
+called a shell. The three terms are used interchangeably, and nearly lost all
+their nuance.
 
 #### Linux
 
@@ -113,6 +127,12 @@ We'll use [gedit](https://projects.gnome.org/gedit/) as our text editor. It's
 available by default on Ubuntu, and you can download it for
 [Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe)
 or for [OSX](http://ftp.gnome.org/pub/GNOME/binaries/mac/gedit/3.2/).
+
+*Why can't I just use TextEdit on a mac or Notepad on Windows?* You could, but
+neither of those programs have any tools to help you program. Most importantly,
+neight has syntax highlighting. GEdit will color different parts of your code
+neatly, allowing you to see at a glance important pieces of your program, and
+often allows you to catch typing mistakes before you even run the program.
 
 Once gedit is installed, open it and type the following two lines:
 
