@@ -1,5 +1,3 @@
-#! /usr/bin/env python
-
 import random
 
 print "HiLo"
@@ -11,6 +9,7 @@ print "HiLo jackpot, which is between 1 and 100 dollars. If you"
 print "guess the amount, you win all the money in the jackpot!"
 print "Then you get another change to win more money. However,"
 print "if you do not guess the amount, the game ends!"
+print
 
 winnings = 0
 done = False
@@ -32,10 +31,12 @@ while not done:
             print "Got it! You won " + str(number) + " dollars!"
             winnings = winnings + number
             print "Your total winnings are " + str(winnings) + " dollars!"
-            again = raw_input("Play again? (Y/n)")
+
+            again = raw_input("Play again? (Y/n) ")
             if again != "Y":
                 done = True
-            continue
+            break
+
         else:
             if guess > number:
                 print "Your guess was too high!"
@@ -46,5 +47,7 @@ while not done:
         if guesses >= 6:
             print "You took too many guesses!"
             lost = done = True
+
+        print
 
 print "Goodbye!"
