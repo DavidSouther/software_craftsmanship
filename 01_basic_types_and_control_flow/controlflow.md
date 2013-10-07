@@ -78,7 +78,7 @@ order your operations correctly.
 When working with multiple logical conditions, the three operations `!` not,
 `&&` and, and `||` or are useful. The and operation works as expected - provided
 the clauses on both sides are true, the entire expression is true. The or
-operation does not behave as expected, in english. If I said I was going to make
+operation does not behave as expected, in English. If I said I was going to make
 eggs or bacon, then I brought you eggs and bacon, you would probably be happy
 with getting an awesome breakfast, but still say my original statement was
 incorrect. In English, or is an exclusive logic operation. Either one OR the
@@ -86,15 +86,16 @@ other condition should be true, but not both. In computers, or is an inclusive
 operation. At least one of the conditions must be true, but if both are true,
 the expression is still correct. The not operation is also a bit different. The
 operations covered to this point take two clauses, one to the right and one
-to the left. The not operation is 'unary', meaning it taks a single clause, to
+to the left. The not operation is 'unary', meaning it takes a single clause, to
 the right of the `!` character.
 
-The final operation, and one used in every progam, is assignment `=`. Assignment
-takes the computation on the right side and stores the value in the variable on
-the left. This leads to calling the pieces the "lvalue" and the "rvalue" - the
-rvalue can be nearly any expression, but the lvalue must be something that can
-be assigned to. In C, that means a single variable. In Python and Coffeescript,
-there are ways to assign to several variables at a single time.
+The final operation, and one used in every program, is assignment `=`.
+Assignment takes the computation on the right side and stores the value in the
+variable on the left. This leads to calling the pieces the "lvalue" and the
+"rvalue" - the rvalue can be nearly any expression, but the lvalue must be
+something that can be assigned to. In C, that means a single variable. In Python
+and Coffeescript, there are ways to assign to several variables at a single
+time.
 
 #### Statement
 
