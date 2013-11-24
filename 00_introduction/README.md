@@ -225,15 +225,18 @@ The second section covers patterns in software craftsmanship - commonly used
 ideas which can be the large building blocks of a program's design. This
 includes discussions on modeling data, saving data, and some ideas on how to
 make good program design decisions. This section also includes a chapter on
-debugging - finding out what went wrong with a program (things will go wrong).
+unit testing - writing small, automated programs that check if your larger
+program works correctly.
+
 
 ### Building Large Programs (10-13)
 
-The last section deals with managing large pieces of software. The section
-will go through building a basic "paint" application, where users can draw
-lines and colors on a canvas, and save the painting to look at later. This
-section also includes a chapter on how to work with other people on the same
-project.
+This section opens with a chapter on debugging - finding out what went wrong
+with a program (things will go wrong).  The rest of the section deals with
+managing large pieces of software. The section will go through building a basic
+"paint" application, where users can draw lines and colors on a canvas, and save
+the painting to look at later. This section concludes with a chapter on how to
+work with other people on the same project.
 
 ### Appendices: Tools for the Toolmakers
 
@@ -276,4 +279,12 @@ Coffee, then C.
 * ~~[Intro: Coffee](./coffeescript/README.md)~~ Coming soon!
 * ~~[Intro: C](./c/README.md)~~ Coming soon!
 
-## [Next: Data Types](../01_basic_types_and_control_flow/README.md)
+## Next: Choose Your Own Adventure!
+
+From this point, there are two directions you can take. If you want to jump
+straight into programming, head to the chapter on
+[Data Types](../01_basic_types_and_control_flow/README.md). Alternately, if you
+want more practice in learning how to control your computer at a deeper level,
+head to the chapter on [Terminals](../01_terminal/README.md). Either way, you'll
+jump to the other chapter at the end, so you always win!
+
