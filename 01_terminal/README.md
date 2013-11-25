@@ -35,17 +35,17 @@ open it, find it either in the Utilities folder under the Applications folder in
 Finder, or through Spotlight. It might also be a great program to pin to your
 dock.
 
-[./11_terminal_finder]
+![Terminal in Finder](11_terminal_finder.png)
 
 Terminal in a Finder window.
 
-[./11_terminal_spotlight]
+![Terminal in Spotlight](11_terminal_spotlight)
 
 Terminal in Spotlight.
 
 Once you've opened Terminal, you will see a mostly empty window.
 
-[20_bash_Terminal]
+![Bash Terminal](20_bash_Terminal)
 
 Before we get any further, we're going to tweak this so it's much easier on the
 eyes, and to work with in general. First, I would recommend expanding the window
@@ -59,11 +59,11 @@ font, I use Consolas at 18pt. It's easier to use a larger font for two reasons -
 eyestrain goes down the larger the texts is, and fewer lines on the screen
 encourages you implicitly to keep parts of your code smaller.
 
-[21_color_scheme]
+![Color Scheme](21_color_scheme)
 
-[22_opacity]
+![Opacity](22_opacity)
 
-[23_fonts]
+![Fonts](23_fonts)
 
 That covers the Terminal settings. Now we'll go and change some bash settings.
 This is a little more indepth. Start by opening a file name `~/.bash_profile`
@@ -89,7 +89,7 @@ It, with the other commands in this section, is one of the most commonly used
 commands in the shell user's vocabulary. Try it once, and see what is in the
 directory.
 
-[30_0_ls.png]
+![ls](30_0_ls.png)
 
 You see several files listed in several rows in dark blue (in the figure). These
 are all folders. Files, in my shell, would be in white. We'll see that in a
@@ -98,7 +98,7 @@ moment.
 There are three common variations on the `ls` command. The first is `ls -l`,
 list directory contents with long formatting. Run this.
 
-[30_1_ls-l.png]
+![ls -l](30_0_ls-l.png)
 
 Here, you see the same files listed, but with much additional information. Most
 shell users I know use this as their primary `ls` usage; I personally haven't
@@ -114,7 +114,7 @@ folder, and takes (on OSX) 68 bytes per file.
 
 The next flag we'll look at is `ls -a`, list with all files.
 
-[30_1_ls-a.png]
+![ls -a](30_0_ls-a.png)
 
 Here we see a file listing similar to the fist `ls` command, but with several
 more files, each that starts with a  `.`. Unix has a convention that any file or
@@ -125,7 +125,7 @@ in the output.
 The last thing we're going to look at is combining the two flags, '-a' and '-l'.
 The command is `ls -l -a`.
 
-[30_1_ls-l-a.png]
+![ls -la](30_0_ls-l-a.png)
 
 This has all the files in the directory, listed in long format. The `-l` and the
 `-a` don't have to be in order, and in fact they don't have to be seperate - `ls
