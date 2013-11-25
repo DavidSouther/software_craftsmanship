@@ -39,13 +39,13 @@ dock.
 
 Terminal in a Finder window.
 
-![Terminal in Spotlight](11_terminal_spotlight)
+![Terminal in Spotlight](11_terminal_spotlight.png)
 
 Terminal in Spotlight.
 
 Once you've opened Terminal, you will see a mostly empty window.
 
-![Bash Terminal](20_bash_Terminal)
+![Bash Terminal](20_bash_Terminal.png)
 
 Before we get any further, we're going to tweak this so it's much easier on the
 eyes, and to work with in general. First, I would recommend expanding the window
@@ -59,11 +59,11 @@ font, I use Consolas at 18pt. It's easier to use a larger font for two reasons -
 eyestrain goes down the larger the texts is, and fewer lines on the screen
 encourages you implicitly to keep parts of your code smaller.
 
-![Color Scheme](21_color_scheme)
+![Color Scheme](21_color_scheme.png)
 
-![Opacity](22_opacity)
+![Opacity](22_opacity.png)
 
-![Fonts](23_fonts)
+![Fonts](23_fonts.png)
 
 That covers the Terminal settings. Now we'll go and change some bash settings.
 This is a little more indepth. Start by opening a file name `~/.bash_profile`
