@@ -173,6 +173,19 @@ After moving around the file system, you may get a bit lost. Run the command
 
 ### mkdir
 
+Knowing what files and folders are already on your system is great, but what
+about actual work, when you need to add to the file system? The first command is
+for folders, `mkdir` for 'Make Directory'. Pass it any name, and it will create
+a folder with that name inside the current directory.
+
+![ls ; mkdir ; ls](30_3_mkdir.png)
+
+By default, `mkdir` can only create folders one level deep. Typing it with `-p`
+(for 'parents') tells `mkdir` to create any intermediate directories it might
+need.
+
+![ mkdir ; mkdir -p](30_3_mkdir_p.png)
+
 ### touch
 
 ### rm
