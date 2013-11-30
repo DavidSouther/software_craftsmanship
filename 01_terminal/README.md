@@ -188,6 +188,12 @@ need.
 
 ### touch
 
+`mkdir` creates folders, and `touch` creates files. (Actually, there are dozens
+to hundreds of ways to create a file, `touch` happens to be one of the most
+common.)
+
+![ls ; touch ; ls](30_4_touch.png)
+
 ### rm
 
 ## Running Programs
