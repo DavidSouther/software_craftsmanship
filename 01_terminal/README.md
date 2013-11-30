@@ -166,6 +166,11 @@ Finally, to go back to the folder you were last in, use `-`.
 
 ### cwd
 
+After moving around the file system, you may get a bit lost. Run the command
+`cwd`, Current Working Directory, to print where you are in the file system.
+
+![cwd](30_2_cwd.png)
+
 ### mkdir
 
 ### touch
