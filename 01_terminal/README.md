@@ -130,8 +130,6 @@ This has all the files in the directory, listed in long format. The `-l` and the
 `-a` don't have to be in order, and in fact they don't have to be seperate - `ls
 -l -a`, `ls -a -l`, `ls -la` and `ls -al` all produce the same output.
 
-
-
 ### cd
 
 Seeing folders and files is neat, but now that we have them, how do we move
@@ -202,18 +200,38 @@ wrong name), the `rm`, 'remove'` command comes in handy.
 
 It also works with folders, using the `-r` flag.
 
-![ls ; rm -f ; ls](30_5_rm_f)
+![ls ; rm -f ; ls](30_5_rm_f.png)
 
 Notice it asks me for every file if I'm sure I want to delete. The flag `f`
 deletes without prompting for confirmation.
 
-![ls ; rm -rf ; ls](30_5)rm_rf
-
-## Working with files
+![ls ; rm -rf ; ls](30_5_rm_rf.png)
 
 ### mv
 
+Besides creating and deleting files, it is also useful to move them around. In a
+GUI, this is usually done by dragging and dropping between folders. In the shell
+we use the `mv` command to move files. There are no commonly used flags for mv.
+
+![ls ; mv ; ls](30_6_mv.png)
+
+Notice you can either move to rename a file, or you can mv a file to a different
+directory.
+
 ### cp
+
+Moving a file literally moves it, and it is no longer at the original location.
+Copying a file with `cp` is what you want when you need the contents of a file
+or directory, while maintaining the original.
+
+![ls ; cp ; ls](30_7_cp.png)
+
+Like `rm`, `cp` can also take the `-r` flag to work on directories.
+
+## Working with files
+
+Now that we understand the basics of the file system, it's time to work with the
+files we have and made.
 
 ### cat
 
