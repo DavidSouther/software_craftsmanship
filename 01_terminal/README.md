@@ -242,6 +242,26 @@ command prints the contents of the file to the terminal.
 
 ### less
 
+For longer files, `cat` will overflow your screen with text. Instead, the
+`less` command is a "pager" that prints a limited amount on the screen at a
+time. Notice how the last line has the file name.
+
+![less](40_2_less.png)
+
+Less has several keyboard commands to control its operation. To move up and down
+in a file, use the keys `j` and `l`, repectively. Press the spacebar to move
+down an entire page. To search for a word or phrase, press the `/` key and start
+typing - less immediately jumps forward to the next match as you type. When you
+look for longer phrases, you'll find that saves you a fair amount of time. Once
+you've found a match, press `n` to jump to the next mach, `N` to jump to the
+previous match, or press the escape key to return to your original position. The
+`h` key shows the help menu (again, press the Escape key to exit). Finally, when
+you're finished with the file, press `q` to exit.
+
+You will want to keep these key commands in mind - there are several programs in
+the Unix shell that will use less to show you results, but might not tell you
+what they've done, so noticing you're in a pager is a good skill to have.
+
 ### grep
 
 ### find
