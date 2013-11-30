@@ -262,6 +262,14 @@ You will want to keep these key commands in mind - there are several programs in
 the Unix shell that will use less to show you results, but might not tell you
 what they've done, so noticing you're in a pager is a good skill to have.
 
+### glob
+
+Glob isn't a program, but somthing you can type when entering file or folder
+names in a command. There are many possible glob patterns, but the one that's
+used regularly is `*`, meaning to match zero or more characters.
+
+![glob](40_3_glob.png)
+
 ### grep
 
 ### find
