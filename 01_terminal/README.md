@@ -272,6 +272,25 @@ used regularly is `*`, meaning to match zero or more characters.
 
 ### grep
 
+Grep is the file pattern searcher. To me it looks like it should actually be an
+acronym. As I was writing this chapter, I decided to figure out what it stood
+for. I was only mildly successful. There is no published direct history that
+I've found, so I got to play with the acronym in my head. It looks like it's
+named after a command from the program ed (beware ye who enter here). I *think*
+it's for Global Regular Expression Printer, but I'm not sure. I emailed the
+creator of the program, Ken Thompson, and asked. TODO PUT REPLY? The point of
+the aside is: I think it's pretty awesome that the original creators of the
+tools we use today are still alive and contributing to this field. That's pretty
+cool!
+
+Anyway, Grep is used to find all the places in a file or bunch of files with a
+certain word or pattern. Here are some examples, using the HiLo game from the
+Python HiLo game in the Basic Types and Control Flow chapter.
+
+![grep hilo](40_4_grep_hilo.png)
+
+![grep hilo -n](40_4_grep_hilo_n.png)
+
 ### find
 
 ## Running Programs
