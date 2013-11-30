@@ -235,6 +235,11 @@ files we have and made.
 
 ### cat
 
+It's much easier to work with files when we can read their contents. The `cat`
+command prints the contents of the file to the terminal.
+
+![cat](40_1_cat.png)
+
 ### less
 
 ### grep
