@@ -209,14 +209,6 @@ deletes without prompting for confirmation.
 
 ![ls ; rm -rf ; ls](30_5)rm_rf
 
-## Running Programs
-
-### arguments
-
-### Path
-
-### ./
-
 ## Working with files
 
 ### mv
@@ -230,6 +222,14 @@ deletes without prompting for confirmation.
 ### grep
 
 ### find
+
+## Running Programs
+
+### arguments
+
+### Path
+
+### ./
 
 ## Shortcuts
 
