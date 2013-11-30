@@ -206,6 +206,12 @@ common.)
 
 ## Working with files
 
+### mv
+
+### cp
+
+### cat
+
 ### less
 
 ### grep
