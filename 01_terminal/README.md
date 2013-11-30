@@ -131,7 +131,38 @@ This has all the files in the directory, listed in long format. The `-l` and the
 `-a` don't have to be in order, and in fact they don't have to be seperate - `ls
 -l -a`, `ls -a -l`, `ls -la` and `ls -al` all produce the same output.
 
+
+
 ### cd
+
+Seeing folders and files is neat, but now that we have them, how do we move
+around? In the GUI, it's clicking and double clicking on an icon. On the command
+line,  we use `cd`, Change Directory.
+
+![cd Downloads](30_1_cd.png)
+
+Here, I `ls` the directory, then move into my `Downloads` directory using `cd`.
+If you know the directory structure, you can navigate arbitrarily deep by giving
+a path with the directories separated by a slash. Again, from my home directory:
+
+![cd devel/southerd/books/software_craftsmanship](30_1_cd_deep.png)
+
+This gets you arbitrarily deep. To move back up the file system, use the special
+folder `..`, which means 'the directory that is the parent to the current
+directory'. It can be used anywhere in the path, and can also be deep. To get
+back to my devel directory, I can use one `..` from the `software_craftsmanship`
+folder.
+
+![cd ../..](30_1_cd_up.png)
+
+A very useful special folder is `~`, as a shorthand for your home directory. To
+quickly get back to my Documents (from anywhere in the file system), use `~`.
+
+![cd ~/Documents](30_1_cd_Documents.png)
+
+Finally, to go back to the folder you were last in, use `-`.
+
+![cd -](30_1_cd_dash.png)
 
 ### cwd
 
