@@ -14,7 +14,6 @@ its subdirectories that match some certain criteria (like having the phrase
 'finalDraft' in the file's name).
 
 
-
 ## General Usage
 
 *Terminal? Command Prompt? Which is it?* It's both. It's a command prompt because
@@ -195,6 +194,20 @@ common.)
 ![ls ; touch ; ls](30_4_touch.png)
 
 ### rm
+
+When finished with a file (or, I do this a lot, after creating a file with the
+wrong name), the `rm`, 'remove'` command comes in handy.
+
+![ls ; touch ; ls ; rm](30_5_rm.png)
+
+It also works with folders, using the `-r` flag.
+
+![ls ; rm -f ; ls](30_5_rm_f)
+
+Notice it asks me for every file if I'm sure I want to delete. The flag `f`
+deletes without prompting for confirmation.
+
+![ls ; rm -rf ; ls](30_5)rm_rf
 
 ## Running Programs
 
