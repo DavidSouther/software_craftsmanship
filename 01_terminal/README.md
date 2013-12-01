@@ -155,18 +155,18 @@ folder.
 A very useful special folder is `~`, as a shorthand for your home directory. To
 quickly get back to my Documents (from anywhere in the file system), use `~`.
 
-![cd ~/Documents](30_1_cd_Documents.png)
+![cd ~/devel](30_1_cd_Documents.png)
 
 Finally, to go back to the folder you were last in, use `-`.
 
 ![cd -](30_1_cd_dash.png)
 
-### cwd
+### pwd
 
 After moving around the file system, you may get a bit lost. Run the command
-`cwd`, Current Working Directory, to print where you are in the file system.
+`pwd`, Print Working Directory, to print where you are in the file system.
 
-![cwd](30_2_cwd.png)
+![pwd](30_2_pwd.png)
 
 ### mkdir
 
@@ -194,18 +194,13 @@ common.)
 ### rm
 
 When finished with a file (or, I do this a lot, after creating a file with the
-wrong name), the `rm`, 'remove'` command comes in handy.
+wrong name), the `rm`, 'remove' command comes in handy.
 
 ![ls ; touch ; ls ; rm](30_5_rm.png)
 
 It also works with folders, using the `-r` flag.
 
-![ls ; rm -f ; ls](30_5_rm_f.png)
-
-Notice it asks me for every file if I'm sure I want to delete. The flag `f`
-deletes without prompting for confirmation.
-
-![ls ; rm -rf ; ls](30_5_rm_rf.png)
+![ls ; rm -r ; ls](30_5_rm_r.png)
 
 ### mv
 
@@ -228,6 +223,8 @@ or directory, while maintaining the original.
 
 Like `rm`, `cp` can also take the `-r` flag to work on directories.
 
+![ls ; cp -r ; ls](30_7_cp_r.png)
+
 ## Working with files
 
 Now that we understand the basics of the file system, it's time to work with the
@@ -239,6 +236,11 @@ It's much easier to work with files when we can read their contents. The `cat`
 command prints the contents of the file to the terminal.
 
 ![cat](40_1_cat.png)
+
+![long cat](40_1_cat.png)
+
+The second example runs cat on README.md (this file you're reading). There is...
+quite a lot of text missing!
 
 ### less
 
