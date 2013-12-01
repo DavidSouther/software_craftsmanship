@@ -274,6 +274,13 @@ used regularly is `*`, meaning to match zero or more characters.
 
 ### grep
 
+*Grep and find are advanced programs. While being incredibly powerful, that
+power comes with a lot of configuration. If this is the first time reading the
+book, I'd recommend glancing at this section, seeing some of the minimum they
+can do, and continue the book being aware they exist. Later, come back and read
+more about them when you've come across some of the problems in programming that
+these tools are build to solve.*
+
 Grep is the file pattern searcher. To me it looks like it should actually be an
 acronym. As I was writing this chapter, I decided to figure out what it stood
 for. I was only mildly successful. There is no published direct history that
