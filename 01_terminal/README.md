@@ -155,7 +155,7 @@ folder.
 A very useful special folder is `~`, as a shorthand for your home directory. To
 quickly get back to my Documents (from anywhere in the file system), use `~`.
 
-![cd ~/devel](30_1_cd_Documents.png)
+![cd ~/devel](30_1_cd_devel.png)
 
 Finally, to go back to the folder you were last in, use `-`.
 
@@ -181,7 +181,7 @@ By default, `mkdir` can only create folders one level deep. Typing it with `-p`
 (for 'parents') tells `mkdir` to create any intermediate directories it might
 need.
 
-![ mkdir ; mkdir -p](30_3_mkdir_p.png)
+![ mkdir ; mkdir -p](30_3_mkdir-p.png)
 
 ### touch
 
@@ -200,7 +200,7 @@ wrong name), the `rm`, 'remove' command comes in handy.
 
 It also works with folders, using the `-r` flag.
 
-![ls ; rm -r ; ls](30_5_rm_r.png)
+![ls ; rm -r ; ls](30_5_rm-r.png)
 
 ### mv
 
@@ -223,7 +223,7 @@ or directory, while maintaining the original.
 
 Like `rm`, `cp` can also take the `-r` flag to work on directories.
 
-![ls ; cp -r ; ls](30_7_cp_r.png)
+![ls ; cp -r ; ls](30_7_cp-r.png)
 
 ## Working with files
 
@@ -298,9 +298,11 @@ Python HiLo game in the Basic Types and Control Flow chapter.
 
 ![grep hilo](40_4_grep_hilo.png)
 
-![grep hilo -n](40_4_grep_hilo_n.png)
+![grep hilo -n](40_4_grep_hilo-n.png)
 
 ### find
+
+
 
 ## Running Programs
 
