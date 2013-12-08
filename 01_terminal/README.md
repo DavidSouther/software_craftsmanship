@@ -101,44 +101,7 @@ directory.
 ![ls](30_0_ls.png)
 
 You see several files listed in several rows in dark blue (in the figure). These
-are all folders. Files, in my shell, would be in white. We'll see that in a
-moment.
-
-There are three common variations on the `ls` command. The first is `ls -l`,
-list directory contents with long formatting. Run this.
-
-![ls -l](30_0_ls-l.png)
-
-Here, you see the same files listed, but with much additional information. Most
-shell users I know use this as their primary `ls` usage; I personally haven't
-used bare `ls` in years until writing this book! The information in this listing
-can be very intimidating when you first look at it. Luckily, for now, there are
-only a few parts that you'll be using, all on the right side: the filesize, the
-date, and the file name. The file name should be pretty clear. The date is the
-most recent update time; for a folder, this is the last time a file anywhere
-inside that folder was update. The file size means different things for files
-and folders. Files, it is the exact number of bytes in the file. For a folder,
-it is the number of bytes to track all the files one level deep within the
-folder, and takes (on OSX) 68 bytes per file.
-
-The next flag we'll look at is `ls -a`, list with all files.
-
-![ls -a](30_0_ls-a.png)
-
-Here we see a file listing similar to the fist `ls` command, but with several
-more files, each that starts with a  `.`. Unix has a convention that any file or
-directory that starts with a `.` is a "hidden" file, something that users don't
-need to worry about on a day-to-day basis. The `-a` flag tells `ls` to show them
-in the output.
-
-The last thing we're going to look at is combining the two flags, '-a' and '-l'.
-The command is `ls -l -a`.
-
-![ls -la](30_0_ls-l-a.png)
-
-This has all the files in the directory, listed in long format. The `-l` and the
-`-a` don't have to be in order, and in fact they don't have to be seperate - `ls
--l -a`, `ls -a -l`, `ls -la` and `ls -al` all produce the same output.
+are all folders. Files, in my shell, would be in white. 
 
 ### cd
 
