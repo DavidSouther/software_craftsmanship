@@ -48,32 +48,35 @@ Once you've opened Terminal, you will see a mostly empty window.
 
 Before we get any further, we're going to tweak this so it's much easier on the
 eyes, and to work with in general. First, I would recommend expanding the window
-with the plus, to take as much screen space as possible. Second, in settings,
-choose a dark background color scheme. I personally like Pro - it colors well,
-nothing conflicts badly, and it's easy on the eyes. Choose what you like best,
-and click the "Default" button. Opacity is set at 85% on Pro, which means you
-will be able to see through it a bit to the windows behind it. I don't like
-this, so I set the opacity to 100%. It is also easier to program with a larger
-font, I use Consolas at 18pt. It's easier to use a larger font for two reasons -
-eyestrain goes down the larger the texts is, and fewer lines on the screen
-encourages you implicitly to keep parts of your code smaller.
+with the plus, to take as much screen space as possible. Next, we'll change the
+color scheme. To edit the color scheme, click "Terminal -> Preferences" in the
+top bar, or press Command+P. 
 
 ![Color Scheme](21_color_scheme.png)
 
-![Opacity](22_opacity.png)
+I find it easier to program with a larger font; I use Consolas at 18pt. It's
+easier to use a larger font for two reasons - eyestrain goes down the larger the
+texts is, and fewer lines on the screen encourages you implicitly to keep parts
+of your code smaller. You can change the font by clicking "Change" next to the
+font display.
 
 ![Fonts](23_fonts.png)
 
+Choose the "Pro" color scheme on the left list. Opacity is set at 85% on Pro,
+which means you will be able to see through it a bit to the windows behind it. I
+don't like this, so I set the opacity to 100%. Go to the "Window" tab, then
+click the black square beneath the "Background" label.
 
+![Opacity](22_opacity.png)
 
+There is one last setting we need, and it's in bash itself. In the terminal
+window, type this and hit enter:
 
-** IN PROGRESS ** 
-That covers the Terminal settings. Now we'll go and change some bash settings.
-This is a little more indepth. Start by opening a file name `~/.bash_profile`
-with gedit; the full command is `/Applications/  (COMING SOON)
+```
+echo export CLICOLOR=xterm-color >> ~/.bashrc
+```
 
-
-
+Restart terminal, and you're ready to go!
 
 ## File System
 
