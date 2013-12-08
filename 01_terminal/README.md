@@ -64,9 +64,13 @@ encourages you implicitly to keep parts of your code smaller.
 
 ![Fonts](23_fonts.png)
 
+
+
+
+** IN PROGRESS ** 
 That covers the Terminal settings. Now we'll go and change some bash settings.
 This is a little more indepth. Start by opening a file name `~/.bash_profile`
-with gedit; the full command is `/Applications/
+with gedit; the full command is `/Applications/  (COMING SOON)
 
 
 
