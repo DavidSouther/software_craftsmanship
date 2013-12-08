@@ -85,6 +85,9 @@ do will involve in the file system in some way. Having a basic understanding of
 the file system command will be your bread and butter throughout your future
 Terminal experience.
 
+A quick note: all the commands here are lower-case in the heading, so this next
+commend is little-l little-s
+
 ### ls
 
 The first command we'll use is called `ls`, short for 'List Directory Contents.'
