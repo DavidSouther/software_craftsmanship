@@ -37,9 +37,9 @@
 
 #### Exercise: Mad Libs
 
-#### Project: Lander
+### Project: Lander
 
-#### Project: Calculator
+### Project: Calculator
 
 * It must
   * Add
