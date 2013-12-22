@@ -1,8 +1,8 @@
-\chapter{Functions, Arrays, and Strings}
+# Functions, Arrays, and Strings
 
-\section{Functions}
+## Functions
 
-# Exercise: Dates
+#### Exercise: Dates
 
 1. Print the current data
 1. Print number of days until:
@@ -12,9 +12,9 @@
   1. New Years
   1. Their Birthday
 
-\subsection{Recursion}
+### Recursion
 
-# Exercise: Fractals
+#### Exercise: Fractals
 
 1. Given a windowed fractal drawer
 1. Implement a recursive, self-similar fractal curve
@@ -26,20 +26,20 @@
     * Sierpinsky Carpet
   1. Color the curve (distance from center?)
 
-\section{Arrays}
+## Arrays
 
-# Exercise: Statistics
+#### Exercise: Statistics
 
 1. Using a given data set
 1. Determine if second babies are born sooner
 
-\section{Strings}
+## Strings
 
-# Exercise: Mad Libs
+#### Exercise: Mad Libs
 
-# Project: Lander
+#### Project: Lander
 
-# Project: Calculator
+#### Project: Calculator
 
 * It must
   * Add
