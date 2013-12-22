@@ -11,7 +11,7 @@ Type in the last line from the example in the types section.
 
 ```python
 for i in range(0, 10):
-    print i
+    print(i)
 ```
 
 Save the new file, as `control.py`
