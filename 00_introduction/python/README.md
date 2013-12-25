@@ -123,9 +123,11 @@ are going to choose a free editor with many nice features, but one that still
 makes you handle most of the programming yourself. Managing your project on your
 own will help you be a better programmer later.
 
-We'll use [idle](https://projects.gnome.org/gedit/) as our text editor. It's
-part of Python, and should be included by default with your python installation.
-To open idle, in your terminal, type `idle &`.
+We'll use [idle](http://en.wikipedia.org/wiki/IDLE_(Python)) as our text editor.
+It's part of Python, and should be included by default with your python
+installation. To open idle, in your terminal, type `idle &`.
+
+![start idle](./20_idle_open.png)
 
 *Why can't I just use TextEdit on a mac or Notepad on Windows?* You could, but
 neither of those programs have any tools to help you program. Most importantly,
@@ -142,13 +144,15 @@ print "Hello, world!"
 print 2 + 3, 10/7, 152 * 12.6
 ```
 
-![idle Hello World](./21_hello_py.png)
+![idle Hello World](./21_hello_shell.png)
 
 This immediate feedback is great when trying out new things in code, but can be
 problematic for longer programs, and you can't save it to run later. Instead,
 let's open a new editor window. In the top menu, choose File -> New Window (on
 Mac, that's Command+N, on Windows and Linux, Ctrl+N). An empty window will open.
 Type the two print lines again, in this window.
+
+![idle Hello World editor](./22_hello_py.png)
 
 Save the program on your hard drive with the name `hello.py`. I create a
 folder called `devel` in my home folder (My Documents on Windows), and a folder
