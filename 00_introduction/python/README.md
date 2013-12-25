@@ -123,26 +123,32 @@ are going to choose a free editor with many nice features, but one that still
 makes you handle most of the programming yourself. Managing your project on your
 own will help you be a better programmer later.
 
-We'll use [gedit](https://projects.gnome.org/gedit/) as our text editor. It's
-available by default on Ubuntu, and you can download it for
-[Windows](http://ftp.gnome.org/pub/GNOME/binaries/win32/gedit/2.30/gedit-setup-2.30.1-1.exe)
-or for [OSX](http://ftp.gnome.org/pub/GNOME/binaries/mac/gedit/3.2/).
+We'll use [idle](https://projects.gnome.org/gedit/) as our text editor. It's
+part of Python, and should be included by default with your python installation.
+To open idle, in your terminal, type `idle &`.
 
 *Why can't I just use TextEdit on a mac or Notepad on Windows?* You could, but
 neither of those programs have any tools to help you program. Most importantly,
-neight has syntax highlighting. GEdit will color different parts of your code
+neight has syntax highlighting. Idle will color different parts of your code
 neatly, allowing you to see at a glance important pieces of your program, and
 often allows you to catch typing mistakes before you even run the program.
 
-Once gedit is installed, open it and type the following two lines:
-
+When Idle is first opened, it is in "shell" mode. This means you can type code
+and run it immediately. Try that now. Type the following two lines, pressing
+enter after each, and seeing what the Python shell does.
 
 ```
 print "Hello, world!"
 print 2 + 3, 10/7, 152 * 12.6
 ```
 
-![GEdit Hello World](./21_hello_py.png)
+![idle Hello World](./21_hello_py.png)
+
+This immediate feedback is great when trying out new things in code, but can be
+problematic for longer programs, and you can't save it to run later. Instead,
+let's open a new editor window. In the top menu, choose File -> New Window (on
+Mac, that's Command+N, on Windows and Linux, Ctrl+N). An empty window will open.
+Type the two print lines again, in this window.
 
 Save the program on your hard drive with the name `hello.py`. I create a
 folder called `devel` in my home folder (My Documents on Windows), and a folder
