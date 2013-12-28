@@ -29,3 +29,6 @@ BLUE_BG = '\033[44m'
 PURPLE_BG = '\033[45m'
 YELLOW_BG = '\033[46m'
 WHITE_BG = '\033[47m'
+
+def at(y, x):
+    return '\033['+ str(y) +';'+ str(x) +'f'
