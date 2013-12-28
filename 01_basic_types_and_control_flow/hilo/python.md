@@ -78,23 +78,26 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   the typography of pieces of the program. Download [this file](./colors.py)
   and save it next to your hilo program. Add `import colors` to your program.
   Edit the first line of the indroduction paragraph to make HiLo bold -
-  `print colors.bold + "HiLo" + colors.normal`. Notice we have to tell the
+  `print colors.BOLD + "HiLo" + colors.NORMAL`. Notice we have to tell the
   program to put the printing back to normal, or else all future priting would
   be in bold.
 
   1. **Colors** The colors module has a variety of styles, independent of
-  eachother. The typography can be `bold`. Printing can be in `white`, `black`,
-  `red`, `blue`, `green`, `yellow`, `cyan`, and [TODO LAST COLOR]. The
-  background color can be set with `bg_white`, `bg_black`, `bg_red`, and so on.
+  eachother. The typography can be `BOLD`. Printing can be in `WHITE`, `BLACK`,
+  `RED`, `BLUE`, `GREEN`, `YELLO`, `CYAN`, and `PURPLE`. The
+  background color can be set with `BG_WHITE`, `BG_BLACK`, `BG_RED`, and so on.
   Play around with the colors, until you like the look and feel of your HiLo
-  game. `normal` puts the terminal back to a normal weight white text on black
+  game. `NORMAL` puts the terminal back to a normal weight white text on black
   background.
 
+  1. **Start Over** If you've gotten your terminal into a jumbled mess, print
+  `colors.CLS` to clear the screen, and move the cursor to the top-left corner.
+
   1. **Print at various points** You can move the cursor (where the print
-  happens) using `color.at(r, c)` where r and c are the row and column you want
-  to print at. Row and column start at the top-left of the terminal at (1, 1),
-  and on "standard" terminals there are 80 columns and 24 rows. Note, if you
-  resize the terminal, that will change. When writing this kind of terminal
+  happens) using `print color.at(r, c)` where r and c are the row and column you
+  want to print at. Row and column start at the top-left of the terminal at `(1,
+  1)`, and on "standard" terminals there are 80 columns and 24 rows. Note, if
+  you resize the terminal, that will change. When writing this kind of terminal
   program, it's usually best to stick with those dimentions.
 
 1. **Binary Search** You may have found the "optimal" algorithm is to begin by
