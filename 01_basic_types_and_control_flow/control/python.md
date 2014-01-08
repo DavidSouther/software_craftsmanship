@@ -82,7 +82,7 @@ Change this program again:
 
 ```python
 sum = 0
-N = int(raw_input("Summing 1 to N: "))
+N = input("Summing 1 to N: ")
 for i in range(1, (N + 1)):
     sum = sum + i
 print sum
@@ -96,11 +96,10 @@ Summing 1 to N: 100
 5050
 ```
 
-The `raw_input("Summing 1 to N: ")` is a python way to ask the user to enter a
-string. Whatever the user types, up to the enter, is the result of the
-expression. Because it's a string, it must be converted to an integer before
-adding 1 to it. Thus, the `int()` piece. More on those details in the next
-chapter.
+The `input("Summing 1 to N: ")` is a python way to ask the user to enter a
+number. Whatever the user types, up to the enter, is the result of the
+expression. While what the user types is a string, python immediately makes
+it an integer.
 
 Now that we have a program that sums a few numbers, change it to ask the user to
 choose between summing or making a product.
@@ -109,13 +108,13 @@ choose between summing or making a product.
 add = raw_input("Sum or Product? (S/P): ")
 if add == "S" or add == "s":
 	sum = 0
-	N = int(raw_input("Summing 1 to N: "))
+	N = input("Summing 1 to N: ")
 	for i in range(2, (N + 1)):
 		sum = sum + i
 	print sum
 elif add == "P" or add == "p":
 	prod = 1
-	N = int(raw_input("Product 1 to N: "))
+	N = input("Product 1 to N: ")
 	for i in range(1, (N + 1)):
 		prod = prod * i
 	print prod
@@ -150,7 +149,7 @@ Start with these lines:
 ```python
 print "Decimal to Roman Numeral"
 print
-number = int(raw_input("Decimal integer: "))
+number = input("Decimal integer: ")
 print
 print "Converting " + str(number) + " to Roman."
 ```

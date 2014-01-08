@@ -13,8 +13,8 @@ Looking back on the steps from the introduction "Hello, World!", start by
 opening your text editor (probably gedit), and write these two lines of code:
 
 ```python
-print "Hello, world"
-print 'Hello, again'
+print("Hello, world")
+print('Hello, again')
 ```
 
 Save the file (in a new folder for this chapter) as "types.py". Open a command
@@ -31,11 +31,11 @@ If you have trouble with these steps, go back to
 there, but for this program. When you have it running, do these next few lines:
 
 ```python
-print 2, 3, 5, 7, 11
+print(2, 3, 5, 7, 11)
 
-print 0.5, 1.27, 3.146
+print(0.5, 1.27, 3.146)
 
-print 'h', 'e', 'l', 'l', 'o'
+print('h', 'e', 'l', 'l', 'o')
 ```
 
 Type them at the end of `types.py`, save the file, and run it in your terminal
@@ -63,18 +63,18 @@ i = 2
 j = 3
 k = 5
 
-print i, j, k
+print(i, j, k)
 
 m = 2 * 3
 n = 3 + 5
 
-print m, n
+print(m, n)
 
 x = 0.5
 y = 1.27
 pi = 3.146
 
-print x, y, pi
+print(x, y, pi)
 ```
 
 When it's running, you should see
@@ -96,12 +96,12 @@ Moving a bit faster, for the biggest section yet:
 circumference_1 = pi * y
 circumference_2 = pi * n
 
-print circumference_1, circumference_2
+print(circumference_1, circumference_2)
 
 average = (i + j + k) / 3
 average_2 = (i + j + k) / 3.0
 
-print average, average_2
+print(average, average_2)
 
 a = 3
 b = 8.6
@@ -113,7 +113,7 @@ denominator = 2 * a
 x1 = (-b + discriminant) / denominator
 x2 = (-b - discriminant) / denominator
 
-print x1, x2
+print(x1, x2)
 ```
 
 Remember, we're just adding these blocks to the end of the types.py file. When
@@ -142,13 +142,13 @@ a = "Hello, world"
 b = 'Hello, world'
 c = "This is" + " more text"
 
-print a, b, c
+print(a, b, c)
 
-print len(a), len(b), len(c)
+print(len(a), len(b), len(c))
 
-print a[4:]
-print b[-4:]
-print c[2:9]
+print(a[4:])
+print(b[-4:])
+print(c[2:9])
 ```
 
 The output of the program at this point is
@@ -185,10 +185,10 @@ if( (current_balance - transaction_amount) < MIN_BALANCE):
 else:
 	current_balance -= transaction_amount
 
-print "Your current balance is: $" + str(current_balance)
+print("Your current balance is: $" + str(current_balance))
 
 for i in range(0, 10):
-	print i;
+	print(i)
 ```
 
 And the complete output from the first big program file is
