@@ -1,7 +1,8 @@
 ## HiLo
 
 HiLo is a simple guessing game. The computer chooses a random number, and the
-player is scored on how quickly they guess the number.
+player is scored on how quickly they guess the number. In a new file, type this
+program, then run it in your terminal!
 
 
 ```python
@@ -99,6 +100,11 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   1)`, and on "standard" terminals there are 80 columns and 24 rows. Note, if
   you resize the terminal, that will change. When writing this kind of terminal
   program, it's usually best to stick with those dimentions.
+
+1. **Difficulty** Give your program several difficulty levels. You could use
+easy = 1 to 10, medium = 1 to 100, and hard = 1 to 1000. You could do a custom
+difficulty. You may want to improve the scoring, so you don't get fewer points
+when the random number happens to be smaller.
 
 1. **Binary Search** You may have found the "optimal" algorithm is to begin by
 choosing 50, then either 25 or 75 depending on if your guess is high or low.
