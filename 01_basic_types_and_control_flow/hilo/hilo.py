@@ -49,28 +49,31 @@ time.sleep(1.5)
 # Will learn how to do full blown "any" key later.
 n = raw_input("Press enter key to continue...")
 
+# This constant sets the left edge of the program's text
+LEFT = 20
+
 # Clear the portion of the screen we care about - the lines below
 # the HiLo title, 70 characters wide.
-for i in range(11, 20):
+for i in range(11, LEFT):
     print colors.at(i, 1) + " " * 70 # Note * for 70 spaces
 
 # Print the difficulty menu
-print colors.at(11, 20) + "1. Between 1 and 10"
-print colors.at(12, 20) + "2. Between 1 and 100"
-print colors.at(13, 20) + "3. Between 1 and 1000"
-difficulty = raw_input(colors.at(14, 20) + "Difficulty? ")
+print colors.at(11, LEFT) + "1. Between 1 and 10"
+print colors.at(12, LEFT) + "2. Between 1 and 100"
+print colors.at(13, LEFT) + "3. Between 1 and 1000"
+difficulty = raw_input(colors.at(14, LEFT) + "Difficulty? ")
 # Easter Egg: Insane Mode!
 difficulty = int(math.pow(10, int(difficulty)))
 
 # Erase the Difficulty menu
 for i in range(11, 15):
-    print colors.at(i, 20) + " " * 40
+    print colors.at(i, LEFT) + " " * 40
 
 # Print the "Guess" box
 print colors.BLUE
-print colors.at(12, 20) + chr(201) + chr(205)*10 + chr(187)
-print colors.at(13, 20) + chr(186) + " " * 10 + chr(186)
-print colors.at(14, 20) + chr(200) + chr(205)*10 + chr(188)
+print colors.at(12, LEFT) + chr(201) + chr(205)*10 + chr(187)
+print colors.at(13, LEFT) + chr(186) + " " * 10 + chr(186)
+print colors.at(14, LEFT) + chr(200) + chr(205)*10 + chr(188)
 print colors.WHITE
 
 # The game itself. The shell of the code is from the lecture.
@@ -83,8 +86,8 @@ while not done:
     lost = False
 
     while not lost:
-        print colors.at(13, 28) + "   " # Clear the last guess
-        guess = raw_input(colors.WHITE + colors.at(13, 21) + "Guess: ")
+        print colors.at(13, LEFT + 8) + "   " # Clear the last guess
+        guess = raw_input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
 
         # Shortcut to leave early, with the empty guess
         if guess == "":
@@ -98,14 +101,14 @@ while not done:
             winnings = winnings + number # Could redo for different scoring
             
             # Fill in the status lines, and now that they've won they'll see their winnings
-            print colors.BOLD + colors.GREEN + colors.at(15, 21) + "You won!" + " "*20
+            print colors.BOLD + colors.GREEN + colors.at(15, LEFT + 1) + "You won!" + " "*LEFT
             time.sleep(1)
-            print colors.NORMAL + colors.WHITE + colors.at(16, 21) + "Winnings: " + " "*20
+            print colors.NORMAL + colors.WHITE + colors.at(16, LEFT + 1) + "Winnings: " + " "*LEFT
             print colors.GREEN + colors.at(16, 32) + "$" + str(winnings)
 
             
-            again = raw_input(colors.NORMAL + colors.at(17, 21) + "Play again? (Y/n) ")
-            print colors.at(17, 21) + " " * 20 # Only resetting line 17, the input line. 16 stays.
+            again = raw_input(colors.NORMAL + colors.at(17, LEFT + 1) + "Play again? (Y/n) ")
+            print colors.at(17, LEFT + 1) + " " * LEFT # Only resetting line 17, the input line. 16 stays.
             if again != "Y":
                 done = True
             break
@@ -113,14 +116,14 @@ while not done:
         else:
             # Fill in line 15 with the game feedback.
             if guess > number:
-                print colors.PURPLE + colors.at(15, 21) + "Your guess was too high!" + " "*20
+                print colors.PURPLE + colors.at(15, LEFT + 1) + "Your guess was too high!" + " "*LEFT
             else:
-                print colors.PURPLE + colors.at(15, 21) + "Your guess was too low!" + " "*20
+                print colors.PURPLE + colors.at(15, LEFT + 1) + "Your guess was too low!" + " "*LEFT
 
         guesses = guesses + 1
         if guesses >= 6:
             # OH NO! They lost!
-            print colors.RED + colors.at(15, 21) + "You took too many guesses!" + " "*20
+            print colors.RED + colors.at(15, LEFT + 1) + "You took too many guesses!" + " "*LEFT
             lost = done = True
 
 
