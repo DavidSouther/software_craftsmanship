@@ -101,6 +101,50 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   you resize the terminal, that will change. When writing this kind of terminal
   program, it's usually best to stick with those dimentions.
 
+    * **Drawing Boxes** One use for this is to draw a box around some portion of
+    the screen. This takes a bit of computing known as the "Extended ASCII
+    Character Set". In the discussion of characters, we menionted that the first
+    128 characters are mapped to various numbers in the ASCII character table.
+    There are many other ways to map characters, and many other characters to
+    map. One version from the 1980s was called "[Code Page 437][page437]", and
+    was used by the original IBM PC computers and MS DOS.
+
+    * In code page 437, the numbers from 128 through 255 were used for printing
+    characters to make user interfaces, especially boxes, as an early form of
+    windowing concepts. Today, with our preponderance of Graphical and web-based
+    interfaces, these characters have largely fallen out of use, but you can
+    still get access to them. In OSX, you will need to change your terminal to
+    use the US-Latin (DOS) character set. Once you do, you could run a program
+    like this in python:
+
+```python
+import colors
+
+LEFT = 20
+
+# Print the "Guess" box
+print colors.BLUE
+print colors.at(12, LEFT) + chr(201) + chr(205)*10 + chr(187)
+print colors.at(13, LEFT) + chr(186) + " " * 10 + chr(186)
+print colors.at(14, LEFT) + chr(200) + chr(205)*10 + chr(188)
+print colors.WHITE
+
+guess = 0
+while guess >= 0:
+  print colors.at(13, LEFT + 8) + "   " # Clear the last guess  
+  guess = raw_input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
+```
+
+* We use `colors.at` to control where the box will show up. We use `chr()`
+to convert a number to a character at that code point. If you look at the
+linked wikipedia page, you see that 186, 187, 188, 200, 201, and 201 are
+double-wide block border characters. You can also see that instead of
+printing 10 chr(205) characters to make the top and bottom portions, we
+use the `*` operation, which for a character or string repeats the
+character several times.
+
+* Try using this in your program to make your interface more exciting!
+
 1. **Difficulty** Give your program several difficulty levels. You could use
 easy = 1 to 10, medium = 1 to 100, and hard = 1 to 1000. You could do a custom
 difficulty. You may want to improve the scoring, so you don't get fewer points
@@ -113,3 +157,5 @@ decision to look to one side or the other of the numbers you're searching.
 Rewrite the program so that instead of asking the user for a guess, the program
 "plays" itself by guessing the number. See how long it takes it to guess any
 particular number.
+
+[page437]: http://en.wikipedia.org/wiki/Code_page_437#Interpretation_of_code_points_1.E2.80.9331_and_127
