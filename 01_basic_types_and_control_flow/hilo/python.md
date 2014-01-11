@@ -145,6 +145,42 @@ character several times.
 
 * Try using this in your program to make your interface more exciting!
 
+
+1. ** Pauses / Animation ** The original Hi Lo program, at the top of the page,
+doesn't stop between showing the instructions and asking for the first guess.
+We could stop that with a simple way to ask the user for some input. Try putting
+`n = raw_input("Press enter key to continue...")` in your program, and you'll
+see that now the program waits for the user before continuing. In other places,
+you might not want to wait for the user, but you do want a pause. Using the time
+module, you can have your program wait a moment.
+
+```python
+import time
+
+print("Hello, world!")
+time.sleep(1.5)
+print("A second and a half later...")
+```
+
+While a pregnant pause in the interface might be interesting, this becomes very
+useful when putting animation in a program. Try the following HiLo intro scroll:
+
+```python
+import time
+
+# An 8 frame animation
+for i in range(1, 9):
+    # Clear the screen
+    print colors.CLS
+    # Hi
+    #   Lo
+    # scrolls down the marquee
+    print colors.at(i, 38), colors.GREEN, "Hi"
+    print colors.at(i+1, 40), colors.RED, "Lo"
+    # Half-second delay in each frame
+    time.sleep(0.5)
+```
+
 1. **Difficulty** Give your program several difficulty levels. You could use
 easy = 1 to 10, medium = 1 to 100, and hard = 1 to 1000. You could do a custom
 difficulty. You may want to improve the scoring, so you don't get fewer points
