@@ -179,10 +179,10 @@ this to the program:
 ```python
 numeral = ""
 while (number > 0):
-	if (number > 10):
+	if (number >= 10):
 		numeral = numeral + "X"
 		number = number - 10
-	elif (number > 5):
+	elif (number >= 5):
 		numeral = numeral + "V"
 		number = number - 5
 	else:
