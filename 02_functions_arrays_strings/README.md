@@ -4,7 +4,11 @@
 
 #### Exercise: Dates
 
-1. Print the current data
+1. Print the current date
+  1. Digital Clock Format
+  1. At least two lines
+  1. Some display styling
+  1. Updates every second
 1. Print number of days until:
   1. Martin Luther King day
   1. July 4th
@@ -16,7 +20,7 @@
 
 #### Exercise: Fractals
 
-1. Given a windowed fractal drawer
+1. Using Turtle
 1. Implement a recursive, self-similar fractal curve
   1. Watch this video: http://www.youtube.com/watch?v=EdyociU35u8
   1. Program One Of
@@ -24,7 +28,8 @@
     * Dragon Curve
     * Sierpinsky Triangle
     * Sierpinsky Carpet
-  1. Color the curve (distance from center?)
+  1. Color the curve (distance from center...)
+    * HLS & Color Spaces discussion!?
 
 ## Arrays
 
@@ -32,10 +37,12 @@
 
 1. Using a given data set
 1. Determine if second babies are born sooner
+  * See Chapter 1 of Think Stats
 
 ## Strings
 
 #### Exercise: Mad Libs
+
 
 ### Project: Lander
 
@@ -49,4 +56,3 @@
   * Sum
   * Product
   * Board-Feet
-
