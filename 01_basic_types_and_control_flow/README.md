@@ -183,7 +183,7 @@ starting position. While I can't think of any printers today that need this
 fuctionality, it is not uncommon to see `\r\n` as a legacy pair of characters in
 many programs. The last control character that is interesting to us is 9, `\t`,
 horizontal tab. The horizontal tab tells the computer that we want a lot of
-whitespace (usually 8 spaces worth).
+whitespace (usually 4 or 8 spaces worth).
 
 ### Strings
 
