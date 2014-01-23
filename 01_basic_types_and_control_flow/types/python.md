@@ -353,6 +353,8 @@ You should do each of these exercises in their own files.
 	1. A = 1.5, B = -6, C = 4.25. [x1 = 0.919877, x2 = 3.08012](http://www.wolframalpha.com/input/?i=1.5+*+x+%5E+2+-6+*+x+%2B+4.25)
 	1. A = 1, B = 200, C = -0.000015. [x1 = 7.50000026528e-08, x2 = -200.000000075](http://www.wolframalpha.com/input/?i=x+%5E+2+%2B+200+x+-+0.000015) (x1 = 7.5*10^-8, x2 = -200)
 
+	(Click the answer links to see the problem breakdown in Wolfram Alpha.)
+
 	Notice in the last the result from Wolfram Alpha is different than the
 	result we got in Python. Formally, the variation of the quadratic formula we
 	use here is "numerically unstable" - when used on certain values, the
