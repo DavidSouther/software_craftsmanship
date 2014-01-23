@@ -194,4 +194,14 @@ Rewrite the program so that instead of asking the user for a guess, the program
 "plays" itself by guessing the number. See how long it takes it to guess any
 particular number.
 
+If you want to see a full HiLo program, see my [completed example][full_hilo].
+It has the animation, a box for input, difficulty levels, and more! Play with
+your program as much as you like, tweaking colors, moving the box, and whatnot.
+Once you're happy with your game, you're ready to move on. But first:
+
+Congratulations! You've written your first computer game!
+
+[Up next: Functions](../../02_functions_arrays_strings/README.md)
+
 [page437]: http://en.wikipedia.org/wiki/Code_page_437#Interpretation_of_code_points_1.E2.80.9331_and_127
+[full_hilo]: https://github.com/DavidSouther/software_craftsmanship/blob/master/01_basic_types_and_control_flow/hilo/hilo.py
