@@ -120,8 +120,13 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
     windowing concepts. Today, with our preponderance of Graphical and web-based
     interfaces, these characters have largely fallen out of use, but you can
     still get access to them. In OSX, you will need to change your terminal to
-    use the US-Latin (DOS) character set. Once you do, you could run a program
-    like this in python:
+    use the US-Latin (DOS) character set.
+
+    * Start a new program, called `boxes.py`. Type this in, and run it. Once
+    this program is running, you should see a blue box in the middle of the
+    screen that asks for your guess, over and over. Hold `Control` and press `c`
+    to quit. As you start to understand how the program draws boxes, work the
+    concept into your hilo game to make the guessing prettier!
 
 ```python
 import colors
@@ -141,16 +146,15 @@ while guess >= 0:
   guess = raw_input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
 ```
 
-* We use `colors.at` to control where the box will show up. We use `chr()`
-to convert a number to a character at that code point. If you look at the
-linked wikipedia page, you see that 186, 187, 188, 200, 201, and 201 are
-double-wide block border characters. You can also see that instead of
-printing 10 chr(205) characters to make the top and bottom portions, we
-use the `*` operation, which for a character or string repeats the
-character several times.
+    * We use `colors.at` to control where the box will show up. We use `chr()`
+    to convert a number to a character at that code point. If you look at the
+    linked wikipedia page, you see that 186, 187, 188, 200, 201, and 201 are
+    double-wide block border characters. You can also see that instead of
+    printing 10 chr(205) characters to make the top and bottom portions, we
+    use the `*` operation, which for a character or string repeats the
+    character several times.
 
-* Try using this in your program to make your interface more exciting!
-
+    * Try using this in your program to make your interface more exciting!
 
 1. ** Pauses / Animation ** The original Hi Lo program, at the top of the page,
 doesn't stop between showing the instructions and asking for the first guess.
