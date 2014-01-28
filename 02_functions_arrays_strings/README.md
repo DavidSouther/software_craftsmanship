@@ -1,6 +1,18 @@
 # Functions, Arrays, and Strings
 
+We write programs to manipulate our data. In programming, we treat data as
+integers, floats, and strings. We can iterate, or repeat an operation on data,
+and we can branch our programs, doing different things based on the value of
+our variables. As programs get bigger, much of programming is managing
+complexity, keeping different parts of the program small and logically
+connected. This chapter covers three tools - functions, ways to block sections
+of code together; arrays, to keep more than one piece of data in a variable, and
+more details of strings, as they are useful in many ways in programming.
+
 ## Functions
+
+
+
 
 #### Exercise: Dates
 
@@ -43,8 +55,8 @@
 
 #### Exercise: Mad Libs
 
-
-### Project: Lander
+1. Should have at least 3 mad libs.
+1. Each mad lib should handle at least 12 words
 
 ### Project: Calculator
 
