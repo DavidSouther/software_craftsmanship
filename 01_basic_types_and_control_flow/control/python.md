@@ -7,7 +7,7 @@ the first half of the chapter is critical to success, really in the rest of your
 programming career.
 
 As in the first two groups of examples, start by opening a new file in gedit.
-Type in the last line from the example in the types section.
+Type in these two lines.
 
 ```python
 for i in range(0, 10):

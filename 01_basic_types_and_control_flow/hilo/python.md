@@ -80,14 +80,16 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
 
   1. **Bold** To start off, we'll include a library (like `random`) for changing
   the typography of pieces of the program. Download [this file](./colors.py)
-  and save it next to your hilo program. Add `import colors` to your program.
+  and save it next to your hilo program. Add `import colors` to your program,
+  below `import random`.
+
   Edit the first line of the indroduction paragraph to make HiLo bold -
   `print colors.BOLD + "HiLo" + colors.NORMAL`. Notice we have to tell the
   program to put the printing back to normal, or else all future priting would
   be in bold.
 
   1. **Colors** The colors module has a variety of styles, independent of
-  eachother. The typography can be `BOLD`. Printing can be in `WHITE`, `BLACK`,
+  each other. The typography can be `BOLD`. Printing can be in `WHITE`, `BLACK`,
   `RED`, `BLUE`, `GREEN`, `YELLO`, `CYAN`, and `PURPLE`. The
   background color can be set with `BG_WHITE`, `BG_BLACK`, `BG_RED`, and so on.
   Play around with the colors, until you like the look and feel of your HiLo
@@ -95,7 +97,8 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   background.
 
   1. **Start Over** If you've gotten your terminal into a jumbled mess, print
-  `colors.CLS` to clear the screen, and move the cursor to the top-left corner.
+  `colors.CLS` to clear the screen, and `colors.at(1, 1)` to move the cursor to
+  the top-left corner.
 
   1. **Print at various points** You can move the cursor (where the print
   happens) using `print color.at(r, c)` where r and c are the row and column you
