@@ -8,10 +8,11 @@ import colors
 
 def box(row, col, width, height):
     width = width - 2 # Subtract 2 for the left and right sides
+    end = row + height-1
     print colors.at(row, col) + chr(201) + chr(205)*width + chr(187)
-    for i in range(row+1, height-1):
+    for i in range(row+1, end):
         print colors.at(i, col) + chr(186) + " "*width + chr(186)
-    print colors.at(row + height, col) + chr(200) + chr(205)*width + chr(188)
+    print colors.at(end, col) + chr(200) + chr(205)*width + chr(188)
 
 print colors.BLUE
 box(12, 20, 10, 3)
