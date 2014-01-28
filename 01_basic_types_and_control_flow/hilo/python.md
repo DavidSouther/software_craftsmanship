@@ -146,15 +146,15 @@ while guess >= 0:
   guess = raw_input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
 ```
 
-    * We use `colors.at` to control where the box will show up. We use `chr()`
-    to convert a number to a character at that code point. If you look at the
-    linked wikipedia page, you see that 186, 187, 188, 200, 201, and 201 are
-    double-wide block border characters. You can also see that instead of
-    printing 10 chr(205) characters to make the top and bottom portions, we
-    use the `*` operation, which for a character or string repeats the
-    character several times.
+* We use `colors.at` to control where the box will show up. We use `chr()`
+to convert a number to a character at that code point. If you look at the
+linked wikipedia page, you see that 186, 187, 188, 200, 201, and 201 are
+double-wide block border characters. You can also see that instead of
+printing 10 chr(205) characters to make the top and bottom portions, we
+use the `*` operation, which for a character or string repeats the
+character several times.
 
-    * Try using this in your program to make your interface more exciting!
+* Try using this in your program to make your interface more exciting!
 
 1. ** Pauses / Animation ** The original Hi Lo program, at the top of the page,
 doesn't stop between showing the instructions and asking for the first guess.
