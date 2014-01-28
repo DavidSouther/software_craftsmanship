@@ -1,18 +1,22 @@
-###
-# HiLo
-#
-# A BASIC-esque game
-#
-# For Software Craftsmanship, by David Souther
-#
-# To play this game, you'll want to set your terminal to a black background, and use an ANSI
-# character set (EG NOT UTF-8). On OSX Terminal, I use the Pro profile and change the character
-# encoding to Latin-US (DOS), in the Character Encoding dropdown under the Advanced settings
-# in Terminal Preferences.
-#
-###
+'''
+HiLo
 
-# A few imports. Math for pow, random for randint, colors for ANSII Terminal things, time to sleep.
+A BASIC-esque game
+
+For Software Craftsmanship, by David Souther
+
+This is the instructor's file. Use it for reference if you get stuck, but try
+to do all the exercises on your own. Also, you can run this program to see a
+completed example. For the exercises, see `python.md` in this directory.
+
+To play this game, you'll want to set your terminal to a black background, and
+use an ANSI character set (EG NOT UTF-8). On OSX Terminal, I use the Pro
+profile and change the character encoding to Latin-US (DOS), in the Character
+Encoding dropdown under the Advanced settings in Terminal Preferences.
+'''
+
+# A few imports. Math for pow, random for randint,
+# colors for ANSII Terminal things, time to sleep.
 import math
 import random
 import colors

@@ -1,9 +1,12 @@
 ## HiLo
 
 HiLo is a simple guessing game. The computer chooses a random number, and the
-player is scored on how quickly they guess the number. In a new file, type this
-program, then run it in your terminal!
+player is scored on how quickly they guess the number.
 
+### Type this Program
+
+In a new file, type this program, save it as `hilo.py`, and run it in your
+terminal!
 
 ```python
 import random
@@ -15,7 +18,7 @@ print
 print "You will have 6 tries to guess the amount of money in the"
 print "HiLo jackpot, which is between 1 and 100 dollars. If you"
 print "guess the amount, you win $10 for every guess you don't take!"
-print "Then you get another change to win more money. However,"
+print "Then you get another changc to win more money. However,"
 print "if you do not guess the amount, the game ends!"
 print
 
@@ -170,15 +173,12 @@ import time
 
 # An 8 frame animation
 for i in range(1, 9):
-    # Clear the screen
     print colors.CLS
-    # Hi
-    #   Lo
-    # scrolls down the marquee
     print colors.at(i, 38), colors.GREEN, "Hi"
     print colors.at(i+1, 40), colors.RED, "Lo"
     # Half-second delay in each frame
     time.sleep(0.5)
+raw_input("Press enter to continue...")
 ```
 
 1. **Difficulty** Give your program several difficulty levels. You could use
