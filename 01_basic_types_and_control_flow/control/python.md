@@ -131,12 +131,19 @@ Notice in the `if` conditions, the `or` checks for the two different possible
 characters. Remember that upper case and lower case characters are different, so
 checking for both is the polite thing for users.
 
+There is one very important thing to note about the `if` statements - the use of
+`==` or double equals. To this point, we've been using `=` to be assignment,
+making a variable have some value. This `==` is a different operation entirely,
+and is actually comparing two values. Be careful not to confuse them!
+
 Use this program to compute the sum of 1 to 57, and the product of 1 to 100.
 Python internally handles integers to arbitrary length, making it ideal for many
 numerical programs. When the number is smaller than some internal integer size
 (at minimum 32 bits, possibly 64 bits on modern computers), Python will use that
 for speed. When a calculation needs more precision, it moves to a "long integer"
-format that allows integers of any size.
+format that allows integers of any size. That said, it is still constrained by
+things like its memory and processing power - you can't reasonably iterate over
+more than about 2^16. (TODO check the exact numberings on this.)
 
 ## Roman Numerals
 
@@ -251,3 +258,13 @@ values, to make sure it's still correct.
     1. 707 DCCVII
     1. 90 DCCCXC
     1. 1800 MDCCC
+
+These control statements - `while`, `for`, and `if`, are the bread and butter of
+making programs do interesting things. Many times, we want to do the same
+calculations on slightly different numbers - `for` and `while`. Other times, we
+need to do different things based on some condition. In programming, these are
+called iteration and banching, respectively.
+
+Let's use these to write our first big program - a video game called HiLo!
+
+# [HiLo](../hilo/README.md)
