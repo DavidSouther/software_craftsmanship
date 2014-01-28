@@ -5,11 +5,11 @@ Abstraction. You may have noticed your code getting a bit difficult to manage
 towards the end of the HiLo program, especially if you added a lot of
 functionality. Any large system becomes complex (almost by definition), and
 managing that complexity is a huge factor in what computer programmers do on a
-daily (even hourly) basis. One of the most useful ways to manage that complexity
-is the concept of a function.
+daily basis. One of the most useful ways to manage that complexity is the
+concept of a function.
 
 In its simplest form, a function is a way to group a related block of code
-together, so that it only need to be written once and can then be used many
+together, so that it only needs to be written once and can then be used many
 times over. In the HiLo program, it would make sense to break each of the
 messages into their own functions. In Python, this would look something like:
 
