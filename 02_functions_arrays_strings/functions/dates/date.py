@@ -1,6 +1,7 @@
 import colors
 print colors.CLS
-from datetime import date
+from datetime import datetime
+import time
 
 def month(date):
     if date.month == 1:
@@ -46,15 +47,45 @@ def formatDate(date):
 def box(row, col, width, height):
     width = width - 2 # Subtract 2 for the left and right sides
     end = row + height-1
-    print colors.at(row, col) + chr(201) + chr(205)*width + chr(187)
+    print colors.at(row, col) + u'\u2554' + u'\u2550'*width + u'\u2557'
     for i in range(row+1, end):
-        print colors.at(i, col) + chr(186) + " "*width + chr(186)
-    print colors.at(end, col) + chr(200) + chr(205)*width + chr(188)
+        print colors.at(i, col) + u'\u2551' + " "*width + u'\u2551'
+    print colors.at(end, col) + u'\u255A' + u'\u2550'*width + u'\u255D'
 
-print colors.BLUE
-box(6, 10, 21, 3)
-now = date.today()
-print colors.PURPLE
-print(colors.at(7, 11) + formatDate(now))
-raw_input(colors.at(9, 10) + "Press Enter to continue...")
-print colors.NORMAL
+def showDay(now):
+    print colors.GREEN
+    box(6, 10, 21, 3)
+    print colors.BLUE
+    print(colors.at(7, 11) + formatDate(now))
+
+def showTime(now):
+    print colors.GREEN
+    box(9, 10, 4, 3)
+    print colors.RED
+    print(colors.at(10, 11) + str(now.hour % 12))
+
+    print colors.GREEN
+    box(9, 13, 4, 3)
+    print colors.RED
+    print(colors.at(10, 14) + str(now.minute))
+
+    print colors.GREEN
+    box(9, 16, 4, 3)
+    print colors.RED
+    print(colors.at(10, 17) + str(now.second))
+
+    print colors.GREEN
+    box(9, 19, 4, 3)
+    print colors.RED
+
+    meridian = "AM"
+    if now.hour > 12:
+        meridian = "PM"
+    print(colors.at(10, 20) + meridian)
+
+while True:
+    now = datetime.now()
+    showDay(now)
+    showTime(now)
+    print colors.NORMAL
+    time.sleep(0.5)
