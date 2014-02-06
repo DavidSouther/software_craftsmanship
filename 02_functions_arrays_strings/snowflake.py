@@ -75,9 +75,14 @@ def curve(length, order):
 		color(poscolor(pos()))
 		forward(length)
 	else:
-		for angle in [60, -120, 60, 0]:
+		#for angle in [60, -120, 60, 0]:
+		for angle in [60, 60, -60, -60, -60, -60, 60, 60]:
 			curve(length / 3, order -1)
-			left(angle)
+			if order % 2 == 0:
+				sign = -1
+			else:
+				sign = 1
+			left(sign * angle)
 
 if __name__ == '__main__':
 	speed(0)
