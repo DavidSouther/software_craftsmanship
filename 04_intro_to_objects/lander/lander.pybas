@@ -1,0 +1,122 @@
+10 PRINT TAB(33);"LUNAR"
+20 PRINT TAB(l5);"CREATIVE COMPUTING MORRISTOWN, NEW JERSEY" 
+25 PRINT:PRINT:PRINT
+30 PRINT "THIS IS A COMPUTER SIMULATION OF AN APOLLO LUNAR" 
+40 PRINT "LANDING CAPSULE.": PRINT: PRINT
+50 PRINT "THE ON-BOARD COMPUTER HAS FAILED (IT WAS MADE BY" 
+60 PRINT "XEROX) SO YOU HAVE TO LAND THE CAPSULE MANUALLY."
+70 PRINT: PRINT "SET BURN RATE OF RETRO ROCKETS TO ANY VALUE BETWEEN" 
+80 PRINT "0 (FREE FALL) AND 200 (MAXIMUM BURN) POUNDS PER SECOND." 
+90 PRINT "SET NEW BURN RATE EVERY 10 SECONDS.": PRINT 
+100 PRINT "CAPSULE WEIGHT 32,500 LBS; FUEL WEIGHT 16,500 LBS."
+110 PRINT: PRINT: PRINT: PRINT "GOOD LUCK"
+
+# Initialize
+PRINT
+PRINT "SEC", "MI + FT", "MPH", "LB FUEL", "BURN RATE"
+PRINT 
+L = 0
+A = 120
+V = 1
+M = 33000 # Weigt
+N = 16500 # Non-fuel
+G = 1E-03
+Z = 1.8
+
+# Show display
+def inputs():
+    PRINT L, INT(A); INT(5280*(A-INT(A))), 3600*V, M-N
+    INPUT K
+    T=10 # 10 second step
+
+# Fuel Test
+while true:
+    IF M-N < 1E-03:
+        fuelOut()
+        break
+    IF T < 1E-03:
+        inputs()
+    S = T
+    # Using too much fuel
+    IF M < N + S * K:
+        S = (M-N)/K # Only step for amount of fuel we have left
+
+    gravity()
+
+    if I <= O:
+        outOfFuel()
+        break
+    if V <= 0:
+        state()
+    if J < 0:
+        370
+        break
+    state()
+
+def fuelOut():
+    PRINT "FUEL OUT AT"; L; "SECONDS"
+    S = ( -V + SQR( V*V + 2*A*G )) / G
+    V = V + G*S
+    L = L + S
+    outOfFuel()
+
+def landed():
+    W = 3600 * V
+    PRINT "ON MOON AT"; L; "SECONDS - IMPACT VELOCITY"; W; "MPH" 
+
+    if W <= 1.2:
+        PRINT "PERFECT LANDING!" 
+    elif W <= 10:
+        PRINT "GOOD LANDING (COULD RE BETTER)"
+    elif W > 60:
+        PRINT "SORRY THERE NERE NO SURVIVORS. YOU BLOW IT!"
+        PRINT "IN FACT, YOU BLASTED A NEW LUNAR CRATER";W*.227;"FEET DEEP!"
+    else:
+        PRINT "CRAFT DAMAGE... YOU'RE STRANDED HERE UNTIL A RESCUE"
+        PRINT "PARTY ARRIVES. HOPE YOU HAVE ENOUGH OXYGEN!"
+
+    tryAgain()
+
+# Physics - state
+def state():
+    L = L + S
+    T = T - S
+    M = M - S * K
+    A = I
+    V = J
+
+# Out of fuel
+def outOfFuel():
+    if S < 5E-03:
+        landed()
+    else:
+        D = V + SQR( V*V + 2*A * (G - Z * K/M) )
+        S = 2 * A/D
+        gravity()
+        state()
+        outOfFuel()
+
+370
+W = (1 - M*G / (Z*K) ) / 2
+S = M * V / (Z * K * ( W + SQR( W*W + V/Z ))) + .05
+gravity()
+if I <= 0:
+    outOfFuel()
+
+else:
+    state()
+    IF J>0 THEN 160
+    IF V>0 THEN 370
+    GOTO 160
+
+# Physics - gravity
+def gravity():
+    Q = S * K / M
+    # Taylor expansions?
+    # Thrust?
+    J = V + G*S + Z * (-Q -Q^2/2 - Q^3/3 - Q^4/4 -Q^5/5)
+    # Gravity?
+    I = A - G * S^2/2 - V*S + Z*S * (Q/2 + Q^2/6 + Q^3/12 + Q^4/20 + Q^5/30 )
+
+def tryAgain():
+    PRINT:PRINT:PRINT:PRINT "TRY AGAIN??": GOTO 70
