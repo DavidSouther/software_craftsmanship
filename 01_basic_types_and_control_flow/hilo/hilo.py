@@ -75,9 +75,9 @@ for i in range(11, 15):
 
 # Print the "Guess" box
 print colors.BLUE
-print colors.at(12, LEFT) + chr(201) + chr(205)*10 + chr(187)
-print colors.at(13, LEFT) + chr(186) + " " * 10 + chr(186)
-print colors.at(14, LEFT) + chr(200) + chr(205)*10 + chr(188)
+print colors.at(12, LEFT) + u'\u2554' + u'\u2550' * 10 + u'\u2557'
+print colors.at(13, LEFT) + u'\u2551' + " " * 10 + u'\u2551'
+print colors.at(14, LEFT) + u'\u255A' + u'\u2550' * 10 + u'\u255D'
 print colors.WHITE
 
 # The game itself. The shell of the code is from the lecture.
