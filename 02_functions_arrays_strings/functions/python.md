@@ -18,6 +18,7 @@ def box(row, col, width, height):
 
 print colors.BLUE
 box(12, 20, 10, 3)
+print colors.NORMAL
 guess = raw_input(colors.at(13, 21) + "Guess: ")
 ```
 
@@ -25,7 +26,7 @@ Type this program as `box_functions.py` and run it. If you make a new folder for
 this chapter, make sure to save the [`colors.py`][colors.py] file in the same
 folder. You should get the blue box from the HiLo program!
 
-But now, what else can we get? Change the last three lines, and try this:
+But now, what else can we get? Change the last four lines, and try this:
 
 ```python
 print colors.BLUE
@@ -33,6 +34,7 @@ box(11, 19, 12, 5)
 box(12, 20, 10, 3)
 for i in range(4, 80, 4):
     box(2, i, 2, 2)
+print colors.NORMAL
 ```
 
 Lots of boxes!
