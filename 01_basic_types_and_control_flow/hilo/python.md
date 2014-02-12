@@ -113,14 +113,10 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
     128 characters are mapped to various numbers in the ASCII character table.
     There are many other ways to map characters, and many other characters to
     map. One version from the 1980s was called "[Code Page 437][page437]", and
-    was used by the original IBM PC computers and MS DOS.
-
-    * In code page 437, the numbers from 128 through 255 were used for printing
-    characters to make user interfaces, especially boxes, as an early form of
-    windowing concepts. Today, with our preponderance of Graphical and web-based
-    interfaces, these characters have largely fallen out of use, but you can
-    still get access to them. In OSX, you will need to change your terminal to
-    use the US-Latin (DOS) character set.
+    was used by the original IBM PC computers and MS DOS. Today, we use the
+    unicode character set, which handles characters from every language on the
+    planet. Some of these include the "[Box Printing Characters][box_chars]",
+    which we use here to create a user interface.
 
     * Start a new program, called `boxes.py`. Type this in, and run it. Once
     this program is running, you should see a blue box in the middle of the
@@ -139,7 +135,6 @@ print colors.at(12, LEFT) + u'\u2554' + u'\u2550' * 10 + u'\u2557'
 print colors.at(13, LEFT) + u'\u2551' + " " * 10 + u'\u2551'
 print colors.at(14, LEFT) + u'\u255A' + u'\u2550' * 10 + u'\u255D'
 print colors.WHITE
-
 
 guess = 0
 while guess >= 0:
@@ -213,3 +208,4 @@ Congratulations! You've written your first computer game!
 
 [page437]: http://en.wikipedia.org/wiki/Code_page_437#Interpretation_of_code_points_1.E2.80.9331_and_127
 [full_hilo]: https://github.com/DavidSouther/software_craftsmanship/blob/master/01_basic_types_and_control_flow/hilo/hilo.py
+[box_chars]: http://en.wikipedia.org/wiki/Box-drawing_character
