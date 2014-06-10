@@ -33,26 +33,7 @@ def month(date):
         return "January"
     elif date.month == 2:
         return "February"
-    elif date.month == 3:
-        return "March"
-    elif date.month == 4:
-        return "April"
-    elif date.month == 5:
-        return "May"
-    elif date.month == 6:
-        return "June"
-    elif date.month == 7:
-        return "July"
-    elif date.month == 8:
-        return "August"
-    elif date.month == 9:
-        return "September"
-    elif date.month == 10:
-        return "October"
-    elif date.month == 11:
-        return "November"
-    elif date.month == 12:
-        return "December"
+    # 10 more cases
 ```
 
 The `month` function is pretty straight forward. For each of the 12 possible
@@ -60,7 +41,7 @@ months, it returns a string. The function doesn't validate anything about the
 date, and just trust that the date passed is good and valid.
 
 The next function, `mark`, returns the string part of an ordinal number, like
-"1st", "2nd", "28th", based on the day of the function. 
+"1st", "2nd", "28th", based on the day of the function.
 
 ```python
 def mark(date):
@@ -105,6 +86,14 @@ otherwise.
 
 ```python
 def leapYear(date):
-    if date.year % 4 = 0:
+    if date.year % 4 == 0:
+        if date.year % 100 == 0:
+            if date.year % 400 = 0:
+                return True
+            else:
+                return False
+        else:
+            return False
+    else:
         return True
 ```

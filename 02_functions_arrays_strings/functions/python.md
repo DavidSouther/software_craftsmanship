@@ -47,4 +47,18 @@ it takes the values `4`, `8`, `12`, `16`, `20`, `24`, `28`, `32`, `36`, `40`,
 `44`, `48`, `52`, `56`, `60`, `64`, `68`, `72`, and `76`. At each of those
 columns, it draws a little 2x2 box!
 
+Functions are great for grouping chunks of code together that you'd have to
+run many times, either by typing over and over or copy/pasting. Let's look at
+the box function a bit closer.
+
+It starts with the Python keyword `def` - short for "Define", and used here to
+"define" a function. The next word, `box`, tells Python what to call your
+function, and is the word you'll use to refer to the function in the future,
+like variables elsewhere. The parenthesis mark the *arguments* to the function.
+Arguments are variables, but variables that are only valid inside the function.
+The function declaration ends with the `:`.
+
+The definition of the function is everything happening below that line at the
+next indentation level.
+
 [https://raw2.github.com/DavidSouther/software_craftsmanship/master/01_basic_types_and_control_flow/hilo/colors.py]
