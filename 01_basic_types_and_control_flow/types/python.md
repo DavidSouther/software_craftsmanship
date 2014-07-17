@@ -33,7 +33,7 @@ there, but for this program. When you have it running, do these next few lines:
 ```python
 print(2, 3, 5, 7, 11)
 
-print(0.5, 1.27, 3.146)
+print(0.5, 1.27, 3.141)
 
 print('h', 'e', 'l', 'l', 'o')
 ```
@@ -95,7 +95,7 @@ print(m, n)
 
 x = 0.5
 y = 1.27
-pi = 3.146
+pi = 3.141
 
 print(x, y, pi)
 ```
@@ -106,11 +106,11 @@ When it's running, you should see
 Hello, world
 Hello, again
 2 3 5 7 11
-0.5 1.27 3.146
+0.5 1.27 3.141
 h e l l o
 2 3 5
 6 8
-0.5 1.27 3.146
+0.5 1.27 3.141
 ```
 
 Working with numbers as they're typed in isn't very useful. In this block of
@@ -157,11 +157,11 @@ it's correct, the output will be
 Hello, world
 Hello, again
 2 3 5 7 11
-0.5 1.27 3.146
+0.5 1.27 3.141
 h e l l o
 2 3 5
 6 8
-0.5 1.27 3.146
+0.5 1.27 3.141
 3.98907 25.128
 3 3.33333333333
 -0.272395015515 -2.59427165115
@@ -237,11 +237,11 @@ The output of the program at this point is
 Hello, world
 Hello, again
 2 3 5 7 11
-0.5 1.27 3.146
+0.5 1.27 3.141
 h e l l o
 2 3 5
 6 8
-0.5 1.27 3.146
+0.5 1.27 3.141
 3.99542 25.168
 3 3.33333333333
 -0.272395015515 -2.59427165115
@@ -282,11 +282,11 @@ And the complete output from the first big program file is
 Hello, world
 Hello, again
 2 3 5 7 11
-0.5 1.27 3.146
+0.5 1.27 3.141
 h e l l o
 2 3 5
 6 8
-0.5 1.27 3.146
+0.5 1.27 3.141
 3.99542 25.168
 3 3.33333333333
 -0.272395015515 -2.59427165115
