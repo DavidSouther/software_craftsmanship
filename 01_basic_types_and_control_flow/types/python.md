@@ -338,7 +338,7 @@ You should do each of these exercises in their own files.
 	edge. The same rugs, with edging, should be
 	1. $9
 	2. $41.25
-	3. $141
+	3. $91
 	4. $44.77
 
 1. **Harder Math**  You might recognize the math section in the middle of the
