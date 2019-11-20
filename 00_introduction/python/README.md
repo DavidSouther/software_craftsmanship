@@ -23,9 +23,7 @@ you.
 
 Python is included with OSX, and every mainstream Linux distribution. On
 Windows, you will need to [download](http://www.python.org/download/) and run
-[the installer](http://www.python.org/ftp/python/2.7.5/python-2.7.5.msi)
-([64-bit](http://www.python.org/ftp/python/2.7.5/python-2.7.5.amd64.msi)).
-
+[the installer](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64-webinstall.exe).
 
 ## First Program
 
@@ -53,8 +51,8 @@ launches, you will be prompted to enter a command with a `$ ` character.
 
 Type `python --version`.
 
-You should see `Python 2.7.5`. The last number might be different, but the `2.7`
-is the important part.
+You should see `Python 3.8.0`. The last two numbers might be different, but as
+long as the version is at least `Python 3.5.0` you will be fine.
 
 #### OSX
 
@@ -72,8 +70,8 @@ Type `python --version`.
 
 ![OSX Python Version](./02_python_version.png)
 
-You should see `Python 2.7.5`. The last two numbers might be different, but as
-long as the version is at least `Python 2.6.0` you will be fine.
+You should see `Python 3.8.0`. The last two numbers might be different, but as
+long as the version is at least `Python 3.5.0` you will be fine.
 
 #### Windows
 
@@ -86,7 +84,7 @@ When it opens, you should see `C:\Users\<your user>\ > `.
 
 Type `python --version`.
 
-You should see `Python 2.7.5`.
+You should see `Python 3.8.0`.
 
 ### Editor
 
@@ -144,7 +142,7 @@ for the project inside that (intro_hello for this file),
 
 ### Running the program
 
-Open your console. Switch to the directory you saved the program in. Your shell
+Open your terminal. Switch to the directory you saved the program in. Your shell
 operates in one directory at a time, called the "Current Directory". To change
 where the shell currently is, use the command `cd`. For where I saved the file,
 on Linux and OSX the command is
@@ -185,12 +183,6 @@ This is a lot of new activity for many readers, and it's ok if something went
 wrong. I'll go through the most common issues here. Keep this page handy,
 because even if you don't have any of these problems this time, they may
 accidentally come up again later.
-
-1. **OSX: gedit unidentified developer** Change your security settings to allow
-applications from "anywhere". This is not ideal - as I find ways to run gedit
-more securely, this section will get updated.
-
-![OSX Application Security Settings](./10_osx_application_security.png)
 
 *Early readers: Please send me a message with any problems you have, so I can
 include them here.*
