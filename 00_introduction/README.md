@@ -198,17 +198,16 @@ of code needed to do the same thing (click a button) can often be an order of
 magnitude less than a similar program in C.
 
 
-#### Coffeescript
-Coffee Script is a dialect of Javascript, developed by Jeremy Ashkenas at the
-New York Times in 2009. Because of the rushed nature of the original development
-of Javascript, Coffeescript aims to provide a streamlined syntax, while removing
-many features of Javascript that are considered "harmful" by the community -
-that is, features that allow or even encourage programmers to write code that
-will perform incorrectly.
-
-In the past five years, Coffeescript has seen tremendous growth, and is in my
-opinion the most enjoyable of the languages to work in, though it does not have
-quite the level of community support that Python has.
+#### TypeScript
+TypeScript is a dialect of Javascript, developed by Andres Heils Hejlsburg at
+Microsoft in 2010. The goal of the TypeScript project is to provide a strong
+"type system" on top of JavaScript. A Type System is a set of tools that
+allows another program, the TypeScript Compiler, to analyze your program to
+prove various properties and check for common errors. For instance, if you
+were to write in your program `5 + "hello"`, TypeScript would say you have an
+error combinging a number and a string. TypeScript is currently the most
+popular variant of JavaScript, because of its tremendous benefit and value in
+helping teams of all sizes manage the complexity of their JavaScript code.
 
 ## Overview of the Text
 
@@ -226,13 +225,12 @@ ideas which can be the large building blocks of a program's design. This
 includes discussions on modeling data, saving data, and some ideas on how to
 make good program design decisions. This section also includes a chapter on
 unit testing - writing small, automated programs that check if your larger
-program works correctly.
-
+program behaves as intended.
 
 ### Building Large Programs (10-13)
 
 This section opens with a chapter on debugging - finding out what went wrong
-with a program (things will go wrong).  The rest of the section deals with
+with a program (things will go wrong). The rest of the section deals with
 managing large pieces of software. The section will go through building a basic
 "paint" application, where users can draw lines and colors on a canvas, and save
 the painting to look at later. This section concludes with a chapter on how to
@@ -243,10 +241,10 @@ work with other people on the same project.
 Any craftsman needs a workbench that suits their needs. The appendices address
 several aspects around such a workbench. First and foremost, programs are
 text. As such, it is important to use a text editor that facilitates looking
-at and `seeing' your code. Second is a discussion of the Linux operating
+at and `seeing` your code. Second is a discussion of the Linux operating
 system. Its open source nature encourages users to take responsibility for
 their computer, and provides a wealth of tools for programming unavailable (or
-at least difficult (read, costly) to acquire) on Windows. Finally, there is a
+at least difficult (read: costly) to acquire) on Windows. Finally, there is a
 discussion on computer hardware. This is a look at what physically is going on
 in your program, focusing on the CPU, memory, and some peripherals. This is
 not strictly critical for learning software programming as a craft, but
@@ -264,19 +262,20 @@ exactly as written. Do not copy and paste the code. Much of programming
 involves paying very close attention to a myriad of small details, and every
 character has meaning. This discipline in typing code exactly as presented
 will pay off in your programming future. The second part of each lesson is a
-few exercises to work with the new concepts in the lesson, and combine them
-with what you learned and wrote previously. Some of the lesson exercises will
-involve conducting research on the Internet. Being able to find help with
-programming questions is another invaluable skill as a software developer.
+few exercises to work with the new concepts introduced in the text and program
+listing, and ideas to combine them with what you learned and wrote previously.
+Some of the lesson exercises will involve conducting research on the Internet.
+Being able to find help with programming questions is another invaluable skill
+as a software developer.
 
 ### Exercise: Hello World
 
 If this is your first time programming, I'd recommend doing the exercises in
 Python. If you've gotten through the book, try redoing the exercises in
-Coffee, then C.
+TypeScript, then C.
 
 * [Intro: Python](./python/README.md)
-* ~~[Intro: Coffee](./coffeescript/README.md)~~ Coming soon!
+* ~~[Intro: TypeScript](./typescript/README.md)~~ Coming soon!
 * ~~[Intro: C](./c/README.md)~~ Coming soon!
 
 ## Next: Choose Your Own Adventure!
@@ -287,4 +286,3 @@ straight into programming, head to the chapter on
 want more practice in learning how to control your computer at a deeper level,
 head to the chapter on [Terminals](../01_terminal/README.md). Either way, you'll
 jump to the other chapter at the end, so you always win!
-
