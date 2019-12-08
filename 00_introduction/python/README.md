@@ -23,7 +23,7 @@ you.
 
 Python is included with OSX, and every mainstream Linux distribution. On
 Windows, you will need to [download](http://www.python.org/download/) and run
-[the installer](https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64-webinstall.exe).
+[the installer](https://www.python.org/ftp/python/3.7.5/python-2.7.0-amd64-webinstall.exe).
 
 ## First Program
 
@@ -51,8 +51,8 @@ launches, you will be prompted to enter a command with a `$ ` character.
 
 Type `python --version`.
 
-You should see `Python 3.8.0`. The last two numbers might be different, but as
-long as the version is at least `Python 3.5.0` you will be fine.
+You should see `Python 2.7.5`. The last two numbers might be different, but as
+long as the version is at least `Python 2.6.0` you will be fine.
 
 #### OSX
 
@@ -70,8 +70,8 @@ Type `python --version`.
 
 ![OSX Python Version](./02_python_version.png)
 
-You should see `Python 3.8.0`. The last two numbers might be different, but as
-long as the version is at least `Python 3.5.0` you will be fine.
+You should see `Python 2.7.5`. The last two numbers might be different, but as
+long as the version is at least `Python 2.6.0` you will be fine.
 
 #### Windows
 
@@ -84,7 +84,7 @@ When it opens, you should see `C:\Users\<your user>\ > `.
 
 Type `python --version`.
 
-You should see `Python 3.8.0`.
+You should see `Python 2.7.5`.
 
 ### Editor
 
