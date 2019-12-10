@@ -34,7 +34,7 @@ these shortcuts.
 * [OSX (64bit)](http://nodejs.org/dist/v0.10.15/node-v0.10.15.pkg)
 * [Linux (64bit)](http://nodejs.org/dist/v0.10.15/node-v0.10.15.tar.gz)
 
-Once node has successfully installed, you will need to install the Coffeescript
+Once node has successfully installed, you will need to install the TypeScript 
 module. To do so, open a command prompt (either run.exe or command.exe on windows,
 or Terminal on OSX or Linux), and type the following command:
 
