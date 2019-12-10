@@ -5,7 +5,7 @@ Linux is certainly the easiest platform to install GCC on.
 For Ubuntu users, run the following:
 
 ```sh
-sudo apt-get GROUPINSTALL??? DEV_TOOLS???
+sudo apt-get install build-essential
 ```
 
 
