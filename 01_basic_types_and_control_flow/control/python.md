@@ -237,33 +237,27 @@ values, to make sure it's still correct.
 
 ## Exercises
 
-1. **Roman Numerals** Finish the Roman Numeral program.
-
-  1. The full order of Roman numerals was:
-
-    * I - One
-    * V - Five
-    * X - Ten
-    * L - Fifty
-    * C - Hundred
-    * D - Five hundred
-    * M - One Thousand
-
-  1. The used subractions were
-
-    * IV - Four
-    * IX - Nine
-    * XL - Forty
-    * XC - Ninety
-    * CD - Four Hundred
-    * CM - Nine Hundred
-
-  1. Sample numbers
-
-    1. 551 - DLI
-    1. 707 - DCCVII
-    1. 90 - DCCCXC
-    1. 1800 - MDCCC
+1.  **Roman Numerals** Finish the Roman Numeral program.
+    1.  The full order of Roman numerals was:
+        *   I - One
+        *   V - Five
+        *   X - Ten
+        *   L - Fifty
+        *   C - Hundred
+        *   D - Five hundred
+        *   M - One Thousand
+    1. The used subractions were
+        *   IV - Four
+        *   IX - Nine
+        *   XL - Forty
+        *   XC - Ninety
+        *   CD - Four Hundred
+        *   CM - Nine Hundred
+    1. Sample numbers
+        1.  551 - DLI
+        1.  707 - DCCVII
+        1.  90 - DCCCXC
+        1.  1800 - MDCCC
 
 These control statements - `while`, `for`, and `if`, are the bread and butter of
 making programs do interesting things. Many times, we want to do the same
