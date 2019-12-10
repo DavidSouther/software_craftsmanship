@@ -142,7 +142,7 @@ b = 8.6
 c = 2.12
 
 import math
-discriminant = math.sqrt(b * b - 4 * a * c)
+discriminant = math.sqrt((b * b) - (4 * a * c))
 denominator = 2 * a
 x1 = (-b + discriminant) / denominator
 x2 = (-b - discriminant) / denominator
@@ -194,12 +194,12 @@ details!)
 
 We've covered addition, multiplication, and division. Subtraction should be easy
 to figure out. The next section does some math with a square root. Specifically,
-the next few lines calculate the `x` values that the equation `3x^2 + 8.6x +
-2.12 = 0` is equal to `0`. This equation describes a parabola, which is the
-mathematical name for the shape a projectile travels in - a thrown basketball,
-or a cannon ball fired from artillery. (Some of the earliest computers were
-created and used by the US Navy to calculate firing angles and distances for
-battleships during World War II.) 
+the next few lines calculate the `x` values that the equation
+`3x^2 + 8.6x + 2.12 = 0` is equal to `0`. This equation describes a parabola,
+which is the mathematical name for the shape a projectile travels in - a thrown
+basketball, or a cannon ball fired from artillery. (Some of the earliest
+computers were created and used by the US Navy to calculate firing angles and
+distances for battleships during World War II.) 
 
 There are two values of `x` that the equation equals zero, and using the
 [quadratic formula][quad_formula], we can find the two values. However, the
@@ -207,9 +207,10 @@ quadratic formula requires we take a square root of a number. There's no key for
 square root, so instead Python provides a variety of utilities in the `math`
 package. Similar to `print`, but we need to tell Python explicitly that we want
 them. To do that, we type the line `import math`. The quadratic formula has two
-intermediate calculations, which we perform with `discriminant = math.sqrt(b * b
-- 4 * a * c)` and `denominator = 2 * a`. Multiplication has a higher priority
-than subraction, so in the discriminant it will happen first.
+intermediate calculations, which we perform with
+`discriminant = math.sqrt((b * b) - (4 * a * c))` and `denominator = 2 * a`.
+Multiplication has a higher priority than subraction, so in the discriminant it
+will happen first, but we add parens to make it clear what the order is.
 
 Finally, we use those two intermediate variable values to calculate the two `x`
 values where `3x^2 + 8.6x + 2.12 = 0` holds true.
