@@ -56,12 +56,14 @@ presidents file.
 
 ### 08_user_interfaces
 
-Rewrite president's UI using tkinter.
+Introduce User Interface concepts. In book, rewrite calculator UI using tkinter.
+As project, rewrite president's UI using tkinter.
 
 ### 09_drawing
 
-Draw koch snowflake. Draw mandelbrot set. Draw turtle sprite. Implement basic
-turtle library.
+Book: Draw koch snowflake. Project: Draw mandelbrot set. Book: Draw turtle sprite,
+Implement basic turtle library. Project: implement turtle button-based UI (move
+forward, turn left/right, pen up/down).
 
 ### 10_debugging
 
