@@ -81,8 +81,8 @@ useful discrete chunks. In programming, we call a single moment in time a
 Date. A Date includes its actual calendar day, like December 10th, 2020, as
 well as a specific time, usually to one one-thousanth second accuracy (a
 millisecond). We can also do things with dates, like find out what the next
-date is (the date after 2019/2/18 is 2019/3/1, but the date after 2020/2/18
-is 2019/2/19), or find out how many days apart two events are.
+date is (the date after 2019/02/18 is 2019/3/1, but the date after 2020/02/18
+is 2019/02/19), or find out how many days apart two events are.
 
 The Date Library in each of our programming languages handles these
 calculations and logic for us, and exposes this with several functions. The
