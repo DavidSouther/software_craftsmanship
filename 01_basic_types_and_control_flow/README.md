@@ -205,7 +205,5 @@ in detail in the workbook.
 Work with the `types` program in the language of your choice.
 
 * [Python](types/python.md)
-* [CoffeeScript](types/coffee.md)
-* [C](types/c.md)
-
-## [Next: Control Flow](controlflow.md)
+* ~~[CoffeeScript](types/coffee.md)~~
+* ~~[C](types/c.md)~~
