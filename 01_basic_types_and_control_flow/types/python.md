@@ -398,9 +398,10 @@ You should do each of these exercises in their own files.
 
 	1. [Board-foot](https://en.wikipedia.org/wiki/Board_foot) Calculate the
 		board-footage for several types of boards, including 
-			* 350 feet of 2x4 (233.33333333333334)
-			* 100 feet of 2x6 (100)
-			* 20 sheets of 8 foot by 4 foot half-inch plywood (320)
+		
+		* 350 feet of 2x4 (233.33333333333334)
+		* 100 feet of 2x6 (100)
+		* 20 sheets of 8 foot by 4 foot half-inch plywood (320)
 
 	1. [Simplified Division Algorithm](https://en.wikipedia.org/wiki/Division_algorithm)
 		When you divide two numbers, there are many ways to express the
@@ -419,11 +420,11 @@ You should do each of these exercises in their own files.
 		to be sensible.
 
 	1. [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation#Basic_examples)
-		* Calculate the standard deviation for the sample data - `2, 4, 4,
-			4, 5, 7, 9 = 5`
+		* Calculate the standard deviation for the sample data - `2, 4, 4, 4, 5, 7, 9 = 5`
 		* Given the height of an adult male in inches, calculate which
 			deviation he is in (mean = 70, deviation = 3). Try using
 			the modulus operator.
+			
 			* `71 = 1/3`
 			* `68 = - 2/3`
 			* `78 = 2 2/3`
@@ -436,6 +437,7 @@ You should do each of these exercises in their own files.
 		from ground level. To calculate sine, use `math.sin(x)`. Assume
 		velocity is in meters per second, so `g = 9.81` in the simplified
 		formula on the wikipedia page.
+
 		* `v = 100, theta = 0.1745; D = 348.581308308` (theta is ~10 degrees)
 		* `v = 1000, theta = 0.1745; D = 34858.1308308`
 		* `v = 250, theta = 0.6981; D = 6274.18922949` (theta is ~40 degrees)
