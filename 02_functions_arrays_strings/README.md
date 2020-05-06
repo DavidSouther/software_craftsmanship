@@ -111,21 +111,6 @@ Let's head over to the workbooks to see all these examples in action!
   1. New Years
   1. Their Birthday
 
-### Recursion
-
-#### Exercise: Fractals
-
-1. Using Turtle
-1. Implement a recursive, self-similar fractal curve
-  1. Watch this video: http://www.youtube.com/watch?v=EdyociU35u8
-  1. Program One Of
-    * Koch Snowflake
-    * Dragon Curve
-    * Sierpinsky Triangle
-    * Sierpinsky Carpet
-  1. Color the curve (distance from center...)
-    * HLS & Color Spaces discussion!?
-
 ## Arrays
 
 #### Exercise: Statistics
@@ -134,20 +119,5 @@ Let's head over to the workbooks to see all these examples in action!
 1. Determine if second babies are born sooner
   * See Chapter 1 of Think Stats
 
-## Strings
-
-#### Exercise: Mad Libs
-
-1. Should have at least 3 mad libs.
-1. Each mad lib should handle at least 12 words
-
-### Project: Calculator
-
-* It must
-  * Add
-  * Subtract
-  * Multiply
-  * Divide
-  * Sum
-  * Product
-  * Board-Feet
+### Project: Rug Shop
+  
