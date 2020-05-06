@@ -3,83 +3,118 @@ Overview
 
 ### 00_introduction
 
+Hello World
+
 Introduce course & workbooks. Set up workbook environment. Write hello world
 program in environment.
 
-### 01a_basic_types_control_flow
+### 01_basic_types_control_flow
 
-Introduce basic types - boolean, numberm & string - and control flow - for,
-while, if/then.  Write simple mad libs. Write HiLo. Introduce PyQB, add color &
-positioning to HiLo.
+HiLo
 
-### 01b_terminal
+Introduce basic types - boolean, number, & string - and control flow - for,
+if/then.  Write HiLo. Introduce PyQB, add color & positioning to HiLo.
+
+### A01_terminal
 
 Introduce the terminal. Choose a color scheme. Introduce file system commands:
 ls, cd, pwd, mkdir, touch, rm, mv, cp, cat, less, globs.
 
 ### 02_arrays_functions
 
+Clock; Calculator; Rug Shop
+
 Introduce functions. Rewrite chapter 1 with functions. Write several clock
 functions using a date library. Write functions to calculate statistics (min, 
-median, mean, max, stddev) on an array of numbers. Write functions for a
-calculator. Write a PyQB UI for a calculator.
+median, mean, max, stddev) on an array of numbers. Write functions for the
+rug shop. Write pyqb interface for a rug shop.
 
-### 03_source_control
+### A02_source_control
 
 Introduce git. Create source repositories for existing projects. Redo HiLO
 development using source control. Create github accounts. Share projects to
 github. Clone a partner's project, make a change, submit a Pull Request to the
 partner.
 
-### 04_intro_to_objects
+### 03_objects
+
+Lander
 
 Introduce objects as Structured Data. Lander game using functions & objects.
 Extend objects as structures data to objects as classes & instances. Rewrite
 lander game as classes. 
 
-### 05_object_extension
+### 04_unit_testing
 
-Lander levels using extension. Rug Store using Rug objects & extension. Rug
-store using Rug property composition.
-
-### 06_unit_testing
+Rug Shop
 
 Introduce the concept of testing. Formalize with a testing framework. Add unit
-tests to rug store.
+tests to rug store. Introduce idea of libraries and environments.
 
-### 07_input_output
+### A03_debugging
+
+Show and discuss hand tracing techniques. Show stack traces and teach how to
+read them. Extend hand tracing with logging statements (using absl). Attach a
+debugger and step through a unit test.
+
+### 05_input_output
+
+HiLo AI; President's Database
 
 Formalize input and output as user feedback. Describe pipes of data. Write HiLo
-"AI" Player. Write Lander AI player. Introduce reading from files. Read
-presidents.csv from file. Write UI to search presidents file. Extend UI to edit
-presidents file.
+"AI" Player. Introduce reading from files. Read presidents.csv from file. Write
+UI to search presidents file. Extend UI to edit presidents file.
 
-### 08_user_interfaces
+### A04_SQL
 
-Introduce User Interface concepts. In book, rewrite calculator UI using tkinter.
-As project, rewrite president's UI using tkinter.
+Describe issues with files as a database (concurrency, lock, corruption, schema).
+Introduce SQL as a new language. Introduce SQLite as a tool. Rewrite President's
+using SQLite as the backing datastore. Introduce the idea of refactoring with a
+column-add structural change.
 
-### 09_drawing
+### 06_events
+
+Calculator; President's Database; Rug Shop
+
+Introduce event handling as a client concept. In book, rewrite calculator UI
+using tkinter. As project, rewrite president's UI using tkinter. Write Rug Shop
+web handler.
+
+### A05_containers
+
+Describe issues with development vs production environments. Introduce concepts of
+containers (isolated, reusable, hermetic environments). Dockerize Rug Shop web
+handlers. Deploy docker instances to the cloud.
+
+### 07_drawing
+
+Koch Snowflake; Mandelbrot; Turtle
 
 Book: Draw koch snowflake. Project: Draw mandelbrot set. Book: Draw turtle sprite,
 Implement basic turtle library. Project: implement turtle button-based UI (move
 forward, turn left/right, pen up/down).
 
-### 10_debugging
+### A06_parsing
 
-Formalize techniques of tracing and debugging. Debug using log statements. Learn
-reading errors. Debug using debugger (breakpoint, step, watch, etc).
+Read Turtle commands from a file. Execute comamnds. Save the resulting image.
 
-### 11_mvc_sprites
+### 08_patterns
 
-Write a sprite-based game. In book: Space Invaders, basic Frogger. Project:
-advanced frogger, tetris, Pac-Man.
+Space Invaders
 
-### 12_mvc_paint
+Write a sprite-based game. Describe iterators, composition, and the update loop
+patterns. In book: Space Invaders. Project: advanced frogger, tetris, Pac-Man.
+
+### 09_mvc
+
+Paint
 
 Write a clone of Paint. Pick color. Set canvas size. 3-5 brushes (Pen, Pencil,
 Text; Spray, stylus). Save canvas to file. Load file.
 
-### 13_team_programming
+### 10_team_programming
 
-As a team, write a board game. Tic-Tac-Toe, Checkers, Chess are all reasonable.
+Board Game
+
+As a team, write a board game. Tic-Tac-Toe, Othello (reversi), Checkers, Chess
+are all reasonable.
