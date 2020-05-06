@@ -225,5 +225,3 @@ Work with the `control flow` program in the language of your choice.
 * [Python](control/python.md)
 * ~~[CoffeeScript](control/coffee.md)~~
 * ~~[C](control/c.md)~~
-
-## [Next: HiLo](hilo/README.md)
