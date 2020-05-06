@@ -167,7 +167,7 @@ time.sleep(1.5)
 print("A second and a half later...")
 ```
 
-        While a pregnant pause in the interface might be interesting, this becomes very
+*  While a pregnant pause in the interface might be interesting, this becomes very
         useful when putting animation in a program. Try the following HiLo intro scroll:
 
 ```python
@@ -183,12 +183,12 @@ for i in range(1, 9):
 raw_input("Press enter to continue...")
 ```
 
-    1.  **Difficulty** Give your program several difficulty levels. You could use
+1.  **Difficulty** Give your program several difficulty levels. You could use
         easy = 1 to 10, medium = 1 to 100, and hard = 1 to 1000. You could do a custom
         difficulty. You may want to improve the scoring, so you don't get fewer points
         when the random number happens to be smaller.
 
-    1.  **Binary Search** You may have found the "optimal" algorithm is to begin by
+1.  **Binary Search** You may have found the "optimal" algorithm is to begin by
         choosing 50, then either 25 or 75 depending on if your guess is high or low.
         This is a strategy called "Binary Search", because there is an either/or
         decision to look to one side or the other of the numbers you're searching.
