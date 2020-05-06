@@ -200,4 +200,5 @@ include them here.*
         is a very powerful editor with a number of extensions to make writing
 	many programming languages easy.
 
-When you've done some or all of these, get started in [chapter 1](../../01_basic_types_and_control_flow)
+When you've done some or all of these, get started in
+[chapter 1](../../01_basic_types_and_control_flow/README.md)
