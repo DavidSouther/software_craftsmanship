@@ -151,7 +151,7 @@ use the `*` operation, which for a character or string repeats the
 character several times.
 
 *   Try using this in your program to make your interface more exciting!
-    1.  ** Pauses / Animation ** The original Hi Lo program, at the top of the page,
+    1.  **Pauses / Animation** The original Hi Lo program, at the top of the page,
         doesn't stop between showing the instructions and asking for the first guess.
         We could stop that with a simple way to ask the user for some input. Try putting
         `n = raw_input("Press enter key to continue...")` in your program, and you'll
