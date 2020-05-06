@@ -257,6 +257,13 @@ Some of the lesson exercises will involve conducting research on the Internet.
 Being able to find help with programming questions is another invaluable skill
 as a software developer.
 
+### What Next?
+
+At the end of each section, there are links either to the workbook exercises
+in the various languages, or links from the workbook back to the textbook at
+the next topic section. So whenever you're ready, click on the link, or come
+back to the last section you worked on!
+
 ### Exercise: Hello World
 
 If this is your first time programming, I'd recommend doing the exercises in
