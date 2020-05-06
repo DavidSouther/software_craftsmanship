@@ -196,10 +196,6 @@ include them here.*
 1. **Say even more things!** Make your program say another five things.
 1. **Say some math.** Make your program say the results of more mathematical
 	expressions. We'll cover arithmetic more in the next chapter.
-1. **Configure gedit** gedit is very customizable, from font and color to tab
-	width and auto saves. Try out some of the settings. See my blog post on
-	[configuring gedit](http://davidsouther.com/2011/08/gedit-tips-tricks/).
-1. **Try Sublime** (Optional) Sublime is another fantastic editor, and many
-	developers (myself included) have switched to it as a primary editor. It is
-	a paid program, so I don't recommend it for this book, but you can evaluate
-	it for 30 days. [sublimetext.com](http://www.sublimetext.com/)
+1. **Try Visual Studio Code** [Visual Studio Code](https://code.visualstudio.com/)
+        is a very powerful editor with a number of extensions to make writing
+	many programming languages easy.
