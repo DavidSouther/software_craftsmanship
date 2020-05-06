@@ -232,7 +232,7 @@ itself - a look into debugging techniques to teach how to isolate problems in a
 misbehaving program, and a discussion of containers, a modern technique in
 distributing production systems to make them available for a number of users.
 
-### Building Large Programs (10-13)
+### Building Large Programs (8-10)
 
 The last section of the book looks at making larger programs that are fully
 featured. This includes making a space-invaders like video game, building out a
