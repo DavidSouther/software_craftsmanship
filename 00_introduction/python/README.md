@@ -68,8 +68,8 @@ Create a new folder, creat a file in the folder, name it `hello.py`. Type this i
 the file and save:
 
 ```
-print "Hello, world!"
-print 2 + 3, 10/7, 152 * 12.6
+print("Hello, world!")
+print(2 + 3, 10/7, 152 * 12.6)
 ```
 
 Use VSCode to execute in the terminal.
@@ -91,82 +91,12 @@ your programming.
 Visual Studio Code has a built-in terminal pane that opens on-demand below
 your code. It uses the default terminal for your system, so read through the
 appropriate section below, and remember that you will always have this
-available right inside VSCode. You can of course run them stand alone, if that
-feels better to you!
-
-#### Linux
-
-Most newcomers to Linux will be using Ubuntu Linux, so any linux instructions
-are for Ubuntu. If you're using a different flavor, the instructions should be
-straightforward to cross apply.
-
-The command prompt in Linux is a terminal emulator. In Unity Dash, type Terminal
-into the search box and the application will show up. Click it. When the program
-launches, you will be prompted to enter a command with a `$ ` character.
-
-Type `python --version`.
-
-You should see `Python 3.7.7`. The last two numbers might be different, but as
-long as the version is at least `Python 3.6.0` you will be fine.
-
-#### OSX
-
-OSX includes an app called Terminal. It is either available under Applications /
-Utilities, or through Spotlight.
-
-![OSX Launch Terminal](./00_osx_terminal.png)
-
-When the program launches, you will be
-prompted to enter a command with a `$ ` character.
-
-![OSX Terminal Prompt](./01_empty_prompt.png)
-
-Type `python --version`.
-
-![OSX Python Version](./02_python_version.png)
-
-You should see `Python 3.7.7`. The last two numbers might be different, but as
-long as the version is at least `Python 3.6.0` you will be fine.
-
-#### Windows
-
-The windows terminal is a command prompt called 'command' or 'cmd', depending on
-your version of Windows. To launch the command prompt in Windows Vista or later,
-open the Start Menu, type cmd or command in the search box, and then click the
-shortcut.
-
-When it opens, you should see `C:\Users\<your user>\ > `.
-
-Type `python --version`.
-
-You should see `Python 3.7.7`.
+available right inside VSCode.
 
 ### Running the program
 
-Open your terminal. Switch to the directory you saved the program in. If you're
-using VSCode, it will already be in the correct directory. Your shell operates
-in one directory at a time, called the "Current Directory". To change where the
-shell currently is, use the command `cd`. For where I saved the file, on Linux
-and OSX the command is
-
-```
-cd ~/devel/intro_hello
-```
-
-The `~` means "My home directory."
-
-
-On Windows, I need the more explicit
-
-```
-cd "C:\Users\southerd\My Documents\devel\intro_hello"
-```
-
-Now, type
-
-```
-python hello.py
-```
+In Visual Studio Code, you can quickly and easily run a program in the built-in
+terminal by right-clicking the file and selecting "Run Python File in Terminal".
 
 And you should see the output
 
@@ -180,6 +110,17 @@ Congratulations! You've written your first program!
 ![cd to and run program](./22_hello_py_run.png)
 
 ### Oh no! Something went wrong!
+
+#### Selecting a Python Version
+
+When you run a python file, VSCode will open the terminal below your code,
+and execute the python file using the currently selected python version. VSCode
+may choose to use python 2, which will cause problems with some programs we
+run. To fix this, right-click the editor window, select "Command Pallette"
+at the bottom of the list, type "Python: Select Interpreter" from the command
+list, and choose a Python 3 version.
+
+#### Anything Else
 
 This is a lot of new activity for many readers, and it's ok if something went
 wrong. I'll go through the most common issues here. Keep this page handy,
