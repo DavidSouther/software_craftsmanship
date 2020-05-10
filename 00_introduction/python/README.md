@@ -139,9 +139,6 @@ include them here.*
 1. **Say even more things!** Make your program say another five things.
 1. **Say some math.** Make your program say the results of more mathematical
 	expressions. We'll cover arithmetic more in the next chapter.
-1. **Try Visual Studio Code** [Visual Studio Code](https://code.visualstudio.com/)
-        is a very powerful editor with a number of extensions to make writing
-	many programming languages easy.
 
 When you've done some or all of these, get started in
 [chapter 1](../../01_basic_types_and_control_flow/README.md)
