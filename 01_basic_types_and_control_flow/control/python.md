@@ -31,16 +31,16 @@ Run the file - `python control.py`
 9
 ```
 
-What happens here? This is a "for" loop, which runs the statement `print i` 10
-times, each time with the variable `i` taking a different value. `print i`
+What happens here? This is a "for" loop, which runs the statement `print(i)` 10
+times, each time with the variable `i` taking a different value. `print(i)`
 itself is an expression, that becomes a statement when the start of the new line
 tells python to end the expression. The `for i ... :` tells python what variable
-to change within the block. The block is everything after that line, that is at
-the next indentation level. An indentation level is anything with the same
-number of spaces at the start of the line. `for i in range(0, 10):` has no
-spaces. `    print i` has four spaces. The `range(0, 10)` tells python to use
-that range for the values of `i`, starting at 0 and going up to, but not
-inclding, 10.
+to change within the block. The `range(0, 10)` tells python to use that range
+for the values of `i`, starting at 0 and going up to, but not inclding, 10.
+The block is everything after that line, _that is at the next indentation level_.
+An indentation level is anything with the same number of spaces at the start of
+the line. `for i in range(0, 10):` has no spaces. `    print(i)` has four spaces.
+Indentatation level is very important in Python, and we will revist it several times.
 
 ## Summations
 
@@ -49,9 +49,9 @@ With that in mind, rewrite the file so it contains this.
 ```python
 sum = 0
 for i in range(1, 11):
-	print i
+	print(i)
 	sum = sum + i
-print sum
+print(sum)
 ```
 
 Save it, run it, and the results:
@@ -74,8 +74,8 @@ Take a moment, and think about what happened.
 
 The program started with an additional declaration, setting `sum` to 0. There
 is an additional line in the for statement, `sum = sum + i`. It is at the same
-indentation level as `print i`, and so runs in the same segment of the program.
-Finally, `print sum` is back at no indentation, so runs after the for statement
+indentation level as `print(i)`, and so runs in the same segment of the program.
+Finally, `print(sum)` is back at no indentation, so runs after the for statement
 finishes.
 
 Change this program again:
@@ -85,7 +85,7 @@ sum = 0
 N = input("Summing 1 to N: ")
 for i in range(1, (N + 1)):
     sum = sum + i
-print sum
+print(sum)
 ```
 
 Now when it runs, it will stop and ask you to input a number for N. Choosing 10
@@ -111,15 +111,15 @@ if add == "S" or add == "s":
 	N = input("Summing 1 to N: ")
 	for i in range(2, (N + 1)):
 		sum = sum + i
-	print sum
+	print(sum)
 elif add == "P" or add == "p":
 	prod = 1
 	N = input("Product 1 to N: ")
 	for i in range(1, (N + 1)):
 		prod = prod * i
-	print prod
+	print(prod)
 else:
-	print "Unsupported Operation"
+	print("Unsupported Operation")
 ```
 
 As we go along, the programs get bigger! The sum program is still there, lines 3
@@ -154,11 +154,11 @@ program up bit by bit, discussing each piece we add.
 Start with these lines:
 
 ```python
-print "Decimal to Roman Numeral"
-print
+print("Decimal to Roman Numeral")
+print()
 number = input("Decimal integer: ")
-print
-print "Converting " + str(number) + " to Roman."
+print()
+print("Converting " + str(number) + " to Roman.")
 ```
 
 This form will become fairly common - print some header content, ask the user
@@ -196,10 +196,10 @@ while (number > 0):
 		numeral = numeral + "I"
 		number = number - 1
 
-print numeral
+print(numeral)
 ```
 
-Running the program, again converting 18 should print out: 
+Running the program, again converting 18 should print out:
 
 ```
 Decimal to Roman Numeral

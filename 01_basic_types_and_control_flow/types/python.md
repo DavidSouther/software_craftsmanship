@@ -267,7 +267,7 @@ current_balance = 30
 transaction_amount = 10
 
 if( (current_balance - transaction_amount) < MIN_BALANCE):
-	print "This transaction is too large."
+	print("This transaction is too large.")
 else:
 	current_balance -= transaction_amount
 
@@ -412,7 +412,7 @@ You should do each of these exercises in their own files.
 		of a division - in this case, remainder 1 when dividing by 3.
 		In Python, there is an operator called "modulus" which returns
 		the remainder of dividing two numbers. It's typed as `%`, as in
-		`3 % 2`, which would be `1`. Try putting `print 5 % 3` in your
+		`3 % 2`, which would be `1`. Try putting `print(5 % 3)` in your
 		python program, and see that it prints 2.
 
 		Use the modulus operator to improve your board-foot calculations.
