@@ -11,16 +11,16 @@ terminal!
 ```python
 import random
 
-print "HiLo"
-print
-print "This is the game of HiLo."
-print
-print "You will have 6 tries to guess the amount of money in the"
-print "HiLo jackpot, which is between 1 and 100 dollars. If you"
-print "guess the amount, you win $10 for every guess you don't take!"
-print "Then you get another changc to win more money. However,"
-print "if you do not guess the amount, the game ends!"
-print
+print("HiLo"
+print()
+print("This is the game of HiLo.")
+print()
+print("You will have 6 tries to guess the amount of money in the")
+print("HiLo jackpot, which is between 1 and 100 dollars. If you")
+print("guess the amount, you win $10 for every guess you don't take!")
+print("Then you get another changc to win more money. However,")
+print("if you do not guess the amount, the game ends!")
+print()
 
 winnings = 0
 done = False
@@ -31,7 +31,7 @@ while not done:
     lost = False
 
     while not lost:
-        guess = raw_input("Your guess: ")
+        guess = input("Your guess: ")
 
         if guess == "":
             done = True
@@ -39,29 +39,29 @@ while not done:
         guess = int(guess)
 
         if guess == number:
-            print "Got it! You won " + str(number) + " dollars!"
+            print("Got it! You won " + str(number) + " dollars!")
             winnings = winnings + ((6 - guesses) * 10)
-            print "Your total winnings are " + str(winnings) + " dollars!"
+            print("Your total winnings are " + str(winnings) + " dollars!")
 
-            again = raw_input("Play again? (Y/n) ")
+            again = input("Play again? (Y/n) ")
             if again != "Y":
                 done = True
             break
 
         else:
             if guess > number:
-                print "Your guess was too high!"
+                print("Your guess was too high!")
             else:
-                print "Your guess was too low!"
+                print("Your guess was too low!")
 
         guesses = guesses + 1
         if guesses >= 6:
-            print "You took too many guesses!"
+            print("You took too many guesses!")
             lost = done = True
 
         print
 
-print "Goodbye!"
+print("Goodbye!")
 ```
 
 ## Exercises
@@ -130,16 +130,16 @@ import colors
 LEFT = 20
 
 # Print the "Guess" box
-print colors.BLUE
-print colors.at(12, LEFT) + u'\u2554' + u'\u2550' * 10 + u'\u2557'
-print colors.at(13, LEFT) + u'\u2551' + " " * 10 + u'\u2551'
-print colors.at(14, LEFT) + u'\u255A' + u'\u2550' * 10 + u'\u255D'
-print colors.WHITE
+print(colors.BLUE)
+print(colors.at(12, LEFT) + u'\u2554' + u'\u2550' * 10 + u'\u2557')
+print(colors.at(13, LEFT) + u'\u2551' + " " * 10 + u'\u2551')
+print(colors.at(14, LEFT) + u'\u255A' + u'\u2550' * 10 + u'\u255D')
+print(colors.WHITE)
 
 guess = 0
 while guess >= 0:
-  print colors.at(13, LEFT + 8) + "   " # Clear the last guess  
-  guess = raw_input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
+  print(colors.at(13, LEFT + 8) + "   ") # Clear the last guess  
+  guess = input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
 ```
 
 * We use `colors.at` to control where the box will show up. We use `chr()`
@@ -175,12 +175,12 @@ import time
 
 # An 8 frame animation
 for i in range(1, 9):
-    print colors.CLS
-    print colors.at(i, 38), colors.GREEN, "Hi"
-    print colors.at(i+1, 40), colors.RED, "Lo"
+    print(colors.CLS)
+    print(colors.at(i, 38), colors.GREEN, "Hi")
+    print(colors.at(i+1, 40), colors.RED, "Lo")
     # Half-second delay in each frame
     time.sleep(0.5)
-raw_input("Press enter to continue...")
+input("Press enter to continue...")
 ```
 
 1.  **Difficulty** Give your program several difficulty levels. You could use
