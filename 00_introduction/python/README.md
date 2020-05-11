@@ -107,7 +107,7 @@ Hello, world!
 
 Congratulations! You've written your first program!
 
-![cd to and run program](./22_hello_py_run.png)
+![vscode hello python](./vscode_intro_python.png)
 
 ### Oh no! Something went wrong!
 
