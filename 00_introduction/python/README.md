@@ -107,7 +107,7 @@ Hello, world!
 
 Congratulations! You've written your first program!
 
-![vscode hello python](./vscode_intro_python.png)
+![vscode hello python](./vscode_intro_py.png)
 
 ### Oh no! Something went wrong!
 
