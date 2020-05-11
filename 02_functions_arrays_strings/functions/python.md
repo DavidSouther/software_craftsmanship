@@ -62,3 +62,111 @@ The definition of the function is everything happening below that line at the
 next indentation level. Remember that in Python, whitespace is important. An
 **indentation level** is all code which has the same amount of leading spaces -
 in our case, four.
+
+## HiLo Revisited
+
+# Functions
+
+One of the most critical and fundamental concepts in computer programming is
+Abstraction. You may have noticed your code getting a bit difficult to manage
+towards the end of the HiLo program, especially if you added a lot of
+functionality. Any large system becomes complex (almost by definition), and
+managing that complexity is a huge factor in what computer programmers do on a
+daily basis. One of the most useful ways to manage that complexity is the
+concept of a function.
+
+In its simplest form, a function is a way to group a related block of code
+together, so that it only needs to be written once and can then be used many
+times over. In the HiLo program, it would make sense to break each of the
+messages into their own functions. In Python, this would look something like:
+
+```python
+import random
+
+def title():
+    print("HiLo")
+    print()
+
+def instructions():
+    print("This is the game of HiLo.")
+    print()
+    print("You will have 6 tries to guess the amount of money in the")
+    print("HiLo jackpot, which is between 1 and 100 dollars. If you")
+    print("guess the amount, you win $10 for every guess you don't take!")
+    print("Then you get another changc to win more money. However,")
+    print("if you do not guess the amount, the game ends!")
+    print()
+
+def get_guess():
+    guess = input("Your guess: ")
+    return int(guess)
+
+def check_guess(guess, number):
+    if guess > number:
+        print("Too Hi!")
+        return false
+    elif guess < number:
+        print("Too Lo!")
+        return false
+    else:
+        print("You win!")
+        return true
+
+def calc_winnings(number, guesses):
+    print("You won " + str(number) + " dollars!")
+    winnings = (6 - guesses) * 10
+    print("Your latest winnings are " + str(winnings) + " dollars!")
+    return winnings
+
+def play_round():
+    guesses = 0
+    number = random.randint(1, 10)
+
+    while guesses < 6:
+        guesses += 1
+        guess = get_guess()
+        if checkGuess(guess, number):
+            return calc_winnings(number, guesses)
+
+    print("You took too many guesses!")
+    return 0
+
+def play_again():
+    again = input("Play again? (Y/n) ")
+    reaturn again != "n"
+
+def finished(winnigs):
+    print("Thank you for playing! Your total winnings were " + str(winnings) + " dollars!")
+
+def game():
+    title()
+    instructions()
+    winnings = play_round()
+    while play_again():
+        winnings += play_round()
+    finished(winnings)
+
+game()
+```
+
+You can see how each section gets broken out into its own small piece, which can
+be written and understood in isolation, rather than having to work on the entire
+program at once. All the text to print out the title and instructions banner have
+been isolated into their own sections. After that, the program defines several
+functions for each isolated part of the game. The `get_guess` function asks for a
+player's gues, and then returns it as an integer. Check guess takes a target number
+and a guessed number, compares them, prints the apropriate message, and returns
+`True` if the user guessed correctly, and `False` if they did not. That value is
+used in `play_round`, which generates a random number, and asks the user for a guess
+until they run out of guesses. If it has returned true, the game will use
+`calc_winnings` to figure out how much that game was worth. `game` coordinates all
+the pieces. First it prints the banner lines. Then, it plays the first round. The
+game continues to play rounds until the user, during `play_again`, asks not to. The
+game adds up all the winnings after each round, and at the very end, prints the
+total the user has won.
+
+Pew!
+
+Take some time to practice with functions. Take your HiLo program, wiht the
+additional features you added, and try breaking it up into functions similar to how
+we have here!
