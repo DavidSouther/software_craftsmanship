@@ -116,9 +116,9 @@ Congratulations! You've written your first program!
 When you run a python file, VSCode will open the terminal below your code,
 and execute the python file using the currently selected python version. VSCode
 may choose to use python 2, which will cause problems with some programs we
-run. To fix this, right-click the editor window, select "Command Pallette"
-at the bottom of the list, type "Python: Select Interpreter" from the command
-list, and choose a Python 3 version.
+run. To fix this, click the "Settings" gear in the bottom-left of VSCode, select
+"Command Pallete" at the bottom of the list, type "Python: Select Interpreter"
+in the command list, and choose a Python 3 version.
 
 #### Anything Else
 
