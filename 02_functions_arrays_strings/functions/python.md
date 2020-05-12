@@ -26,6 +26,31 @@ Type this program as `box_functions.py` and run it. If you make a new folder for
 this chapter, make sure to save the [`colors.py`][colors.py] file in the same
 folder. You should get the blue box from the HiLo program!
 
+> What's up with those "u'\u2554'" bits? In chapter 1, we discussed the ASCII
+character set, and briefly mentioned there were more than those 128 characters
+in the Unicode character set. You're almost certainly familiar with a number of
+unicode characters already - emoji! 😂, 🖤, and 😍 are all emoji, and are also
+single unicode characters! If you have an emoji input on your keyboard (like the
+touchbar on the Mac Pro), you could type them directly. If you don't have those
+buttons, you can use the longer explicit number forms. In this case, we could
+write those as `'\u1F602'`, `'\u2764'`, and `'\u1F60A'`. 
+
+> For the boxes, we're going to use a different set of unicode characters, the
+"box drawings" characters. You can either type them using the `\u` unicode
+notation, or copy and paste them from below. You can find many more box drawing
+characters at https://www.compart.com/en/unicode/block/U+2500.
+
+*   ═ \u2550
+*   ║ \u2551
+*   ╔ \u2554
+*   ╗ \u2557
+*   ╚ \u255A
+*   ╝ \u255D
+*   ╠ \u2560
+*   ╣ \u2563
+*   ╦ \u2566
+*   ╩ \u2569
+
 But now, what else can we get? Delete the last four lines, and try this:
 
 ```python
@@ -62,6 +87,8 @@ The definition of the function is everything happening below that line at the
 next indentation level. Remember that in Python, whitespace is important. An
 **indentation level** is all code which has the same amount of leading spaces -
 in our case, four.
+
+
 
 ## HiLo Revisited
 
