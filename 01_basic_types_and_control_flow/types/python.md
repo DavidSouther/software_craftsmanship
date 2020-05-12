@@ -266,7 +266,7 @@ MIN_BALANCE = 25
 current_balance = 30
 transaction_amount = 10
 
-if( (current_balance - transaction_amount) < MIN_BALANCE):
+if (current_balance - transaction_amount) < MIN_BALANCE:
 	print("This transaction is too large.")
 else:
 	current_balance -= transaction_amount
@@ -325,10 +325,10 @@ remaining in the account. We'll cover these more in the next section.
 
 You should do each of these exercises in their own files.
 
-1. **Pricing rugs** A company has hired you to develop their website, where they
-	sell rugs. They have square rugs, rectangular rugs, and circular rugs. Rugs
-	are $5 per square foot of finished rug. Write a program that prints the cost
-	of rugs for these sizes:
+1. **Pricing rugs** A company makes rugs, and has asked you to calculate the
+    price for their rugs. They have square rugs, rectangular rugs, and circular
+	rugs. Rugs are $5 per square foot of finished rug. Write a program that
+	prints the cost of rugs for these sizes:
 	1. Square, 1 foot on a side. ($5)
 	1. Square, 2.5 feet on a side. ($31.25)
 	1. Rectangular, 3 feet by 5 feet. ($75)
