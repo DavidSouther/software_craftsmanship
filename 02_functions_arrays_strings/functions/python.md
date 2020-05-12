@@ -119,8 +119,6 @@ next indentation level. Remember that in Python, whitespace is important. An
 **indentation level** is all code which has the same amount of leading spaces -
 in our case, four.
 
-
-
 ## HiLo Revisited
 
 # Functions
@@ -162,13 +160,13 @@ def get_guess():
 def check_guess(guess, number):
     if guess > number:
         print("Too Hi!")
-        return false
+        return False
     elif guess < number:
         print("Too Lo!")
-        return false
+        return False
     else:
         print("You win!")
-        return true
+        return True
 
 def calc_winnings(number, guesses):
     print("You won " + str(number) + " dollars!")
@@ -178,12 +176,12 @@ def calc_winnings(number, guesses):
 
 def play_round():
     guesses = 0
-    number = random.randint(1, 10)
+    number = random.randint(1, 100)
 
     while guesses < 6:
         guesses += 1
         guess = get_guess()
-        if checkGuess(guess, number):
+        if check_guess(guess, number):
             return calc_winnings(number, guesses)
 
     print("You took too many guesses!")
@@ -191,9 +189,9 @@ def play_round():
 
 def play_again():
     again = input("Play again? (Y/n) ")
-    reaturn again != "n"
+    return again != "n"
 
-def finished(winnigs):
+def finished(winnings):
     print("Thank you for playing! Your total winnings were " + str(winnings) + " dollars!")
 
 def game():
