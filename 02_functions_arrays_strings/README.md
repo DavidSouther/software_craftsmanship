@@ -53,7 +53,7 @@ functions.
 * ~[TypeScript](./functions/typescript.md)~
 * ~[C](./functions/c.md)~
 
-### Function Libraries
+### Function Libraries (#libraries)
 
 As you build up several functions which work on related things or otherwise
 complement one another, it's common to bundle them together to provide more
@@ -95,7 +95,6 @@ tell us the number of days between two dates. We could even use a function
 which takes one date, changed just the month, and returns that to us!
 
 Let's head over to the workbooks to see all these examples in action!
-
 
 #### Exercise: Dates
 

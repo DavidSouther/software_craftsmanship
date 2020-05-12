@@ -226,3 +226,13 @@ Pew!
 Take some time to practice with functions. Take your HiLo program, wiht the
 additional features you added, and try breaking it up into functions similar to how
 we have here!
+
+## Exercises
+
+Revisit the [exercises in chapter 1](../../01_basic_types_and_control_flow/types/python.md). Instead of writing them out by hand, write a function (or functions) for each one,
+and use them to calculate the answers to the following problems:
+
+(TODO add a bunch more example values for the exercises from ch 1 types)
+
+When you're feeling more comfortable writing and calling functions, head [back to the
+main chapter](../README.md#libraries)
