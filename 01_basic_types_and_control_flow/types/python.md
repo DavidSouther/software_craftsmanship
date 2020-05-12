@@ -275,7 +275,7 @@ transaction_amount = 10
 if (current_balance - transaction_amount) < MIN_BALANCE:
 	print("This transaction is too large.")
 else:
-	current_balance -= transaction_amount
+	current_balance = current_balance - transaction_amount
 
 print("Your current balance is: $" + str(current_balance))
 
@@ -299,9 +299,6 @@ h e l l o
 -0.272395015515 -2.59427165115
 Hello, world Hello, world This is more text
 12 12 17
-o, world
-orld
-is is m
 This transaction is too large.
 Your current balance is: $30
 0
@@ -334,6 +331,11 @@ math. Don't let the math scare you! We're just using python as a calculator at
 this point. Do each computation, store it in a variable, and then print that
 variable out. The goal here is to practice typing python code and running python
 problems. It is *not* a math course! Formulas for all the exercises are included.
+
+Do as many or as few of the exercises as is interesting to you. This is a chance
+to play around with a new hobby, and you might find some of these types of
+calculations are interesting. But it's really not critical to understand all the
+details - just do what's fun, and then go on to the control flow section!
 
 1. **Pricing rugs** A company makes rugs, and has asked you to calculate the
     price for their rugs. They have square rugs (area = length ^ 2), rectangular

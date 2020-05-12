@@ -62,14 +62,18 @@ and often allows you to catch typing mistakes before you even run the program. I
 also has numerous language integrations, from running code to suggesting likely
 completions as you type.
 
-When VSCode is first opened, you will need to make a new project.
+When VSCode is first opened, you will need to make a new folder.
 
-Create a new folder, creat a file in the folder, name it `hello.py`. Type this into
-the file and save:
+*   [Windows First Run](./vscode_windows/README.md)
+*   [Mac First Run](./vscode_mac/README.md)
+*   [Linux First Run](./vscode_linux/README.md)
+
+Once you have your project folder, create a file and name it `hello.py`. Type this
+into the file and save:
 
 ```
 print("Hello, world!")
-print(2 + 3, 10/7, 152 * 12.6)
+print(2 + 3, 12/5, 152 * 12.6)
 ```
 
 Use VSCode to execute in the terminal.
@@ -102,7 +106,7 @@ And you should see the output
 
 ```
 Hello, world!
-5 1 1915.2
+5 2.4 1915.2
 ```
 
 Congratulations! You've written your first program!
