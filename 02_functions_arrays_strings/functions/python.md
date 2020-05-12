@@ -51,7 +51,38 @@ characters at https://www.compart.com/en/unicode/block/U+2500.
 *   ╦ \u2566
 *   ╩ \u2569
 
-But now, what else can we get? Delete the last four lines, and try this:
+## Diagram of a function
+
+Let's take a closer look at the anatomy of this function. Recall from the
+textbook portion that a function needs three things: A name, its parameters (also
+called arguments), and a body. In the box function, those look like this:
+
+[!diagram of a python function](./digraph_of_a_python_funciton.png)
+
+In python, a function starts with the key word `def`. That's followed by its name,
+in this case `box`. It then has four parameters, all inside the parenthises -
+`(row, col, width, height)`. Finally, in python, the function declaration (the name
+and argument list) ends with the `:` (colon). We've seen this in the chapter on control
+flow as well, and it indicates that we're about to group a bunch of code at the
+next indentation level.
+
+To get an indentation level, we add a new line (press enter on our keyboard) and
+indent one level. There are several ways to indent. One is to hit the tab key on
+your keyboard. Another is to add some number of spaces - at least two, but four
+and eight are also common. A third way is to let VSCode do it for you! You've
+probably seen this already when working through the first chapter, that VSCode
+would automatically add the indendation for you when you started a new line after
+a `:` colon.
+
+So, why does Python have so many ways to do indentation? Mostly it's historical
+reasons. For our purposes, we're going to start with using 4 spaces for indentation,
+because that's VSCode's default, and usually it'll handle it for us. The only rule
+is to be consistent with the amount of indentation you use in your program.
+
+## One function, many boxes
+
+Now that we have a function that prints a box, what else can we get? Delete the
+last four lines of file you started, and try this instead:
 
 ```python
 print(colors.BLUE)
