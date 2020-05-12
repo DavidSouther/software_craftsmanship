@@ -16,7 +16,7 @@ for i in range(0, 10):
 
 Save the new file, as `control.py`
 
-Run the file - `python control.py`
+Run the file - `python3 control.py`
 
 ```
 0

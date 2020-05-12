@@ -361,11 +361,15 @@ details - just do what's fun, and then go on to the control flow section!
 	zero - and that physicists use to calculate where a basketball will land
 	when thrown with a certain force.
 
-	The full quadratic equation is
+	The full quadratic equation is, again:
 
 	```
-	x1 = (-b + discriminant) / (2 * a)
-	x2 = (-b - discriminant) / (2 * a)
+	import math
+
+	discriminant = math.sqrt((b * b) - (4 * a * c))
+	denominator = 2 * a
+	x1 = (-b + discriminant) / denominator
+	x2 = (-b - discriminant) / denominator
 	```
 
 	the different being a + in the first and a - in the second.
