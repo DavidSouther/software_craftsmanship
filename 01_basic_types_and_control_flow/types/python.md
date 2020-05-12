@@ -124,6 +124,12 @@ the program. When a variable is anywhere else in the program, like in these
 print lines, the program simply uses the value currently assigned to the
 variable.
 
+> A note on naming: variables can be as long as you want, but there are a few
+rules. First, they can't have any spaces in them. Second, they can't start with
+a digit (0-9). But they can have a digit in them, and you can also use `_`, an
+underscore, to separate "words" in a long variable. In fact, Pythonistas are
+encouraged to!
+
 Moving a bit faster, for the biggest section yet:
 
 ```python
@@ -323,20 +329,25 @@ remaining in the account. We'll cover these more in the next section.
 
 ## Exercises
 
-You should do each of these exercises in their own files.
+You should do each of these exercises in their own files. They include a lot of
+math. Don't let the math scare you! We're just using python as a calculator at
+this point. Do each computation, store it in a variable, and then print that
+variable out. The goal here is to practice typing python code and running python
+problems. It is *not* a math course! Formulas for all the exercises are included.
 
 1. **Pricing rugs** A company makes rugs, and has asked you to calculate the
-    price for their rugs. They have square rugs, rectangular rugs, and circular
-	rugs. Rugs are $5 per square foot of finished rug. Write a program that
-	prints the cost of rugs for these sizes:
+    price for their rugs. They have square rugs (area = length ^ 2), rectangular
+	rugs (area = length * width), and circular rugs (area = pi * radius ^ 2). Rugs
+	are $5 per square foot of finished rug. Write a program that prints the cost of
+	rugs for these sizes:
 	1. Square, 1 foot on a side. ($5)
 	1. Square, 2.5 feet on a side. ($31.25)
 	1. Rectangular, 3 feet by 5 feet. ($75)
-	1. Circular, 1.5 foot radius (3 feet across).  ($35.34)
+	1. Circular, 1.5 foot radius (3 feet across).  ($35.33645, using pi = 3.141)
 
 1. **Advanced rugs** The rug company loves your code! They want you to add another
 	feature! They now offer edges on their rugs. Edging costs $1/foot of
-	edge. The same rugs, with edging, should be
+	edge. (The perimeter of a square is length * 4. A rectangle is length * 2 + width * 2. A circle's perimeter is Pi * radius * 2.) The same rugs, with edging, should be
 	1. $9
 	2. $41.25
 	3. $91
@@ -345,8 +356,17 @@ You should do each of these exercises in their own files.
 1. **Harder Math**  You might recognize the math section in the middle of the
 	program (where we use the 'discriminant' variable) as the quadratic equation - 
 	a formula mathemeticians use to determine where a parabola has the value
-	zero - and that physicists use to calculate where a baskbetball will land
+	zero - and that physicists use to calculate where a basketball will land
 	when thrown with a certain force.
+
+	The full quadratic equation is
+
+	```
+	x1 = (-b + discriminant) / (2 * a)
+	x2 = (-b - discriminant) / (2 * a)
+	```
+
+	the different being a + in the first and a - in the second.
 
 	Solve the quadratic equation for:
 
