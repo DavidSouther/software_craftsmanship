@@ -1,7 +1,7 @@
 # Functions
 
 Let's start with this program, that defines a function, a reusable block of
-code, to draw a box on the terminal:
+code, to draw a box in the terminal:
 
 ```python
 import colors
