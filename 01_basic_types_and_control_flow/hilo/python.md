@@ -36,6 +36,7 @@ while not done:
         if guess == "":
             done = True
             break
+
         guess = int(guess)
 
         if guess == number:
