@@ -83,7 +83,7 @@ Change this program again:
 ```python
 sum = 0
 N = input("Summing 1 to N: ")
-for i in range(1, (N + 1)):
+for i in range(1, (int(N) + 1)):
     sum = sum + i
 print(sum)
 ```
@@ -98,8 +98,8 @@ Summing 1 to N: 100
 
 The `input("Summing 1 to N: ")` is a python way to ask the user to enter a
 number. Whatever the user types, up to the enter, is the result of the
-expression. While what the user types is a string, python immediately makes
-it an integer.
+expression. Because what the user types is a string, you need to tell python
+to treat it as an integer with `int(N)`.
 
 Now that we have a program that sums a few numbers, change it to ask the user to
 choose between summing or making a product.
@@ -109,13 +109,13 @@ add = raw_input("Sum or Product? (S/P): ")
 if add == "S" or add == "s":
 	sum = 0
 	N = input("Summing 1 to N: ")
-	for i in range(2, (N + 1)):
+	for i in range(2, (int(N) + 1)):
 		sum = sum + i
 	print(sum)
 elif add == "P" or add == "p":
 	prod = 1
 	N = input("Product 1 to N: ")
-	for i in range(1, (N + 1)):
+	for i in range(1, (int(N) + 1)):
 		prod = prod * i
 	print(prod)
 else:
