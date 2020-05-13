@@ -105,7 +105,7 @@ Now that we have a program that sums a few numbers, change it to ask the user to
 choose between summing or making a product.
 
 ```python
-add = raw_input("Sum or Product? (S/P): ")
+add = input("Sum or Product? (S/P): ")
 if add == "S" or add == "s":
 	sum = 0
 	N = input("Summing 1 to N: ")
