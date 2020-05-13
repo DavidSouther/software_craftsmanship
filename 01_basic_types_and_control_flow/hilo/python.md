@@ -11,7 +11,7 @@ terminal!
 ```python
 import random
 
-print("HiLo"
+print("HiLo")
 print()
 print("This is the game of HiLo.")
 print()
