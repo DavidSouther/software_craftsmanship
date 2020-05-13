@@ -113,11 +113,25 @@ Let's head over to the workbooks to see all these examples in action!
 
 ## Arrays
 
+* Arrays group lists of data
+* range() actually creates arrays
+* for foo in ... works with arrays
+* access parts of arrays with slices
+* manipulate arrays with list comprehensions
+
 #### Exercise: Statistics
 
 1. Using a given data set
 1. Determine if second babies are born sooner
   * See Chapter 1 of Think Stats
 
-### Project: Rug Shop
-  
+## Strings
+
+* Recap strings from ch 1
+* String concatenation
+* Converting to and from strings
+* String interpolation (templates)
+* Substrings
+* String methods - find, count, upper, lower, (l|r)strip, replace
+
+### Mad Libs
