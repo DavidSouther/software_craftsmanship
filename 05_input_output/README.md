@@ -1,35 +1,20 @@
 # Input & Output
 
-## Input, Output
+## Interactive Input & Output
 
-#### Discuss
-- Reading from command line (raw_input)
-- writing to command line (print)
+* Reading from command line (input)
+* Writing to command line (print)
 
-## Command Line
+## Flags
 
-### Piping
-
-#### Exercise: Write HiLo AI
-* Refactor or Restart (Using lecture code)
-* Write AI that reads the word and guesses higher or lower
-
-#### Exercise: Write Lander AI
-* Refactor or Restart (Using lecture code)
-* Write AI that reads the state vector and provides input
-
-### Parameters
+* Ways to change how a program starts up
 
 ## Files
 
-- Reading from a file
-- Writing to a file
-- File Data Formats
-
-## Databases
-
+* Reading from a file
+* Writing to a file
+* File Data Formats
 
 # Project
 
 Presidents Database
-Encyclopedia
