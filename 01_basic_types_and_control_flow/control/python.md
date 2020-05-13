@@ -109,7 +109,7 @@ add = raw_input("Sum or Product? (S/P): ")
 if add == "S" or add == "s":
 	sum = 0
 	N = input("Summing 1 to N: ")
-	for i in range(2, (int(N) + 1)):
+	for i in range(1, (int(N) + 1)):
 		sum = sum + i
 	print(sum)
 elif add == "P" or add == "p":
@@ -156,7 +156,7 @@ Start with these lines:
 ```python
 print("Decimal to Roman Numeral")
 print()
-number = input("Decimal integer: ")
+number = int(input("Decimal integer: "))
 print()
 print("Converting " + str(number) + " to Roman.")
 ```
