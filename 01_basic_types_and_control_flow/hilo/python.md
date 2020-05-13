@@ -11,14 +11,14 @@ terminal!
 ```python
 import random
 
-print("HiLo"
+print("HiLo")
 print()
 print("This is the game of HiLo.")
 print()
 print("You will have 6 tries to guess the amount of money in the")
-print("HiLo jackpot, which is between 1 and 100 dollars. If you")
+print("HiLo jackpot, which is between 1 and 100 jellybeans. If you")
 print("guess the amount, you win $10 for every guess you don't take!")
-print("Then you get another changc to win more money. However,")
+print("Then you get another chance to win more money. However,")
 print("if you do not guess the amount, the game ends!")
 print()
 
