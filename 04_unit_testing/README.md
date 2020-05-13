@@ -1,16 +1,29 @@
 # Unit Testing
 
-#### Exercise
-Unit Test Ch2: Calculator
+* Unit Testing is validating programs work
+* Unit tests are focused
+* Unit tests are small
+* Unit tests help debug as we're writing, and catch regressions later.
 
-#### Exercise
-Unit Test Ch4: and Ch5:
+## Anatomy of a untit test
 
-#### Exercise
-TDD: Re-implement, as a class, Rugs, using TDD.
+* Test Suite
+* Test Methods
+  * Set up
+  * Evaluate
+  * Assert
 
-### Project
+### Exercises:
 
-TDD something from Ch5
+* Rugs Tests
+* Lander Tests
 
-NB: ALL PROGRAMS FROM NOW ON MUST BE TESTED, TDD ENCOURAGED IN LAB!
+## Advanced Topics
+
+* Before Each: Block of setup
+* Mocks: Replacing complex with simple behavior
+  * Test HiLo with mocked random
+* Spies: Checking if related code has been called with the expeced values
+  * Spy on datetime to test clock
+* Test Driven Development
+  * Red/Green/Refactor
