@@ -23,19 +23,19 @@ print("if you do not guess the amount, the game ends!")
 print()
 
 winnings = 0
-done = False
+playing = True 
 
-while not done:
+while playing:
     guesses = 0
     number = random.randint(1, 10)
-    lost = False
+    round_finished = False
 
-    while not lost:
+    while not round_finished:
         guess = input("Your guess: ")
 
         if guess == "":
-            done = True
-            break
+            playing = False 
+            break # Exit the round early
 
         guess = int(guess)
 
@@ -47,7 +47,9 @@ while not done:
 
             again = input("Play again? (Y/n) ")
             if again != "Y":
-                done = True
+                playing = False
+            round_finished = True
+            
         else:
             if guess > number:
                 print("Your guess was too high!")
@@ -57,7 +59,8 @@ while not done:
             guesses = guesses + 1
             if guesses >= 6:
                 print("You took too many guesses!")
-                lost = done = True
+                playing = False
+                round_finished = True
 
             print()
 
