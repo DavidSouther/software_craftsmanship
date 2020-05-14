@@ -90,7 +90,7 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   Edit the first line of the indroduction paragraph to make HiLo bold -
   `print(colors.BOLD + "HiLo" + colors.NORMAL)`. Notice we have to tell the
   program to put the printing back to normal, or else all future priting would
-  be in bold.
+  be in bold. Run the program and see what it does!
 
   1. **Colors** The colors module has a variety of styles, independent of
   each other. The typography can be `BOLD`. Printing can be in `WHITE`, `BLACK`,
