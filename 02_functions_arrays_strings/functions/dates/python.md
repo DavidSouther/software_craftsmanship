@@ -34,6 +34,8 @@ def month(date):
     elif date.month == 2:
         return "February"
     # 10 more cases
+ 
+print(month(date.today))
 ```
 
 The `month` function is pretty straight forward. For each of the 12 possible
@@ -55,6 +57,8 @@ def mark(date):
     if date.day % 10 == 3:
         return "rd"
     return "th"
+
+print(str(date.today.day) + mark(date.today))
 ```
 
 The `mark` function, like `month`, takes one parameter `date`, and returns "th",
@@ -65,6 +69,8 @@ We can finally use all these pieces to make a function to format a date.
 ```python
 def formatDate(date):
     return month(date) + ' ' + str(date.day) + mark(date) + ', ' + str(date.year)
+
+print(formatData(date.today))
 ```
 
 With these pieces in place, we can add a final bit of program that makes a new
@@ -110,6 +116,11 @@ Try this function out for several years!
 | 1900 | False |
 | 2016 | True  |
 | 2015 | False |
+
+> What is that % sign? We talked about it briefly in the chapter 1 exercises.
+It's the division remainder operator, and it says "Instead of giving me the
+decimals after a division, give me the whole number that got rounded off."
+So 5 % 12 = 5, but also 17 % 12 = 5. 
 
 ## Clock
 
