@@ -13,4 +13,4 @@ You might want to change the position of text, the colors on the screen, or give
 the game several difficulty levels. Like all programming, it's all to your
 imagination!
 
-[Python](python.md)
+[Python](01_python.md)

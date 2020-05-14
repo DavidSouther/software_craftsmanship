@@ -236,7 +236,7 @@ Once you're happy with your game, you're ready to move on. But first:
 
 Congratulations! You've written your first computer game!
 
-[Up next: Functions](../../02_functions_arrays_strings/README.md)
+[Wrap Up](../wrap_up.md)
 
 [page437]: http://en.wikipedia.org/wiki/Code_page_437#Interpretation_of_code_points_1.E2.80.9331_and_127
 [full_hilo]: https://github.com/DavidSouther/software_craftsmanship/blob/master/01_basic_types_and_control_flow/hilo/hilo.py

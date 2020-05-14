@@ -222,6 +222,6 @@ some code.
 
 Work with the `control flow` program in the language of your choice.
 
-* [Python](control/python.md)
-* ~~[CoffeeScript](control/coffee.md)~~
-* ~~[C](control/c.md)~~
+* [Python](01_python.md)
+* ~~[TypeScript](02_typescript.md)~~
+* ~~[C](03_c.md)~~

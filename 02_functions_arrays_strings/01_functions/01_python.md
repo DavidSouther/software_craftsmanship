@@ -10,11 +10,11 @@ print(colors.CLS)
 
 def box(row, col, width, height):
     width = width - 2
-    end = row + height-1
-    print(colors.at(row, col) + u'\u2554' + u'\u2550' * width + u'\u2557')
+    end = row + height - 1
+    print(colors.at(row, col) + "\u2554" + "\u2550" * width + "\u2557")
     for i in range(row+1, end):
-        print(colors.at(i, col) + u'\u2551' + " " * width + u'\u2551')
-    print(colors.at(end, col) + u'\u255A' + u'\u2550' * width + u'\u255D')
+        print(colors.at(i, col) + "\u2551" + " " * width + "\u2551")
+    print(colors.at(end, col) + "\u255A" + "\u2550" * width + "\u255D")
 
 print(colors.BLUE)
 box(12, 20, 10, 3)
@@ -26,17 +26,37 @@ Type this program as `box_functions.py` and run it. If you make a new folder for
 this chapter, make sure to save the [`colors.py`][colors.py] file in the same
 folder. You should get the blue box from the HiLo program!
 
-> What's up with those "u'\u2554'" bits? In chapter 1, we discussed the ASCII
+There are a couple things to point out here, but the important one to remember is
+that multiplying a string by a number will repeat the string that number of times.
+To take advantage of this, we subtract 2 from our width (because we have one column
+on either side for the vertical lines), and then print that many top box characters.
+
+For the vertical repeats, we use a different loop than before: `for ... in ...`.
+While the `while` loop repeated every time a condition was true, `for ... in ...`
+is going to take a list of data and repeat the block once for every item in that
+list. To be useful, it also saves that item in a variable for us! But the variable
+does change every time through the loop. Here, we use the variable `i`, which is
+a common variable to use for small loops over a range of numbers.
+
+To get the list of numbers, we use `range(row + 1, row + height - 1)`. We want to
+start with the next row after our first, and we want to continue until the last
+row. Why is that `row + height - 1`, insted of `row + height - 2`? Because range
+is "open" - that is, it returns the first item _up to but not including_ the last
+item.
+
+## Emoji  and special characters.
+
+What's up with those `"\u2554"` bits? In chapter 1, we discussed the ASCII
 character set, and briefly mentioned there were more than those 128 characters
 in the Unicode character set. You're almost certainly familiar with a number of
 unicode characters already - emoji! 😂, 🖤, and 😍 are all emoji, and are also
 single unicode characters! If you have an emoji input on your keyboard (like the
 touchbar on the Mac Pro), you could type them directly. If you don't have those
 buttons, you can use the longer explicit number forms. In this case, we could
-write those as `'\u1F602'`, `'\u2764'`, and `'\u1F60A'`. 
+write those as `"\u1F602"`, `"\u2764"`, and `"\u1F60A"`. 
 
-> For the boxes, we're going to use a different set of unicode characters, the
-"box drawings" characters. You can either type them using the `\u` unicode
+For the boxes, we're going to use a different set of unicode characters, the
+"box drawings" characters. You can either type them using the `\uNNNN` unicode
 notation, or copy and paste them from below. You can find many more box drawing
 characters at https://www.compart.com/en/unicode/block/U+2500.
 

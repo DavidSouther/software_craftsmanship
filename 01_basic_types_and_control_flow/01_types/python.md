@@ -474,6 +474,6 @@ actual programming you will do. This typeing programs is usually called coding,
 seperate from actually figuring out what a program should do, which is the
 programming.
 
-Now that you can add and subtract, it's time to tackle [control flow](../controlflow.md)
+Now that you can add and subtract, it's time to tackle [control flow](../02_control/README.md)
 
 [quad_formula]: http://en.wikipedia.org/wiki/Quadratic_formula

@@ -314,4 +314,4 @@ called iteration and banching, respectively.
 
 Let's use these to write our first big program - a video game called HiLo!
 
-# [HiLo](../hilo/README.md)
+# [HiLo](../03_hilo/README.md)

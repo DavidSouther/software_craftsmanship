@@ -270,6 +270,6 @@ If this is your first time programming, I'd recommend doing the exercises in
 Python. If you've gotten through the book, try redoing the exercises in
 TypeScript, then C.
 
-* [Intro: Python](./python/README.md)
-* ~~[Intro: TypeScript](./typescript/README.md)~~ Coming soon!
-* ~~[Intro: C](./c/README.md)~~ Coming soon!
+* [Intro: Python](./01_python/README.md)
+* ~~[Intro: TypeScript](./02_typescript/README.md)~~ Coming soon!
+* ~~[Intro: C](./03_c/README.md)~~ Coming soon!

@@ -204,6 +204,6 @@ in detail in the workbook.
 
 Work with the `types` program in the language of your choice.
 
-* [Python](types/python.md)
-* ~~[CoffeeScript](types/coffee.md)~~
-* ~~[C](types/c.md)~~
+* [Python](01_types/01_python.md)
+* ~~[CoffeeScript](01_types/02_typescript.md)~~
+* ~~[C](01_types/03_c.md)~~
