@@ -82,12 +82,13 @@ draw those characters in a variety (by which I mean all of eight) different
 colors. In this series of exercises, we'll make HiLo look like those old games!
 
   1. **Bold** To start off, we'll include a library (like `random`) for changing
-  the typography of pieces of the program. Download [this file](./colors.py)
-  and save it next to your hilo program. Add `import colors` to your program,
+  the typography of pieces of the program. Create a new file in your directory
+  named `colors.py` and paste the contents of [this file](./colors.py) into it.
+  Save it next to your hilo program. Add `import colors` to your program,
   below `import random`.
 
   Edit the first line of the indroduction paragraph to make HiLo bold -
-  `print colors.BOLD + "HiLo" + colors.NORMAL`. Notice we have to tell the
+  `print(colors.BOLD + "HiLo" + colors.NORMAL)`. Notice we have to tell the
   program to put the printing back to normal, or else all future priting would
   be in bold.
 
@@ -104,7 +105,7 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   the top-left corner.
 
   1. **Print at various points** You can move the cursor (where the print
-  happens) using `print color.at(r, c)` where r and c are the row and column you
+  happens) using `print(colors.at(r, c))` where r and c are the row and column you
   want to print at. Row and column start at the top-left of the terminal at `(1,
   1)`, and on "standard" terminals there are 80 columns and 24 rows. Note, if
   you resize the terminal, that will change. When writing this kind of terminal
