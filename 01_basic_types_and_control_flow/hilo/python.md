@@ -47,20 +47,18 @@ while not done:
             again = input("Play again? (Y/n) ")
             if again != "Y":
                 done = True
-            break
-
         else:
             if guess > number:
                 print("Your guess was too high!")
             else:
                 print("Your guess was too low!")
 
-        guesses = guesses + 1
-        if guesses >= 6:
-            print("You took too many guesses!")
-            lost = done = True
+            guesses = guesses + 1
+            if guesses >= 6:
+                print("You took too many guesses!")
+                lost = done = True
 
-        print
+            print
 
 print("Goodbye!")
 ```
