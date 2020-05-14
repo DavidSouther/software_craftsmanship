@@ -57,7 +57,7 @@ Let's take a closer look at the anatomy of this function. Recall from the
 textbook portion that a function needs three things: A name, its parameters (also
 called arguments), and a body. In the box function, those look like this:
 
-[!diagram of a python function](./digraph_of_a_python_funciton.png)
+![diagram of a python function](./digraph_of_a_python_funciton.png)
 
 In python, a function starts with the key word `def`. That's followed by its name,
 in this case `box`. It then has four parameters, all inside the parenthises -
@@ -149,7 +149,7 @@ def instructions():
     print("You will have 6 tries to guess the amount of money in the")
     print("HiLo jackpot, which is between 1 and 100 dollars. If you")
     print("guess the amount, you win $10 for every guess you don't take!")
-    print("Then you get another changc to win more money. However,")
+    print("Then you get another chance to win more money. However,")
     print("if you do not guess the amount, the game ends!")
     print()
 
@@ -169,8 +169,9 @@ def check_guess(guess, number):
         return True
 
 def calc_winnings(number, guesses):
+    new_winnings = (6 - guesses) * 10
     print("You won " + str(number) + " dollars!")
-    winnings = (6 - guesses) * 10
+    winnings = winnings + new_winnings
     print("Your latest winnings are " + str(winnings) + " dollars!")
     return winnings
 
@@ -179,13 +180,14 @@ def play_round():
     number = random.randint(1, 100)
 
     while guesses < 6:
-        guesses += 1
         guess = get_guess()
         if check_guess(guess, number):
-            return calc_winnings(number, guesses)
+            calc_winnings(number, guesses)
+            return False # They didn't lose!
+        guesses += 1
 
     print("You took too many guesses!")
-    return 0
+    return True # They lost!
 
 def play_again():
     again = input("Play again? (Y/n) ")
@@ -199,7 +201,9 @@ def game():
     instructions()
     winnings = play_round()
     while play_again():
-        winnings += play_round()
+        lost = play_round()
+        if lost:
+            break # Exit the round playing loop
     finished(winnings)
 
 game()
@@ -221,9 +225,9 @@ game continues to play rounds until the user, during `play_again`, asks not to. 
 game adds up all the winnings after each round, and at the very end, prints the
 total the user has won.
 
-Pew!
+Pehw!
 
-Take some time to practice with functions. Take your HiLo program, wiht the
+Take some time to practice with functions. Take your HiLo program with the
 additional features you added, and try breaking it up into functions similar to how
 we have here!
 
