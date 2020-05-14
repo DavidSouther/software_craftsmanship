@@ -185,11 +185,11 @@ this to the program:
 
 ```python
 numeral = ""
-while (number > 0):
-	if (number >= 10):
+while number > 0:
+	if number >= 10:
 		numeral = numeral + "X"
 		number = number - 10
-	elif (number >= 5):
+	elif number >= 5:
 		numeral = numeral + "V"
 		number = number - 5
 	else:
@@ -210,7 +210,54 @@ Converting 18 to Roman.
 XVIII
 ```
 
-Huzzah! Of course, our program doesn't handle numbers larger than 49, and it
+Huzzah!
+
+Let's take a closer look at what all we just did. We start with `numeral = ""`,
+which declares and initializes the variable numeral to the empty string. We'll
+use this variable to build up the roman numeral we finally print out. After
+that, we start our loop with `while number > 0:`. This implies that we're going
+to be changing the `number` variable, and ending when it becomes equal to or less
+than zero. So we'll probably be subtracting from it!
+
+The body of the loop is what gets repeated. It's what comes after the `:` colon
+and is at the next indentation level. That's a fancy way of saying that the lines
+which come afer the `while` statement with the same number of spaces ahead of them!
+This approach, where leading whitespace is critical to the syntax and semantics of
+the program, is unique to Python. We'll revisit it several times throughout the book,
+but for now suffice to say "Be consistent". If you use VSCode, its default is four
+spaces, and if you hit tab, it will replace that with the requisite four spaces.
+
+Within the `while` loop we have an `if ... elif ... else` control structure. Each
+`if` branch has a condition. In this case, the conditions are `number >= 10` and
+`number >= 5`. Python will evaluate them in order, execute the first block whose
+condition is true, and then skip to after the end of all the `if ... elif ... else`
+blocks. This sequential ordering is important - it will always peform the first
+matching case, not the best matching case. If none of the conditions match, it will
+do the `else` body.
+
+Each body then has a pretty similar setup, like for the 10 case:
+
+```
+numeral = numeral + "X"
+numer = number - 10
+```
+
+this appends (concatenates at the end) the next letter of the numeral, and then
+changes the number we're currently building up. This behavior, where we change some
+variable of interest and then the variable which controls the loop, is a very common
+pattern.
+
+Once the associated block of the `if ... elif ... else` finishes, the entire section
+is complete. Because nothing comes after it in the code at the same indentation level,
+the program loops back up to the `while number > 0:` line. It evaluates that again,
+and if it's still true, does the entire body over again! If instead it's false, it goes
+down to the next line of code (or the end of the file) at the same indent level. In this
+case, that is `print(numeral)` showing us the value we build up! And being the last
+line in the file, the progam ends.
+
+### Wider Range of Numerals
+
+Of course, our program doesn't handle numbers larger than 49, and it
 doesn't follow the rule that 4 should be "IV", instead of "IIII". Let's fix
 the second one together. Edit the body of the algorithm (the while loop) to
 have a new case for when number is 4:

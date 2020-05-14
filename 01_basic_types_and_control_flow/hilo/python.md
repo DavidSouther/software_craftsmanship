@@ -67,6 +67,35 @@ while playing:
 print("Goodbye!")
 ```
 
+Run this a few times, and enjoy playing this little game!
+
+A couple things to call out that we haven't seen before.
+
+We have multiple loops nested, `while playing` and `while not roun_finished`.
+It's totally fine to do this - when the outer loop gets to the inner loop, the
+inner loop will run over and over until its condition is no longer true. The
+program will wrap back around to the outer loop, which will either exit itself
+or rerun its own body, again running the innter loop. We see the same thing
+with the nested `if ... else: if... else` (and also, the `elif` and `else` are 
+totally optional!).
+
+There is an extra way to control the loops, rather than relying only on the loop
+condition. That's the `break` statement. It will immediately end the nearest loop,
+skipping the rest of the body and also not evaluating the condition. `break` means
+end the loop right now! There's another command, `continue`, which skips the rest
+of the loop body but _does_ re-check the condition back at the top.
+
+To generate a random number, we use a pair of lines
+
+```
+import random
+number = random.randint(0, 10)
+```
+
+Just like we used `import math` to load a library function for `sqrt`, random
+gives us access to a bunch of ways to test randomness. The `randint(0, 10)`
+part picks an integer uniformly between 0 and 10.
+
 ## Exercises
 
 1. Assuming you copied the program exactly as presented, there is one bug that
