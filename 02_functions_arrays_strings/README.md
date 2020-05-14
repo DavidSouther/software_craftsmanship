@@ -111,6 +111,8 @@ anything involving animation, we want to tie it to speeds for our user.
 
 Let's head over to the workbooks to see all these examples in action!
 
+[Python](./dates/python.md)
+
 #### Exercise: Dates
 
 1.  Print the current date
