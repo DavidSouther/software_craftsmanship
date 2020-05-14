@@ -58,7 +58,7 @@ while not done:
                 print("You took too many guesses!")
                 lost = done = True
 
-            print
+            print()
 
 print("Goodbye!")
 ```
