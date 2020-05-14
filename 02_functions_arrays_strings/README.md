@@ -94,21 +94,36 @@ to get the specific year or hour it represents, or we can use functions to
 tell us the number of days between two dates. We could even use a function
 which takes one date, changed just the month, and returns that to us!
 
+While dates tell us the time in human-readable format, there's also the concept
+of "system time". This is the time the computer uses to verify its internal
+clock. In many cases, this is as simple as a counter it keeps internally.
+If your computer has a 1 gigahertz processor, that means its internal chip
+performs 1 billion calculations per second. If it keeps a counter that goes
+up by one every 1,000 calculations, then for every million times the counter
+goes up, one second has passed.
+
+This timing information can be used in a huge number of ways, but we used it
+during animations in hilo to make the computer sleep for some period of time
+before moving on to the next operation. This let us control the speed of
+the program tied to what works for humans, rather than letting the program
+run as fast as it can. Usually we want to just let the program run, but for
+anything involving animation, we want to tie it to speeds for our user.
+
 Let's head over to the workbooks to see all these examples in action!
 
 #### Exercise: Dates
 
-1. Print the current date
-  1. Digital Clock Format
-  1. At least two lines
-  1. Some display styling
-  1. Updates every second
-1. Print number of days until:
-  1. Martin Luther King day
-  1. July 4th
-  1. Christmas
-  1. New Years
-  1. Their Birthday
+1.  Print the current date
+    1.  Digital Clock Format
+    1.  At least two lines
+    1.  Some display styling
+    1.  Updates every second
+1.  Print number of days until:
+    1.  Martin Luther King day
+    1.  July 4th
+    1.  Christmas
+    1.  New Years
+    1.  Your Birthday
 
 ## Arrays
 
