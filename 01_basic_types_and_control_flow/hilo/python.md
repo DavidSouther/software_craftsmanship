@@ -40,8 +40,9 @@ while not done:
         guess = int(guess)
 
         if guess == number:
-            print("Got it! You won " + str(number) + " dollars!")
-            winnings = winnings + ((6 - guesses) * 10)
+            new_winnings = winnings + ((6 - guesses) * 10)
+            print("Got it! You won " + str(new_winnings) + " dollars!")
+            winnings = new_winnings
             print("Your total winnings are " + str(winnings) + " dollars!")
 
             again = input("Play again? (Y/n) ")
