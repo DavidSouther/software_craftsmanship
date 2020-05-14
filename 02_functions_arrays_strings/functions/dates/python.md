@@ -187,3 +187,33 @@ It pauses a moment, then gets the current time with `datetime.now`. That is the 
 it hands to the `print_clock` function. These two functions work together to make
 this program! They get started in the main file itself, by first clearing the screen
 and then starting the tick function going.
+
+## Time differences
+
+Once you have a first date, it's probably useful to compare it with the first date to find out
+how far apart they are. How many days until Christmas, or your birthday? How many days has
+it been since Elon Musk first launched a car into space? In Python, we answer these questions
+with a `timedelta`. We can make a timedelta directly, with code like `five_days = timedelta(days=5)`,
+or we could create one from two dates we have, like `delta = now - then`. Once we have a timedelta,
+we can add it to other dates to find out which date is that far from the first.
+
+```python
+from datetime import datetime
+
+now = datetime.now()
+christmas = datetime(now.year, 12, 25)
+days_until_christmas = (christmas - now)
+print(days_until_christmas)
+```
+
+When I ran it on May 13th, I got
+
+```
+224 days, 22:05:49.793276
+```
+
+224 days and some hours! Almost there!
+
+## Exercise: Days Until... Clock
+
+TODO keyboard polling to switch between clock modes.
