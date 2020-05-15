@@ -264,7 +264,7 @@ def play_round():
         guesses += 1
 
     print("You took too many guesses!")
-    return -1 # They lost!
+    return 0 # They lost!
 
 def play_again():
     again = input("Play again? (y/n) ")
@@ -277,11 +277,11 @@ def game():
     title()
     instructions()
     winnings = play_round()
-    if winnings == -1:
+    if winnings == 0:
         break
     while play_again():
         new_winnings = play_round()
-        if lost:
+        if new_winnings == 0:
             break # Exit the round playing loop
         else:
             winnings += new_winnings
