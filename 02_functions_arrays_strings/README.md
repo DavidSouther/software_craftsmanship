@@ -53,4 +53,3 @@ functions.
 * ~[TypeScript](./01_functions/02_typescript.md)~
 * ~[C](./01_functions/03_c.md)~
 
-complement one another, it's common to bundle them together to provide more
