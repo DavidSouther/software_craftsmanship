@@ -140,57 +140,13 @@ colors. In this series of exercises, we'll make HiLo look like those old games!
   you resize the terminal, that will change. When writing this kind of terminal
   program, it's usually best to stick with those dimentions.
 
-    * **Drawing Boxes** One use for this is to draw a box around some portion of
-    the screen. This takes a bit of computing known as the "Extended ASCII
-    Character Set". In the discussion of characters, we menionted that the first
-    128 characters are mapped to various numbers in the ASCII character table.
-    There are many other ways to map characters, and many other characters to
-    map. One version from the 1980s was called "[Code Page 437][page437]", and
-    was used by the original IBM PC computers and MS DOS. Today, we use the
-    unicode character set, which handles characters from every language on the
-    planet. Some of these include the "[Box Printing Characters][box_chars]",
-    which we use here to create a user interface.
-
-    * Start a new program, called `boxes.py`. Type this in, and run it. Once
-    this program is running, you should see a blue box in the middle of the
-    screen that asks for your guess, over and over. Hold `Control` and press `c`
-    to quit. As you start to understand how the program draws boxes, work the
-    concept into your hilo game to make the guessing prettier!
-
-```python
-import colors
-
-LEFT = 20
-
-# Print the "Guess" box
-print(colors.BLUE)
-print(colors.at(12, LEFT) + u'\u2554' + u'\u2550' * 10 + u'\u2557')
-print(colors.at(13, LEFT) + u'\u2551' + " " * 10 + u'\u2551')
-print(colors.at(14, LEFT) + u'\u255A' + u'\u2550' * 10 + u'\u255D')
-print(colors.WHITE)
-
-guess = 0
-while guess >= 0:
-  print(colors.at(13, LEFT + 8) + "   ") # Clear the last guess  
-  guess = input(colors.WHITE + colors.at(13, LEFT + 1) + "Guess: ")
-```
-
-* We use `colors.at` to control where the box will show up. We use `chr()`
-to convert a number to a character at that code point. If you look at the
-linked wikipedia page, you see that 186, 187, 188, 200, 201, and 201 are
-double-wide block border characters. You can also see that instead of
-printing 10 chr(205) characters to make the top and bottom portions, we
-use the `*` operation, which for a character or string repeats the
-character several times.
-
-*   Try using this in your program to make your interface more exciting!
-    1.  **Pauses / Animation** The original Hi Lo program, at the top of the page,
-        doesn't stop between showing the instructions and asking for the first guess.
-        We could stop that with a simple way to ask the user for some input. Try putting
-        `n = raw_input("Press enter key to continue...")` in your program, and you'll
-        see that now the program waits for the user before continuing. In other places,
-        you might not want to wait for the user, but you do want a pause. Using the time
-        module, you can have your program wait a moment.
+1.  **Pauses / Animation** The original Hi Lo program, at the top of the page,
+    doesn't stop between showing the instructions and asking for the first guess.
+    We could stop that with a simple way to ask the user for some input. Try putting
+    `n = raw_input("Press enter key to continue...")` in your program, and you'll
+    see that now the program waits for the user before continuing. In other places,
+    you might not want to wait for the user, but you do want a pause. Using the time
+    module, you can have your program wait a moment.
 
 ```python
 import time
@@ -215,6 +171,9 @@ for i in range(1, 9):
     time.sleep(0.5)
 input("Press enter to continue...")
 ```
+
+*   We'll explore this more in later chapters, but see if you can incorporate this
+    into your program!
 
 1.  **Difficulty** Give your program several difficulty levels. You could use
         easy = 1 to 10, medium = 1 to 100, and hard = 1 to 1000. You could do a custom
