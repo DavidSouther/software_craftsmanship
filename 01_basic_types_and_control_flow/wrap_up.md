@@ -16,3 +16,5 @@ animation to snazzy it up! Be proud of yourself, you are now a computer
 programmer!
 
 [Up next: Chapter 2, Functions](../02_functions_arrays_strings/README.md)
+
+**Recommended:** Take a detour through [Appendix 2: Source Control](../A02_source_control/README.md)

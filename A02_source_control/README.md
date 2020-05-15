@@ -75,10 +75,11 @@ an account on github as well, as you will be encouraged to share your work - but
 certainly not required to do so!
 
 I'm going to leave you with GitHub Desktop's excellent
-[documentation](https://help.github.com/en/desktop). Install it and set up a new
-local project (either one for the book, or better (to get more practice) one for
-each chapter). Commit the current state of your code as-is. Edit your code a bit
-and see how it changes.
+[documentation](https://help.github.com/en/desktop). Once GitHub Desktop is
+installed, follow their instructions for setting up a new repository. Either use
+the existing folder that your code is in when you create it, or create it in a new
+folder and then copy your code over to there. Then, make a commit with everything
+as-is. After that, your project is in source control, and you can play around a bit!
 
 [VSCode git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)
 is also excellent documentation, if you want to use VSCode's built in git tool,
@@ -131,3 +132,10 @@ this book as part of a classroom setting, your instructor will likely have you
 submit exercises using a shared git repository. If you're uncomfortable about
 sharing your code publicly, GitHub offers individual users unlimited free
 private repositories.
+
+Once you've finished work for the day, use GitHub Desktop (or VSCode), commit
+your changes, and **push** them to the _remote branch_, that is, the one that
+lives on GitHub's servers as your backup. When you're ready to start again,
+head back to where you came here from! If you're following the links in the
+book, that means next up is
+[Chapter 2, Functions](../02_functions_arrays_strings/README.md)
