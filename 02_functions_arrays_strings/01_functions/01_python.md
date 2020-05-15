@@ -249,10 +249,8 @@ def check_guess(guess, number):
         return True
 
 def calc_winnings(number, guesses):
-    new_winnings = (6 - guesses) * 10
+    winnings = (6 - guesses) * 10
     print("You won " + str(number) + " dollars!")
-    winnings = winnings + new_winnings
-    print("Your latest winnings are " + str(winnings) + " dollars!")
     return winnings
 
 def play_round():
@@ -262,12 +260,11 @@ def play_round():
     while guesses < 6:
         guess = get_guess()
         if check_guess(guess, number):
-            calc_winnings(number, guesses)
-            return False # They didn't lose!
+            return calc_winnings(number, guesses)
         guesses += 1
 
     print("You took too many guesses!")
-    return True # They lost!
+    return -1 # They lost!
 
 def play_again():
     again = input("Play again? (Y/n) ")
@@ -280,10 +277,14 @@ def game():
     title()
     instructions()
     winnings = play_round()
+    if winnings == -1:
+        break
     while play_again():
-        lost = play_round()
+        new_winnings = play_round()
         if lost:
             break # Exit the round playing loop
+        else:
+            winnings += new_winnings
     finished(winnings)
 
 game()
