@@ -248,9 +248,9 @@ def check_guess(guess, number):
         print("You win!")
         return True
 
-def calc_winnings(number, guesses):
+def calc_winnings(guesses):
     winnings = (6 - guesses) * 10
-    print("You won " + str(number) + " dollars!")
+    print("You won " + str(winnings) + " dollars!")
     return winnings
 
 def play_round():
@@ -260,7 +260,7 @@ def play_round():
     while guesses < 6:
         guess = get_guess()
         if check_guess(guess, number):
-            return calc_winnings(number, guesses)
+            return calc_winnings(guesses)
         guesses += 1
 
     print("You took too many guesses!")
