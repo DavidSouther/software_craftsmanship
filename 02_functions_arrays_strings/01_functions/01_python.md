@@ -48,7 +48,7 @@ is to be consistent with the amount of indentation you use in your program.
 ## One function, many calculations
 
 Now that we have a function that prints a box, what else can we get? Delete the
-last four lines of file you started, and try this instead:
+last two lines of file you started, and try this instead:
 
 ```python
 while (size = input("Rug size (empty to quit): ")) != "":
