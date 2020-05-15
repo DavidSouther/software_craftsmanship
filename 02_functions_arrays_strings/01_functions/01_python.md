@@ -16,34 +16,36 @@ print(square_rug_cost(5, False))
 print(square_rug_cost(5, True))
 ```
 
-Type this program as `box_functions.py` and run it. You should see it print out the
-two rug costs - 125 and 155, respectively.
+Type this program as `box_functions.py` and run it. You should see it print out
+the two rug costs - 125 and 155, respectively.
 
 Let's take a closer look at the anatomy of this function. Recall from the
-textbook portion that a function needs three things: A name, its parameters (also
-called arguments), and a body. In this square_rug_cost function, those look like this:
+textbook portion that a function needs three things: A name, its parameters
+(also called arguments), and a body. In this square_rug_cost function, those
+look like this:
 
 ![diagram of a python function](./digraph_of_a_python_function.png)
 
-In python, a function starts with the key word `def`. That's followed by its name,
-in this case `box`. It then has twu parameters, all inside the parenthises -
-`(size, fringe)`. Finally, in python, the function declaration (the name
-and argument list) ends with the `:` (colon). We've seen this in the chapter on control
-flow as well, and it indicates that we're about to group a bunch of code at the
-next indentation level.
+In python, a function starts with the key word `def`. That's followed by its
+name, in this case `box`. It then has twu parameters, all inside the
+parenthises - `(size, fringe)`. Finally, in python, the function declaration
+(the name and argument list) ends with the `:` (colon). We've seen this in
+the chapter on control flow as well, and it indicates that we're about to
+group a bunch of code at the next indentation level.
 
-To get an indentation level, we add a new line (press enter on our keyboard) and
-indent one level. There are several ways to indent. One is to hit the tab key on
-your keyboard. Another is to add some number of spaces - at least two, but four
-and eight are also common. A third way is to let VSCode do it for you! You've
-probably seen this already when working through the first chapter, that VSCode
-would automatically add the indendation for you when you started a new line after
-a `:` colon.
+To get an indentation level, we add a new line (press enter on our keyboard)
+and indent one level. There are several ways to indent. One is to hit the tab
+key on your keyboard. Another is to add some number of spaces - at least two,
+but four and eight are also common. A third way is to let VSCode do it for
+you! You've probably seen this already when working through the first
+chapter, that VSCode would automatically add the indendation for you when you
+started a new line after a `:` colon.
 
-So, why does Python have so many ways to do indentation? Mostly it's historical
-reasons. For our purposes, we're going to start with using 4 spaces for indentation,
-because that's VSCode's default, and usually it'll handle it for us. The only rule
-is to be consistent with the amount of indentation you use in your program.
+So, why does Python have so many ways to do indentation? Mostly it's
+historical reasons. For our purposes, we're going to start with using 4
+spaces for indentation, because that's VSCode's default, and usually it'll
+handle it for us. The only rule is to be consistent with the amount of
+indentation you use in your program.
 
 ## One function, many calculations
 
@@ -60,7 +62,7 @@ while (size = input("Rug size (empty to quit): ")) != "":
 print("Goodbye")
 ```
 
-Lots of rugs to price!
+We can price (square) rugs over and over!
 
 > `while ... input` - notice we combined the while loop with the input, and
 immediately checked if we got an empty result. This allows us to not need
@@ -269,32 +271,34 @@ def game():
 game()
 ```
 
-You can see how each section gets broken out into its own small piece, which can
-be written and understood in isolation, rather than having to work on the entire
-program at once. All the text to print out the title and instructions banner have
-been isolated into their own sections. After that, the program defines several
-functions for each isolated part of the game. The `get_guess` function asks for a
-player's gues, and then returns it as an integer. Check guess takes a target number
-and a guessed number, compares them, prints the apropriate message, and returns
-`True` if the user guessed correctly, and `False` if they did not. That value is
-used in `play_round`, which generates a random number, and asks the user for a guess
-until they run out of guesses. If it has returned true, the game will use
-`calc_winnings` to figure out how much that game was worth. `game` coordinates all
-the pieces. First it prints the banner lines. Then, it plays the first round. The
-game continues to play rounds until the user, during `play_again`, asks not to. The
-game adds up all the winnings after each round, and at the very end, prints the
-total the user has won.
+You can see how each section gets broken out into its own small piece, which
+can be written and understood in isolation, rather than having to work on the
+entire program at once. All the text to print out the title and instructions
+banner have been isolated into their own sections. After that, the program
+defines several functions for each isolated part of the game. The `get_guess`
+function asks for a player's gues, and then returns it as an integer. Check
+guess takes a target number and a guessed number, compares them, prints the
+apropriate message, and returns `True` if the user guessed correctly, and
+`False` if they did not. That value is used in `play_round`, which generates
+a random number, and asks the user for a guess until they run out of guesses.
+If it has returned true, the game will use `calc_winnings` to figure out how
+much that game was worth. `game` coordinates all the pieces. First it prints
+the banner lines. Then, it plays the first round. The game continues to play
+rounds until the user, during `play_again`, asks not to. The game adds up all
+the winnings after each round, and at the very end, prints the total the user
+has won.
 
 Pehw!
-
 Take some time to practice with functions. Take your HiLo program with the
-additional features you added, and try breaking it up into functions similar to how
-we have here!
+additional features you added, and try breaking it up into functions similar
+to how we have here!
 
 ## Exercises
 
-Revisit the [exercises in chapter 1](../../01_basic_types_and_control_flow/types/python.md). Instead of writing them out by hand, write a function (or functions) for each one,
-and use them to calculate the answers to the following problems. To get you started,
+Revisit the [exercises in chapter
+1](../../01_basic_types_and_control_flow/types/python.md). Instead of writing
+them out by hand, write a function (or functions) for each one, and use them
+to calculate the answers to the following problems. To get you started,
 here's a function to calculate the cost of a square rug:
 
 ```python
@@ -307,5 +311,5 @@ def square_rug(width, fringe):
 
 (TODO add a bunch more example values for the exercises from ch 1 types)
 
-When you're feeling more comfortable writing and calling functions, head on to [date
-and time functions](./01_dates/README.md)
+When you're feeling more comfortable writing and calling functions, head on to
+[date and time functions](./01_dates/README.md)
