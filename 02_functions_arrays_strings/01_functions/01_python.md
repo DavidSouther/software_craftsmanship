@@ -6,7 +6,7 @@ code, to draw a box in the terminal:
 ```python
 import colors
 
-print(colors.CLS)
+print(colors.CLEAR)
 
 def box(row, col, width, height):
     width = width - 2
@@ -22,13 +22,13 @@ print(colors.NORMAL)
 guess = input(colors.at(13, 21) + "Guess: ")
 ```
 
-Type this program as `box_functions.py` and run it. If you make a new folder for
+Type this program as `box.py` and run it. If you make a new folder for
 this chapter, make sure to save the [`colors.py`][colors.py] file in the same
-folder. You should get the blue box from the HiLo program!
+folder. You should get a blue box!
 
-There are a couple things to point out here, but the important one to remember is
-that multiplying a string by a number will repeat the string that number of times.
-To take advantage of this, we subtract 2 from our width (because we have one column
+There are a couple things to point out here. The first I want to call out is that
+multiplying a string by a number will repeat the string that number of times. To
+take advantage of this, we subtract 2 from our width (because we have one column
 on either side for the vertical lines), and then print that many top box characters.
 
 For the vertical repeats, we use a different loop than before: `for ... in ...`.
@@ -254,9 +254,18 @@ we have here!
 ## Exercises
 
 Revisit the [exercises in chapter 1](../../01_basic_types_and_control_flow/types/python.md). Instead of writing them out by hand, write a function (or functions) for each one,
-and use them to calculate the answers to the following problems:
+and use them to calculate the answers to the following problems. To get you started,
+here's a function to calculate the cost of a square rug:
+
+```python
+def square_rug(width, fringe):
+    area = width * width
+    perimeter = fringe * 4
+    cost = area * 5 + fringe * 1.5
+    return cost
+```
 
 (TODO add a bunch more example values for the exercises from ch 1 types)
 
-When you're feeling more comfortable writing and calling functions, head [back to the
-main chapter](../README.md#libraries)
+When you're feeling more comfortable writing and calling functions, head on to [date
+and time functions](./01_dates/README.md)

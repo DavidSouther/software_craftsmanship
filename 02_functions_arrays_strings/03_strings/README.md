@@ -5,6 +5,6 @@
 * Converting to and from strings
 * String interpolation (templates)
 * Substrings
-* String methods - find, count, upper, lower, (l|r)strip, replace
+* String methods - find/replace, count, upper/lower
 
 ### Mad Libs
