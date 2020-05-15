@@ -41,7 +41,7 @@ Before we get started with git and GitHub Desktop, let's go over a few concepts.
 Git tracks source code in a **repository**. This is really just a fancy way of
 saying a folder and all the directories inside of it that are managed by git. A
 project can have any number of git repositories - one on your computer, one that
-is backed up and shread on github.com, one on each of your colleagues'
+is backed up and shared on github.com, one on each of your colleagues'
 computers, and in some cases, one copy on github for every colleague! Each copy
 of a repository like this is called a **fork**.
 
@@ -92,7 +92,7 @@ times when you might have two different things you want to be working on in a
 project at the same time (we're talking over a few hours or days). Maybe you're
 developing a new feature, and you come across a bug that you want to fix that's
 unrelated to this feature. To make this possible without needing to constantly
-be focused on keeping the two parts of work in tandem, you can creat a
+be focused on keeping the two parts of work in tandem, you can create a
 **branch**. A branch is like a mini-fork - you choose some commit to start from,
 you add commits based on that (which branch out from the main set of code), and
 then you can switch branches to put that work aside and come back to it later.
