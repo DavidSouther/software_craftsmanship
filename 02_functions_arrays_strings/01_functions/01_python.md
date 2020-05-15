@@ -278,7 +278,8 @@ def game():
     instructions()
     winnings = play_round()
     if winnings == 0:
-        break
+        print("Tough luck! Try again later!")
+        return
     while play_again():
         new_winnings = play_round()
         if new_winnings == 0:
