@@ -55,7 +55,7 @@ last two lines of file you started, and try this instead:
 ```python
 size = input("Rug size (empty to quit): ")
 while size != "":
-    size = int(size)
+    size = float(size)
     fringe = input("Does the rug have fringe (Y/n)? ")
     fringe = fringe == "Y"
     cost = square_rug_cost(size, fringe)
@@ -86,11 +86,17 @@ that get declared _inside_ the function aren't visible further out. This neatly
 allows each function to do its own work without stepping on the toes of other
 functions! Also, the base level of every file is its own scope.
 
+Aside from files, only functions with `def` define new scopes. The body of a
+`while` loop or `if` block does not create a new scope!
+
+Let's take that while loop, and break it into a function and a loop. Delete
+everything you typed in the last section, and type this instead.
+
 ```python
 def compute_square_rug():
-    size = int(input("Rug Size: "))
+    size = float(input("Rug Size: "))
     fringe = input("Does the rug have fringe (Y/n)? ")
-    fringe = fringe === "Y"
+    fringe = fringe == "Y"
     cost = square_rug_cost(size, fringe)
     print(cost)
 
@@ -113,8 +119,8 @@ def rectangular_rug_cost(width, height, fringe):
     return cost
 
 def compute_rectangular_rug():
-    width = int(input("Rug width: "))
-    height = int(input("Rug height: "))
+    width = float(input("Rug width: "))
+    height = float(input("Rug height: "))
     fringe = input("Fringe (y/N)?: ") == "Y"
     print(rectangular_rug_cost(width, height, fringe))
 
