@@ -1,87 +1,33 @@
 # Functions
 
 Let's start with this program, that defines a function, a reusable block of
-code, to draw a box in the terminal:
+code, to calculate the price of our square rug from chapter 1:
 
 ```python
-import colors
+def square_rug_cost(size, fringe):
+    area = size * size
+    cost = area * 5
+    if (fringe):
+        perimeter = size * 4
+        cost = cost + perimiter * 1.5
+    return cost
 
-print(colors.CLS)
-
-def box(row, col, width, height):
-    width = width - 2
-    end = row + height - 1
-    print(colors.at(row, col) + "\u2554" + "\u2550" * width + "\u2557")
-    for i in range(row+1, end):
-        print(colors.at(i, col) + "\u2551" + " " * width + "\u2551")
-    print(colors.at(end, col) + "\u255A" + "\u2550" * width + "\u255D")
-
-print(colors.BLUE)
-box(12, 20, 10, 3)
-print(colors.NORMAL)
-guess = input(colors.at(13, 21) + "Guess: ")
+print(square_rug_cost(5, False))
+print(square_rug_cost(5, True))
 ```
 
-Type this program as `box_functions.py` and run it. If you make a new folder for
-this chapter, make sure to save the [`colors.py`][colors.py] file in the same
-folder. You should get the blue box from the HiLo program!
-
-There are a couple things to point out here, but the important one to remember is
-that multiplying a string by a number will repeat the string that number of times.
-To take advantage of this, we subtract 2 from our width (because we have one column
-on either side for the vertical lines), and then print that many top box characters.
-
-For the vertical repeats, we use a different loop than before: `for ... in ...`.
-While the `while` loop repeated every time a condition was true, `for ... in ...`
-is going to take a list of data and repeat the block once for every item in that
-list. To be useful, it also saves that item in a variable for us! But the variable
-does change every time through the loop. Here, we use the variable `i`, which is
-a common variable to use for small loops over a range of numbers.
-
-To get the list of numbers, we use `range(row + 1, row + height - 1)`. We want to
-start with the next row after our first, and we want to continue until the last
-row. Why is that `row + height - 1`, insted of `row + height - 2`? Because range
-is "open" - that is, it returns the first item _up to but not including_ the last
-item.
-
-## Emoji  and special characters.
-
-What's up with those `"\u2554"` bits? In chapter 1, we discussed the ASCII
-character set, and briefly mentioned there were more than those 128 characters
-in the Unicode character set. You're almost certainly familiar with a number of
-unicode characters already - emoji! 😂, 🖤, and 😍 are all emoji, and are also
-single unicode characters! If you have an emoji input on your keyboard (like the
-touchbar on the Mac Pro), you could type them directly. If you don't have those
-buttons, you can use the longer explicit number forms. In this case, we could
-write those as `"\u1F602"`, `"\u2764"`, and `"\u1F60A"`. 
-
-For the boxes, we're going to use a different set of unicode characters, the
-"box drawings" characters. You can either type them using the `\uNNNN` unicode
-notation, or copy and paste them from below. You can find many more box drawing
-characters at https://www.compart.com/en/unicode/block/U+2500.
-
-*   ═ \u2550
-*   ║ \u2551
-*   ╔ \u2554
-*   ╗ \u2557
-*   ╚ \u255A
-*   ╝ \u255D
-*   ╠ \u2560
-*   ╣ \u2563
-*   ╦ \u2566
-*   ╩ \u2569
-
-## Diagram of a function
+Type this program as `box_functions.py` and run it. You should see it print out the
+two rug costs - 125 and 155, respectively.
 
 Let's take a closer look at the anatomy of this function. Recall from the
 textbook portion that a function needs three things: A name, its parameters (also
-called arguments), and a body. In the box function, those look like this:
+called arguments), and a body. In this square_rug_cost function, those look like this:
 
-![diagram of a python function](./digraph_of_a_python_funciton.png)
+![diagram of a python function](./digraph_of_a_python_function.png)
 
 In python, a function starts with the key word `def`. That's followed by its name,
-in this case `box`. It then has four parameters, all inside the parenthises -
-`(row, col, width, height)`. Finally, in python, the function declaration (the name
+in this case `box`. It then has twu parameters, all inside the parenthises -
+`(size, fringe)`. Finally, in python, the function declaration (the name
 and argument list) ends with the `:` (colon). We've seen this in the chapter on control
 flow as well, and it indicates that we're about to group a bunch of code at the
 next indentation level.
@@ -99,45 +45,139 @@ reasons. For our purposes, we're going to start with using 4 spaces for indentat
 because that's VSCode's default, and usually it'll handle it for us. The only rule
 is to be consistent with the amount of indentation you use in your program.
 
-## One function, many boxes
+## One function, many calculations
 
 Now that we have a function that prints a box, what else can we get? Delete the
 last four lines of file you started, and try this instead:
 
 ```python
-print(colors.BLUE)
-box(11, 19, 12, 5)
-box(12, 20, 10, 3)
-for i in range(4, 80, 4):
-    box(2, i, 2, 2)
-print(colors.NORMAL)
+while (size = input("Rug size (empty to quit): ")) != "":
+    size = int(size)
+    fringe = input("Does the rug have fringe (Y/n)? ")
+    fringe = fringe === "Y"
+    cost = square_rug_cost(size, fringe)
+    print(cost)
+print("Goodbye")
 ```
 
-Lots of boxes!
+Lots of rugs to price!
 
-The first box command draws a big box, staring at (11, 19), and then a smaller
-box directly inside that. It then goes through the `for...range` loop, which
-uses a verson of range we haven't seen before. This time, it starts with the
-value 4, then increases by 4 until it is greater than or equal to 80. That is,
-it takes the values `4`, `8`, `12`, `16`, `20`, `24`, `28`, `32`, `36`, `40`,
-`44`, `48`, `52`, `56`, `60`, `64`, `68`, `72`, and `76`. At each of those
-columns, it draws a little 2x2 box!
+> `while ... input` - notice we combined the while loop with the input, and
+immediately checked if we got an empty result. This allows us to not need
+to have two places where we get the size of the rug, at the beginning and
+at the end of the body.
 
-Functions are great for grouping chunks of code together that you'd have to
-run many times, either by typing over and over or copy/pasting. Let's look at
-the box function a bit closer.
+So now our function just loops as long as the user gives us a size, asks if
+they want fringe with that, and prints the rug price. That's good, but it
+actually took more lines of code than if we'd just written it all inline...
+We'll come back to that. For now, bear with me two more steps. First, we
+will turn that input into its own function. Then, we're going to do make
+two similar functions for a rectangular rug. While that will look like
+more code than we needed, it will pay off when we add circles and start
+talking about abstraction.
+
+```python
+def compute_square_rug():
+    size = int(input("Rug Size: "))
+    fringe = input("Does the rug have fringe (Y/n)? ")
+    fringe = fringe === "Y"
+    cost = square_rug_cost(size, fringe)
+    print(cost)
+
+while input("Price another rug (y/N)? ") == "Y":
+    compute_square_rug()
+```
+
+But why are we adding more code when it just does the same thing!? ARGH!
+I asked you to stay with me one more step, before we see the pay off.
+First, delete the last two lines (the while loop that asks whether to
+price another rug), and then add this:
+
+```python
+def rectangular_rug_cost(width, height, fringe):
+    area = width * height
+    cost = area * 5
+    if fringe:
+        perimeter = width * 2 + height * 2
+        cost += perimeter * 1.5
+    return cost
+
+def compute_rectangular_rug():
+    width = int(input("Rug width: "))
+    height = int(input("Rug height: "))
+    fringe = input("Fringe (y/N)?: ") == "Y"
+    print(rectangular_rug_cost(width, height, fringe))
+
+while input("Price another rug (y/N)? ") == "Y":
+    compute_rectangular_rug()
+```
+
+At this point, we've written four functions. For each rug type, we have two
+functions - one to perform the calculation, and one to perform the user
+input. So why would we write all four of these, instead of just one loop?
+The first answer is to make it easier to read and understand. One big
+function or loop body would be shorter to write, yes, but in sofware
+engineering there's a somewhat paradoxical fact that code is read by humans
+much more often than it's written. You've likely seen this yourself while
+trying to get your prior programs to work - you would run it, it wouldn't
+work right or you'd get an error, and then you had to go back through many
+times reading it to figure out what it was doing.
+
+By separating out each task into functions like this, you are using
+_abstraction_. Each function lets us move from handling the details of getting
+input or calculating a rug size, to instead working with the *idea* of getting
+input or calculating the rug's size. Why is this useful? Mainly, it means
+that now whenever I think about calculating a rug, I don't need to remember
+the formulas for its area and perimeter, I only need to know which parameters
+are necessary.
+
+It also gives us a good separation of concerns. That's a fancy way of saying
+the opposite of what was in the last paragraph - from the ouside, I only
+need to know what parameers to pass the function and it does the work. From
+the inside, I only need to take those parameters and do the calculation. I don't
+care how I got those parameters! The could come from a command line interface,
+like here, or in chapter 5, they could come from a web server which provides
+this functionality to customers online. That separation is a great boon that
+abstraction using functions gives us.
+
+## Anatomy of a function
+
+Let's cover the critical pieces of a function again.
 
 It starts with the Python keyword `def` - short for "Define", and used here to
-"define" a function. The next word, `box`, tells Python what to call your
-function, and is the word you'll use to refer to the function in the future,
-like variables elsewhere. The parenthesis mark the *arguments* to the function.
-Arguments are variables, but variables that are only valid inside the function.
-The function declaration ends with the `:`.
+"define" a function. The next word, `square_rug_cost` or `calculate_rectangular_rug`,
+tells Python what to call your function. It is the word you'll use to refer to
+the function in the future, like variables elsewhere. The parentheses mark the
+*arguments* to the function. Arguments are variables, but variables that are only
+visible and valid inside the function. The function declaration ends with the `:`.
 
 The definition of the function is everything happening below that line at the
 next indentation level. Remember that in Python, whitespace is important. An
 **indentation level** is all code which has the same amount of leading spaces -
-in our case, four.
+in our case, four. Just like in `if` and `for` and `while` loops, this code at
+the same level of indendation is the **function body** is what gets executed
+each time you call your function.
+
+Ok, let's write one more function, this time to combine the two rugs we had
+before. Again, delete the "Price another rug" while loop, and add this.
+
+```python
+def choose_rug():
+    type = input("Would you like to price a (S)quare rug or a (R)ectangular rug? ")
+    if type == "S" or type == "s":
+        compute_square_rug()
+    elif type == "R" or type == "r":
+        compute_rectangular_rug()
+        
+while input("Price another rug (y/N)? ") == "Y":
+    choose_rug()
+```
+
+I don't know about you, but I really like how easy it is to read and understand
+what this block of code is doing compared to the big long chunks we had in
+chaper 1!
+
+On your own, try to add the circle calculations using the same set up we have here.
 
 ## HiLo Revisited
 
