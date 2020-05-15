@@ -56,8 +56,8 @@ last two lines of file you started, and try this instead:
 size = input("Rug size (empty to quit): ")
 while size != "":
     size = float(size)
-    fringe = input("Does the rug have fringe (Y/n)? ")
-    fringe = fringe == "Y"
+    fringe = input("Does the rug have fringe (y/n)? ")
+    fringe = fringe == "y"
     cost = square_rug_cost(size, fringe)
     print(cost)
 
@@ -95,12 +95,12 @@ everything you typed in the last section, and type this instead.
 ```python
 def compute_square_rug():
     size = float(input("Rug Size: "))
-    fringe = input("Does the rug have fringe (Y/n)? ")
-    fringe = fringe == "Y"
+    fringe = input("Does the rug have fringe (y/n)? ")
+    fringe = fringe == "y"
     cost = square_rug_cost(size, fringe)
     print(cost)
 
-while input("Price another rug (y/N)? ") == "Y":
+while input("Price a rug (y/n)? ") == "y":
     compute_square_rug()
 ```
 
@@ -121,11 +121,15 @@ def rectangular_rug_cost(width, height, fringe):
 def compute_rectangular_rug():
     width = float(input("Rug width: "))
     height = float(input("Rug height: "))
-    fringe = input("Fringe (y/N)?: ") == "Y"
+    fringe = input("Fringe (y/n)?: ") == "y"
     print(rectangular_rug_cost(width, height, fringe))
 
-while input("Price another rug (y/N)? ") == "Y":
-    compute_rectangular_rug()
+while input("Price another rug (y/n)? ") == "y":
+    rug_type = input("(1) square or (2) rectangular? ")
+    if rug_type == "1":
+        compute_square_rug()
+    elif rug_type == "2":
+        compute_rectangular_rug()
 ```
 
 At this point, we've written four functions. For each rug type, we have two
