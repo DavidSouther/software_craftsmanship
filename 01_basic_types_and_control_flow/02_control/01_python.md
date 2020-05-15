@@ -305,6 +305,15 @@ values, to make sure it's still correct.
         1.  707 - DCCVII
         1.  90 - DCCCXC
         1.  1800 - MDCCC
+1.  **Rugs**
+    1.  Create a new program, `square_rug.py`. When it runs, ask the user the
+        size of the rug, and whether they want fringe. Print out the cost.
+    1.  Create two more rugs programs, `rectangular_rug.py` and `circular_rug.py`.
+        Ask the user the appropriate questions and print the cost.
+    1.  Create a program that combines these three - first ask the user which
+        type of rug they are creating, and then have it choose between those
+	three implementations. Copy/paste the implementations from the earlier
+	parts of the exercise.
 
 These control statements - `while`, `for`, and `if`, are the bread and butter of
 making programs do interesting things. Many times, we want to do the same

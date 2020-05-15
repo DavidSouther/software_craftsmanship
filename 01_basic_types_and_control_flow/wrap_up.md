@@ -15,4 +15,4 @@ bare rules of the game, we added color, boxes, and maybe even a little
 animation to snazzy it up! Be proud of yourself, you are now a computer
 programmer!
 
-[Up next: Chapter 2, Functions](../../02_functions_arrays_strings/README.md)
+[Up next: Chapter 2, Functions](../02_functions_arrays_strings/README.md)
