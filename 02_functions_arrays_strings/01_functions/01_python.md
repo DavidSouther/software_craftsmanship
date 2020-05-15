@@ -267,8 +267,8 @@ def play_round():
     return -1 # They lost!
 
 def play_again():
-    again = input("Play again? (Y/n) ")
-    return again != "n"
+    again = input("Play again? (y/n) ")
+    return again == "y"
 
 def finished(winnings):
     print("Thank you for playing! Your total winnings were " + str(winnings) + " dollars!")
