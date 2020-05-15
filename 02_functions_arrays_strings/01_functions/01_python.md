@@ -5,7 +5,7 @@ code, to calculate the price of our square rug from chapter 1:
 
 ```python
 def square_rug_cost(size, fringe):
-    area = size * size
+    area = size ** 2
     cost = area * 5
     if (fringe):
         perimeter = size * 4
@@ -53,21 +53,20 @@ Now that we have a function that prints a box, what else can we get? Delete the
 last two lines of file you started, and try this instead:
 
 ```python
-while (size = input("Rug size (empty to quit): ")) != "":
+size = input("Rug size (empty to quit): ")
+while size != "":
     size = int(size)
     fringe = input("Does the rug have fringe (Y/n)? ")
-    fringe = fringe === "Y"
+    fringe = fringe == "Y"
     cost = square_rug_cost(size, fringe)
     print(cost)
+
+    # Get the size for the next rug
+    size = input("Rug size (empty to quit): ")
 print("Goodbye")
 ```
 
 We can price (square) rugs over and over!
-
-> `while ... input` - notice we combined the while loop with the input, and
-immediately checked if we got an empty result. This allows us to not need
-to have two places where we get the size of the rug, at the beginning and
-at the end of the body.
 
 So now our function just loops as long as the user gives us a size, asks if
 they want fringe with that, and prints the rug price. That's good, but it
@@ -77,6 +76,15 @@ will turn that input into its own function. Then, we're going to do make
 two similar functions for a rectangular rug. While that will look like
 more code than we needed, it will pay off when we add circles and start
 talking about abstraction.
+
+But wait a minute, why do we have `cost` in two different places? Those are
+actually two completely separate variables, in what we call different scopes.
+Every function starts a new **scope**, which is a way to set a new group of
+variables it knows about. A function knows about all the variables in any scope
+outside of it, as well as all the variables it declares. However, the variables
+that get declared _inside_ the function aren't visible further out. This neatly
+allows each function to do its own work without stepping on the toes of other
+functions! Also, the base level of every file is its own scope.
 
 ```python
 def compute_square_rug():
