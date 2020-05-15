@@ -131,3 +131,10 @@ this book as part of a classroom setting, your instructor will likely have you
 submit exercises using a shared git repository. If you're uncomfortable about
 sharing your code publicly, GitHub offers individual users unlimited free
 private repositories.
+
+Once you've finished work for the day, use GitHub Desktop (or VSCode), commit
+your changes, and **push** them to the _remote branch_, that is, the one that
+lives on GitHub's servers as your backup. When you're ready to start again,
+head back to where you came here from! If you're following the links in the
+book, that means next up is
+[Chapter 2, Functions](../02_functions_arrays_strings/README.md)
