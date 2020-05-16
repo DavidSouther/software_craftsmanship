@@ -1,3 +1,34 @@
+def get_two_numbers():
+    num1 = input("First number? ")
+    num2 = input("Second number? ")
+    return float(num1), float(num2)
+
+def addition():
+    num1, num2 = get_two_numbers()
+    result = num1 + num2
+    print(str(num1) + " + " + str(num2) + " = " + str(result))
+
+def subtraction():
+    num1, num2 = get_two_numbers()
+    result = num1 - num2
+    print(str(num1) + " - " + str(num2) + " = " + str(result))
+
+def menu():
+    print("1. Addition")
+    print("2. Subtraction")
+    return input("What is your selection? ")
+
+while True:
+    selection = menu()
+    if selection == "1":
+        addition()
+    elif selection == "2":
+        subtraction()
+    else:
+        # No entry, done calculating
+        break
+    input("Press enter to continue...")
+exit()
 import colors
 
 def get_two_numbers():

@@ -17,22 +17,23 @@ Each branch or loop is made up of many small pieces, which we want to describe.
 
 ### Blocks
 
-A block of code is a logical collection of code, separated from the rest of the
-program by some syntactic construct in the programming language. In the
-"c-based" languages (languages which got their syntax from C, including C++,
-Java, and Javascript), blocks are grouped withing '{' and '}'. In Python,
-Coffeescript, Ruby, and some others, blocks are grouped together by indenting
-lines of code at the same level. Within a block of code, each piece is executed
-in order, until it reaches a branch or a loop, in which case the program moves
-to executing that block.
-
-Blocks themselves can be broken down further, with slightly more precise
-semantics than speaking of lines of code as a whole.
+A **block** of code is a logical collection of code, separated from the rest
+of the program by some syntactic construct in the programming language. In
+the "c-based" languages (languages which got their syntax from C, including
+C++, Java, and Javascript), blocks are grouped withing '{' and '}'. In
+Python, Coffeescript, Ruby, and some others, blocks are grouped together by
+indenting lines of code at the same level. Within a block of code, each piece
+is executed in order. Each statement in the block happens one at a time,
+independant of other statments around it. The statement is made up of
+expressions, which are individual calculations on pieces of data. Like
+statements, expressions are evaluated (or run, or calculated) independantly of
+one another. The only way a computer takes a value from one expression or block
+or statment and uses it in another is by storing the results in a variable.
 
 #### Expression
 
-An expression takes some data and perforom an operation. Adding two numbers is
-an expression. Checking if one number is greater than another number is an
+An **expression** takes some data and performs an operation. Adding two numbers
+is an expression. Checking if one number is greater than another number is an
 expression. Calculating one of the roots of the quadratic equation is an
 expression, but storing that result in a variable is not - that is a statement.
 
@@ -99,22 +100,76 @@ time.
 
 #### Statement
 
-A statement is the smallest executable chunk of code. In C, making a statement
-is as easy as adding a `;` to the end of an expression, delineating where one
-expression ends and the next begins. Usually, statements group blocks of code.
-An expression will run to check a condition of the program, and some number of
-blocks of code are executed in some way. The complete collection of the
-expression and the blocks are the statement. Of course, the blocks in the
-statement are statements themselves. Branching and looping, discussed next, are
-the best ways to see how statements combine to form a program.
+A **statement** is the smallest executable chunk of code. In C, making a
+statement is as easy as adding a `;` to the end of an expression, delineating
+where one expression ends and the next begins. Usually, statements group
+blocks of code. An expression will run to check a condition of the program,
+and some number of blocks of code are executed in some way. The complete
+collection of the expression and the blocks are the statement. Of course, the
+blocks in the statement are statements themselves. Branching and looping,
+discussed next, are the best ways to see how statements combine to form a
+program.
+
+Statements are executed one at a time, in sequence, without any direct effect on
+other statements. Indirectly, they can only work with one another via storing
+and reading values in and from variables. As a statement executes, the program
+goes through each expression in the statement in their order of operations.
+Usually, that means following parentheses fron inside to outside, and then going
+from the left side to the right. The big exception to this is with assignments,
+which always are the left-most side before the `=`, and then the rest of the
+statement.
+
+Let's look at this next line of code, which is valid in all the languages we
+use, and see how it goes one step at a time.
+
+```py
+total_cost = (item_count * cost_per_item) + shipping_cost
+```
+
+Reading from the left to the right,  we see the statement starts with
+`total_cost =`. From this, we know that whatever follows the `=` will calculate
+some value, and then we will store that value in the variable named
+`total_cost`. After the `=`, we see our first parenthisis, so we find the ending
+paren and do the calculation within them, `item_count * cost_per_item`. By
+multiplying these together, we get some intermediate value. That sticks around
+for a moment longer while we look at the last piece of the expression,
+`+ shipping_cost`. We take that value we had from the multiplication, add it to
+the shipping cost, and then and only then take this final single value and store
+it in `total_cost`. All that in a single expression, separate from anything else
+in the program!
+
+Let's walk through it again with real values.
+
+```
+item_count = 4
+cost_per_item = 4.25
+shipping_cost = 2.99
+total_cost = (item_count * cost_per_item) + shipping_cost
+```
+
+When this executes, it goes inside the parens to outside, left to right, and
+finally assigns the value to the variable. So inside the parns, we have
+`item_count * cost_per_item`. The program looks up `item_count` first, and finds
+`4`, then looks up `cost_per_item`, and finds `4.25`. At this point, it has
+`4 * 4.25`. Only after it's gotten the values from those variables does it do
+the multiplication! So it does, and we have `17`. Now, it keeps this value in
+mind (just a value, no variable to keep it around), and does the next operation,
+`+ shipping_cost`. It looks up shipping cost, `2.99`, and puts it together with
+the value we just got, and have `17 + 2.99`. This works out to `19.99`, and now
+we have the final value of the expression. We take it and store it in
+`total_cost`. Now, any time after this line, if the program uses `total_cost`,
+it will look it up and find `19.99` to use however it needs.
 
 ### Branching
 
-With the concept of a block of code being a logical chunk of code, combining
+With the concept of a **block** of code being a logical chunk of code, combining
 them in interesting ways gives programs their power. The most common piece of
 control flow is the logical branch. A logical branch examines some condition of
 the program's data, and runs one or another block of code depending on whether
 that condition is true.
+
+A block is just a set of statements which execute in order. Typically, later
+statements in the 
 
 #### If-Then-Else
 

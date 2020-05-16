@@ -193,143 +193,31 @@ while input("Price another rug (y/N)? ") == "Y":
     choose_rug()
 ```
 
-I don't know about you, but I really like how easy it is to read and understand
-what this block of code is doing compared to the big long chunks we had in
-chaper 1!
+What all have we done here? We took a program that had a single flow of data,
+with variables all of ther place, and found small isolated chunks of work. We
+took those isolted, self-contained bits of work and gave them names by creating
+functions. We had to create all the functions in our program before the bottom,
+when we actually call them. Overall we traded some additional global complexity
+for less local complexity.
 
-On your own, try to add the circle calculations using the same set up we have here.
+> **Like a recipe** If we were writing a cookbook, we have a lot of different
+ways to write recipes. We could cram all the steps together, and we could be
+very explicit about each one. "Take the onions. Remove the skins. Cut the unions
+into thin slices. Turn on the oven to medium heat. Put a sauce pan on the oven.
+Heat oil & butter in the pan. When the oil and butter are hot, add the onions.
+Occaisionally stir the onions for 10 minutes for softened and translucent. For
+caramalized onions, add sugar at 10 minutes and continue stiring occaisionally
+for another 35 minutes."
 
-## HiLo Revisited
+> If this were a recipe for a steak dinner, that's a lot of steps that aren't
+really related to the steak itself! And are we going to repeat those steps every
+other dish that calls for softened or caramlized onions? I would hope not.
+Instead we make a new recipe, "Caramilized Onions", and whenever another dish
+calls for them we just say "2 cups caramilized onions, see page such and such."
+That's exactly what we're doing with the functions here! Finding self-contained
+pieces that can be used repeatedly, rather than repeating ourselves every time
+over and over again.
 
-# Functions
-
-One of the most critical and fundamental concepts in computer programming is
-Abstraction. You may have noticed your code getting a bit difficult to manage
-towards the end of the HiLo program, especially if you added a lot of
-functionality. Any large system becomes complex (almost by definition), and
-managing that complexity is a huge factor in what computer programmers do on a
-daily basis. One of the most useful ways to manage that complexity is the
-concept of a function.
-
-In its simplest form, a function is a way to group a related block of code
-together, so that it only needs to be written once and can then be used many
-times over. In the HiLo program, it would make sense to break each of the
-messages into their own functions. In Python, this would look something like:
-
-```python
-import random
-
-def title():
-    print("HiLo")
-    print()
-
-def instructions():
-    print("This is the game of HiLo.")
-    print()
-    print("You will have 6 tries to guess the amount of money in the")
-    print("HiLo jackpot, which is between 1 and 100 dollars. If you")
-    print("guess the amount, you win $10 for every guess you don't take!")
-    print("Then you get another chance to win more money. However,")
-    print("if you do not guess the amount, the game ends!")
-    print()
-
-def get_guess():
-    guess = input("Your guess: ")
-    return int(guess)
-
-def check_guess(guess, number):
-    if guess > number:
-        print("Too Hi!")
-        return False
-    elif guess < number:
-        print("Too Lo!")
-        return False
-    else:
-        print("You win!")
-        return True
-
-def calc_winnings(guesses):
-    winnings = (6 - guesses) * 10
-    print("You won " + str(winnings) + " dollars!")
-    return winnings
-
-def play_round():
-    guesses = 0
-    number = random.randint(1, 100)
-
-    while guesses < 6:
-        guess = get_guess()
-        if check_guess(guess, number):
-            return calc_winnings(guesses)
-        guesses += 1
-
-    print("You took too many guesses!")
-    return 0 # They lost!
-
-def play_again():
-    again = input("Play again? (y/n) ")
-    return again == "y"
-
-def finished(winnings):
-    print("Thank you for playing! Your total winnings were " + str(winnings) + " dollars!")
-
-def game():
-    title()
-    instructions()
-    winnings = play_round()
-    if winnings == 0:
-        print("Tough luck! Try again later!")
-        return
-    while play_again():
-        new_winnings = play_round()
-        if new_winnings == 0:
-            break # Exit the round playing loop
-        else:
-            winnings += new_winnings
-    finished(winnings)
-
-game()
-```
-
-You can see how each section gets broken out into its own small piece, which
-can be written and understood in isolation, rather than having to work on the
-entire program at once. All the text to print out the title and instructions
-banner have been isolated into their own sections. After that, the program
-defines several functions for each isolated part of the game. The `get_guess`
-function asks for a player's gues, and then returns it as an integer. Check
-guess takes a target number and a guessed number, compares them, prints the
-apropriate message, and returns `True` if the user guessed correctly, and
-`False` if they did not. That value is used in `play_round`, which generates
-a random number, and asks the user for a guess until they run out of guesses.
-If it has returned true, the game will use `calc_winnings` to figure out how
-much that game was worth. `game` coordinates all the pieces. First it prints
-the banner lines. Then, it plays the first round. The game continues to play
-rounds until the user, during `play_again`, asks not to. The game adds up all
-the winnings after each round, and at the very end, prints the total the user
-has won.
-
-Pehw!
-Take some time to practice with functions. Take your HiLo program with the
-additional features you added, and try breaking it up into functions similar
-to how we have here!
-
-## Exercises
-
-Revisit the [exercises in chapter
-1](../../01_basic_types_and_control_flow/types/python.md). Instead of writing
-them out by hand, write a function (or functions) for each one, and use them
-to calculate the answers to the following problems. To get you started,
-here's a function to calculate the cost of a square rug:
-
-```python
-def square_rug(width, fringe):
-    area = width * width
-    perimeter = fringe * 4
-    cost = area * 5 + fringe * 1.5
-    return cost
-```
-
-(TODO add a bunch more example values for the exercises from ch 1 types)
-
-When you're feeling more comfortable writing and calling functions, head on to
-[date and time functions](./01_dates/README.md)
+Functions are a really important concept in programming and software engineering
+so let's take a look at [a calculator program](./02_calculator/01_python.md) to
+get more experience with them.
