@@ -49,6 +49,40 @@ Variables let programmers use concrete concepts to refer to the more abstract
 realm of the mathematical values in the computer. Variables can generally be
 any word that isn't a keyword in a programming language.
 
+Variables are not the values themselves. Over the course of a program, some
+variables will be assigned to many times. In all the programming languages we
+use, this is done with the single equals character, `=`. The `=` operator always
+has two sides - the left hand side will be a single varible name, like `age` or
+`area`. The right hand side is some value, or some calculation. `age = 32`
+stores the number `32` in the variable named `age`, so if later on I wanted to
+know the age of something, I can refer to `age` instead of needing to know that
+it was `32` every time. If I want to calculate something, I also store that in a
+variable. `area = length * width` is going to use two other variables that we've
+set already, `length` and `width`, take the values that are stored in those
+variables, multiply them together, and store the result of that in the variable
+`area`.
+
+Using variables like this to track data gives us two really useful benefits.
+Most importantly, this allows data to change over time. We can use variables to
+track what the data's value is, and then us it in other calculations, without
+alwyas having to know its specific value each time. When we deal with user input
+we will see how variables let us write a program that executes and generates a
+value that no programmer ever coded!
+
+From an engineering perspective, variables let us attach names to concepts in
+our programs. This lets us write programs that read almost as prose. With just
+a sprinkle of notation (and a rigid syntax), the names will give our variables
+let us be expressive in our intent for what the program does.
+
+> Variables in programming are not variables in algebra. You might be having a
+flashback to high school algebra, maybe remembering something like
+`3x^2 + 5x + 7 = 0`, and being asked to "solve for x". In mathematics like this,
+a variable is an unknown, a part of the expression that we need to isolate and
+handle separately. While the word in programming comes from the same place,
+it's almost the opposite - in programming, a variable *always* has a value and
+we always know what it is. It's more like keeping track of the amount of
+ingredients in a recipe than it is soliving a mathematical equation.
+
 ### Operators
 
 Operators are the built-in things that can happen to data. Common operators

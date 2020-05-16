@@ -41,3 +41,11 @@ BRIGHT_WHITE_BG = '\033[107m'
 
 def at(y, x):
     return '\033['+ str(y) +';'+ str(x) +'f'
+
+def box(row, col, width, height):
+    width = width - 2
+    end = row + height - 1
+    print(at(row, col) + "\u2554" + "\u2550" * width + "\u2557")
+    for i in range(row+1, end):
+        print(at(i, col) + "\u2551" + " " * width + "\u2551")
+    print(at(end, col) + "\u255A" + "\u2550" * width + "\u255D")
