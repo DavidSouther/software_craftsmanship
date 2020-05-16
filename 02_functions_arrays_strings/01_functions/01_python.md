@@ -16,7 +16,7 @@ print(square_rug_cost(5, False))
 print(square_rug_cost(5, True))
 ```
 
-Type this program as `box_functions.py` and run it. You should see it print out
+Type this program as `rug_functions.py` and run it. You should see it print out
 the two rug costs - 125 and 155, respectively.
 
 Let's take a closer look at the anatomy of this function. Recall from the
