@@ -1,27 +1,58 @@
-from pyqb import COLORS, CLS, NORMAL, BOLD, at, box
-from time import sleep
+import colors
+
+def get_two_numbers():
+    print(colors.CLEAR)
+    colors.box(5, 5, 28, 3)
+    num1 = input(colors.at(6, 6) + "First number? ")
+    print(colors.at(6, 6) + " " * 26)
+    num2 = input(colors.at(6, 6) + "Second number? ")
+    print(colors.at(6, 6) + " " * 26)
+    return float(num1), float(num2)
 
 def addition():
-    print CLS
-    box(5, 5, 28, 3)
-    num1 = input(at(6, 6) + "First number? ")
-    print at(6, 6) + " " * 26
-    num2 = input(at(6, 6) + "Second number? ")
-    print at(6, 6) + " " * 26
-    print at(6, 6), num1, '+', num2, '=', num1 + num2
-    raw_input()
+    num1, num2 = get_two_numbers()
+    result = num1 + num2
+    print(colors.at(6, 6), num1, '+', num2, '=', result)
 
+def subtraction():
+    num1, num2 = get_two_numbers()
+    result = num1 - num2
+    print(colors.at(6, 6), num1, '-', num2, '=', result)
+
+def multiplication():
+    num1, num2 = get_two_numbers()
+    result = num1 * num2
+    print(colors.at(6, 6), num1, '*', num2, '=', result)
+
+def division():
+    num1, num2 = get_two_numbers()
+    result = num1 / num2
+    print(colors.at(6, 6), num1, '/', num2, '=', result)
 
 def menu():
-    print CLS
-    box(4, 4, 30, 5)
-    print at(5, 5), "1. Addition"
-    print at(6, 5), "2. Subtraction"
-    return input(at(7, 5) + "What is your selection? ")
+    print(colors.CLEAR)
+    colors.box(4, 4, 30, 7)
+    print(colors.at(5, 5), "1. Addition")
+    print(colors.at(6, 5), "2. Subtraction")
+    print(colors.at(7, 5), "3. Multiplication")
+    print(colors.at(8, 5), "4. Division")
+    return input(colors.at(9, 5) + "What is your selection? ")
 
-while True:
-    selection = menu()
-    if selection == 1:
-        addition()
-    elif selection == 2:
-        subtraction()
+def calculator():
+    while True:
+        selection = menu()
+        if selection == "1":
+            addition()
+        elif selection == "2":
+            subtraction()
+        elif selection == "3":
+            multiplication()
+        elif selection == "4":
+            division()
+        else:
+            # No entry, end the program
+            break
+        input(colors.at(8, 5) + "Press enter to continue...")
+
+calculator()
+print(colors.CLEAR)
