@@ -24,7 +24,7 @@
 * Refactor rugs using inheritance
 * Abstraction, Polymorphism, Inheritance, Encapsulation
 
-## Lander Game
+## Mastermind Game
 
 * Class Design - SOLID
 * Single Responsibility
