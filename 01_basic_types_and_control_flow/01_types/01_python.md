@@ -139,9 +139,8 @@ circumference_2 = pi * n
 print(circumference_1, circumference_2)
 
 average = (i + j + k) / 3
-average_2 = (i + j + k) / 3.0
 
-print(average, average_2)
+print(average)
 
 a = 3
 b = 8.6
@@ -169,7 +168,7 @@ h e l l o
 6 8
 0.5 1.27 3.141
 3.98907 25.128
-3 3.33333333333
+3.33333333333
 -0.272395015515 -2.59427165115
 ```
 
@@ -185,18 +184,14 @@ on the right, or "right hand side", is `pi * y` and `pi * n`. `pi` was assigned
 `n` was assigned the value `3 + 5`, or `8`, which when multiplied by `3.141` is
 `25.128`, the value stored in `circumference_2`.
 
-Let's take a look at those two average lines. In both, we add `i`, `j`, and `k`.
-From above, `i = 2`, `j = 3`, and `k = 5`. When those are all added together,
-they equal `10`. The parenthesese are there to tell Python to do the addition
-first, before the division. Here is where the two lines diverge. So far, `i`,
-`j`, and `k` are all integers. `3` itself is also an integer. When we do
-arithmetic with integers, we can only ever get an integer. So when we divide the
-integer 10 by the integer 3, we get the closes integer - 3! In the second line,
-we divide the integer 10 by the float 3.0. As soon as floats are involved, the
-value of the arithmetic is ALWAYS a float! So we get the much more accurate
-`3.33333333333`, which is not exactly correct but as precise as the computer can
-calculate. (See the appendix on computer arithmetic if you want the gory, mathy
-details!)
+Let's take a look at the average line. We add `i`, `j`, and `k`. From above,
+`i = 2`, `j = 3`, and `k = 5`. When those are all added together, they equal
+`10`. The parenthesese are there to tell Python to do the addition first,
+before the division. We then divide the integer 10 by 3, and in python 3 the
+value of the arithmetic is ALWAYS a float! So we get the extremely accurate
+`3.33333333333`, which is not exactly correct but as precise as the computer
+can calculate. (See the appendix on computer arithmetic if you want the gory,
+mathy details!)
 
 We've covered addition, multiplication, and division. Subtraction should be easy
 to figure out. The next section does some math with a square root. Specifically,
