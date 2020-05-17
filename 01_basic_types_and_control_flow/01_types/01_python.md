@@ -88,8 +88,8 @@ k = 5
 
 print(i, j, k)
 
-m = 2 * 3
-n = 3 + 5
+m = i * j
+n = j + k
 
 print(m, n)
 

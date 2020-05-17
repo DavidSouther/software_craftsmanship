@@ -44,23 +44,29 @@ workbooks as needed.
 
 ### Variables
 
-In a program file, variables are words used to refer to some piece of data.
+In a program file, **variables** are words used to refer to some piece of data.
 Variables let programmers use concrete concepts to refer to the more abstract
 realm of the mathematical values in the computer. Variables can generally be
 any word that isn't a keyword in a programming language.
 
-Variables are not the values themselves. Over the course of a program, some
-variables will be assigned to many times. In all the programming languages we
-use, this is done with the single equals character, `=`. The `=` operator always
-has two sides - the left hand side will be a single varible name, like `age` or
-`area`. The right hand side is some value, or some calculation. `age = 32`
-stores the number `32` in the variable named `age`, so if later on I wanted to
-know the age of something, I can refer to `age` instead of needing to know that
-it was `32` every time. If I want to calculate something, I also store that in a
-variable. `area = length * width` is going to use two other variables that we've
-set already, `length` and `width`, take the values that are stored in those
-variables, multiply them together, and store the result of that in the variable
-`area`.
+Variables have two parts - an **identifier** which gives it its name, and a
+**value** which is the data that it curently stores. An identifier is a way to
+refer to a certain bucket holding a piece of data, but it is not the data
+itself. This distinction is really important when we start looking at data
+changing over time.
+
+Over the course of a program, some identifiers will be assigned to many
+times. In all the programming languages we use, this is done with the single
+equals character, `=`. The `=` operator always has two sides - the left hand
+side will be a single varible name, like `age` or `area`. The right hand side
+is some value, or some calculation. `age = 32` stores the number `32` in the
+variable named `age`, so if later on I wanted to know the age of something, I
+can refer to `age` instead of needing to know that it was `32` every time. If
+I want to calculate something, I also store that in a variable. `area =
+length * width` refers to two other identifiers, which are the readable part
+of two other variables that we've set already, `length` and `width`. The
+assignment takes the values that are stored in those variables, multiplies
+them together, and stores the result of that in the variable `area`.
 
 Using variables like this to track data gives us two really useful benefits.
 Most importantly, this allows data to change over time. We can use variables to
@@ -70,9 +76,10 @@ we will see how variables let us write a program that executes and generates a
 value that no programmer ever coded!
 
 From an engineering perspective, variables let us attach names to concepts in
-our programs. This lets us write programs that read almost as prose. With just
-a sprinkle of notation (and a rigid syntax), the names will give our variables
-let us be expressive in our intent for what the program does.
+our programs. Using identifiers this way lets us write programs that read
+almost as prose. With just a sprinkle of notation (and a rigid syntax), the
+names we give our variables let us be expressive in our intent for what the
+program does.
 
 > Variables in programming are not variables in algebra. You might be having a
 flashback to high school algebra, maybe remembering something like
@@ -86,18 +93,18 @@ ingredients in a recipe than it is soliving a mathematical equation.
 ### Operators
 
 Operators are the built-in things that can happen to data. Common operators
-are things from elementary arithmetic  -  add `+`, subtract `-`,
-multiply `*`, and divide `/`. Other operators let the program compare
-two pieces of data  -  equals `==`, less-than `<`, greater-than-
-or- equal-to `>=`. Notice there are some funny things for the comparison
-operators. First, equals is two characters, `==`, not the single `=`
-used in elementary school. This is because a single `=` sign is an
-operator used to assign values to a variable. Multiplication is a star, {\tt
-*}. While `x` was used in elementary school, we use `*` for our
-programs because `x` could be a variable, and we need to be unambiguous in
-what the program means. There is no `less-than-equal-to` on a common keyboard,
-so programs use the two character combinations of `<=` and `>=` to do
-comparisons. There are other operators that will be covered as they are needed.
+are things from elementary arithmetic - add `+`, subtract `-`, multiply `*`,
+and divide `/`. Other operators let the program compare two pieces of data -
+equals `==`, less-than `<`, greater-than- or- equal-to `>=`. Notice there are
+some funny things for the comparison operators. First, equals is two
+characters, `==`, not the single `=` used in elementary school. This is
+because a single `=` sign is an operator used to assign values to a variable
+using its identifier. Multiplication is a star, `*`. While `x` was used in
+elementary school, we use `*` for our programs because `x` could be a
+variable, and we need to be unambiguous in what the program means. There is
+no `less-than-equal-to` on a common keyboard, so programs use the two
+character combinations of `<=` and `>=` to do comparisons. There are other
+operators that will be covered as they are needed.
 
 ## Basic Types
 

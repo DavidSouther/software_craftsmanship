@@ -194,7 +194,7 @@ while input("Price another rug (y/N)? ") == "Y":
 ```
 
 What all have we done here? We took a program that had a single flow of data,
-with variables all of ther place, and found small isolated chunks of work. We
+with variables all over the place, and found small isolated chunks of work. We
 took those isolted, self-contained bits of work and gave them names by creating
 functions. We had to create all the functions in our program before the bottom,
 when we actually call them. Overall we traded some additional global complexity
@@ -219,5 +219,5 @@ pieces that can be used repeatedly, rather than repeating ourselves every time
 over and over again.
 
 Functions are a really important concept in programming and software engineering
-so let's take a look at [a calculator program](./02_calculator/01_python.md) to
-get more experience with them.
+so let's take a look at
+[a closer look at how they execute](./02_calculator/README.md).
