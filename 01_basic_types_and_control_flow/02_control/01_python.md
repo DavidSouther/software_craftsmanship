@@ -321,6 +321,5 @@ calculations on slightly different numbers - `for` and `while`. Other times, we
 need to do different things based on some condition. In programming, these are
 called iteration and banching, respectively.
 
-Let's use these to write our first big program - a video game called HiLo!
-
-# [HiLo](../03_hilo/README.md)
+Before we move on to writing our first big program, we're going to step back to
+the theory and look at [tracing program execution](./TRACING.md).
