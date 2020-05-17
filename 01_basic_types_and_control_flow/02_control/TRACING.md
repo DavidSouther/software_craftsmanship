@@ -326,11 +326,28 @@ sum | ~0 1 3 6 10~ 15    2
  i  | ~1 2 3 4~ 5        3
                          4
                          5
+```
+
+And we're at the end of the loop. We come back to the top, `range` already gave
+us 5, which is the last thing we used in the loop. `range` has nothing left, so
+we exit the loop body. There's one more line - `print(sum)`, and looking at the
+final value for `sum` we get 15!
+
+
+```text
+ id | value           _output_
+----|------              1
+sum | ~0 1 3 6 10~ 15    2
+ i  | ~1 2 3 4~ 5        3
+                         4
+                         5
                          15
 ```
 
-That's right, after we exit the loop, we have `print(sum)`, and looking at the
-final value for `sum` we get 15!
+So we looped 5 times, with an increasing value of `i` for each. We printed out
+that `i` each time to see where we were at in the loop, and kept adding it to
+sum. After the loop was finished, we look back at `sum` one last time, and
+output its value, `15`. Then, the program is done and ends!
 
 ## Tracing input
 
