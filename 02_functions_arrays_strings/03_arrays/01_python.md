@@ -68,8 +68,8 @@ The body of the loop is one line - `total += val`. We saw `+=` in the rugs and
 it's just a short way to say `total = total + val`.
 
 The body of the loop will execute one time for every value in `my_array`. Each
-time before the body executes, python will assign the next value in `my_rray` to
-the variable `val`.
+time before the body executes, python will assign the next value in `my_array`
+to the variable `val`.
 
 After the loop body (because it's back to the first level of indendation), we
 return the total. And that's it for the function!
@@ -157,26 +157,26 @@ data set, I've create a small file you can download and save next to your
 
 Once this file is saved, go back to `arrays.py` and add
 
-```
+```py
 from data import PREGNANCIES
 
 # Set up the lists to calculate sums on
-preg_length_first_babies = []
-preg_length_second_babies = []
+preg_weeks_first_babies = []
+preg_weeks_second_babies = []
 
-for [order, length] in PREGNANCIES:
+for [order, weeks] in PREGNANCIES:
     if order > 2:
         # Only interested in second babies compared to first
         continue
     elif order == 2:
-        preg_length_second_babies.append(length)
+        preg_weeks_second_babies.append(length)
     elif order == 1:
-        preg_length_first_babies.append(length)
+        preg_weeks_first_babies.append(length)
 
-avg_first_babies = avg(preg_length_first_babies)
-avg_second_babies = avg(preg_length_second_babies)
-std_dev_first_babies = std_dev(preg_length_first_babies)
-std_dev_second_babies = std_dev(preg_length_second_babies)
+avg_first_babies = avg(preg_weeks_first_babies)
+avg_second_babies = avg(preg_weeks_second_babies)
+std_dev_first_babies = std_dev(preg_weeks_first_babies)
+std_dev_second_babies = std_dev(preg_weeks_second_babies)
 
 print(f"First babies are born at an average of {avg_first_babies:.2f} weeks.")
 print(f"First babies have a standard deviation of {std_dev_first_babies:.2f} weeks")
@@ -243,4 +243,22 @@ and pass our two arrays into our functions we had defined for `avg` and
 
 ## Exercises
 
-TODO
+*   Using the `sum` function above, trace the execution of these programs:
+    *   `print(sum([15, 15, 15, 14, 16]))`
+    *   `print(sum([2, 7, 14, 22, 30]))`
+*   Using the `avg` function above, trace the execution of these programs:
+    *   `print(avg([15, 15, 15, 14, 16]))`
+    *   `print(avg([2, 7, 14, 22, 30]))`
+*   Using the `std_dev` function above, trace the execution of these programs:
+    *   `print(([15, 15, 15, 14, 16]))`
+    *   `print(std_dev([2, 7, 14, 22, 30]))`
+*   In statistics, population *variance* is a part of the standard deviation.
+    Specifically, it's the part of calculating a standard deviation that sums
+    the squares of differences and divides by N, before taking the square root.
+    In other words, the standard deviation is the square root of the variance of
+    the array of data. Rewrite your `std_dev` function to perform the first
+    part of the calculation, the `variance`, in its own function, and then use
+    that function to calculate the standard deviation.
+
+When you've completed the exercises, we can
+[wrap up this chapter](../wrap_up.md).

@@ -13,11 +13,11 @@ def square_rug_cost(size, fringe):
     return cost
 
 print(square_rug_cost(5, False))
-print(square_rug_cost(5, True))
+print(square_rug_cost(2.5, True))
 ```
 
 Type this program as `rug_functions.py` and run it. You should see it print out
-the two rug costs - 125 and 155, respectively.
+the two rug costs - 125 and 46.25, respectively.
 
 Let's take a closer look at the anatomy of this function. Recall from the
 textbook portion that a function needs four things: A name, its arguments 
@@ -47,6 +47,12 @@ spaces for indentation, because that's VSCode's default, and usually it'll
 handle it for us. The only rule is to be consistent with the amount of
 indentation you use in your program.
 
+At the end of the code, we **call** the function twice, once with the values
+`5` and `False` for its arguments, and then a second time with the values `2.5`
+and `True`. We print out both values right away. This code is just here to
+test that the function worked, and we'll replace it with something more
+substantial.
+
 ## One function, many calculations
 
 Now that we have a function that prints a box, what else can we get? Delete the
@@ -67,14 +73,21 @@ print("Goodbye")
 
 We can price (square) rugs over and over!
 
-So now our function just loops as long as the user gives us a size, asks if
-they want fringe with that, and prints the rug price. That's good, but it
-actually took more lines of code than if we'd just written it all as one
-block... We'll come back to that. For now, bear with me two more steps.
-First, we will turn that input into its own function. Then, we're going to do
-make two similar functions for a rectangular rug. While that will look like
-more code than we needed, it will pay off when we add circles and start
-talking about abstraction.
+So now our program just loops as long as the user gives us a size, asks if
+they want fringe with that, and then calculates and prints the rug price.
+Instead of providing literal values for the function call, it uses two
+variables, `size` and `has_fringe`. `has_fringe` is `True` when the user
+provided `"y"` in their input, and `False` if the user provided any other
+input. When we call `square_rug_cost`, we look up the values for those
+variables and provide them to the function. We do *not* provide the variables
+themselves! Only the values go to the call, and the variables are unrelated!
+
+That's good, but it actually took more lines of code than if we'd just
+written it all as one block... We'll come back to that. For now, bear with me
+two more steps. First, we will turn that input into its own function. Then,
+we're going to do make two similar functions for a rectangular rug. While
+that will look like more code than we needed, it will pay off when we add
+circles and start talking about abstraction.
 
 But wait a minute, why do we have `cost` in two different places? Those are
 actually two completely separate variables, in what we call different scopes.
@@ -227,4 +240,4 @@ over and over again.
 
 Functions are a really important concept in programming and software engineering
 so let's take a look at
-[a closer look at how they execute](./02_calculator/README.md).
+[a closer look at how they execute](./function_tracing.md).

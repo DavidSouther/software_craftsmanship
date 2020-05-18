@@ -64,16 +64,27 @@ loop!
 
 ### Calling Functions
 
-Once you have a function, you need to put them together in interesting ways.
-This works exactly the same as with operators in chapter 1. There, we talked
-about expressions, like adding 2 and 3 to get 5. While we did that with the
-`+` operator, we could also make a function named add, which takes two
-arguments, uses the + operator in its body, and then returns the result. You
-can also use functions in control flow. Perhaps you want to perform a more
-complex calculation when deciding which branch of an if then to take, or you
-want to repeat a calculation several times with differing data in a for loop.
+Once we have defined a function, we need to do something with it. On its own, it
+just sits there taking up programming space. To execute a function, from
+somewhere else in the code we will **call** the function. Calling a function,
+sometimes referred to as *executing* or *invoking* it, requires us to specify
+the function name and then provide a list of arguments that will be the values
+the function uses.
 
-TODO expand
+We have now used the phrase "list of arguments" to mean two differnt things.
+In the last section, the list of arguments was what we used to name all the
+variables which the function needed to have filled in from whoever asked it to
+do work. Here, we use the same phrase to describe the values the calling
+code will hand to the function for it to work on.
+
+This process is kind of the opposite of asking for user input. When we asked for
+user input, the code waited for the user to provide data, then did calculations
+on it, and then provided the user output. For a function, we hand it all the
+data it will need right away, as input via its arguments. It then executes, and
+when it finishes it hands us data back as the function's output via its return
+statement. Be careful, though, because while this function input and output is
+analogous to user input and output, they are still different things and we still
+use both in our programs!
 
 That was a lot of theory, so now might be a good time to head to the workbook
 and do the first section in this chaper, getting practice with this intro to
