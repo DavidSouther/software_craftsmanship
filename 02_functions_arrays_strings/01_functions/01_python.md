@@ -69,10 +69,10 @@ We can price (square) rugs over and over!
 
 So now our function just loops as long as the user gives us a size, asks if
 they want fringe with that, and prints the rug price. That's good, but it
-actually took more lines of code than if we'd just written it all inline...
-We'll come back to that. For now, bear with me two more steps. First, we
-will turn that input into its own function. Then, we're going to do make
-two similar functions for a rectangular rug. While that will look like
+actually took more lines of code than if we'd just written it all as one
+block... We'll come back to that. For now, bear with me two more steps.
+First, we will turn that input into its own function. Then, we're going to do
+make two similar functions for a rectangular rug. While that will look like
 more code than we needed, it will pay off when we add circles and start
 talking about abstraction.
 
@@ -90,6 +90,10 @@ Aside from files, only functions with `def` define new scopes. The body of a
 
 Let's take that while loop, and break it into a function and a loop. Delete
 everything you typed in the last section, and type this instead.
+
+> If you've gone through appendix 2 on source control, this would be a good
+time to make a commit, to keep that version of the file which does the loop &
+calculation in the same block.
 
 ```python
 def compute_square_rug():
