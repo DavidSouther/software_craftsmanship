@@ -75,8 +75,8 @@ After the loop body (because it's back to the first level of indendation), we
 return the total. And that's it for the function!
 
 Back at the file level, we run the function using the data we got above, and
-the print it using a format string. This string uses `{var:.2f}`, which takes
-`var`, treats it as a `f`load, and provides 2 digits of precision.
+the print it using a format string. This string uses `{data_sum:.2f}`, which
+takes `data_sum`, treats it as a `f`loat, and provides 2 digits of precision.
 
 Let's keep going with a function to calculate the average. The average, or mean,
 of a set of numbers is found by adding all of them up and dividing by the total
