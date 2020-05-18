@@ -395,7 +395,7 @@ while number > 0:
 	elif number >= 5:
 		numeral = numeral + "V"
 		number = number - 5
-    elif (number == 4):
+  elif (number == 4):
 		numeral = numeral + "IV"
 		number = 0
 	else:
