@@ -389,18 +389,18 @@ number = int(input("Decimal integer: "))
 
 numeral = ""
 while number > 0:
-	if number >= 10:
-		numeral = numeral + "X"
-		number = number - 10
-	elif number >= 5:
-		numeral = numeral + "V"
-		number = number - 5
-  elif (number == 4):
-		numeral = numeral + "IV"
-		number = 0
-	else:
-		numeral = numeral + "I"
-		number = number - 1
+    if number >= 10:
+       numeral = numeral + "X"
+        number = number - 10
+    elif number >= 5:
+        numeral = numeral + "V"
+        number = number - 5
+    elif (number == 4):
+        numeral = numeral + "IV"
+        number = 0
+    else:
+        numeral = numeral + "I"
+        number = number - 1
 
 print(numeral)
 ```
