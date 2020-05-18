@@ -55,16 +55,21 @@ print(f"Data sums to {data_sum:.2f}")
 Data sums to 57.00
  ```
 
-Here, we define a new function, `sum`. It takes one argument, `my_array`, which
-will be the array of data to operate on. Sum, or summation, is just a really
-fancy way of saying "Add up all the numbers". We do that by starting the
-variable `total` with the value 0, and then we use a `for ... in` loop to get
-every item. With a for loop, we name the variable in the second area, and then
-provide the value to loop over as the end (before the `:`). So this `for ... in`
-the array to loop over is `my_array` and the variable for each time is `val`.
+Here, we define a new function, `sum`. It takes one argument, `my_array`,
+which will be the array of data to operate on. Sum, or summation, is just a
+really fancy way of saying "Add up all the numbers". We do that by starting
+the variable `total` with the value 0, and then we use a `for ... in ...`
+loop to get every item. With a for loop, we name the variable in the first
+area, and then provide the value to loop over as the second (before the `:`).
+So this `for ... in ...` the array to loop over is `my_array` and the
+variable for each time is `val`.
 
-The body of the loop is nearly trivial - `total += val`. We saw `+=` in the rugs
-and it's just a short way to say `total = total + val`.
+The body of the loop is one line - `total += val`. We saw `+=` in the rugs and
+it's just a short way to say `total = total + val`.
+
+The body of the loop will execute one time for every value in `my_array`. Each
+time before the body executes, python will assign the next value in `my_rray` to
+the variable `val`.
 
 After the loop body (because it's back to the first level of indendation), we
 return the total. And that's it!
