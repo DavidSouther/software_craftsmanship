@@ -50,23 +50,24 @@ realm of the mathematical values in the computer. Variables can generally be
 any word that isn't a keyword in a programming language.
 
 Variables have two parts - an **identifier** which gives it its name, and a
-**value** which is the data that it curently stores. An identifier is a way to
-refer to a certain bucket holding a piece of data, but it is not the data
+**value** which is the data that it _currently_ stores. An identifier is a way
+to refer to a certain bucket holding a piece of data, but it is not the data
 itself. This distinction is really important when we start looking at data
 changing over time.
 
-Over the course of a program, some identifiers will be assigned to many
-times. In all the programming languages we use, this is done with the single
-equals character, `=`. The `=` operator always has two sides - the left hand
-side will be a single varible name, like `age` or `area`. The right hand side
+Over the course of a program, there are some identifiers which will assign
+different values to, and do those assignments many times. In all the
+programming languages we use, this is done with the single equals character,
+`=`. The `=` operator always has two sides - the left hand side will be the
+identifier (the variable's name), like `age` or `area`. The right hand side
 is some value, or some calculation. `age = 32` stores the number `32` in the
 variable named `age`, so if later on I wanted to know the age of something, I
 can refer to `age` instead of needing to know that it was `32` every time. If
 I want to calculate something, I also store that in a variable. `area =
-length * width` refers to two other identifiers, which are the readable part
-of two other variables that we've set already, `length` and `width`. The
-assignment takes the values that are stored in those variables, multiplies
-them together, and stores the result of that in the variable `area`.
+length * width` refers to two other identifiers, which are the names of two
+other variables that we've set already, `length` and `width`. The assignment
+takes the values that are stored in those variables, multiplies them
+together, and stores the result of that in the variable `area`.
 
 Using variables like this to track data gives us two really useful benefits.
 Most importantly, this allows data to change over time. We can use variables to

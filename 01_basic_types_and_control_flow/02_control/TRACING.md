@@ -395,7 +395,7 @@ while number > 0:
     elif number >= 5:
         numeral = numeral + "V"
         number = number - 5
-    elif (number == 4):
+    elif number == 4:
         numeral = numeral + "IV"
         number = 0
     else:
@@ -438,7 +438,8 @@ number |                     | Decimal to Roman Numeral
 ```
 
 And then, we'll decide what input we will give it, and record that in the
-`input` column. 
+`input` column.  This value comes from the user, and isn't part of the program.
+Therefore, we will choose `18` arbitrarily as what our users has put in.
 
 ```text
  ID    | Value         input | output
@@ -469,12 +470,14 @@ number |  18            18   | Decimal to Roman Numeral
 numeral|  ""                 | Decimal integer:
 ```
 
-In the `while number > 0:` decision, we look up `number`, see that it is `18`,
-and do the loop body. In the `if` block, we look up `number` (again), see that
-it is (still) `18`, and then do the body ignoring the other `if` branches. The
-body sets `numeral` (`""`) to `numeral + "X"` (which with string concatenation
-becomes just `"X"`), and sets `number` (`18`) to `number - 10` (`8`). When the
-body is done, we have this trace:
+In the `while number > 0:` decision, we look up `number`, see that it is
+`18`, and do the loop body. In the loop body, the first statement is the
+first if condition, `if number >= 10:`. In this `if` condition, we look up
+`number` (again), see that it is (still) `18`, and then do the first body
+ignoring the other `if` branches. The body sets `numeral` (`""`) to `numeral
++ "X"` (which with string concatenation becomes just `"X"`), and sets
+`number` (`18`) to `number - 10` (`8`). When the body is done, we have this
+trace:
 
 ```text
  ID    | Value         input | output
@@ -485,10 +488,11 @@ numeral|  ~""~ "X"           | Decimal integer:
 
 The `while number > 0:` sees `number` is `8`, which is larger than zero, and
 does the loop body. `if number >= 10:` is not true, though - `8` is less than
-`10`, so the `if` does not do its body! Instead, it goes to the next `elif` and
-checks that condition, `number >= 5`. It is, so at this point the `elif` block
-gets started. Notice, though, that the computer did execute each `if` check
-individually. It did *not* just jump straight to the block we wanted to.
+`10`, so this `if` condition does not apply and we do not execute its body!
+Instead, it goes to the next `elif` and checks that condition, `number >= 5`.
+It is, so at this point the `elif` block gets started. Notice, though, that
+the computer did execute each `if` check individually. It did *not* just jump
+straight to the block we wanted to.
 
 So it has found the `elif` condition true, executes that block, and goes back
 to the top.
@@ -505,8 +509,8 @@ if finds `3` to be less than `10`, so it doesn't do that body. The first elif
 then gets a shot, and finds that `3` is less than `5` so again doesn't
 execute it. The second `elif` is up, but `3` doesn't equal `4` so no dice.
 The only thing left is the `else`, which means that the `else` body has to
-execute. But it did still first try both of the other conditions! The
-computer executes in order, it does not pick the "best" option. It's up to
+execute. But it did still first try all of the other conditions! The
+computer executes in order, it does not pick the _best_ option. It's up to
 you to put the more specific cases first, and the more general cases later.
 
 At the end of this round we have this trace:
@@ -560,6 +564,10 @@ these pieces go. Find a layout for your page that works for you!
 ## Exercises
 
 You guessed it - trace your roman numerals project with several other inputs.
+
+## Wrap Up
+
+This is a pedagogical tool
 
 ## Project
 

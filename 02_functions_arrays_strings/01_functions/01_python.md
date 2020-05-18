@@ -20,15 +20,15 @@ Type this program as `rug_functions.py` and run it. You should see it print out
 the two rug costs - 125 and 155, respectively.
 
 Let's take a closer look at the anatomy of this function. Recall from the
-textbook portion that a function needs three things: A name, its parameters
-(also called arguments), and a body. In this square_rug_cost function, those
-look like this:
+textbook portion that a function needs four things: A name, its arguments 
+(also called parameters), the body, and a return statement. In this
+`square_rug_cost` function, those look like this:
 
 ![diagram of a python function](./digraph_of_a_python_function.png)
 
 In python, a function starts with the key word `def`. That's followed by its
-name, in this case `box`. It then has twu parameters, all inside the
-parenthises - `(size, fringe)`. Finally, in python, the function declaration
+name, in this case `square_rug_cost`. It then has two parameters, all inside the
+parentheses - `(size, fringe)`. Finally, in python, the function declaration
 (the name and argument list) ends with the `:` (colon). We've seen this in
 the chapter on control flow as well, and it indicates that we're about to
 group a bunch of code at the next indentation level.
@@ -50,15 +50,14 @@ indentation you use in your program.
 ## One function, many calculations
 
 Now that we have a function that prints a box, what else can we get? Delete the
-last two lines of file you started, and try this instead:
+last two lines of file you started (the print lines), and add this code:
 
 ```python
 size = input("Rug size (empty to quit): ")
 while size != "":
-    size = float(size)
-    fringe = input("Does the rug have fringe (y/n)? ")
-    fringe = fringe == "y"
-    cost = square_rug_cost(size, fringe)
+    wants_fringe = input("Does the rug have fringe (y/n)? ")
+    has_fringe = wants_fringe == "y"
+    cost = square_rug_cost(float(size), has_fringe)
     print(cost)
 
     # Get the size for the next rug
