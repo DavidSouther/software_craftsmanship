@@ -8,13 +8,16 @@
 ## Flags
 
 * Ways to change how a program starts up
+* Using absl library
 
 ## Files
 
 * Reading from a file
+* range as iterable, and looping over iterables
 * Writing to a file
 * File Data Formats
 
 # Project
 
-Presidents Database
+President's Database (Using lib/csv)
+Maze Specification

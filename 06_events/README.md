@@ -28,6 +28,7 @@
 * Python, C: tkinter for UI framework
 * Typescript: Angular for UI framework
 
-### Exercises:
+### Exercises/Projects:
 * UI for President's Database
 * UI for Rug Shop
+* UI for Maze
