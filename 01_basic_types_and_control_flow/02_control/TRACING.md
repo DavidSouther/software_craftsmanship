@@ -390,7 +390,7 @@ number = int(input("Decimal integer: "))
 numeral = ""
 while number > 0:
     if number >= 10:
-       numeral = numeral + "X"
+        numeral = numeral + "X"
         number = number - 10
     elif number >= 5:
         numeral = numeral + "V"
