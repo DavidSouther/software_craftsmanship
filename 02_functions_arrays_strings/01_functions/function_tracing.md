@@ -1,6 +1,6 @@
 # Function Tracing
 
-In chapte 1, we explored how computers execute programs and how their memory
+In chapter 1, we explored how computers execute programs and how their memory
 changed over time by making traces of their memory as we pretended to execute
 the programs in our head. The same tools work to help us understand how
 function calling and returns work, as well. We're going to walk through this
@@ -339,3 +339,12 @@ There you have it - a concise visual representation of how the computer memory
 keeps function scopes separate, how it returns variables from functions, and how
 once a function has finished executing, none of the memory that went into
 figuring out the calculation is left to the computer.
+
+## Exercises
+
+TODO
+
+When you've had a chance to get more comfortable with traces, commit your work,
+take a break, and when you come back we'll look at
+[strings and string formatting](../02_strings/README.md) to improve our user
+messages.

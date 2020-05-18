@@ -60,3 +60,5 @@ get a substring and make that substring all upper or all lower). You can
 often **count** the number of occurances of a character or (shorter) string
 inside another. And there are utilities to **find** occurances of a string in
 another, and then **replace** those occurances with some other value.
+
+[python](./01_python.md)

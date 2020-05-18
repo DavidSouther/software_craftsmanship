@@ -38,7 +38,7 @@ into each `{data}` block.
 
 ## Formatted HiLo
 
-For HiLo, we're going to change two functions.
+Let's look back at HiLo, but this time using format strings
 
 ```python
 def calc_winnings(number, guesses):
@@ -69,3 +69,11 @@ have certain types of separators between every 3 digits. Rather than listing
 them all here, I'll recommend visiting https://pyformat.info/ and reading their
 excellent documentation. (As you can tell, we're using the "New" format.) That
 said, we will be using some of these as we go further in the book.
+
+## Exercises
+
+*   Revisit some or all of your programs and make them use format strings
+    instead of string concatenation.
+
+When you've gotten all your programs using format strings for beautiful output,
+we can learn about [multiple pieces of data with arrays](../03_arrays/README.md)
