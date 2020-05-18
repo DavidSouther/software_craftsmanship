@@ -27,7 +27,7 @@ textbook portion that a function needs four things: A name, its arguments
 ![diagram of a python function](./digraph_of_a_python_function.png)
 
 In python, a function starts with the key word `def`. That's followed by its
-name, in this case `square_rug_cost`. It then has two parameters, all inside the
+name, in this case `square_rug_cost`. It then has two arguments, all inside the
 parentheses - `(size, fringe)`. Finally, in python, the function declaration
 (the name and argument list) ends with the `:` (colon). We've seen this in
 the chapter on control flow as well, and it indicates that we're about to
@@ -110,7 +110,9 @@ while input("Price a rug (y/n)? ") == "y":
 But why are we adding more code when it just does the same thing!? ARGH!
 I asked you to stay with me one more step, before we see the pay off.
 First, delete the last two lines (the while loop that asks whether to
-price another rug), and then add this:
+price another rug), and then add the following.
+
+> Before deleting the loop, this is another good time to make a commit...
 
 ```python
 def rectangular_rug_cost(width, height, fringe):
@@ -137,30 +139,31 @@ while input("Price another rug (y/n)? ") == "y":
 
 At this point, we've written four functions. For each rug type, we have two
 functions - one to perform the calculation, and one to perform the user
-input. So why would we write all four of these, instead of just one loop?
-The first answer is to make it easier to read and understand. One big
-function or loop body would be shorter to write, yes, but in sofware
-engineering there's a somewhat paradoxical fact that code is read by humans
-much more often than it's written. You've likely seen this yourself while
-trying to get your prior programs to work - you would run it, it wouldn't
-work right or you'd get an error, and then you had to go back through many
-times reading it to figure out what it was doing.
+input. So why would we write all four of these, instead of just one loop? The
+first answer is to make it easier to read and understand. One big function or
+loop body would be shorter to write, yes, but in software engineering there's
+a somewhat paradoxical fact people read any given code many times, while they
+write it once and edit it maybe a couple more times. You've likely seen this
+yourself while trying to get your prior programs to work - you would run it,
+it wouldn't work right or you'd get an error, and then you had to go back
+through many times reading it to figure out what it was doing.
 
 By separating out each task into functions like this, you are using
 _abstraction_. Each function lets us move from handling the details of getting
 input or calculating a rug size, to instead working with the *idea* of getting
 input or calculating the rug's size. Why is this useful? Mainly, it means
 that now whenever I think about calculating a rug, I don't need to remember
-the formulas for its area and perimeter, I only need to know which parameters
+the formulas for its area and perimeter, I only need to know whic arguments
 are necessary.
 
 It also gives us a good separation of concerns. That's a fancy way of saying
-the opposite of what was in the last paragraph - from the ouside, I only
-need to know what parameers to pass the function and it does the work. From
-the inside, I only need to take those parameters and do the calculation. I don't
-care how I got those parameters! The could come from a command line interface,
-like here, or in chapter 5, they could come from a web server which provides
-this functionality to customers online. That separation is a great boon that
+the opposite of what was in the last paragraph - from the ouside, I only need
+to know what arguments to pass the function and it does the work. I can
+delegate to it, and trust it will do the work. From the inside, I only need
+to take those arguments and do the calculation. I don't care how I got those
+arguments! The could come from a command line interface, like here, or in
+chapter 5, they could come from a web server which provides this
+functionality to customers online. That separation is a great boon that
 abstraction using functions gives us.
 
 ## Anatomy of a function
@@ -168,11 +171,12 @@ abstraction using functions gives us.
 Let's cover the critical pieces of a function again.
 
 It starts with the Python keyword `def` - short for "Define", and used here to
-"define" a function. The next word, `square_rug_cost` or `calculate_rectangular_rug`,
-tells Python what to call your function. It is the word you'll use to refer to
-the function in the future, like variables elsewhere. The parentheses mark the
-*arguments* to the function. Arguments are variables, but variables that are only
-visible and valid inside the function. The function declaration ends with the `:`.
+"define" a function. The next word, `square_rug_cost` or
+`calculate_rectangular_rug`, tells Python what to call your function. It is the
+word you'll use to refer to the function in the future, like variables
+elsewhere. The parentheses mark the *arguments* to the function. Arguments are
+variables, but variables that are only visible and valid inside the function.
+The function declaration ends with the `:`.
 
 The definition of the function is everything happening below that line at the
 next indentation level. Remember that in Python, whitespace is important. An
