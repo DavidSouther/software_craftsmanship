@@ -105,14 +105,14 @@ in function `len` to get the length of the array. Keep `len` in mind, as it's
 the canonical way in python to get the size of any complex object - arrays or
 otherwise! At the end, we print out the same way.
 
-The last function is a lot more complex. The standard deviation of a set of
-numbers describes their statistical distribution. If the standard deviation is
-a larger number, it means there is more variability in the sample. The numbers
-are more different to eachother than similar. If the standard deviation is
-smaller, the numbers are more clustered together.
+We have one last function, which is a lot more complex. The standard
+deviation of a set of numbers describes their statistical distribution. If
+the standard deviation is a larger number, it means there is more variability
+in the sample. The numbers are more different to each other than similar. If
+the standard deviation is smaller, the numbers are more clustered together.
 
 > The formal definition of the standard deviation involves taking all the
-numbers in the array, squareing the difference in the average of all values from
+numbers in the array, squaring the difference in the average of all values from
 the single value, summing all those squares, dividing that sum by the number of
 values in the data set, and finally taking a square root of the whole thing. Ask
 your nearest stats professor for details, and trust the math part of the code
@@ -122,13 +122,17 @@ below :)
 ```py
 import math
 def std_dev(my_array):
-    length = len(my_array)
     my_array_average = avg(my_array)
-    std_dev_sum = 0
+
+    diffs_squared = []
     for val in my_array:
         diff = val - my_array_average
-        std_dev_sum += (diff ** 2)
-    return math.sqrt(std_dev_sum / length)
+        diff_squared = diff ** 2
+        diffs_squared.append(diff_squared)
+
+    sum_of_squares = sum(diffs_squared)
+    length = len(my_array)
+    return math.sqrt(sum_of_squares / length)
 
 data_std_dev = std_dev(data)
 print(f"Data std dev is {data_std_dev:.2f}")
