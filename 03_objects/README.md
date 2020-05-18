@@ -1,6 +1,15 @@
 # Introduction to Objects
 
+Date library as objects which have structured data.
+
+Develop rugs example using classes, then add inheritence.
+
+Build maze game from the ground up, using rooms and doors to encapsulate
+behavior.
+
 ## Structured Data
+
+Develop rugs example
 
 * Dicts as structured data
 * Objects as structured data
@@ -24,11 +33,4 @@
 * Refactor rugs using inheritance
 * Abstraction, Polymorphism, Inheritance, Encapsulation
 
-## Mastermind Game
-
-* Class Design - SOLID
-* Single Responsibility
-* Open/Closed
-* Liskov
-* Interfaces
-* Dependency Inversion
+## Maze game
