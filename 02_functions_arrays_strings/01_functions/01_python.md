@@ -170,13 +170,13 @@ abstraction using functions gives us.
 
 Let's cover the critical pieces of a function again.
 
-It starts with the Python keyword `def` - short for "Define", and used here to
-"define" a function. The next word, `square_rug_cost` or
-`calculate_rectangular_rug`, tells Python what to call your function. It is the
-word you'll use to refer to the function in the future, like variables
-elsewhere. The parentheses mark the *arguments* to the function. Arguments are
-variables, but variables that are only visible and valid inside the function.
-The function declaration ends with the `:`.
+It starts with the Python keyword `def` - short for "Define", and used here
+to "define" a function. The next word, `square_rug_cost` or
+`calculate_rectangular_rug`, is the identifier which tells Python what to
+name your function. It is the word you'll use to refer to the function in the
+future, like variables elsewhere. The parentheses mark the *arguments* to the
+function. Arguments are variables, but variables that are only visible and
+valid inside the function. The function declaration ends with the `:`.
 
 The definition of the function is everything happening below that line at the
 next indentation level. Remember that in Python, whitespace is important. An
@@ -213,14 +213,14 @@ very explicit about each one. "Take the onions. Remove the skins. Cut the unions
 into thin slices. Turn on the oven to medium heat. Put a sauce pan on the oven.
 Heat oil & butter in the pan. When the oil and butter are hot, add the onions.
 Occaisionally stir the onions for 10 minutes for softened and translucent. For
-caramalized onions, add sugar at 10 minutes and continue stiring occaisionally
+caramelized onions, add sugar at 10 minutes and continue stiring occaisionally
 for another 35 minutes."
 
 > If this were a recipe for a steak dinner, that's a lot of steps that aren't
 really related to the steak itself! And are we going to repeat those steps every
-other dish that calls for softened or caramlized onions? I would hope not.
-Instead we make a new recipe, "Caramilized Onions", and whenever another dish
-calls for them we just say "2 cups caramilized onions, see page such and such."
+other dish that calls for softened or caramelized onions? I would hope not.
+Instead we make a new recipe, "Caramelized Onions", and whenever another dish
+calls for them we just say "2 cups caramelized onions, see page such and such."
 That's exactly what we're doing with the functions here! Finding self-contained
 pieces that can be used repeatedly, rather than repeating ourselves every time
 over and over again.
