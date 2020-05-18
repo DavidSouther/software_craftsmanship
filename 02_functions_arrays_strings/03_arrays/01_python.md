@@ -164,19 +164,13 @@ from data import PREGNANCIES
 preg_weeks_first_babies = []
 preg_weeks_second_babies = []
 
-for [order, weeks] in PREGNANCIES:
-    if order > 2:
-        # Only interested in second babies compared to first
-        continue
-    elif order == 2:
-        preg_weeks_second_babies.append(length)
+for pregnacy in PREGNANCIES:
+    order = pregnacy[0]
+    weeks = pregnacy[1]
+    if order == 2:
+        preg_weeks_second_babies.append(weeks)
     elif order == 1:
-        preg_weeks_first_babies.append(length)
-
-avg_first_babies = avg(preg_weeks_first_babies)
-avg_second_babies = avg(preg_weeks_second_babies)
-std_dev_first_babies = std_dev(preg_weeks_first_babies)
-std_dev_second_babies = std_dev(preg_weeks_second_babies)
+        preg_weeks_first_babies.append(weeks)
 
 print(f"First babies are born at an average of {avg_first_babies:.2f} weeks.")
 print(f"First babies have a standard deviation of {std_dev_first_babies:.2f} weeks")
@@ -223,14 +217,17 @@ data here are first, the order of the pregnancy (so whether this is the woman's
 first or second or fifth pregnancy), and second, the number of weeks into the
 pregnancy she gave birth.
 
-When we loop over an array that has these small tuple arrays inside of them, we
-can use a shorthand syntax to make two variables, instead of a single variable.
-`for [order, length] in PREGNANCIES:` will go through each tuple in
-`PREGNANCIES`, take the first number in that tuple, assign it to the variable
-`order`, take the second value, assign it to the variable `length`, and then
-with those variables perform the body of the loop.
+Inside the loop, we create two variables, `order` and `weeks`. Because each item
+in `PREGNANCIES` is an array, we access the first and second elements
+respectively. To do so, we use the `[index]` array access notation. We write the
+variable which has the array, `pregnancy`. We then add `[]` immediately after
+it. Finally, we use a variable or value to access the item we want - remember,
+indexes start at zero. So `pregnancy[0]` gives us the first item in the tuple
+(the array of two items), which our data file defines as the order of the
+pregnancy. `pregnancy[1]` gives us the weeks' duration of of the pregnancy,
+again which we know from the data file.
 
-The loop body is an `if ... elif ... elif` block. It looks at the order, and
+The loop body is several `if ... elif ...` block. It looks at the order, and
 decides which of the lists we're tracking it should append with the length of
 the next pregnancy. If the order is great than 2, we will ignore it because we
 are only interested in either a woman's first or second pregnancy. Then if the
