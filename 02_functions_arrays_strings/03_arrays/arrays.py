@@ -3,6 +3,20 @@ for i in data:
     print(i)
 
 def sum(my_array):
+    """Compute the summation of numbers in an array.
+
+    This function will take one array, sum all the elements of the array using
+    the python `+` operator, and return a new value holding the result of the
+    calculation. The array will not be modified during execution. The initial
+    value of the sum is 0.
+
+    Args:
+        my_array: an array of number or number-like objects which can be joined
+            using the `+` operator and which can be joined to `0`.
+    Returns:
+        The result of applying `+` with each number in my_array.
+    """
+
     total = 0
     for val in my_array:
         total += val
