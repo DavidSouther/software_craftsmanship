@@ -4,7 +4,8 @@
 
 * Consistent mechanism to handle groups of similar data
 * One operation on multiple pieces of data
-* 95% of the time, you'll use a built-in iteratable: Array (or List), Set, Map
+* 95% of the time, you'll use a built-in iteratable: Array (or List), Set, Map,
+  Reader
 
 ### Exercises:
 * Loop Back Iterator
@@ -14,9 +15,6 @@
 * Objects referring to objects is more flexible than inheritance
 * Game has a list of Invaders
 * Invaders can be removed from the list
-
-### Exercises
-* 
 
 ## Update Loop
 

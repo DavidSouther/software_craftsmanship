@@ -37,11 +37,13 @@ from data import PREGNANCIES
 # Set up the lists to calculate sums on
 preg_length_by_baby = [[], []]
 
-for [order, length] in PREGNANCIES:
+for pregnacy in PREGNANCIES:
+    order = pregnacy[0]
+    weeks = pregnacy[1]
     if order > 2:
         # Only interested in second babies compared to first
         continue
-    preg_length_by_baby[order - 1].append(length)
+    preg_length_by_baby[order - 1].append(weeks)
 
 avg_first_babies = avg(preg_length_by_baby[0])
 avg_second_babies = avg(preg_length_by_baby[1])

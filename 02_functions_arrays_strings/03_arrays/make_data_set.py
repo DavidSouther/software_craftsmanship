@@ -3,6 +3,8 @@
 """
 Adapted from Think Stats 2e, using the CFC NSFG.
 
+https://www.cdc.gov/nchs/nsfg/index.htm
+
 Pulls the dataset and extracts [prglngth, prgordr]
 """
 
