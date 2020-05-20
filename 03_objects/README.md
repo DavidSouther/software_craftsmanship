@@ -1,36 +1,22 @@
 # Introduction to Objects
 
-Date library as objects which have structured data.
+In this chapter, we take our understanding of programming as variables tracking
+values over time and begin to add structure that will help us manage complexity
+as our code grows. We use **functions** to manage the complexity of breaking out
+executable pieces of code over time. Here, we start using **objects** to manage
+the complexity of pieces of data with multiple facets. We begin to get an
+understanding of these by building out a program which prints a desktop
+calendar.
 
-Develop rugs example using classes, then add inheritence.
+The second project takes us from using built-in objects to building out our own
+objects. Returning to the trusty Rug Shop, **classes** will describe the data
+of a rug, and **methods** will let us cut down yet again on the code needed to
+keep all the rug types around. We will gain a large amount of flexibility in how
+rugs are stored and priced, and can use this to quickly create many more types
+of rugs.
 
-Build maze game from the ground up, using rooms and doors to encapsulate
-behavior.
+The last section will take us back to video games. We'll build out a set of
+classes which let us have a maze or labyrinth that our intrepid player must
+navigate, collecting keys for locked doors before finding the treasure room.
 
-## Structured Data
-
-Develop rugs example
-
-* Dicts as structured data
-* Objects as structured data
-* Dates as an object with structure data in it
-* Pragmatically, keeps all your data bundled up together.
-* Classes describe the structure of data.
-* Instances of a class represent a single copy of data of a certain structure.
-* Calendar program using datetime and timedelta clases
-
-## Methods
-
-* Methods are functions on a class
-* Implicit (sometimes explicit) reference to the struct itself
-* Rugs... revisited
-
-## Inheritance
-
-* Modify a class for a specific use case
-* Can add data or methods
-* Can change the behavior of existing methods
-* Refactor rugs using inheritance
-* Abstraction, Polymorphism, Inheritance, Encapsulation
-
-## Maze game
+[Objects & a calendar](./01_calendar/README.md)
