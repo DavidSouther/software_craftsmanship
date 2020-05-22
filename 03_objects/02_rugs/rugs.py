@@ -1,14 +1,19 @@
 from math import pi
 
 class Rug():
-    def __init__(self):
-        self.has_fringe = False
+    def __init__(self, has_fringe = False):
+        self.has_fringe = has_fringe 
+        self.description = "basic"
     
     def get_values(self):
-        """ Ask the user for all the values necessary for this rug. Extending classes should call this before asking for their own inputs. """
+        """
+        Ask the user for all the values necessary for this rug.
+
+        Extending classes should call this before asking for their own inputs.
+        """
         wants_fringe = input("Should this rug have fringe (y/N)? ")
         if wants_fringe.lower().startswith('y'):
-            wants_fringe = True
+            self.has_fringe = True
 
     def area(self):
         """ Calculate the area of the rug. To be implemented by an extending class. """
@@ -35,10 +40,20 @@ class Rug():
         total_cost = area_cost + perimeter_cost
         return total_cost
 
+    def print(self):
+        price = self.cost()
+        if self.has_fringe:
+            with_fringe = "with"
+        else:
+            with_fringe = "without"
+
+        print(f"This {self.description} rug costs ${price:.2f} {with_fringe} fringe.")
+
 class SquareRug(Rug):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, size = 0, has_fringe = False):
+        super().__init__(has_fringe)
         self.side_length = 0
+        self.description = "square"
     
     def get_values(self):
         super().get_values()
@@ -53,10 +68,11 @@ class SquareRug(Rug):
         return self.side_length * 4
 
 class RectangularRug(Rug):
-    def __init__(self):
-        super().__init__()
-        self.width = 0 
-        self.length = 0 
+    def __init__(self, width = 0, length = 0, has_fringe = False):
+        super().__init__(has_fringe)
+        self.width =  width
+        self.length = length 
+        self.description = "rectangular"
     
     def get_values(self):
         super().get_values()
@@ -72,9 +88,10 @@ class RectangularRug(Rug):
         return self.width * 2 + self.length * 2
 
 class CircularRug(Rug):
-    def __init__(self):
-        super().__init__()
-        self.radius = 0 
+    def __init__(self, radius = 0, has_fringe = False):
+        super().__init__(has_fringe)
+        self.radius = radius
+        self.description = "circular"
     
     def get_values(self):
         super().get_values()
@@ -102,15 +119,8 @@ def get_rug():
 
 def price_rug():
     rug = get_rug()
-    
-    # Ask for inputs
     rug.get_values()
-    price = rug.cost()
-    if rug.has_fringe:
-        with_fringe = "with"
-    else:
-        with_fringe = "without"
-    print(f"This rug costs ${price:.2f} {with_fringe} fringe.")
+    rug.print()
 
 while not input("Price another rug (Y/n): ").lower().startswith("n"):
     price_rug()
