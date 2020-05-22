@@ -50,7 +50,7 @@ Make a new file, `calendar.py`, and let's get going!
 
 ```python
 import colors
-from datetime import datetime, timedelata
+from datetime import datetime, timedelta
 from time import sleep
 ```
 
@@ -61,22 +61,26 @@ check the month, day, and year.
 
 A `datetime` is an object with properties for each of the things you might
 expect - `hour` gives us the numerical hour in the day that that datetime
-represents; `month` the month of the year, `milliseconds` the number of
-fractions of a second the datetime was created at.
+represents; `month` the month of the year, `microsecond` the number of
+millionths of a second the datetime was created at.
 
 When we have a single `datetime`, these values don't change unless we tell it
 to! When we used the function `datetime.now()`, it looked at the computer's clock
 *at that moment in time*, made a note of it, and that moment *at a point in time*
 is what we can look at. If we want a different `datetime`, we have to call `datetime.now()`
-*another time*, and this time we gat back a *different* datetime! It doesn't
+*another time*, and this time we get back a *different* datetime! It doesn't
 update the one that we had gotten before. Let's see what that looks like.
 
 ```py
-print(datetime.now())
+moment_1 = datetime.now()
 sleep(0.5)
-print(datetime.now())
+moment_2 = datetime.now()
 sleep(1.5)
-print(datetime.now())
+moment_3 = datetime.now()
+
+print(moment_1.hour, moment_1.minute, moment_1.second, moment_1.microsecond)
+print(moment_2.hour, moment_2.minute, moment_2.second, moment_2.microsecond)
+print(moment_3.hour, moment_3.minute, moment_3.second, moment_3.microsecond)
 ```
 
 Running that at a little before 9am on May 19th, 2020 I got this output:
