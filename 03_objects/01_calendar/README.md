@@ -17,13 +17,13 @@ which we keep in our heads as being about one rug, we can instead talk about a
 single rug, which has an area, a width, and a height. It may sound pedantic, but
 in practice it really makes tracking complex pieces of data much easier!
 
-These bundles of data are called **objects**. Each piece of data bundled into an
-object is a **property** on an object. We can think of objects having "shape" or
-"structure" based on what properties it has on it, and the types of data that
-are stored in those properties. A property in a lot of ways just a variable that
-is attached to a single object in our program. The property has an
-**identifier** and stores a **value**. It's just that it can't appear alone, and
-only is part of the object.
+These bundles of data are called **objects**. Each piece of data bundled into
+an object is a **property** on an object. We can think of objects having
+"shape" or "structure" based on what properties it has on it, and the types
+of data that are stored in those properties. A property is, in many ways,
+just a variable that is attached to a single object in our program. The
+property has an **identifier** and stores a **value**. It's just that it can't
+appear alone, and only is part of the object.
 
 An object is a value, which means you can assign it to a variable. You can pass
 it to a function as an argument. You can even assign an object into a property
