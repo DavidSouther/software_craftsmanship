@@ -83,12 +83,12 @@ print(moment_2.hour, moment_2.minute, moment_2.second, moment_2.microsecond)
 print(moment_3.hour, moment_3.minute, moment_3.second, moment_3.microsecond)
 ```
 
-Running that at a little before 9am on May 19th, 2020 I got this output:
+Running that at a little before 9am I got this output:
 
 ```
-2020-05-19 08:48:36.731726
-2020-05-19 08:48:37.235577
-2020-05-19 08:48:38.736215
+8 48 36 731726
+8 48 37 235577
+8 48 38 736215
 ```
 
 You should have something similar - the second one is about .5 seconds after the
