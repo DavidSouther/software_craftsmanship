@@ -83,23 +83,26 @@ print(moment_2.hour, moment_2.minute, moment_2.second, moment_2.microsecond)
 print(moment_3.hour, moment_3.minute, moment_3.second, moment_3.microsecond)
 ```
 
-Running that at a little before 9am I got this output:
+Running that at a little before 3 pm I got this output:
 
 ```
-8 48 36 731726
-8 48 37 235577
-8 48 38 736215
+14 48 36 731726
+14 48 37 235577
+14 48 38 736215
 ```
 
 You should have something similar - the second one is about .5 seconds after the
 first, and the third is about 2 second after the first!
+
+> `datetime` tracks hours using 24 hours in a day. Later in this section, we'll
+see how to get AM/PM hours.
 
 ### Desktop Calendar
 
 Before we dive in to the rest of this program, let's take a look at what it'll
 show us. It's going to be a program that prints a calendar of the current month.
 The days of the week will be along the top, with weekends a different color.
-It will also mark today a specific color, as well as any holidays we he this
+It will also mark today a specific color, as well as any holidays we have this
 month. At the bottom, it will print the number of days as well as the number of
 workdays until the next holiday, and finally it'll have a digital clock printing
 the time in H:M format.
@@ -109,11 +112,11 @@ It will look like this when we're done:
 ![Desktop Calendar](./desktop_calendar.png)
 
 Let's take a look at a function that returns the string for which month of
-the year a date is. Remove the 5 lines above, and add this instead. The `def`
-keyword starts starts *def*ining a section of code. The parenthesese tell
-python it is a function, while `month` gives it a name. Finally, `date` names
-an argument for the function. This will take a `datetime` object, not just a
-number!
+the year a date is. Remove everything but the imports above, and add this
+instead. The `def` keyword starts starts *def*ining a section of code. The
+parenthesese tell python it is a function, while `month` gives it a name.
+Finally, `date` names an argument for the function. This will take a
+`datetime` object, not just a number!
 
 ```python
 def month(date):
@@ -128,11 +131,18 @@ print(month(datetime.now()))
 
 Running that this morning, it told me it was `May` as expected!
 
+In this function, we have the argument date. We expect callers to pass a
+datetime as the argument. One property of a datetime is `month`, which gives us
+the numeric month of the year starting from 1 as January. We access a property
+on an object using a `.`. So `date.month` says go to the value in the variable
+`date`, find its property `month`, and use *that* value for our expression.
+
 At this point, we can do the top bar of our calendar. Replace the print line
 with this bit of code.
 
 ```python
-month_face = f"{now.day} {month(now)} {now.year}"
+moment = datetime.now()
+month_face = f"{moment.day} {month(moment)} {moment.year}"
 print(f"{month_face:^28}")
 ```
 
@@ -142,12 +152,18 @@ And running that, we see
         19 May 2020        
 ```
 
-Let's look at this bit by bit. First, we start a new variable, `month_face`. We
-build it by using a **template string** which we introduced in the strings
-section last chapter. We know it's a format string because it has an `f` right
-in front of it. It accesses two different properties on the `now` object (which,
-again, is a datetime) -- `day` and `year`. It also takes the entire object and
-passes it to our `month` function we just wrote above.
+Let's look at this bit by bit. We get a single moment, so that we can use that
+one moment in time several times, once to get the day, once for the month, and
+once for the year. We get the `day` as a property of `moment` using `.day`, and
+the same for `.year`. We use the `month` function we just wrote to get the full
+name of the month, rather than the number.
+
+We start a new variable, `month_face`. This is so we can easily center it, on
+the next line. We build it by using a **template string** which we introduced
+in the strings section last chapter. We know it's a format string because it
+has an `f` right in front of it. It accesses two different properties on the
+`now` object (which, again, is a datetime) -- `day` and `year`. It also takes
+the entire object and passes it to our `month` function we just wrote above.
 
 We store this in the variable `month_face` so that we can use a second format
 string to center the text we just created. We do this with the `:^` format
@@ -170,9 +186,9 @@ a plan of action before we start.
 Thinking through what the calendar should look like, it should have 7 columns,
 one for each day of the week. It will have 4 to 6 rows, depending on how many
 weeks the month takes up. Each day in the month, then, will end up having a
-column, based on which day of the week it is. It will also have a row - but the
+column, based on which day of the week it is. It will also have a row -- but the
 row its in will depend on how many weeks have come before it at that point. In
-a python date, the `weekday()` function will give us a number between 0 and 6 -
+a python date, the `weekday()` function will give us a number between 0 and 6 --
 0 means Monday, 1 means Tuesday, up to 6 being Sunday. So if this gives us the
 column to put the day in, what about the row?
 
@@ -191,7 +207,7 @@ def print_day(date, row):
     print(colors.at(row, column), end="")
     print(date.day)
 
-printDay(datetime.now(), 1)
+print_day(datetime.now(), 1)
 ```
 
 For me, on Tuesday the 19th, I see a few spaces and then `19`.
@@ -200,15 +216,15 @@ For me, on Tuesday the 19th, I see a few spaces and then `19`.
      19
 ```
 
-We use our `colors.at` function to choose the row and column to print at. `row`
-is an argument we don't change. `date.weekday()` is a function which will return
-the weekday (0 is Monday, 6 is Sunday) for the date it's attached to. For our
-calendar, we want each weekday to take up 4 spaces, so that's why we multiply by
-4 - to skip past the other earlier days that week. The `2 +` is just an initial
-padding to not squish everything up against the left side of the screen. With
-that row and column, we print `colors.at()` to move the cursor, but we also add
-this new piece `end=""`. Usually when we print, it moves the cursor down to the
-next line immediately. We don't want that to happen, and suppress that behavior
+We use our `colors.at` function to choose the row and column to print at.
+`date.weekday()` is a function which will return the weekday (0 is Monday, 6
+is Sunday) for the date it's attached to. For our calendar, we want each
+weekday to take up 4 spaces, so that's why we multiply by 4 - to skip past
+the other earlier days that week. The `2 +` is just an initial padding to not
+squish everything up against the left side of the screen. With that row and
+column, we print `colors.at()` to move the cursor, but we also add this new
+piece `end=""`. Usually when we print, it moves the cursor down to the next
+line immediately. We don't want that to happen, and suppress that behavior
 using `end=""`.
 
 > The reason it's called `end` is because normally, python uses the special
