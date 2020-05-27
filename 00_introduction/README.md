@@ -1,7 +1,7 @@
 # Introduction
 
 Human endeavors rest on the backs of the hard-working crafters. From stone-
-movers of the Egyptian pyramids to steel-workers on today's oil rigs, skilled
+movers of the Egyptian pyramids to steel-workers on today's wind farms, skilled
 workers built civilization with their hands. Stone, steel, lumber, and leather
 have for centuries been the foundation of human enterprise. In the 21st century,
 there is a new medium demanding attention: information. The data flying across
@@ -14,8 +14,8 @@ programmers the same tools to work with as the professional.
 
 This book is aimed at those who are interested in this new medium as a
 potential hobby or curiosity. The book begins assuming the reader knows how to
-turn on and use their computer for basic tasks  -  email, word processing,
-image editing, and video games, and takes them to a level where they will be
+turn on and use their computer for basic tasks -- email, word processing,
+image editing, and video games; and takes them to a level where they will be
 comfortable and confident in using and controlling their computers. This book
 is very fast paced. Software development is a field which has undergone active
 development for the past 80 years, yet did not exist beyond a dream before

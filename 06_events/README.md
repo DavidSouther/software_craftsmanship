@@ -15,7 +15,7 @@
 * URLs as event targets
 * Web server as event dispatcher
 * Respond with HTML for a file
-* Moustache templating
+* Templating (moustache) & styling (mdl)
 
 ### Exercises:
 * Web Server for President's Database (Read only, links to next/last president)
