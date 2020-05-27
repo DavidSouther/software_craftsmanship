@@ -244,11 +244,11 @@ will print an entire month for us.
 
 ```py
 one_day = timedelta(1)
-def print_month(date, first_row):
+def print_month(date, first_week_row):
     day_in_month = datetime(date.year, date.month, 1)
     week = 0
     while day_in_month.month == date.month:
-        printDay(day_in_month, first_row + week)
+        printDay(day_in_month, first_week_row + week)
         if day_in_month.weekday() == 6:
             week += 1
         day_in_month += one_day
@@ -256,8 +256,8 @@ def print_month(date, first_row):
 
 There's a bit more to this one, as we might expect when we need a loop. The
 function declaration looks about the same as what we might expect - a `date` to
-tell us which month we're interested in, and `first_row` which we will use to
-know how far down the page to print the month part of the calendar. The loop
+tell us which month we're interested in, and `first_week_row` which we will use
+to know how far down the page to print the month part of the calendar. The loop
 will track `day_in_month`. Each iteration of the loop, we add one day to it, and
 keep looping until the tracking variable is no longer in the same month as the
 original `date`. Each time through, we also track the current week within the
