@@ -252,6 +252,8 @@ def print_month(date, first_week_row):
         if day_in_month.weekday() == 6:
             week += 1
         day_in_month += one_day
+
+print_month(datetime.now(), 2)
 ```
 
 There's a bit more to this one, as we might expect when we need a loop. The
