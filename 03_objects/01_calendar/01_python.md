@@ -239,8 +239,9 @@ don't want the default.
 
 ### Calendar Weeks
 
-Now that we can print one day, let's do the `print_month` function which
-will print an entire month for us. 
+Now that we can print one day, let's do the `print_month` function which will
+print an entire month for us. Delete the `print_day` testing line, and then add
+& test this `print_month` function.
 
 ```py
 one_day = timedelta(1)
@@ -248,22 +249,23 @@ def print_month(date, first_week_row):
     day_in_month = datetime(date.year, date.month, 1)
     week = 0
     while day_in_month.month == date.month:
-        printDay(day_in_month, first_week_row + week)
+        print_day(day_in_month, first_week_row + week)
         if day_in_month.weekday() == 6:
             week += 1
         day_in_month += one_day
 
+print(colors.CLEAR)
 print_month(datetime.now(), 2)
 ```
 
 There's a bit more to this one, as we might expect when we need a loop. The
-function declaration looks about the same as what we might expect - a `date` to
-tell us which month we're interested in, and `first_week_row` which we will use
-to know how far down the page to print the month part of the calendar. The loop
-will track `day_in_month`. Each iteration of the loop, we add one day to it, and
-keep looping until the tracking variable is no longer in the same month as the
-original `date`. Each time through, we also track the current week within the
-month, incrementing it after printing each Sunday.
+function declaration looks about the same as for `print_day` - a `date` to
+tell us which month we're interested in, and `first_week_row` which we will
+use to know how far down the page to print the month part of the calendar.
+The loop will track `day_in_month`. Each iteration of the loop, we add one
+day to it, and keep looping until the tracking variable is no longer in the
+same month as the original `date`. Each time through, we also track the
+current week within the month, incrementing it after printing each Sunday.
 
 Above that, though, we have a constant - `one_day = timedelta(1)`. What do you
 think that is?
