@@ -162,20 +162,23 @@ We start a new variable, `month_face`. This is so we can easily center it, on
 the next line. We build it by using a **template string** which we introduced
 in the strings section last chapter. We know it's a format string because it
 has an `f` right in front of it. It accesses two different properties on the
-`now` object (which, again, is a datetime) -- `day` and `year`. It also takes
-the entire object and passes it to our `month` function we just wrote above.
+object returned by the `no` function (which, again, is a datetime) -- `day` and
+`year`. It also takes the entire object and passes it to our `month` function we
+just wrote above.
 
 We store this in the variable `month_face` so that we can use a second format
 string to center the text we just created. We do this with the `:^` format
 specifier. In chapter 2, we used `:.2f` to specify the amount of precision we
-wanted in a floating point number. In the format string, the `:` marks where the
-variable ends, and when modifiers to the formatting begin. There are three that
-are useful when working with text, and those are `:<`, `:^`, and `:>`. All three
-take a number after the arrow, and they fill out text that as many characters as
-the number. The text is padded with whitespace after, around, or before the
-value it got from the left of the `:`. That is to say, these all let us left,
-center, and right justify a string of text. In this case, we use 28 characters
-because that's how wide our calendar will be.
+wanted in a floating point number. In the format string, the `:` marks where
+the variable ends, and when modifiers to the formatting begin. There are
+three that are useful when working with text, and those are `:<`, `:^`, and
+`:>`. All three take a number after the arrow, and they fill out the text
+with extra spaces on the sides so that the final string has many characters
+(including spaces) as the number specifies. The text is padded with
+whitespace after, around, or before the value it got from the left of the
+`:`. That is to say, these all let us left, center, and right justify a
+string of text. In this case, we use 28 characters because that's how wide
+our calendar will be.
 
 ### Calendar Days
 
@@ -216,7 +219,6 @@ For me, on Tuesday the 19th, I see a few spaces and then `19`.
      19
 ```
 
-We use our `colors.at` function to choose the row and column to print at.
 `date.weekday()` is a function which will return the weekday (0 is Monday, 6
 is Sunday) for the date it's attached to. For our calendar, we want each
 weekday to take up 4 spaces, so that's why we multiply by 4 - to skip past
@@ -237,26 +239,29 @@ don't want the default.
 
 ### Calendar Weeks
 
-Now that we can print one day, let's do the `print_calendar` function which
-will print an entire month for us.
+Now that we can print one day, let's do the `print_month` function which
+will print an entire month for us. 
 
 ```py
 one_day = timedelta(1)
 def print_month(date, first_row):
-    monthly = datetime(date.year, date.month, 1)
+    day_in_month = datetime(date.year, date.month, 1)
     week = 0
-    while monthly.month == date.month:
-        row = first_row + week
-        printDay(monthly, row)
-        if monthly.weekday() == 6:
-            row += 1
-        monthly += one_day
+    while day_in_month.month == date.month:
+        printDay(day_in_month, first_row + week)
+        if day_in_month.weekday() == 6:
+            week += 1
+        day_in_month += one_day
 ```
 
 There's a bit more to this one, as we might expect when we need a loop. The
 function declaration looks about the same as what we might expect - a `date` to
 tell us which month we're interested in, and `first_row` which we will use to
-know how far down the page to print the month part of the calendar.
+know how far down the page to print the month part of the calendar. The loop
+will track `day_in_month`. Each iteration of the loop, we add one day to it, and
+keep looping until the tracking variable is no longer in the same month as the
+original `date`. Each time through, we also track the current week within the
+month, incrementing it after printing each Sunday.
 
 Above that, though, we have a constant - `one_day = timedelta(1)`. What do you
 think that is?

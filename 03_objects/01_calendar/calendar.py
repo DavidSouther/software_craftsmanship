@@ -88,7 +88,7 @@ def countWorkDays(until):
 def printCalendar():
     now = datetime.now()
     print(colors.CLEAR, colors.at(4, 1))
-    print(" Su  M   Tu  W   Th  F   Sa")
+    print(" M   Tu  W   Th  F   Sa  Su")
     printMonth(now.year, now.month, row=6)
 
     (days, workdays) = countWorkDays(datetime(2020, 6, 20))
