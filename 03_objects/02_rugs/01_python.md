@@ -324,10 +324,8 @@ methods. I'll give the example of `SquareRug`, and you can do the same for
 
 ```py
 class SquareRug(Rug):
-    def __init__(self, size = 0, has_fringe = False):
-        self.has_fringe = has_fringe
-        self.size = size 
-    
+    # cost and __init__ methods are the same
+
     def get_values(self):
         self.side_length = float(input("Side length of this square rug? "))
 
@@ -359,6 +357,8 @@ class SquareRug(Rug):
     def get_values(self):
         super().get_values()
         self.size = float(input("Side length of this square rug? "))
+    
+    # Other methods stay the same
 ```
 
 These two methods first get access to the parent class with the `super()`
