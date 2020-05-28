@@ -430,9 +430,9 @@ def print_day(date, row):
     print(colors.at(row, column), end="")
     if date.day == now.day:
         print(colors.YELLOW, end="")
-    elif isHoliday(date):
+    elif is_holiday(date):
         print(colors.PURPLE, end="")
-    elif isWeekend(date):
+    elif is_weekend(date):
         print(colors.RED, end="")
     else:
         print(colors.WHITE, end="")
