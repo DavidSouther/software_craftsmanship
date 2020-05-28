@@ -14,26 +14,7 @@ class Room():
     def __init__(self, description, key = None):
         self.description = description
         self.key = key
-        self.north_door = None
-        self.south_door = None
-        self.west_door = None
-        self.east_door = None
-    
-    def add_north_door(self, north_room, lock = None):
-        self.north_door = Door(self, north_room, lock)
-        north_room.south_door = self.north_door 
-
-    def add_south_door(self, south_room, lock = None):
-        self.south_door = Door(self, south_room, lock)
-        south_room.north_door = self.south_door
-
-    def add_east_door(self, east_room, lock = None):
-        self.east_door = Door(self, east_room, lock)
-        east_room.west_door = self.east_door
-    
-    def add_west_door(self, west_room, lock = None):
-        self.west_door  = Door(self, west_room, lock)
-        west_room.east_door = self.west_door
+        self.doors = []
     
     def on_enter(self, player):
         if self.key != None:
@@ -151,9 +132,9 @@ room_b = Room("The Library", blue_key)
 room_c = Room("The dining room")
 room_d = Room("The kitchen")
 
-room_a.add_east_door(room_b)
-room_a.add_north_door(room_c)
-room_c.add_north_door(room_d, blue_lock)
+Door(room_a, room_b)
+Door(room_a, room_c)
+Door(room_c, room_d, blue_lock)
 
 game = Game(room_a, room_d)
 game.play()
