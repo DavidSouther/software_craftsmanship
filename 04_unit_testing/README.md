@@ -13,7 +13,7 @@ while we took measured steps along our trail.
 * Unit tests are small
 * Unit tests help debug as we're writing, and catch regressions later.
 
-## Anatomy of a untit test
+## Anatomy of a unit test
 
 * Test Suite
 * Test Methods

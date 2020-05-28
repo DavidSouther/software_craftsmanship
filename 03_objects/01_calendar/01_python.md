@@ -447,7 +447,7 @@ printing" before calling `print_month`.
 def print_calendar():
     now = datetime.now()
     print(colors.CLEAR, colors.at(1, 1))
-    print(" Su  M   Tu  W   Th  F   Sa")
+    print(" M   Tu  W   Th  F   Sa  Su")
     print_month(now, row=2)
 
 print_calendar()
@@ -459,7 +459,7 @@ and then use `print_month` starting at row 6 to give us the days in the calendar
 appropriately aligned. It should look like this, all said and done:
 
 ```
- Su  M   Tu  W   Th  F   Sa
+ M   Tu  W   Th  F   Sa  Su
                  1   2   3
  4   5   6   7   8   9   10
  11  12  13  14  15  16  17
