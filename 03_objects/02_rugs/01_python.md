@@ -75,6 +75,8 @@ Rug 1 costs $125.00
 Rug 2 costs $46.25
 ```
 
+This is our first class! I think it's time to make a commit!
+
 Let's go through this code and look at the new things we haven't used yet. First
 we have `class SquareRug():`. Just like a variable or a function, a class has an
 **identifier**, this one is `SquareRug`. Like variables and functions, the
@@ -195,6 +197,9 @@ while input("Price another rug? (y/n) ").lower() == 'y':
     price_rug()
 ```
 
+We now have a control loop and a few classes, so this might be a good time to
+make a commit. (If you've been making them more often, that's great!)
+
 Right away we see that maybe this isn't the best approach. The whole point of
 classes was to contain the information necessary to build a rug, but we have
 this whole function which just asks all the information over again anyway! Let's
@@ -260,6 +265,10 @@ rug type. Then back in the loop, it has the rug itself ask the user for
 the values, which fills in the rug. The control loop sends that rug to this new
 `print_rug` function, to get nice formatting. Now, we have a clean, clear,
 logical separation of concerns for our rug types!
+
+This feels like a great time to make a commit. You might also at this point want
+to compare this version of the program to the prior commit, and look back over
+what you've changed!
 
 ## Inheritance
 
@@ -351,6 +360,9 @@ for the `area` method on the `SquareRug` instance. `SquareRug` *does* define an
 
 Update the Rectangular and Circular rugs to use the base class functionality!
 
+When you're done, make a commit! This should be much cleaner, and would be
+another great time to review the differences from the last check point.
+
 ### Accessing base behavior
 
 But wait, this is missing something - how will it get whether the user wants
@@ -385,7 +397,6 @@ class has more complex initialization behavior.
 
 Let's look at this for `RectangleRug`, and then you can do it yourself for
 `CircleRug`!
-
 
 ```py
 class RectangularRug(Rug):
@@ -468,6 +479,9 @@ This circular rug costs $439.82 with fringe.
 Price another rug (Y/n): n
 Goodbye!
 ```
+
+When you're done with all three, let's make our final commit and compare it to
+our first version with the original control loop. Quite a change, hun?
 
 ## Examples
 
