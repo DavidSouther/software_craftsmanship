@@ -130,7 +130,7 @@ two rugs passing `5, False` and `2.5, True` for the parameters. We call the
 We can do this again for the rectangle rug.
 
 ```py
-class RectangleRug():
+class RectangularRug():
     def __init__(self, width, length, has_fringe):
         self.width = width 
         self.length = length 
@@ -144,8 +144,8 @@ class RectangleRug():
             cost = cost + perimeter * 1.5
         return cost
 
-rectangle_rug_1 = RectangleRug(4, 6, False)
-rectangle_rug_2 = RectangleRug(2.5, 5, True)
+rectangle_rug_1 = RectangularRug(4, 6, False)
+rectangle_rug_2 = RectangularRug(2.5, 5, True)
 rectangle_rug_1_cost = rectangle_rug_1.cost()
 rectangle_rug_2_cost = rectangle_rug_2.cost()
 print(f"Rug 1 costs ${rectangle_rug_1_cost:.2f}")
@@ -191,7 +191,7 @@ def price_rug():
     rug_cost = rug.cost()
     print(f"The rug costs ${rug_cost:.2f}")
 
-while input("Price another rug? (y/n) ").lowercase() == 'y':
+while input("Price another rug? (y/n) ").lower() == 'y':
     price_rug()
 ```
 
@@ -212,6 +212,8 @@ class SquareRug():
     def __init__(self, size = 0, has_fringe = False):
         self.size = size
         self.has_fringe = has_fringe
+
+    # The old cost function, it doesn't change
 
     def get_values(self):
         wants_fringe = input("Should this rug have fringe (y/N)? ")
@@ -236,9 +238,6 @@ def get_rug():
     elif rug_type == "3":
         rug = CircularRug()
 
-    # Ask for inputs
-    rug.get_values()
-
     return rug
 
 def print_rug(rug)
@@ -251,6 +250,9 @@ def print_rug(rug)
     
 while input("Price another rug? (y/n) ").lowercase() == 'y':
     rug = get_rug()
+    # Ask for inputs
+    rug.get_values()
+
     print_rug(rug)
 ```
 

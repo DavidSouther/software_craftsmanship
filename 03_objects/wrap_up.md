@@ -22,3 +22,10 @@ We ended the chapter building a maze game. This gave us more practice with
 classes, but more importantly, we used it as a jumping point for talking about
 object and program design. We saw how using classes and objects let us write
 clear code which shows its intent.
+
+These first three chapters have given us the basic building blocks of writing
+computer programs. From here, we will look at techniques for building programs
+that are larger and more difficult to understand at one time. These tools will
+aid in developing these larger programs in a systematic and verifiable way.
+
+[Unit testing](../04_unit_testing/README.md)

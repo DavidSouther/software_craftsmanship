@@ -449,7 +449,7 @@ def print_calendar():
     now = datetime.now()
     print(colors.CLEAR, colors.at(1, 1))
     print(" M   Tu  W   Th  F   Sa  Su")
-    print_month(now, row=2)
+    print_month(now, 3)
 
 print_calendar()
 ```
@@ -483,7 +483,7 @@ appropriately aligned. It should look like this, all said and done:
  ## Exercises
 
 *   **Vacations** Add vacation days and give them a color.
-*   **Clock face** Look at more properties on dattime, and use them to print a
+*   **Clock face** Look at more properties on datetime, and use them to print a
     clock face.
 *   **Days until** Using timedeltas, count the number of days between two dates.
     Use this to print "Days until/Workdays until"
