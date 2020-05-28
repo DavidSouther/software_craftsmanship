@@ -1,0 +1,19 @@
+# Rug Tests
+
+For the rugs program, we want to write unit tests to verify all of the parts of
+the rug classes. We should have at least three - `SquareRug`, `RectangularRug`,
+and `CircularRug`. Each uses some functionality of the base `Rug` class, and
+also provides its own calculations for `area` and `perimeter`.
+
+We'll write a test case for each class, then, and within each test case write
+individual tests for a rug of a certain size, with or without fringe. The tests
+will set up by create a rug of whatever type we're verifying, evaluate the
+calculatoins 
+
+* Libraries
+* Test Files
+* Square Rug Tests
+  * Area
+  * Perimeter
+  * Cost
+  * Edge cases: 0 area, 0 perimeter
