@@ -333,10 +333,15 @@ methods. I'll give the example of `SquareRug`, and you can do the same for
 
 ```py
 class SquareRug(Rug):
-    # __init__ and get_values methods stay the same and are unchanged
+    # __init__ and stays the same and is unchanged
 
     # remove the cost method
 
+    # change the get_values method
+    def get_values(self):
+        self.size = float(input("Side length of this square rug? "))
+
+    # add these methods
     def area(self):
         return self.size ** 2
 
