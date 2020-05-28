@@ -232,13 +232,11 @@ def get_rug():
     print("3) Circular Rug")
     rug_type = input("Which type of rug? ")
     if rug_type == "1":
-        rug = SquareRug()
+        return SquareRug()
     elif rug_type == "2":
-        rug = RectangularRug()
+        return RectangularRug()
     elif rug_type == "3":
-        rug = CircularRug()
-
-    return rug
+        return CircularRug()
 
 def print_rug(rug)
     price = rug.cost()
@@ -248,7 +246,7 @@ def print_rug(rug)
         with_fringe = "without"
     print(f"This rug costs ${price:.2f} {with_fringe} fringe.")
     
-while input("Price another rug? (y/n) ").lowercase() == 'y':
+while input("Price another rug? (y/n) ").lower() == 'y':
     rug = get_rug()
     # Ask for inputs
     rug.get_values()
@@ -257,10 +255,11 @@ while input("Price another rug? (y/n) ").lowercase() == 'y':
 ```
 
 Now the `get_rug` function only needs to know about the types of rugs we have in
-the program, and chooses one of them. It has the rug itself ask the user for
-the values, and then returns the created & filled in rug. The control loop sends
-that rug to this new `print_rug` function, to get nice formatting. Now, we have
-a clean, clear, logical separation of concerns for our rug types!
+the program, and chooses one of them. It returns a new instance of the chosen
+rug type. Then back in the loop, it has the rug itself ask the user for
+the values, which fills in the rug. The control loop sends that rug to this new
+`print_rug` function, to get nice formatting. Now, we have a clean, clear,
+logical separation of concerns for our rug types!
 
 ## Inheritance
 
