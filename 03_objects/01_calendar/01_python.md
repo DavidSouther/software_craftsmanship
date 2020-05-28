@@ -426,7 +426,8 @@ color base on which of these conditions are true.
 ```py
 def print_day(date, row):
     now = datetime.now()
-    print(colors.at(row, 2 + (4 * date.weekday())), end="")
+    column = 2 + (4 * date.weekday())
+    print(colors.at(row, column), end="")
     if date.day == now.day:
         print(colors.YELLOW, end="")
     elif isHoliday(date):
