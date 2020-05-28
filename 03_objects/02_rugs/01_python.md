@@ -324,22 +324,34 @@ methods. I'll give the example of `SquareRug`, and you can do the same for
 
 ```py
 class SquareRug(Rug):
-    # cost and __init__ methods are the same
+    # __init__ and get_values methods are the same
 
-    def get_values(self):
-        self.side_length = float(input("Side length of this square rug? "))
+    # remove the cost method
 
     def area(self):
-        return self.side_length ** 2
+        return self.size ** 2
 
     def perimeter(self):
-        return self.side_length * 4
+        return self.size * 4
 ```
 
 Here, we still have our class identifier, but we added the `Rug` parent class to
 the inside of the first parenthesis. This is what tells python this is a derived
 class. The `get_values` method asks for the side of the rug, and the `area` and
 `perimeter` methods do just the specific calculations for the square.
+
+If we execute our program now and choose a square rug, the `get_rug` function
+will create a new `SquareRug` object. Then, when we call `cost` in `print_rug`,
+it will look on the `SquareRug` for a `cost` method. Because there is no `cost`
+method defined on `SqaureRug`, it will look on the super class, `Rug`. `Rug`
+does have a `cost` method, so Python will execute that method using the instance
+of the `SquareRug` as the `self` argument. As `Rug::cost` executes, it will ask
+for the `area` method on the `SquareRug` instance. `SquareRug` *does* define an
+`area` method, so Python will use that version which returns the size squared.
+
+Update the Rectangular and Circular rugs to use the base class functionality!
+
+### Accessing base behavior
 
 But wait, this is missing something - how will it get whether the user wants
 fringe? Because we replaced the `get_values` method, this new version will get
