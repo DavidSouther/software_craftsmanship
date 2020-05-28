@@ -333,7 +333,7 @@ methods. I'll give the example of `SquareRug`, and you can do the same for
 
 ```py
 class SquareRug(Rug):
-    # __init__ and get_values methods are the same
+    # __init__ and get_values methods stay the same and are unchanged
 
     # remove the cost method
 
