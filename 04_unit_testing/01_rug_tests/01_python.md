@@ -156,4 +156,4 @@ tight in our main program, being able to simply read the tests is a great boon.
 
 ## Exercises
 
-* Write tests for the other rugs types you want.
+*   Write tests for the other rugs types you have.
