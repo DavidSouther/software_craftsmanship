@@ -100,7 +100,7 @@ class Keyring():
             print(f"Picked up {key} key")
             self.keys.append(key)
     
-    def can_unlock_door(self, door):
+    def can_unlock(self, door):
         if door.lock == None:
             return True
         for key in self.keys:
@@ -113,9 +113,9 @@ exit_room = Room("exit")
 entry_room.add_north_door(exit_room, "blue")
 keyring = Keyring()
 
-print(keyring.can_unlock_door(entry_room.north_door))
+print(keyring.can_unlock(entry_room.north_door))
 keyring.add_key("blue")
-print(keyring.can_unlock_door(entry_room.north_door))
+print(keyring.can_unlock(entry_room.north_door))
 ```
 
 A lock keeps track of which key fits it, and provides a simple method to check
@@ -125,7 +125,7 @@ we could think of ways to extend the `Lock` class to require one of several keys
 (like a specific key and a master key), or make it need multiple keys to unlock.
 
 The keyring tracks which keys have been found, and for any given door, it asks
-the lock on the door if any of its keys fit. If they do, the `can_unlock_door`
+the lock on the door if any of its keys fit. If they do, the `can_unlock`
 method returns `True` and we know this `Keyring` lets us through that door.
 
 ## Game and Player
@@ -142,7 +142,7 @@ class Player():
         self.current_room = start_room 
 
     def move_through(self, door):
-        if door != None and self.keyring.can_unlock_door(door):
+        if door != None and self.keyring.can_unlock(door):
             self.current_room = door.other_side(self.current_room)
             self.current_room.on_enter(self)
         else:

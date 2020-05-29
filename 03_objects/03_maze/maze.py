@@ -48,7 +48,7 @@ class Keyring():
             print(f"Picked up {key} key")
             self.keys.append(key)
     
-    def can_unlock_door(self, door):
+    def can_unlock(self, door):
         if door.lock == None:
             return True
         for key in self.keys:
@@ -57,12 +57,12 @@ class Keyring():
         return False
 
 class Player():
-    def __init__(self):
+    def __init__(self, start_room):
         self.keyring = Keyring()
-        self.current_room = None
+        self.current_room = start_room
 
     def move_through(self, door):
-        if door != None and self.keyring.can_unlock_door(door):
+        if door != None and self.keyring.can_unlock(door):
             self.current_room = door.other_side(self.current_room)
             self.current_room.on_enter(self)
         else:

@@ -1,16 +1,4 @@
 class Room():
-    """
-    A Room is in a maze.
-
-    It has a brief description. It might have a maze. It has walls in the
-    cardinal directions, and each wall may or may not have a door.
-
-    A room has methods for adding doors in each of the cardinal directions.
-    These methods take the other room to connect this room to, creat a door
-    between them, and sets the door appropriately for both sides. If the other
-    room already had a door there... well, that door is broken and only goes one
-    way now, I guess?
-    """
     def __init__(self, description, key = None):
         self.description = description
         self.key = key
@@ -138,17 +126,25 @@ class Game():
                 print("You won the treasure!")
                 break 
 
-blue_key = "blue"
-blue_lock = Lock()
-blue_lock.add_fitting_key(blue_key)
-room_a = Room("the entry room")
-room_b = Room("the library", blue_key)
-room_c = Room("the dining room")
-room_d = Room("the kitchen")
 
-room_a.add_east_door(room_b)
-room_a.add_north_door(room_c)
-room_c.add_north_door(room_d, blue_lock)
+def basic_maze():
+    blue_key = "blue"
+    blue_lock = Lock()
+    blue_lock.add_fitting_key(blue_key)
+    room_a = Room("the entry room")
+    room_b = Room("the library", blue_key)
+    room_c = Room("the dining room")
+    room_d = Room("the kitchen")
 
-game = Game(room_a, room_d)
-game.play()
+    room_a.add_east_door(room_b)
+    room_a.add_north_door(room_c)
+    room_c.add_north_door(room_d, blue_lock)
+
+    return Game(room_a, room_d)
+
+def main():
+    game = basic_maze()
+    game.play()
+
+if __name__ == "__main__":
+    main()
