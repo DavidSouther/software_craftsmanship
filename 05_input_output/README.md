@@ -7,8 +7,9 @@
 
 ## Flags
 
-* Ways to change how a program starts up
-* Using absl library
+*   Ways to change how a program starts up
+*   Using absl library
+*   Rugs cost from flags
 
 ## Files
 
@@ -20,4 +21,5 @@
 # Project
 
 President's Database (Using lib/csv)
+
 Maze Specification

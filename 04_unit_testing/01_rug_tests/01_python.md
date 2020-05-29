@@ -103,7 +103,7 @@ F
 FAIL: test_no_fringe (__main__.SquareRugTest)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "c:\Users\dsouther\Documents\GitHub\software_craftsmanship\04_unit_testing\01_rug_tests\rug_test.py", line 14, in test_no_fringe
+  File "01_rug_tests\rug_test.py", line 14, in test_no_fringe
     self.assertEqual(perimeter, 25)
 AssertionError: 20 != 25
 

@@ -2,7 +2,7 @@
 
 On our journey into the world of Software Craftsmanship, we've completed our
 first steps. We have an understanding of the way computers run and store values.
-We've used functions to abstract reusable blocks of executabe code, and we've
+We've used functions to abstract reusable blocks of executable code, and we've
 used objects to abstract bundles of data. These core pieces are all we need to
 write software. Everything else is just using them - either built in to our
 language, from a library we include, or that we've written ourselves. Of course,
