@@ -68,7 +68,8 @@ def move_up(maze, player):
     cell = maze[player.row + 1][player.column]
     if cell == 'X':
         print("Found the exit!")
-    if maze[player.row + 1][player.column - 1] == '|' and maze[player.row + 1][player.column + 1] == '|':
+    if maze[player.row + 1][player.column - 1] == '|'
+            and maze[player.row + 1][player.column + 1] == '|':
         if not player.keyring.includes(cell):
             # The door is locked
             return
