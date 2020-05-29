@@ -1,7 +1,7 @@
 from math import pi
 
 class Rug():
-    def __init__(self, has_fringe = False, description = "basic"):
+    def __init__(self, has_fringe = False, description = ""):
         self.has_fringe = has_fringe 
         self.description = description
     

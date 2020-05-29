@@ -440,7 +440,7 @@ class.
 
 ```py
 class Rug():
-    def __init__(self, has_fringe = False, description = "basic"):
+    def __init__(self, has_fringe = False, description = ""):
         self.has_fringe = has_fringe 
         self.description = description
 
@@ -456,7 +456,7 @@ class Rug():
         print(f"This {description} rug costs ${price:.2f} {with_fringe} fringe.")
 
 class SquareRug(Rug):
-    def __init__(self, size, has_fringe):
+    def __init__(self, size = 0, has_fringe = False):
         super().__init__(has_fringe, "square")
         self.size = size 
     
@@ -465,6 +465,17 @@ class SquareRug(Rug):
 
 I think you get the point, and can handle `RectangularRug` and `CircularRug` on
 your own!
+
+Now that `print` is in the parent rug, we can remove our entire `print_rug`
+function. Then, we need to replace the call in `price_rug` with a call to
+`rug.print()`:
+
+```py
+def price_rug():
+    rug = get_rug()
+    rug.get_values()
+    rug.print()
+```
 
 Here's a sample session:
 
