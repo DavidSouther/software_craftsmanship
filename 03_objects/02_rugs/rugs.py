@@ -1,9 +1,9 @@
 from math import pi
 
 class Rug():
-    def __init__(self, has_fringe = False):
+    def __init__(self, has_fringe = False, description = "basic"):
         self.has_fringe = has_fringe 
-        self.description = "basic"
+        self.description = description
     
     def get_values(self):
         """
@@ -51,9 +51,8 @@ class Rug():
 
 class SquareRug(Rug):
     def __init__(self, size = 0, has_fringe = False):
-        super().__init__(has_fringe)
+        super().__init__(has_fringe, "square")
         self.side_length = 0
-        self.description = "square"
     
     def get_values(self):
         super().get_values()

@@ -440,8 +440,13 @@ class.
 
 ```py
 class Rug():
-    # ... The other lines
-    def print(self)
+    def __init__(self, has_fringe = False, description = "basic"):
+        self.has_fringe = has_fringe 
+        self.description = description
+
+    # ... The other methods, unchanged
+
+    def print(self):
         price = self.cost()
         if self.has_fringe:
             with_fringe = "with"
@@ -452,9 +457,8 @@ class Rug():
 
 class SquareRug(Rug):
     def __init__(self, size, has_fringe):
-        super().__init__(has_fringe)
+        super().__init__(has_fringe, "square")
         self.size = size 
-        self.description = 'square'
     
     # Other methods
 ```
@@ -465,15 +469,15 @@ your own!
 Here's a sample session:
 
 ```
-Price another rug (Y/n): 
+Price another rug (Y/n): Y
 1) Square Rug
 2) Rectangular Rug
 3) Circular Rug
 Which type of rug? 1
-Should this rug have fringe (y/N)? 
+Should this rug have fringe (y/N)? N
 Side length of this square rug? 5
 This square rug costs $125.00 without fringe.
-Price another rug (Y/n): 
+Price another rug (Y/n): Y
 1) Square Rug
 2) Rectangular Rug
 3) Circular Rug
