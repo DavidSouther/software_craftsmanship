@@ -44,8 +44,8 @@ class Door():
         else:
             return self.side_a
 
-entry_room = Room("Entrance")
-exit_room = Room("Exit")
+entry_room = Room("the entrance")
+exit_room = Room("the exit")
 entry_room.add_north_door(exit_room)
 
 print(exit_room.south_door.other_side(exit_room).description)
@@ -97,7 +97,7 @@ class Keyring():
 
     def add_key(self, key):
         if not key in self.keys:
-            print(f"Picked up {key}")
+            print(f"Picked up {key} key")
             self.keys.append(key)
     
     def can_unlock_door(self, door):
@@ -108,13 +108,13 @@ class Keyring():
                 return True
         return False
 
-entry_room = Room("Entrance")
-exit_room = Room("Exit")
-entry_room.add_north_door(exit_room, "Blue")
+entry_room = Room("entrance")
+exit_room = Room("exit")
+entry_room.add_north_door(exit_room, "blue")
 keyring = Keyring()
 
 print(keyring.can_unlock_door(entry_room.north_door))
-keyring.add_key('blue')
+keyring.add_key("blue")
 print(keyring.can_unlock_door(entry_room.north_door))
 ```
 
@@ -145,6 +145,8 @@ class Player():
         if door != None and self.keyring.can_unlock_door(door):
             self.current_room = door.other_side(self.current_room)
             self.current_room.on_enter(self)
+        else:
+            print("Cannot move through that door.")
 ```
 
 The player starts itself in some given room, and makes itself an empty keyring.
@@ -187,8 +189,7 @@ class Game():
 
     def print_room(self):
         room = self.player.current_room
-        print("You are in a room.")
-        print(room.description)
+        print(f"You are in {room.description}.")
         if room.north_door != None:
             print("There is a door to the (n)orth.")
 
@@ -234,10 +235,10 @@ Let's try it out on a bigger maze:
 blue_key = "blue"
 blue_lock = Lock()
 blue_lock.add_fitting_key(blue_key)
-room_a = Room("The entry room")
-room_b = Room("The Library", blue_key)
-room_c = Room("The dining room")
-room_d = Room("The kitchen")
+room_a = Room("the entry room")
+room_b = Room("the library", blue_key)
+room_c = Room("the dining room")
+room_d = Room("the kitchen")
 
 room_a.add_east_door(room_b)
 room_a.add_north_door(room_c)

@@ -62,20 +62,13 @@ class Lock():
         if not key in self.fitting_keys:
             self.fitting_keys.append(key)
 
-class Key():
-    def __init__(self, color):
-        self.color = color
-    
-    def __str__(self):
-        return f"{self.color} key"
-
 class Keyring():
     def __init__(self):
         self.keys = []
 
     def add_key(self, key):
         if not key in self.keys:
-            print(f"Picked up {key}")
+            print(f"Picked up {key} key")
             self.keys.append(key)
     
     def can_unlock_door(self, door):
@@ -95,6 +88,8 @@ class Player():
         if door != None and self.keyring.can_unlock_door(door):
             self.current_room = door.other_side(self.current_room)
             self.current_room.on_enter(self)
+        else:
+            print("Cannot move through that door.")
 
 class Game():
     def __init__(self, start_room, end_room):
@@ -105,8 +100,7 @@ class Game():
 
     def print_room(self):
         room = self.player.current_room
-        print("You are in a room.")
-        print(room.description)
+        print(f"You are in {room.description}.")
         if room.north_door != None:
             print("There is a door to the (n)orth.")
         if room.east_door != None:
@@ -131,6 +125,7 @@ class Game():
     
     def play(self):
         while True:
+            print()
             self.print_room()
 
             direction = input("Which direction do you go? (q to quit) ")[0].lower()
@@ -143,13 +138,13 @@ class Game():
                 print("You won the treasure!")
                 break 
 
-blue_key = Key("blue")
+blue_key = "blue"
 blue_lock = Lock()
 blue_lock.add_fitting_key(blue_key)
-room_a = Room("The entry room")
-room_b = Room("The Library", blue_key)
-room_c = Room("The dining room")
-room_d = Room("The kitchen")
+room_a = Room("the entry room")
+room_b = Room("the library", blue_key)
+room_c = Room("the dining room")
+room_d = Room("the kitchen")
 
 room_a.add_east_door(room_b)
 room_a.add_north_door(room_c)

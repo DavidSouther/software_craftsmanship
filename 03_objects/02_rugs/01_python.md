@@ -215,8 +215,8 @@ and stores it in the class' properties.
 ```py
 class SquareRug():
     def __init__(self, size = 0, has_fringe = False):
-        self.size = size
         self.has_fringe = has_fringe
+        self.size = size
 
     # The old cost function, it doesn't change
 
@@ -381,7 +381,7 @@ that instead.
 class SquareRug(Rug):
     def __init__(self, size = 0, has_fringe = False):
         super().__init__(has_fringe)
-        self.size = 0
+        self.size = size
     
     def get_values(self):
         super().get_values()
