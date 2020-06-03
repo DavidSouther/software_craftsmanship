@@ -484,7 +484,10 @@ appropriately aligned. It should look like this, all said and done:
 
 *   **Vacations** Add vacation days and give them a color.
 *   **Clock face** Look at more properties on datetime, and use them to print a
-    clock face.
+    clock face. Bonus: Use the `format` function and Python's datetime format
+    codes.
 *   **Days until** Using timedeltas, count the number of days between two dates.
-    Use this to print "Days until/Workdays until"
-*   **Tick Tick Tick** Using loops and `time.sleep`, make your clock tick.
+    Use this and your weekend/vacation checks to print "Days until/Workdays
+    until"
+*   **Tick Tick Tick** Using loops and `time.sleep`, make your clock tick by
+    updating every 10th of a second.

@@ -503,11 +503,28 @@ Goodbye!
 When you're done with all three, let's make our final commit and compare it to
 our first version with the original control loop. Quite a change, hun?
 
-## Examples
+## Exercises
 
 *   Change the price per square foot and the price per perimeter.
-*   Allow the programmer to set the prices per area and perimeter on a
-    rug-by-rug basis
+*   Refactor `SquareRug` to extend from `RectangularRug` instead of `Rug`. The
+    user interface (the visible text the user sees and inputs the user gives)
+    should not change.
+*   Allow the user to specify the color of each rug. Colors do not change the
+    price of a rug.
+*   Incredi-Rugz has added a new type of rug, the Peackock rug. This rug comes
+    in small, medium, and large sizes; it never has fringe; and it only comes in
+    one color, "Peacock". Small peacock rugs cost $125; medium cost $250, and
+    large cost $500.
+*   The rugs program currently asks for several rugs, prices each, and then
+    exists. Write a new class, `Order`. Move your control loop into `Order`,
+    which should:
+    *   Ask for the name of who's making the order
+    *   Repeatedly ask whether the user wants to add a rug to the order
+    *   If the users wants to add a rug to the order, use the same prompts to
+        create and describe the rugs.
+    *   When the user is done asking for rugs, print out the order including who
+        is placing the order, a summary of each rug with type, size, color, and
+        price, and a total cost for all the rugs in the order.
 
 In this section, we've looked at how we define and create our own classes.
 Classes describe objects, bundles of data with certain properties and methods
