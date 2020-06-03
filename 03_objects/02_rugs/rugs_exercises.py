@@ -49,23 +49,6 @@ class Rug():
 
         print(f"This {self.description} rug costs ${price:.2f} {with_fringe} fringe.")
 
-class SquareRug(Rug):
-    def __init__(self, size = 0, has_fringe = False):
-        Rug.__init__(self, has_fringe, "square")
-        self.side_length = 0
-    
-    def get_values(self):
-        Rug.get_values(self)
-        self.side_length = float(input("Side length of this square rug? "))
-
-    def area(self):
-        """ The area of a square is its side length squared. """
-        return self.side_length ** 2
-
-    def perimeter(self):
-        """ The perimeter of a square is its side length four times. """
-        return self.side_length * 4
-
 class RectangularRug(Rug):
     def __init__(self, width = 0, length = 0, has_fringe = False):
         Rug.__init__(self, has_fringe)
@@ -85,6 +68,23 @@ class RectangularRug(Rug):
     def perimeter(self):
         """ The perimeter of a rectange is its twice its length plus twice its width. """
         return self.width * 2 + self.length * 2
+
+class SquareRug(Rug):
+    def __init__(self, size = 0, has_fringe = False):
+        Rug.__init__(self, has_fringe, "square")
+        self.side_length = 0
+    
+    def get_values(self):
+        Rug.get_values(self)
+        self.side_length = float(input("Side length of this square rug? "))
+
+    def area(self):
+        """ The area of a square is its side length squared. """
+        return self.side_length ** 2
+
+    def perimeter(self):
+        """ The perimeter of a square is its side length four times. """
+        return self.side_length * 4
 
 class CircularRug(Rug):
     def __init__(self, radius = 0, has_fringe = False):
