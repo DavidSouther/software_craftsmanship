@@ -126,7 +126,7 @@ def move_up(player):
     door = room.north_door
     if door == None:
         return
-    if door.is_unlocked_by(player.keyring):
+    if not door.is_unlocked_by(player.keyring):
         return
     player.current_room = door.other_side(room)
     player.current_room.on_enter(player)
@@ -146,7 +146,7 @@ way that shows how to make these types of decision, or at least where these
 decisions will arise in a setting of a larger development process. It is not an
 overstatement to say that code like the first example has grown to cause
 projects to run over time, over budget, and even to fail, while clear
-architecture and design during the software engieering process has directly led
+architecture and design during the software engineering process has directly led
 to projects coming in on time, in budget, and serving a long and useful life.
 
 Let's take a look at the full example and explore this maze in depth in our

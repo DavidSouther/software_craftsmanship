@@ -89,8 +89,8 @@ class Lock():
         self.fitting_key = fitting_key
 
     def accepts(self, key):
-        return key == self.fitting_keys
-
+        return key == self.fitting_key 
+ 
 class Keyring():
     def __init__(self):
         self.keys = []
@@ -110,7 +110,8 @@ class Keyring():
 
 entry_room = Room("entrance")
 exit_room = Room("exit")
-entry_room.add_north_door(exit_room, "blue")
+blue_lock = Lock("blue")
+entry_room.add_north_door(exit_room, blue_lock)
 keyring = Keyring()
 
 print(keyring.can_unlock(entry_room.north_door))
