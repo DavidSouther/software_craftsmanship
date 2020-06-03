@@ -380,25 +380,28 @@ that instead.
 ```py
 class SquareRug(Rug):
     def __init__(self, size = 0, has_fringe = False):
-        super().__init__(has_fringe)
+        Rug.__init__(self, has_fringe)
         self.size = size
     
     def get_values(self):
-        super().get_values()
+        Rug.get_values(self)
         self.size = float(input("Side length of this square rug? "))
     
     # Other methods stay the same
 ```
 
-These two methods first get access to the parent class with the `super()`
-function call. While `self` gives us the current instance as type `SquareRug`,
-`super()` gives us the current instance as type `Rug`. We then call `get_values`
-on that instance to have it ask for and set the has_fringe property, beore doing
-the square's user input for side length. For completeness and consistency, we do
-the same thing in the `__init__` constructor - instead of setting `has_fringe`
-at this point, we let the super class constructor handle it. While it's a bit
-silly for this simple case, it's a good habit to get into for when the base
-class has more complex initialization behavior.
+These two methods first get access to the method on the parent class by
+asking for it specifically - `Rug.__init__` and `Rug.get_values`. This treats
+the method specifically as a function, just like calling any other function.
+However, because we're accessing the method directly rather than through an
+object, we need to provide the `self` argument explicitly. This all results
+in calling the `Rug`'s version of `get_values` on our rug instance to ask for
+and set the `has_fringe` property, beore doing `SquareRug`'s user input for
+side length. For completeness and consistency, we do the same thing in the
+`__init__` constructor - instead of setting `has_fringe` at this point, we
+let the super class constructor handle it. While it's a bit silly for this
+simple case, it's a good habit to get into for when the base class has more
+complex initialization behavior.
 
 Let's look at this for `RectangleRug`, and then you can do it yourself for
 `CircleRug`!
@@ -406,12 +409,12 @@ Let's look at this for `RectangleRug`, and then you can do it yourself for
 ```py
 class RectangularRug(Rug):
     def __init__(self, length = 0, width = 0, has_fringe = False):
-        super().__init__(has_fringe)
+        Rug.__init__(has_fringe)
         self.length = length
         self.width = width
     
     def get_values(self):
-        super().get_values()
+        Rug.get_values()
         self.length = float(input("Length of this rectangular rug? "))
         self.width = float(input("Width of this rectangular rug? "))
 
@@ -457,7 +460,7 @@ class Rug():
 
 class SquareRug(Rug):
     def __init__(self, size = 0, has_fringe = False):
-        super().__init__(has_fringe, "square")
+        Rug.__init__(self, has_fringe, "square")
         self.size = size 
     
     # Other methods
