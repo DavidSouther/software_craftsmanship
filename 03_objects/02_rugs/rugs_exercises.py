@@ -51,11 +51,11 @@ class Rug():
 
 class SquareRug(Rug):
     def __init__(self, size = 0, has_fringe = False):
-        super().__init__(has_fringe, "square")
+        Rug.__init__(self, has_fringe, "square")
         self.side_length = 0
     
     def get_values(self):
-        super().get_values()
+        Rug.get_values(self)
         self.side_length = float(input("Side length of this square rug? "))
 
     def area(self):
@@ -68,13 +68,13 @@ class SquareRug(Rug):
 
 class RectangularRug(Rug):
     def __init__(self, width = 0, length = 0, has_fringe = False):
-        super().__init__(has_fringe)
+        Rug.__init__(self, has_fringe)
         self.width =  width
         self.length = length 
         self.description = "rectangular"
     
     def get_values(self):
-        super().get_values()
+        Rug.get_values(self)
         self.width = float(input("Width of the rectangular rug? "))
         self.length = float(input("Length of the rectangular rug? "))
 
@@ -88,12 +88,12 @@ class RectangularRug(Rug):
 
 class CircularRug(Rug):
     def __init__(self, radius = 0, has_fringe = False):
-        super().__init__(has_fringe)
+        Rug.__init__(self, has_fringe)
         self.radius = radius
         self.description = "circular"
     
     def get_values(self):
-        super().get_values()
+        Rug.get_values(self)
         self.radius = float(input("Radius of this circular rug? "))
 
     def area(self):
