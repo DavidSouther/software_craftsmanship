@@ -233,11 +233,9 @@ loop back and play some more!
 Let's try it out on a bigger maze:
 
 ```py
-blue_key = "blue"
-blue_lock = Lock()
-blue_lock.add_fitting_key(blue_key)
+blue_lock = Lock("blue")
 room_a = Room("the entry room")
-room_b = Room("the library", blue_key)
+room_b = Room("the library", "blue")
 room_c = Room("the dining room")
 room_d = Room("the kitchen")
 
