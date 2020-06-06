@@ -110,11 +110,10 @@ class Game():
                 print("You won the treasure!")
                 break 
 
-blue_key = "blue"
 blue_lock = Lock()
-blue_lock.add_fitting_key(blue_key)
+blue_lock.add_fitting_key("blue")
 room_a = Room("the entry room")
-room_b = Room("the library", blue_key)
+room_b = Room("the library", "blue")
 room_c = Room("the dining room")
 room_d = Room("the kitchen")
 

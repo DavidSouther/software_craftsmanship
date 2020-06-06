@@ -233,7 +233,6 @@ loop back and play some more!
 Let's try it out on a bigger maze:
 
 ```py
-blue_lock = Lock("blue")
 room_a = Room("the entry room")
 room_b = Room("the library", "blue")
 room_c = Room("the dining room")
@@ -241,7 +240,7 @@ room_d = Room("the kitchen")
 
 room_a.add_east_door(room_b)
 room_a.add_north_door(room_c)
-room_c.add_north_door(room_d, blue_lock)
+room_c.add_north_door(room_d, Lock("blue"))
 
 game = Game(room_a, room_d)
 game.play()
@@ -252,7 +251,24 @@ start the player in the entry. Give it a shot!
 
 # Exercises
 
-* Make a bigger maze!
-* Add more items or types of keys?
-* Provide descriptions of doors.
-* Make rooms support as many doors as you want to give them.
+*   Make a bigger maze!
+*   Add more items or types of keys?
+*   Provide descriptions of doors.
+*   Make rooms support as many doors as you want to give them.
+
+## Recipe book
+
+Write a program that shows a recipe book. This recipe book will let users choose
+a recipe from a list of recipes, and then when the user is reading a recipe, let
+them change the number of servings. When the user changes the number of servings
+it will update all the measurements as needed. A recipe book has a title and
+many recipes. Each recipe has a title, a number of servings in its written
+instructoins, a list of ingredients, and instructions as a string or list of
+directions. Ingredients in a recipe will need a name, and also some notion of a
+measurement.
+
+Measurements will be where a lot of the magic in scaling the number of servings.
+A measurement could be as simple as a single number, which scales up and down
+based on the desired number of servings.
+A measurement will be some base number, but will also need some notion of
+whether it's a volume or a 
