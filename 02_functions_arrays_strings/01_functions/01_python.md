@@ -238,6 +238,17 @@ That's exactly what we're doing with the functions here! Finding self-contained
 pieces that can be used repeatedly, rather than repeating ourselves every time
 over and over again.
 
+## Exercises
+
+*   **Rugs** Write functions for a circular rug and let users choose circular
+    rugs in the input.
+
+*   **Recipe Measurements** Revisit the `measurements.py` file from chapter 1.
+    Create functions for common parts that are duplicated or otherwise should be
+    grouped in the file. No peeking, but [here's my breakdown](./recipe_fns.md)
+
+*   Write functions for exercises in chapter 1.
+
 Functions are a really important concept in programming and software engineering
 so let's take a look at
 [a closer look at how they execute](./function_tracing.md).

@@ -305,6 +305,37 @@ values, to make sure it's still correct.
         1.  707 - DCCVII
         1.  90 - DCCCXC
         1.  1800 - MDCCC
+
+1.  **Recipes**
+    *   Create a new program `measurements.py`. Ask the user how many people
+        they want to serve. Just choose a recipe and hard-code the measurements
+        for the recipe. Scale the ingredients based on how many people the user
+        has entered. After the first recipe, add a few more and let the user
+        choose between several recipes.
+
+        *This will feel like a huge amount of duplication. That is the point. We
+        do not have the tools we need to make this work without duplicating this
+        code. The exercises in this chapter are to get you feeling confident
+        using only the tools we have so far - variables, values, math, and if
+        conditions. In chapter 2, we will use **functions** to shock you with
+        how much shorter it can be!*
+
+    *   Some of the recipes you scaled down in the last section might not make a
+        huge amount of sense. Trying to get one and a half eggs? That's a pain!
+        Add conditional statements to your calculations in the earlier exercises
+        that tell the user they can't scale certain recipes if that would result
+        in measurements that are difficult to scale (like fractional eggs).
+
+    *   Something something decimal to fraction
+
+    *   While scaling some of these measurements, you may have noticed some
+        odd or difficult measurements. How do you handle 0.125 cups of an
+        ingredient? In a real kitchen, you would switch from 1/8th a cup to
+        using 2 tablespoons! Modify your program to convert between certain unit
+        sizes. You can find tables of measurements conversions online, but most
+        conversions will work by using the conversions of 1 cup is 16
+        tabelespoons, and 1 tablespoon is 3 teaspoons.
+
 1.  **Rugs**
     1.  Create a new program, `square_rug.py`. When it runs, ask the user the
         size of the rug, and whether they want fringe. Print out the cost.
@@ -312,8 +343,8 @@ values, to make sure it's still correct.
         Ask the user the appropriate questions and print the cost.
     1.  Create a program that combines these three - first ask the user which
         type of rug they are creating, and then have it choose between those
-	three implementations. Copy/paste the implementations from the earlier
-	parts of the exercise.
+        three implementations. Copy/paste the implementations from the earlier
+        parts of the exercise.
 
 These control statements - `while`, `for`, and `if`, are the bread and butter of
 making programs do interesting things. Many times, we want to do the same

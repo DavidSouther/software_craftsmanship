@@ -269,6 +269,6 @@ measurement.
 
 Measurements will be where a lot of the magic in scaling the number of servings.
 A measurement could be as simple as a single number, which scales up and down
-based on the desired number of servings.
-A measurement will be some base number, but will also need some notion of
-whether it's a volume or a 
+based on the desired number of servings. A measurement will be some base number,
+but will also need some notion of whether it's a volume or a weight or a count
+of things.

@@ -417,6 +417,19 @@ details - just do what's fun, and then go on to the control flow section!
 	In this exercise, choose one or more of these formulas and implement it,
 	using several sets of numbers. For more practice, do more of these!
 
+	1.  **Recipe Measurements.** In a recipe book, recipes are given in servings
+		prepared and quantity of ingredients added. An omelette recipe takes 3
+		eggs and makes 2 servings. A waffle recipe takes 2 cups of flour, and
+		makes 6 waffles. If we wanted to double the recipe, we could multiply
+		the eggs and flour by 2. This would let us make 4 omelettes and 12
+		waffles, but would require 8 eggs and 4 cups of flour. Or if you were
+		only feeding yourself, you'd halve the recipes, using 1.5 eggs and 1
+		cup of flour for a half-sized omelette and 3 waffles.
+		
+		As an exercise, pull a recipe book off your shelf (or find a recipe
+		online) and use Python to calculate the amount of measurement for
+		doubling, tripling, or halving each recipe.
+
 	1. [Board-foot](https://en.wikipedia.org/wiki/Board_foot) Calculate the
 		board-footage for several types of boards, including 
 		

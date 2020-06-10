@@ -156,8 +156,9 @@ time.sleep(1.5)
 print("A second and a half later...")
 ```
 
-*  While a pregnant pause in the interface might be interesting, this becomes very
-        useful when putting animation in a program. Try the following HiLo intro scroll:
+*   While a pregnant pause in the interface might be interesting, this becomes
+    very useful when putting animation in a program. Try the following HiLo
+    intro scroll:
 
 ```python
 import time
@@ -169,6 +170,7 @@ for i in range(1, 9):
     print(colors.at(i+1, 40), colors.RED, "Lo")
     # Half-second delay in each frame
     time.sleep(0.5)
+
 input("Press enter to continue...")
 ```
 
