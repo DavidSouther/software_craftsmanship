@@ -430,6 +430,10 @@ details - just do what's fun, and then go on to the control flow section!
 		online) and use Python to calculate the amount of measurement for
 		doubling, tripling, or halving each recipe.
 
+		> Tip: If you have two variables, `desired_servings` and
+		> `recipe_servings`, you can change the scale of the recipe by
+		> multiplying every measurement by `desired_servings / recipe_servings`.
+
 	1. [Board-foot](https://en.wikipedia.org/wiki/Board_foot) Calculate the
 		board-footage for several types of boards, including 
 		
