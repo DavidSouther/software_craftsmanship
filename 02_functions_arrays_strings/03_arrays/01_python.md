@@ -240,22 +240,30 @@ and pass our two arrays into our functions we had defined for `avg` and
 
 ## Exercises
 
-*   Using the `sum` function above, trace the execution of these programs:
-    *   `print(sum([15, 15, 15, 14, 16]))`
-    *   `print(sum([2, 7, 14, 22, 30]))`
-*   Using the `avg` function above, trace the execution of these programs:
-    *   `print(avg([15, 15, 15, 14, 16]))`
-    *   `print(avg([2, 7, 14, 22, 30]))`
-*   Using the `std_dev` function above, trace the execution of these programs:
-    *   `print(([15, 15, 15, 14, 16]))`
-    *   `print(std_dev([2, 7, 14, 22, 30]))`
-*   In statistics, population *variance* is a part of the standard deviation.
-    Specifically, it's the part of calculating a standard deviation that sums
-    the squares of differences and divides by N, before taking the square root.
-    In other words, the standard deviation is the square root of the variance of
-    the array of data. Rewrite your `std_dev` function to perform the first
-    part of the calculation, the `variance`, in its own function, and then use
-    that function to calculate the standard deviation.
+*   **Statistics**
+    *   Using the `sum` function above, trace the execution of these programs:
+        *   `print(sum([15, 15, 15, 14, 16]))`
+        *   `print(sum([2, 7, 14, 22, 30]))`
+    *   Using the `avg` function above, trace the execution of these programs:
+        *   `print(avg([15, 15, 15, 14, 16]))`
+        *   `print(avg([2, 7, 14, 22, 30]))`
+    *   Using the `std_dev` function above, trace the execution of these programs:
+        *   `print(([15, 15, 15, 14, 16]))`
+        *   `print(std_dev([2, 7, 14, 22, 30]))`
+    *   In statistics, population *variance* is a part of the standard
+        deviation. Specifically, it's the part of calculating a standard
+        deviation that sums the squares of differences and divides by N, before
+        taking the square root. In other words, the standard deviation is the
+        square root of the variance of the array of data. Rewrite your `std_dev`
+        function to perform the first part of the calculation, the `variance`,
+        in its own function, and then use that function to calculate the
+        standard deviation.
+*   **Recipes** Use arrays to store the ingredients in each recipe. For each
+    ingredient, the array should have a tuple of three items, including the
+    name, the default amount, and the measurement size. Instead of printing each
+    ingredient specifically, use a function which loops over the array to print
+    each ingredient. Don't forget the scale parameters!
+
 
 When you've completed the exercises, we can
 [wrap up this chapter](../wrap_up.md).
