@@ -55,11 +55,9 @@ class SquareRugTestCase(unittest.TestCase):
         rug = rugs.SquareRug(5, False)
 
         area = rug.area()
-        perimeter = rug.perimeter()
         cost = rug.cost()
 
         self.assertEqual(area, 25)
-        self.assertEqual(perimeter, 20)
         self.assertEqual(cost, 125)
 
 
@@ -119,20 +117,19 @@ exceptions to debug our programs.
 Let's add another two tests!
 
 ```py
-class SquareRugTest(unittest.TestCase):
+class SquareRugTestCase(unittest.TestCase):
     def test_square_rug_no_fringe(self):
         # ... the test from before
 
     def test_square_rug_fringe(self):
-        rug = rugs.SquareRug(5, False)
+        rug = rugs.SquareRug(5, True)
 
         area = rug.area()
         perimeter = rug.perimeter()
         cost = rug.cost()
 
         self.assertEqual(area, 25)
-        self.assertEqual(perimeter, 20)
-        self.assertEqual(cost, 125)
+        self.assertEqual(cost, 155)
     
     def test_square_rug_no_size(self):
         rug = rugs.SquareRug(0, False)
@@ -157,3 +154,4 @@ tight in our main program, being able to simply read the tests is a great boon.
 ## Exercises
 
 *   Write tests for the other rugs types you have.
+*   Write tests for recipe ingredient scaling.

@@ -311,7 +311,8 @@ values, to make sure it's still correct.
         they want to serve. Just choose a recipe and hard-code the measurements
         for the recipe. Scale the ingredients based on how many people the user
         has entered. After the first recipe, add a few more and let the user
-        choose between several recipes.
+        choose between several recipes. Make sure your recipes don't all use the
+        same ingredients!
 
         *This will feel like a huge amount of duplication. That is the point. We
         do not have the tools we need to make this work without duplicating this

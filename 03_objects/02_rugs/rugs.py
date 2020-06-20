@@ -121,7 +121,8 @@ def price_rug():
     rug.get_values()
     rug.print()
 
-while not input("Price another rug (Y/n): ").lower().startswith("n"):
-    price_rug()
+if __name__ == "__main__":
+    while not input("Price another rug (Y/n): ").lower().startswith("n"):
+        price_rug()
 
-print("Goodbye!")
+    print("Goodbye!")

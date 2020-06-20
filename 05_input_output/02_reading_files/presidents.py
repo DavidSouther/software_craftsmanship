@@ -3,7 +3,6 @@ import os
 
 from datetime import datetime
 
-
 class President():
     def __init__(self, number, name, start_date, end_date, party, vice_pres):
         self.number = number
