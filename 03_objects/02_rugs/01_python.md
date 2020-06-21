@@ -536,5 +536,19 @@ and objects let us finally have much less duplication and much clearer flow of
 operations & data. Taken together, objects allow us to abstract data in the same
 way functions allow us to abstract operations and code execution.
 
+## Exercises
+
+*   **Recipe Book** Create classes for your recipes program in chapter 1. At a
+    minimum, you should have classes for `Recipe`s and `Ingredient`s. Both
+    should have a `print_for_desired_servings` method, which takes the number of
+    people to cook the recipe for, and prints the scaled ingredients for that
+    many servings.
+    *  **Measurements** Write a class hierarchy (base class and sub classes) for
+        ingredient measurements. Ingredients should take a name and a
+        measurement. Measurements should take an amount. When you write method
+        to scale the measurement to fit the serving, it should return a suitable
+        string. For instance, convert 1/8 cup to 2 tablespoons; or 1 tablespoon
+        and 1 teaspoon to 4 teaspoons.
+
 Now that we know the basics of programming with objects, we can look at
 [tracing objects in memory](./tracing_objets.md).
