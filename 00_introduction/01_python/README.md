@@ -21,7 +21,16 @@ you.
 
 ## python
 
-In this book, we'll be using Python 3. It is included with many Linux distributions,
+In this book, we'll be using Python 3. The easiest way to begin using Python 3
+is by using Github Codespaces, which creates a virtual linux computer in the
+cloud for you to use. 
+
+... pic of start codespaces ...
+
+NOTE: Codespaces is BETA, and requires sign up. Update this paragraph when it's
+public.
+
+If you are using your personal computer, python is included with many Linux distributions,
 but if you are using macOS (OSX) or Windows, you will need to install it. 
 On Windows and Mac, you will need to [download](http://www.python.org/download/) and run
 [the windows installer](https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64-webinstall.exe)
@@ -49,10 +58,12 @@ are going to choose a free editor with many nice features, but one that still
 makes you handle most of the programming yourself. Managing your project on your
 own will help you be a better programmer later.
 
-We'll use [Visual Studio Code](https://code.visualstudio.com) as our text editor.
-It is well supported, has a tremendously rich feature set and ecosystem of
-extensions, and best of all, is completely free. When you visit the VSCode page,
-it should suggest an appropriate download link for your platform.
+If you're using the recommended Github Codespaces, the editor is
+[Visual Studio Code](https://code.visualstudio.com). If you are want to install
+it on your own computer, you can follow the link. It is well supported, has a
+tremendously rich feature set and ecosystem of extensions, and best of all, is
+completely free. When you visit the VSCode page, it should suggest an appropriate
+download link for your platform.
 
 *Why can't I just use TextEdit on a mac or Notepad on Windows?* You could, but
 neither of those programs have any tools to help you program. Most importantly,
