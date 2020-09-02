@@ -1,0 +1,8 @@
+Students will be able to describe an **object**, and how **properties** have values like variables.
+Students will be able to access properties on built-in Date objects.
+Students will be able to create and modify built-in Date objects.
+Students will be able to describe a **class** as a way to bundle data into **objects**
+Students will be able to describe **methods** as functions of a **class**
+Students will be able to create a **class** using a **constructor** to **initialize** properties
+Students will be able to compute updates to a class using methods
+Students will be able to **extend** a class to share functionality.
