@@ -11,4 +11,4 @@ able to perform basic computing tasks, through writing your first program, on to
 having a basic understanding of how programs work, while being able to begin to
 understand the programs that are used in your profession.
 
-If you want to learn how to program as a craft, [get started](00_introduction/README.md )!
+If you want to learn how to program as a craft, [get started](00_introduction/README.md)!
