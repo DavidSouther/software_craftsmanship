@@ -1,125 +1,111 @@
-class Room():
-    def __init__(self, description, key = None):
-        self.description = description
-        self.key = key
-        self.doors = []
+class Room:
+    def __init__(self, name):
+        self.name = name
+        self.neighbors = []
     
-    def on_enter(self, player):
-        if self.key != None:
-            player.keyring.add_key(self.key)
-
-class Door():
-    def __init__(self, side_a, side_b, description = "", lock = None):
-        self.side_a = side_a
-        self.side_b = side_b
-
-        if description == "":
-            description = f"Door between {side_a.description} and {side_b.description}"
-        self.description = description
-
-        self.lock = lock
-
-        side_a.doors.append(self)
-        side_b.doors.append(self)
+    def add_neighbor(self, neighbor):
+        if not neighbor in self.neighbors:
+            self.neighbors.append(neighbor)
+            neighbor.add_neighbor(self)
     
-    def other_side(self, side):
-        if side == self.side_a:
-            return self.side_b
-        else:
-            return self.side_a
-
-class Lock():
-    def __init__(self):
-        self.fitting_keys = []
-
-    def accepts(self, key):
-        return key in self.fitting_keys
-    
-    def add_fitting_key(self, key):
-        if not key in self.fitting_keys:
-            self.fitting_keys.append(key)
-
-class Keyring():
-    def __init__(self):
-        self.keys = []
-
-    def add_key(self, key):
-        if not key in self.keys:
-            print(f"Picked up {key} key")
-            self.keys.append(key)
-    
-    def can_unlock(self, door):
-        if door.lock == None:
-            return True
-        for key in self.keys:
-            if door.lock.accepts(key):
-                return True
-        return False
-
-class Player():
-    def __init__(self, start_room):
-        self.keyring = Keyring()
-        self.current_room = start_room
-
-    def move_through(self, door):
-        if door != None and self.keyring.can_unlock(door):
-            self.current_room = door.other_side(self.current_room)
-            self.current_room.on_enter(self)
-        else:
-            print(f"Cannot move through {door.description}")
-
-class Game():
-    def __init__(self, start_room, end_room):
-        self.start_room = start_room
-        self.end_room = end_room
-        self.player = Player()
-        self.player.current_room = self.start_room
-
     def print_room(self):
-        room = self.player.current_room
-        print(f"You are in {room.description}.")
-        doors = len(room.doors)
+        print(f"This is the {self.name}.")
+        doors = len(self.neighbors)
         if doors == 1:
             print("There is 1 door")
         else:
             print(f"There are {doors} doors")
-        i = 0
-        for door in room.doors:
-            print(f"{i + 1}) {door.description}")
-            i += 1
+
+        for i, room in enumerate(self.neighbors, start=1):
+            print(f"{i}) {room.description}")
     
-    def move_player(self, direction):
-        if direction < len(self.player.current_room.doors):
-            door = self.player.current_room.doors[direction]
-            self.player.move_through(door)
+    def on_enter(self, player):
+        print(f"You entered the {self.name}")
+
+class TreasureRoom(Room):
+    def __init__(self, name, value):
+        Room.__init__(self, name)
+        self.value = value
+        self.visited = False
+    
+    def on_enter(self, player):
+        Room.on_enter(self, player)
+        if not self.visited:
+            self.visited = True
+            print(f"It has {self.value} gold!")
+            player.treasure += self.value
+
+class MonsterRoom(Room):
+    def __init__(self, name, strength):
+        Room.__init__(self, name)
+        self.strength = strength
+    
+    def on_enter(self, player):
+        Room.on_enter(self, player)
+        if not self.visited:
+            self.visited = True
+            print(f"It has a monster, which deals ${strength} damage!")
+            player.health -= self.strength
+
+class Player:
+    def __init__(self, starting_room, health = 20):
+        self.health = health
+        self.current_room = starting_room
+        self.treasure = 0
+
+    def move(self, direction):
+        if direction < len(self.current_room.neighbors):
+            room = self.current_room.neighbors[direction]
+            self.current_room = room
+            room.on_enter(self)
         else:
-            print("No room in that direction.")
+            print("No room in that direction.")    
     
+class Game:
+    def __init__(self, start_room, end_room):
+        self.player = Player(start_room)
+        self.end_room = end_room
+
     def play(self):
         while True:
-            print() # A blank line
-            self.print_room()
+            print()
+            player.current_room.print_room()
 
-            direction = input("Which door do you go through? (q to quit) ")[0]
+            direction = input("Which door would you like to go through? ([q]uit) ")[0]
             if direction.lower() == "q":
                 break
+
+            # Subtract 1 because the room descriptions start at 1 but the array starts at 0
+            player.move(int(direction) - 1)
+
+            if self.player.health <= 0:
+                print("You have died!")
+                break
+
     
-            self.move_player(int(direction) - 1)
+    print("Goodbye!")
 
-            if self.player.current_room == self.end_room:
-                print("You won the treasure!")
-                break 
+entrance = Room('Entryway')
+hallway = Room('Hallway')
+dining_room = MonsterRoom('Dining Room', 2)
+billiards_room = TreasureRoom('Billiards Room', 100)
+ballroom = TreasureRoom('Ballroom', 300)
+library = MonsterRoom('Library', 4)
+lounge = MonsterRoom('Lounge', 4)
+study = MonsterRoom('Study', 3)
+kitchen = TreasureRoom('Kitchen', 100)
+conservatory = TreasureRoom('Conservatory', 200)
 
-blue_lock = Lock()
-blue_lock.add_fitting_key("blue")
-room_a = Room("the entry room")
-room_b = Room("the library", "blue")
-room_c = Room("the dining room")
-room_d = Room("the kitchen")
+entrance.add_neighbor(hallway)
+hallway.add_neighbor(dining_room)
+hallway.add_neighbor(billiards_room)
+hallway.add_neighbor(ballroom)
+hallway.add_neighbor(library)
+hallway.add_neighbor(study)
+hallway.add_neighbor(lounge)
+kitchen.add_neighbor(conservatory)
 
-Door(room_a, room_b)
-Door(room_a, room_c)
-Door(room_c, room_d, lock=blue_lock)
+kitchen.add_neighbor(study)
+conservatory.add_neighbor(lounge)
 
-game = Game(room_a, room_d)
-game.play()
+Game(entrance)

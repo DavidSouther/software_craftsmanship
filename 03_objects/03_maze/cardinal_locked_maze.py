@@ -1,3 +1,10 @@
+def times_five_greater(a, b):
+    a5 = a * 5
+    if a5 > b:
+        return a5
+    else:
+        return
+
 class Room():
     """
     A Room is in a maze.

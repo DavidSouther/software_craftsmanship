@@ -434,14 +434,14 @@ details - just do what's fun, and then go on to the control flow section!
 		> `recipe_servings`, you can change the scale of the recipe by
 		> multiplying every measurement by `desired_servings / recipe_servings`.
 
-	1. [Board-foot](https://en.wikipedia.org/wiki/Board_foot) Calculate the
-		board-footage for several types of boards, including 
-		
-		* 350 feet of 2x4 (233.33333333333334)
-		* 100 feet of 2x6 (100)
-		* 20 sheets of 8 foot by 4 foot half-inch plywood (320)
+	1.  Pieces of trim. When finishing a room, it's common to install trim
+	    at the base of the wall. Trim commonly comes in 8' segments. Suppose
+		you have a room that's 12' by 18', with a 3' wide doorway. To cover
+		the base of all the walls, you'll need to cover 57' of wall with trim
+		(12 + 12 + 18 + 18 - 3). This requires 8 pieces of trim - because
+		you can't buy less than a whole piece of trim!
 
-	1. [Simplified Division Algorithm](https://en.wikipedia.org/wiki/Division_algorithm)
+	1.  [Simplified Division Algorithm](https://en.wikipedia.org/wiki/Division_algorithm)
 		When you divide two numbers, there are many ways to express the
 		result. So far, we've been using the floating point format, with
 		some number of decimals after the number. That leads to some odd
