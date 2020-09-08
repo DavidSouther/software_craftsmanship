@@ -151,6 +151,180 @@ it is...) the code is clear and direct in what it's doing. There's no logic,
 only direct calls and direct comparisons. While we've tried to be concise and
 tight in our main program, being able to simply read the tests is a great boon.
 
+## Writing your own tests
+
+As you go to write your own unit tests, we need a way to take what we've done
+for rugs and apply it generally. The first thing we want to do is create a test
+file for every program file we create. In the rugs program, we had `rugs.py` and
+put the test in `rugs_test.py`. This convention, of creating a second file and
+adding `_test` to it, is a great way to organize your project. It is clear what
+your program files are, and what the tests are.
+
+The second thing to do is to make sure our program has no behavior when it's
+first called. That is, Python can run the file and find all the functions and
+classes and variables, but it won't execute any code right away. It needs to
+wait until it's told explicitly to run in a test or another file. But many of
+our programs do need to do something if we run them specifically! To achieve
+this, at the end of our python files we check if we're running the "main" file
+that was specified on the command line.
+
+```
+if __name__ == "__main__":
+    # Run the program if it was called directly
+```
+
+Because we should be testing all our programs, any python file we write that does
+more than declare classes and functions should end with this block of code.
+
+Third, we can import the pieces of our program into our test. Because the test
+file lives in the same folder as the program, we can just use the file name
+(without the .py extension) in the `from` part of our import. There are two ways
+we can import our implementation. Using the rugs example, we could use either
+of these forms:
+
+```
+import rugs
+
+squareRug = rugs.SquareRug()
+rectRug = rugs.RectangularRug()
+```
+
+This form imports the file as an object, where the properties are all the
+functions and classes at the top level of the `rugs.py` file. Alternatively,
+you can import each item in isolation. This is useful if you only need one or
+two items from the file.
+
+```
+from rugs import SquareRug
+from rugs import RectangularRug
+
+squareRug = SquareRug()
+rectRug = RectangularRug()
+```
+
+We have used this form before when we only wanted one or two things out of a
+much larger module, like when we did `from math import sqrt`. While we're doing
+imports, we also want to import TestCase from the unittest module which Python
+provides.
+
+After importing the parts of our program we intend to test, we can fourthly start
+creating TestCases. A TestCase does two things - it groups together tests for
+related pieces of functionality, and it extends from the Python TestCase
+base class to get a bunch of "magic" that will actually execute the tests when
+you run the test file.
+
+To get that magic, we need to create a class structured in a very specific
+way. First, it must extend from unittest.TestCase. Second, it must have methods
+whose name begins with `test`. Python looks at classes which extend TestCase
+for any method that starts with `test`, and treats those as the specific tests
+to run and, whether they pass or fail, will report them with that name.
+
+We can look at the Rugs tests for an example:
+
+```python
+import unittest
+import rugs
+
+class RectangularRugsTest(TestCase):
+    def test_rectangle_fringe(self):
+        # The body of the test
+```
+
+When you create tests for your own projects, it's usually a good idea to have
+one test file per program file, and one test case in the test file per class
+or function in the program file. Each TestCase then has multiple tests methods
+to verify each part of functionality that it has. A simple function might have
+just a single test method, while a complex class could have dozens or hundreds!
+
+Our fifth step in creating a test for our programs is writing out the details
+of each possible way to run the function or class. You want to be writing a
+test method for the common ways to use it, and you realy want to write a test
+method for each of the uncommon ways! For instance, in the rugs, we tested both
+with and without fringe. These are common cases. We also tested what happens
+if a size is 0! This and other uncommon cases are **edge cases**, and because
+they're dealing with things a bit wonky or out of the ordinary, we really want
+to focus on them in our tests to make sure it behaves just as we thing it should.
+
+Within our test methods, there's a common approach: set up, execute, assert.
+It's easiest to look at these in backwards order. Assert is how we will verify
+our program is behaving correctly. We know that if it does perform as specified,
+our program will be in some certain state. As a very simple example, let's say
+our program is adding two numbers: `a = b + c`. After the program has completed
+this step, we expect the variable `a` to have a certain value. And to demonstrate
+that, we will `assert` that it does. We do this with the `assert...` methods.
+In rugs, this was `self.assertEqual(rug.cost, 50)`. For this example, it would be
+`self.assertEqual(a, # The value of b + c #)`. 
+
+> NOTE: We use the expected value of b + c, instead of calculating it inline!
+By manually performing the expected calculation, you save yourself from
+accidentally using a value that came from a bug in your code! And yes, most of
+the time the computation is much more complex than addition!
+
+`assertEqual` is the most common assertion you'll do, but others are available
+if you check the Python documentation.
+
+To assert something about a program state, we must have executed it before.
+In the rugs test, that was calling the cost method and storing the result. In our
+simple example here, it would just be the one line of code `a = b + c`. For
+this to work, we need some values for `b` and `c`, and that's the set up part.
+All in all, this test would look like so:
+
+```
+# Create a test case
+class ArithmeticTests(unittest.TestCase):
+  # Declare a test method
+  def test_simple_addition(self):
+    # Set up
+    b = 5
+    c = 3
+    
+    # Execute
+    a = add(b, c)
+
+    # Assert
+    self.assertEqual(a, 8)
+```
+    
+There you go! These are all the pieces of defining, creating, and implementing
+a unit test for your program. The last piece is to run it. To do that, we're
+going to tell unittest to run when the test class is executed directly:
+
+```
+if __name__ == "__main__":
+  unittest.main()
+```
+
+Putting that at the end of your `_test.py` file will let you run it with python
+on the command line, and it will either tell you all the unit tests passed, or
+it will show you an error for exactly which one failed!
+
+The whole example again:
+
+
+```python
+import unittest # Get the testing library
+
+from my_arithmetic import add # Get the thing we wrote and will test
+
+# Create a test case
+class ArithmeticTests(unittest.TestCase):
+  # Declare a test method
+  def test_simple_addition(self):
+    # Set up
+    b = 5
+    c = 3
+    
+    # Execute
+    a = add(b, c)
+
+    # Assert
+    self.assertEqual(a, 8)
+   
+# Run the tests when we execute this file
+if __name__ == "__main__":
+  unittest.main()
+```
+
 ## Exercises
 
 *   Write tests for the other rugs types you have.
