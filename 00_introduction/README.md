@@ -268,7 +268,7 @@ back to the last section you worked on!
 
 If this is your first time programming, I'd recommend doing the exercises in
 Python. If you've gotten through the book, try redoing the exercises in
-TypeScript, then C.
+TypeScript, then C!
 
 * [Intro: Python](./01_python/README.md)
 * ~~[Intro: TypeScript](./02_typescript/README.md)~~ Coming soon!

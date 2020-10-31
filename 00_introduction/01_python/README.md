@@ -3,9 +3,9 @@
 Welcome to the Software Craftsmanship Python examples. These examples will
 lead you through a variety of programming exercises in conjunction with the main
 Software Craftsmanship lessons. Programming is a skill, and like any other skill,
-it takes practice to become truly proficient. The exercises in these examples range
-from "monkey-see-monkey-do" problems getting you used to typing exactly as a
-computer expects, to free-ranging ideas on programs you might be interested in
+it takes practice to become truly proficient. The exercises in these examples
+range from "monkey-see-monkey-do" problems getting you used to typing exactly as
+a computer expects, to free-ranging ideas on programs you might be interested in
 writing for yourself. 
 
 You will want to complete every "MSMD" section exactly as written. Computers
@@ -23,21 +23,30 @@ you.
 
 In this book, we'll be using Python 3. The easiest way to begin using Python 3
 is by using Github Codespaces, which creates a virtual linux computer in the
-cloud for you to use. 
+cloud for you to use. It is already configured to develop all of the programs in
+this book. By using codespaces, you will be up and running immediately, with no
+need to install any programs yourself. However, codespaces are not free. The are
+[billed per hour of activity](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/about-billing-for-codespaces),
+though they do deactivate after 30 minutes of inactivity. At the time of this
+writing, the basic tier of Codespaces are more than sufficient for anything you
+will do in this book, and costs $0.085 per hour.
 
 ... pic of start codespaces ...
 
 NOTE: Codespaces is BETA, and requires sign up. Update this paragraph when it's
 public.
 
-If you are using your personal computer, python is included with many Linux distributions,
-but if you are using macOS (OSX) or Windows, you will need to install it. 
-On Windows and Mac, you will need to [download](http://www.python.org/download/) and run
+If you are using your personal computer, python is included with many Linux
+distributions, but if you are using macOS (OSX) or Windows, you will need to
+install it. On Windows and Mac, you will need to
+[download](http://www.python.org/download/) and run
 [the windows installer](https://www.python.org/ftp/python/3.7.7/python-3.7.7-amd64-webinstall.exe)
 or [the mac osx installer](https://www.python.org/ftp/python/3.7.7/python-3.7.7-macosx10.9.pkg)
-respectively. If it is not installed by default with your linux distribution, follow
-[the python documentation](https://docs.python.org/3/using/unix.html) for getting an up
-to date copy.
+respectively. If it is not installed by default with your linux distribution,
+follow [the python documentation](https://docs.python.org/3/using/unix.html) for
+getting an up to date copy. After installing Python, instructions in this
+workbook are exactly the same for local development or using Codespaces. Choose
+one, and stick with it.
 
 ## First Program
 
@@ -59,11 +68,11 @@ makes you handle most of the programming yourself. Managing your project on your
 own will help you be a better programmer later.
 
 If you're using the recommended Github Codespaces, the editor is
-[Visual Studio Code](https://code.visualstudio.com). If you are want to install
-it on your own computer, you can follow the link. It is well supported, has a
-tremendously rich feature set and ecosystem of extensions, and best of all, is
-completely free. When you visit the VSCode page, it should suggest an appropriate
-download link for your platform.
+[Visual Studio Code](https://code.visualstudio.com) (or VSCode for short). If
+you are wanting to install it on your own computer, you can follow the link. It
+is well supported, has a tremendously rich feature set and ecosystem of
+extensions, and best of all, is completely free. When you visit the VSCode page,
+it should suggest an appropriate download link for your platform.
 
 *Why can't I just use TextEdit on a mac or Notepad on Windows?* You could, but
 neither of those programs have any tools to help you program. Most importantly,
@@ -75,12 +84,8 @@ completions as you type.
 
 When VSCode is first opened, you will need to make a new folder.
 
-*   [Windows First Run](./vscode_windows/README.md)
-*   [Mac First Run](./vscode_mac/README.md)
-*   [Linux First Run](./vscode_linux/README.md)
-
-Once you have your project folder, create a file and name it `hello.py`. Type this
-into the file and save:
+Once you have your project folder, create a file and name it `hello.py`. Type
+this into the file and save:
 
 ```
 print("Hello, world!")
