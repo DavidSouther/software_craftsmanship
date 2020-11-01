@@ -333,10 +333,11 @@ calculations are interesting. But it's really not critical to understand all the
 details - just do what's fun, and then go on to the control flow section!
 
 1. **Pricing rugs** A company makes rugs, and has asked you to calculate the
-    price for their rugs. They have square rugs (area = length ^ 2), rectangular
-	rugs (area = length * width), and circular rugs (area = pi * radius ^ 2). Rugs
-	are $5 per square foot of finished rug. Write a program that prints the cost of
-	rugs for these sizes:
+    price for their rugs. They have square rugs (`area = length \* length`),
+	rectangular rugs (`area = length * width`), and circular rugs
+	(`area = pi \* radius \* radius`). Rugs are $5 per square foot of finished
+	rug. Write a program that prints the cost of rugs for these sizes:
+
 	1. Square, 1 foot on a side. ($5)
 	1. Square, 2.5 feet on a side. ($31.25)
 	1. Rectangular, 3 feet by 5 feet. ($75)
@@ -344,17 +345,20 @@ details - just do what's fun, and then go on to the control flow section!
 
 1. **Advanced rugs** The rug company loves your code! They want you to add another
 	feature! They now offer edges on their rugs. Edging costs $1/foot of
-	edge. (The perimeter of a square is length * 4. A rectangle is length * 2 + width * 2. A circle's perimeter is Pi * radius * 2.) The same rugs, with edging, should be
+	edge. (The perimeter of a square is length \* 4. A rectangle is length \* 2
+	\+ width \* 2. A circle's perimeter is Pi \* radius \* 2.) The same rugs,
+	with edging, should be
+
 	1. $9
 	2. $41.25
 	3. $91
 	4. $44.77
 
 1. **Harder Math**  You might recognize the math section in the middle of the
-	program (where we use the 'discriminant' variable) as the quadratic equation - 
-	a formula mathemeticians use to determine where a parabola has the value
-	zero - and that physicists use to calculate where a basketball will land
-	when thrown with a certain force.
+	program (where we use the 'discriminant' variable) as the quadratic equation. 
+	THe quadratic equation is a formula mathemeticians use to determine where a
+	parabola has the value zero, and that physicists use to calculate where a
+	basketball will land when thrown with a certain force.
 
 	The full quadratic equation is, again:
 
@@ -439,7 +443,11 @@ details - just do what's fun, and then go on to the control flow section!
 		you have a room that's 12' by 18', with a 3' wide doorway. To cover
 		the base of all the walls, you'll need to cover 57' of wall with trim
 		(12 + 12 + 18 + 18 - 3). This requires 8 pieces of trim - because
-		you can't buy less than a whole piece of trim!
+		you can't buy less than a whole piece of trim! Use python to determine
+		the number of pieces of trim you need for rooms of these sizes:
+
+		1. 12' by 18', with one 3' doorway.
+		1. 10' by 20', with two 3' doorways.
 
 	1.  [Simplified Division Algorithm](https://en.wikipedia.org/wiki/Division_algorithm)
 		When you divide two numbers, there are many ways to express the

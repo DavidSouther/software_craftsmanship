@@ -314,20 +314,18 @@ values, to make sure it's still correct.
         choose between several recipes. Make sure your recipes don't all use the
         same ingredients!
 
-        *This will feel like a huge amount of duplication. That is the point. We
-        do not have the tools we need to make this work without duplicating this
-        code. The exercises in this chapter are to get you feeling confident
-        using only the tools we have so far - variables, values, math, and if
-        conditions. In chapter 2, we will use **functions** to shock you with
-        how much shorter it can be!*
+        > This will feel like a huge amount of duplication. That is the point.
+        We do not have the tools we need to make this work without duplicating
+        this code. The exercises in this chapter are to get you feeling
+        confident using only the tools we have so far - variables, values, math,
+        and `if` conditions. In chapter 2, we will use **functions** to shock
+        you with how much shorter it can be!
 
     *   Some of the recipes you scaled down in the last section might not make a
         huge amount of sense. Trying to get one and a half eggs? That's a pain!
         Add conditional statements to your calculations in the earlier exercises
         that tell the user they can't scale certain recipes if that would result
         in measurements that are difficult to scale (like fractional eggs).
-
-    *   Something something decimal to fraction
 
     *   While scaling some of these measurements, you may have noticed some
         odd or difficult measurements. How do you handle 0.125 cups of an

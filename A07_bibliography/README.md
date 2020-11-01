@@ -8,37 +8,33 @@
 https://www.khanacademy.org/computing/computer-programming
 
 ## Must Reads
-*   [Test Driven Development](https://smile.amazon.com/dp/1491958707)
-    https://www.obeythetestinggoat.com/
-*   [Game Programming Patterns](https://smile.amazon.com/dp/0990582906)
-*   [Refactoring](https://smile.amazon.com/dp/0201485672)
 
-## Fun projects:
-*   [Impractical Python Projects](https://nostarch.com/impracticalpythonprojects)
+## Projects & Practice:
+*   [Impractical Python Projects](https://smile.amazon.com/dp/159327890X)
+*   [Cracking the Coding Interview](https://smile.amazon.com/dp/0984782850)
 
 ## Data Science & Machine Learning
-*   SQL
 *   [Python Data Science Handbook](https://smile.amazon.com/dp/1491912057)
-    https://jakevdp.github.io/PythonDataScienceHandbook/
 *   [Hands On Machine Learning with SciKit](https://smile.amazon.com/dp/1491962291)
+*   [Getting Started with SQL](https://smile.amazon.com/dp/1491938617)
 
 ## Full Stack Development
-*   Some book that discusses Databases, Web servers, Javascript clients, and
-    *   Flask, SQL, Docker; React, Auth; Monitoring, Deployment
-    *   Something like "PHP & MySQL" but not shitty. Probably Python and React.
+*   [Learning PHP, MySQL, and Javascript](https://smile.amazon.com/dp/1491978910)
+*   [Python API Development Fundamentals](https://smile.amazon.com/dp/1838983996)
+*   [Full Stack React Projects](https://smile.amazon.com/dp/1839215410)
+*   [Ruby on Rails Tutorial](https://smile.amazon.com/dp/0136702651)
 
 ## Data Structures & Computer Science
 *   [Data Structures and Algorithms Python](https://smile.amazon.com/dp/1118290275)
 *   [Structure and Interpretation of Computer Programs](https://smile.amazon.com/dp/0262510871)
-    https://sicp.comp.nus.edu.sg/sicpjs.pdf
 *   [Purely Functional Data Structures](https://smile.amazon.com/dp/0521663504)
 *   [Understanding Computation](https://smile.amazon.com/dp/1449329276)
-    https://computationbook.com/
 
 ## Games
 *   [Learning C# with Unity ](https://smile.amazon.com/dp/B07Q85GR5Q/)
 *   [Beginning C++ through Game Programming](https://smile.amazon.com/dp/1435457420)
 *   [3D Math Primer for Graphics and Games](https://smile.amazon.com/dp/1568817231)
+*   [Game Programming Patterns](https://smile.amazon.com/dp/0990582906)
 
 ## Mobile
 *   [Android Development with Kotlin](https://smile.amazon.com/dp/1787123685)
@@ -55,3 +51,12 @@ https://www.khanacademy.org/computing/computer-programming
 *   [The Mythical Man Month](https://smile.amazon.com/dp/0201835959)
 *   [Clean Code](https://smile.amazon.com/dp/0132350882)
 *   [Site Reliability Engineering](https://smile.amazon.com/dp/149192912X)
+*   [Software Engineering at Google](https://smile.amazon.com/dp/1492082791)
+*   [Test Driven Development](https://smile.amazon.com/dp/1491958707)
+*   [Refactoring](https://smile.amazon.com/dp/0201485672)
+*   [Architecture Patterns with Python](https://smile.amazon.com/dp/1492052205)
+*   [How Google Tests Software](https://smile.amazon.com/dp/B007MQLMF2/)
+
+## Computer Science History
+*   [Broad Band: The Untold Story of the Women Who Made the Internet](https://smile.amazon.com/dp/0735211752)
+*   [The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution](https://smile.amazon.com/dp/B00JGAS65Q)
