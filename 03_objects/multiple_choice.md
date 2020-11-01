@@ -46,3 +46,8 @@ class Rug():
 rug = Rug(25, 20, False)
 print(rug.cost())
 ```
+
+
+
+In the example, the symbol ____ is a [variable] [class] [property]
+In the example, ___ is a child of class [...]
