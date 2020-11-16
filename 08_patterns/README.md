@@ -34,4 +34,5 @@
 
 ### Exercises
 
-* Write a Frogger game
+*   Write a Frogger game
+*   Recipe Mixer
