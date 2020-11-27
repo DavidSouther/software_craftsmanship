@@ -227,3 +227,9 @@ Work with the `types` program in the language of your choice.
 * [Python](01_types/01_python.md)
 * ~~[CoffeeScript](01_types/02_typescript.md)~~
 * ~~[C](01_types/03_c.md)~~
+
+:leveloffset: 2
+
+include::02_control/00_textbook.adoc[]
+
+include::03_hilo/00_textbook.adoc[]

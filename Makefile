@@ -1,8 +1,4 @@
 textbook_spine = 00_textbook.adoc
-textbook_sources = \
-	00_textbook_index.adoc \
-	00_introduction/00_introduction.adoc \
-	01_basic_types_and_control_flow/00_types_and_control_flow.adoc
 
 all: html pdf
 

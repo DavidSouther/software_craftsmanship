@@ -13,6 +13,6 @@ ifndef::backend-html5[toc::[]]
 
 :leveloffset: 1
 
-include::00_introduction/00_introduction.adoc[]
+include::00_introduction/00_textbook.adoc[]
 
-include::01_basic_types_and_control_flow/00_types_and_control_flow.adoc[]
+include::01_basic_types_and_control_flow/00_textbook.adoc[]
