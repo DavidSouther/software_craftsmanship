@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.12">
+<meta name="author" content="David Souther">
+<title>Software Craftsmanship</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:50%;border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Software Craftsmanship</h1>
+<div class="details">
+<span id="author" class="author">David Souther</span><br>
+<span id="email" class="email"><a href="mailto:davidsouther+software-craftsmanship@gmail.com">davidsouther+software-craftsmanship@gmail.com</a></span><br>
+<span id="revdate">2020-11-27</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#_computers_are_tools">Computers Are Tools</a></li>
+<li><a href="#_computer_languages">Computer Languages</a></li>
+<li><a href="#_using_this_book">Using this book</a></li>
+<li><a href="#_practice">Practice</a></li>
+</ul>
+</li>
+<li><a href="#_basic_types_and_control_flow">Basic Types and Control Flow</a>
+<ul class="sectlevel2">
+<li><a href="#_basic_types">Basic Types</a></li>
+<li><a href="#_control_flow">Control Flow</a></li>
+<li><a href="#_tracing_program_execution">Tracing Program Execution</a></li>
+<li><a href="#_hilo">HiLo</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#169; 2020 David Souther</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Human endeavors rest on the backs of the hard-working crafters.
+From stone- movers of the Egyptian pyramids to steel-workers on today&#8217;s wind farms, skilled workers built civilization with their hands.
+Stone, steel, lumber, and leather have for centuries been the foundation of human enterprise.
+In the 21st century, there is a new medium demanding attention: information.
+The data flying across the Internet is the backbone of international trade and commerce, and needs skilled craftspeople to shape it.
+Yet even as professional carpenters build masterwork cabinetry for law firms and movie stars, there are laymen working on the same craft with the same tools in their garage.
+This is no less true for computers  -  the relatively low cost of consumer software gives hobbyist programmers the same tools to work with as the professional.</p>
+</div>
+<div class="paragraph">
+<p>This book is aimed at those who are interested in this new medium as a potential hobby or curiosity.
+The book begins assuming the reader knows how to turn on and use their computer for basic tasks&#8201;&#8212;&#8201;email, word processing, image editing, and video games; and takes them to a level where they will be comfortable and confident in using and controlling their computers.
+This book is very fast paced.
+Software development is a field which has undergone active development for the past 80 years, yet did not exist beyond a dream before then.
+There is a lot to learn about this craft, but readers who want to become truly skilled at this craft will hopefully find this book gives them many of the tools they need to feel comfortable working their computer.
+To get the most out of the text,  I recommended readers work through the companion workbook.
+Like any craft, to get good at software development you need to develop software.
+The workbooks lead you through developing software, in a way highlights the concepts presented in the text.</p>
+</div>
+<div class="sect2">
+<h3 id="_computers_are_tools">Computers Are Tools</h3>
+<div class="paragraph">
+<p>Information is a critical piece of today&#8217;s infrastructure.
+How people  use information is part of the field of Computer Science.
+Computer Science is on the one hand deeply seated in mathematics, and on the other, firmly rooted in practicality.
+The computer itself is simply a tool, like a band saw or plasma torch, which does amazing things with this data.
+Whether used in large-scale data mining and predictions for financial institutions, determining exactly what websites have what content, or creating a side show of family photos.
+At the end of the day, the laptop or desktop sitting in front of you is just a piece of silicone, copper, and plastic, capable of doing only exactly what it is told.</p>
+</div>
+<div class="paragraph">
+<p>The task of the computer programmer is to tell the computer what to do.
+This is not an easy task.
+When people think about a problem, we can start off being a bit loose on how we describe the problem to ourselves.
+We can find issues or errors in our assumptions, and change them on the fly.
+Computers cannot do this.
+Every condition must be considered before hand.
+Say you&#8217;re balancing your check book.
+You add up $12.57, $52.45, and $1.99, but miss the decimal on the $52.45, and end up with $5249.56  -  clearly an error.
+On paper, it is obvious what you did wrong.
+The computer has no way of knowing this was an error.
+Instead, it is up to the good programmer to tell the computer to verify that any numbers typed into the financial program ends with a decimal and two numbers.
+Then, the program can warn the user before making the calculation, potentially avoiding a costly transaction.</p>
+</div>
+<div class="sect3">
+<h4 id="_using_this_tool">Using this tool</h4>
+<div class="paragraph">
+<p>Software craftsmen use this tool by writing programs.
+A program is a document both written and read by human beings, while telling the computer unambiguously what to do.
+Take this example: <code>4 + 6 / 2</code>.
+Is the answer 7 or 5? If you remembered something like "Please Remember My Dear Aunt Sally" from grade school, you would say 7.
+If you were a desk calculator in an accountant&#8217;s office, you would say 5.
+This statement is <strong>ambiguous</strong>  -  it could mean more than one thing.
+The programmer&#8217;s job is to decide if the statement should be <code>(4 + 6) / 2 = 5</code> or <code>4 + (6 / 2) = 7</code>.</p>
+</div>
+<div class="paragraph">
+<p>This is a pedantic exercise.
+As software gets more complex, software engineers are responsible for deciding how the computer helps people interact with their data.
+Consider the difference in organ donor rates between the United States and Sweden.
+In the book [Nudge](<a href="http://nudges.org/" class="bare">http://nudges.org/</a>), the authors contend the difference is in "presumed consent" - that is, DMVs in the United States require drivers to Opt In to being an organ donor, while Swedish DMVs require patients to Opt Out.
+If you were writing a web page to take DMV registration information, the difference in those conditions is eight characters - adding "checked" to the Organ Donor input.
+With that minuscule change in a program, the software craftsman has the potential for enormous influence on the lives of millions of people.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sharing_this_tool">Sharing this tool</h4>
+<div class="paragraph">
+<p>There is a whole world outside your front doorstep, and as much as some programmers might want to deny it, at some point every craftsman&#8217;s programming will be used by someone else.
+It is important your code be both readable and usable by these other craftsmen.
+There are many ways to do this, and many great tools to facilitate this.
+While many software craftsman may want to hoard their code, this is simply not possible.
+Even at companies like Microsoft, the largest proprietary software development company on the planet, teams are used because software projects, even most hobbyist projects, are too large for one person to handle alone.</p>
+</div>
+<div class="paragraph">
+<p>Many computer science courses ignore this aspect of programming, which I believe is a real detriment to the students.
+Many computer science students can go their entire undergraduate careers without ever looking at their peers' code, and only having their program reviewed by the instructors.
+Craftsman of all fields can drastically improve their work by meeting and sharing ideas.
+Building partnerships with other craftsmen is one of the most rewarding ways to practice a trade, but can also be a harrowing experience learning how to work and interact with a completely new group of people.
+To work past this impediment, I present tools for managing and sharing your programs early in the book (Chapter 3, Source Control), and encourage you to find other programmers and technology clubs in your area and on the Internet.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_computer_languages">Computer Languages</h3>
+<div class="paragraph">
+<p>Computer languages are the tie between the world of everyday common sense conversation and the exact stupidity of the computer.
+There are hundreds, if not thousands, of different programming languages today.
+Many are "toy" languages, built for a fun exercise or class project and are not intended for wide-scale use.
+There are other languages that are proven as the workhorses of computers, and are used everywhere from your cell phone to robots running on Mars.</p>
+</div>
+<div class="paragraph">
+<p>Languages are often classed based on their style of programming, and their level of expressivity.
+There are, broadly, three styles of programming: imperative, functional, and logical.
+Imperative languages are similar to a cookbook recipe.
+They describe, one statement at a time, the "things" a computer is to do - add two numbers, print those numbers to the screen, ask the user for confirmation.
+C, JavaScript, and Python are all imperative languages.
+Functional languages embrace the mathematics of computer science.
+Functional languages often use similar syntactic constructs as imperative languages, but with fundamental underlying differences.
+Haskell, Erlang, and Lisp are functional programming languages.
+Logical programming languages have little to do with either imperative or functional programming.
+Prolog is a logical programming language.
+Logical programming will not be discussed in this book.</p>
+</div>
+<div class="paragraph">
+<p>Expressivity is notion for the ratio of amount of programming code written to how much the computer does.
+Languages with the least amount of expressivity are referred to as "low-level" languages  -  they must deal with all aspects of the computer and its memory.
+"High-level" languages handle many of the details of working on computer hardware, and let the programmer just focus on expressing the logic of the program in question.
+This book is presented using three different languages.
+These languages were chosen because they each represent a very different approach to software craftsmanship.
+Each approach is correct in  its own way, and it is important to know each of the approaches to be a great software craftsman.
+Further, each of these three languages is mature, and actively used in a variety of projects today.</p>
+</div>
+<div class="sect3">
+<h4 id="_c">C</h4>
+<div class="paragraph">
+<p>C started its life at Bell Labs in 1973.
+C was written by Dennis Kernighan and Brian Ritchie as a language to write the Unix operating system.
+Before C, operating systems (the program enabling all the other programs to run) were written in an assembly language for each computer Unix would run on.
+However, no two brands of computers had the same assembly language, so any time someone wanted to run Unix on a new computer, they had to rewrite the entire operating system.
+At the time, this could be thousands of lines of code.
+Today, it would take millions of lines of assembly to code Windows or Linux.
+C was designed to be a consistent language that, rather than being run on a computer as is, would first be compiled into the appropriate assembly code.</p>
+</div>
+<div class="paragraph">
+<p>C is widely considered the <em>lowest-level</em> of today&#8217;s common programming languages, meaning C is as close to running "on the hardware" as you can get.
+When writing C, the programmer has to deal with many aspects of computer memory management.
+There are few utilities to achieve all but the most common tasks (though there are a wealth of <em>libraries</em> to fill the gap).
+C is the only language used in this book that must be compiled before being run.
+This <em>low-level</em> nature of C makes it a very powerful language, especially when faced with requirements to interact directly with hardware, or when hardware is in short supply (embedded on robots or cell phones).
+That power comes with great responsibility for writing the program correctly.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_python">Python</h4>
+<div class="paragraph">
+<p>Python is a programming language developed by Guido van Rossum in the late 1980s.
+Python has gone through two major revisions since its first release, and now is widely available on nearly any computing platform.
+Today, Python is used by many Linux distributions to write a variety of their higher-level tools.
+Organizations from Google to NASA use Python for numerous mission-critical applications.</p>
+</div>
+<div class="paragraph">
+<p>Python was designed to be a very flexible language, and as such is <em>high-level</em> compared to C.
+Python was also designed to be a fun language to use - the name Python refers not to the snake, but to Monty Python&#8217;s Flying Circus.
+Python has a certain culture around its use not seen in many other programming languages.
+In Python, the prevailing wisdom is "there should be one - and preferably only one - obvious way to do it."</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_javascript">Javascript</h4>
+<div class="paragraph">
+<p>Javascript is a programming language developed at Netscape in 1994 by Brandon Eiche over the course of a week.
+Javascript is the de-facto standard for writing programs served over the Internet to run in a user&#8217;s web browser.
+While actually a functional programming language, Javascript is often (mis)represented as being an imperative language.
+This has lead to some very poor code being written in the 15 plus years since its inception.
+That said, its use in every web browser today has many people working to make Javascript a less-maligned and better respected language.</p>
+</div>
+<div class="paragraph">
+<p>Javascript is a very high level language.
+The programmer has few worries about memory management, and no capabilities to access the computer&#8217;s hardware (though there are initiatives to enable such use).
+When combined with libraries like jQuery, javascript can be the most expressive of the three languages presented.
+When we start working with graphical programs later in the book, Javascript&#8217;s expressive power will really shine, in that the amount of code needed to do the same thing (click a button) can often be an order of magnitude less than a similar program in C.</p>
+</div>
+<div class="sect4">
+<h5 id="_typescript">TypeScript</h5>
+<div class="paragraph">
+<p>TypeScript is a dialect of Javascript, developed by Andres Hejlsburg at Microsoft in 2010.
+The goal of the TypeScript project is to provide a strong "type system" on top of JavaScript.
+A Type System is a set of tools that allows another program, the TypeScript Compiler, to analyze your program to prove various properties and check for common errors.
+For instance, if you were to write in your program <code>5 + "hello"</code>, TypeScript would say you have an error combinging a number and a string.
+TypeScript is currently the most popular variant of JavaScript, because of its tremendous benefit and value in helping teams of all sizes manage the complexity of their JavaScript code.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_this_book">Using this book</h3>
+<div class="paragraph">
+<p>This book is meant to be a guide on your programming journey.
+The main textbook, which you have in your hands right now, talks about software engineering concepts and ideas.
+It isn&#8217;t tied to any specific programming language.
+Instead, it provides a discussion of the topics, definitions, and general content in a lecture style.
+After reading the textbook sections, there are workbooks available to put the ideas into practice for a specific programming language.
+There are three textbooks.
+When using this book for the first time, I suggest using the Python textbook.
+Python is the easiest of the languages to start using, with the lowest barrier to entry.
+After Python, TypeScript covers the same content in a slightly different approach.
+You will learn the concepts in the textbook even better by seeing how they are expressed in a different language.
+But still, you should do the Python workbook in full first.
+Finally, there is the C workbook.
+C has a level of detail above the other two, and will serve as a good final introduction to programming techniques.</p>
+</div>
+<div class="sect3">
+<h4 id="_syntactic_core_1_3">Syntactic Core (1-3)</h4>
+<div class="paragraph">
+<p>The first three chapters will cover the core of writing programs.
+This will get you to the point where you can have your computer talking to you and asking questions, though perhaps not gracefully.
+We will discuss how computers understand data, and how they operate on data in a clear and precise manner.
+You will also learn how to begin grouping this data and these operations into increasingly complex pieces that work in synergy with one another.
+You should also follow the first two appendicies, on using the terminal and source control, to begin learning the programming-adjacent skillsets that are necessary in software craftsmanship.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_programming_patterns_4_6">Programming Patterns (4-6)</h4>
+<div class="paragraph">
+<p>With the basics down, these chapters begin to take a look at patterns common to bigger and more robust pieces of software.
+You will learn how to write tests for their code.
+Tests are small programs which verify the main program is itself written correctly.
+Input and output are necessary for having programs which work with data sets, when storing more complex data longer than the run of the program.
+Chapter 6 begins to look at longer running programs, including graphical user interfaces for highly interactive programs running on local PCs and using web servers to allow people worldwide to access your work.
+Another pair of appendices augment the programming itself - a look into debugging techniques to teach how to isolate problems in a misbehaving program, and a discussion of containers, a modern technique in distributing production systems to make them available for a number of users.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_building_large_programs_7_9">Building Large Programs (7-9)</h4>
+<div class="paragraph">
+<p>The last section of the book looks at making larger programs that are fully featured.
+This includes making a space-invaders like video game, building out a painting program, and working as a team to create a board game.
+Each of these projects in the chapter should be a complete stand-alone tool that combines lessons from all the prior work in the book.
+The final appendicies discuss a technique for managing data called parsing, and a bibliography of future books &amp; courses to consider as you continue your programming journey.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_practice">Practice</h3>
+<div class="paragraph">
+<p>Like any skill, software craftsmanship takes practice.
+The workbooks are designed to highlight the concepts presented in the text, while giving you an opportunity to practice these skills.
+The workbooks are broken into lessons roughly corresponding to sections of the main text.
+Each lesson has two parts.
+The first part is a listing of code.
+You should type the code into your editor exactly as written.
+Do not copy and paste the code.
+Much of programming involves paying very close attention to a myriad of small details, and every character has meaning.
+This discipline in typing code exactly as presented will pay off in your programming future.
+The second part of each lesson is a few exercises to work with the new concepts introduced in the text and program listing, and ideas to combine them with what you learned and wrote previously.
+Some of the lesson exercises will involve conducting research on the Internet.
+Being able to find help with programming questions is another invaluable skill as a software developer.</p>
+</div>
+<div class="sect3">
+<h4 id="_what_next">What Next?</h4>
+<div class="paragraph">
+<p>At the end of each section, there are links either to the workbook exercises in the various languages, or links from the workbook back to the textbook at the next topic section.
+So whenever you&#8217;re ready, click on the link, or come back to the last section you worked on!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercise_hello_world">Exercise: Hello World</h4>
+<div class="paragraph">
+<p>If this is your first time programming, I&#8217;d recommend doing the exercises in the Python workbook.
+If you&#8217;ve gotten through the book, try redoing the exercises in TypeScript, then C!</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Intro: Python](./01_python/README.md)</p>
+</li>
+<li>
+<p>~~[Intro: TypeScript](./02_typescript/README.md)~~ Coming soon!</p>
+</li>
+<li>
+<p>~~[Intro: C](./03_c/README.md)~~ Coming soon!</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_types_and_control_flow">Basic Types and Control Flow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Programs begin with data.
+They then perform operations on that data over time.
+This chapter introduces you to what data is in a proram, and how to control that time aspect.
+After we have an overview of what data is, and how we can operate on it, we&#8217;ll write a number guessing game.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_types">Basic Types</h3>
+<div class="paragraph">
+<p>Computers work with data.
+At the lowest level, this data is just 'on' and 'off' in a transistor.
+Software craftsmen don&#8217;t work at this level.
+Instead, our programming languages give us the tools to work with this data in a much more intuitive fashion.
+In broad strokes, this is achieved with two concepts: data types and control flow.
+Data types describe the data our program is working with, whether it be a number, a bank account, or an image.
+Control flow describes the operations that occur on the data over time, like adding numbers, checking the balance of a bank account, or cropping an image.</p>
+</div>
+<div class="paragraph">
+<p>You can think of data types as the space of a program.
+At any one point in time, we will have certain sets of data we are working with.
+We can stop the program, look at the data, and carry on.
+While we think of three dimensions in space,  up/down, left/right, and front/back, there are many more dimensions we could talk about for different things.
+A table has a color, along with its position.
+Our programs represent these properties in different ways, but we as programmers abstract them, and the term we use to talk about these properties is data types.</p>
+</div>
+<div class="paragraph">
+<p>Control flow would then be the time aspect of a program.
+As the program runs, it does different things to the data.
+At some point, it might need to make a decision, and do one thing or another depending on what properties the data has.
+At another point, the program might need to do the same thing on a bunch of similar pieces of data.
+Control flow represents the logical actions our programs follow.</p>
+</div>
+<div class="sect3">
+<h4 id="_syntax">Syntax</h4>
+<div class="paragraph">
+<p>Before we dive into discussing our first program, there is one more topic to cover.
+Syntax describes the words and symbols that make a valid program.
+In English, nouns, verbs and adjectives must come in a certain fashion for a sentence to make sense.
+In a computer program, there are similar rules for how a program can be written, and still make sense to the computer to run.
+We will cover the details of syntax for each programing language in the workbook, but there are some key terms to know regardless of the language.</p>
+</div>
+<div class="sect4">
+<h5 id="_keywords">Keywords</h5>
+<div class="paragraph">
+<p>In any programming language, there are a few reserved <strong>keywords</strong>.
+These are words which have a specific meaning in that programming lanugage.
+Most programming languages only use no more than a couple dozen keywords.
+These will be covered in the workbooks as needed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_variables">Variables</h5>
+<div class="paragraph">
+<p>In a program file, <strong>variables</strong> are words used to refer to some piece of data.
+Variables let programmers use concrete concepts to refer to the more abstract realm of the mathematical values in the computer.
+Variables can generally be any word that isn&#8217;t a keyword in a programming language.</p>
+</div>
+<div class="paragraph">
+<p>Variables have two parts - an <strong>identifier</strong> which gives it its name, and a <strong>value</strong> which is the data that it <em>currently</em> stores.
+An identifier is a way to refer to a certain bucket holding a piece of data, but it is not the data itself.
+This distinction is really important when we start looking at data changing over time.</p>
+</div>
+<div class="paragraph">
+<p>Over the course of a program, there are some identifiers which will assign different values to, and do those assignments many times.
+In all the programming languages we use, this is done with the single equals character, <code>=</code>.
+The <code>=</code> operator always has two sides - the left hand side will be the identifier (the variable&#8217;s name), like <code>age</code> or <code>area</code>.
+The right hand side is some value, or some calculation.
+<code>age = 32</code> stores the number <code>32</code> in the variable named <code>age</code>, so if later on I wanted to know the age of something, I can refer to <code>age</code> instead of needing to know that it was <code>32</code> every time.
+If I want to calculate something, I also store that in a variable.
+<code>area = length * width</code> refers to two other identifiers, which are the names of two other variables that we&#8217;ve set already, <code>length</code> and <code>width</code>.
+The assignment takes the values that are stored in those variables, multiplies them together, and stores the result of that in the variable <code>area</code>.</p>
+</div>
+<div class="paragraph">
+<p>Using variables like this to track data gives us two really useful benefits.
+Most importantly, this allows data to change over time.
+We can use variables to track what the data&#8217;s value is, and then us it in other calculations, without alwyas having to know its specific value each time.
+When we deal with user input we will see how variables let us write a program that executes and generates a value that no programmer ever coded!</p>
+</div>
+<div class="paragraph">
+<p>From an engineering perspective, variables let us attach names to concepts in our programs.
+Using identifiers this way lets us write programs that read almost as prose.
+With just a sprinkle of notation (and a rigid syntax), the names we give our variables let us be expressive in our intent for what the program does.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Variables are not algebraic</div>
+<div class="paragraph">
+<p>Variables in programming are not variables in algebra.
+You might be having a flashback to high school algebra, maybe remembering something like <code>3x\^2 + 5x + 7 = 0</code>, and being asked to "solve for x".
+In mathematics like this, a variable is an unknown, a part of the expression that we need to isolate and handle separately.
+While the word in programming comes from the same place, it&#8217;s almost the opposite - in programming, a variable <em>always</em> has a value and we always know what it is.
+It&#8217;s more like keeping track of the amount of ingredients in a recipe than it is solving a mathematical equation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_operators">Operators</h5>
+<div class="paragraph">
+<p>Operators are the built-in things that can happen to data.
+Common operators are things from elementary arithmetic - add <code>+</code>, subtract <code>-</code>, multiply <code>*</code>, and divide <code>/</code>.
+Other operators let the program compare two pieces of data - equals <code>==</code>, less-than <code>&lt;</code>, greater-than- or- equal-to <code>&gt;=</code>.
+Notice there are some funny things for the comparison operators.
+First, equals is two characters, <code>==</code>, not the single <code>=</code> used in elementary school.
+This is because a single <code>=</code> sign is an operator used to assign values to a variable using its identifier.
+Multiplication is a star, <code>\*</code>.
+While <code>x</code> was used in elementary school, we use <code>\*</code> for our programs because <code>x</code> could be a variable, and we need to be unambiguous in what the program means.
+There is no <code>≤</code> on a common keyboard, so programs use the two character combinations of <code>&#8656;</code> and <code>&gt;=</code> to do comparisons.
+There are other operators that will be covered as they are needed.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_basic_types_2">Basic Types</h4>
+<div class="paragraph">
+<p>Data Types fall into two distinct categories.
+<strong>Primitive</strong> data types are those that are specified in the programming language itself.
+<strong>Complex</strong> data types are defined by the programmer, and are made up entirely of primitive data types and other complex data types already defined.
+In this section, we will go over the basic data types in your language.
+In general, these basic types are applicable in any programming language in major use today, with small discrepencies between them.</p>
+</div>
+<div class="sect4">
+<h5 id="_numbers">Numbers</h5>
+<div class="paragraph">
+<p>Since computers only do arithmetic, everything is at some level a number in the computer.
+In mathematics, numbers can be as big as they need to be.
+If we were counting pebbles of sand on a beach, there is a number to represent that (though I will not be the one doing the counting).
+Computers are somewhat more finite.
+The representation of a basic number in a computer is confined to a range of a few possible values.
+On today&#8217;s computers, that range is either <code>2\^32</code> or <code>2\^64</code> possible values.
+The 32 and 64 refer to the number of <strong>bits</strong> your computer handles.
+When the IT guy asks whether your computer is 32 or 64 bit, this is what we&#8217;re talking about.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_characters">Characters</h5>
+<div class="paragraph">
+<p>Characters are single bytes of data that are interpreted as being human- readable in some form.
+For instance, the letter <code>a</code> is the integer <code>97</code>.
+The letter <code>V</code> is <code>86</code>.
+<code>!</code>, the exclamation point, is <code>33</code>.
+Because the computer operates on numbers, there is no distinction to it between the number <code>33</code> and the character <code>!</code>.
+Instead, programmers tell their programs how they intend to use the data, and the program does the "right thing".
+The "right thing" is exactly what is was told to do.
+To understand what you&#8217;re telling the computer to do better, it is important to know that there is nothing special about the mappings between the numbers and characters.
+Indeed, the first 128 character numbers were chosen by an organization called the American Standard Code for Information Interchange, or ASCII.
+For this reason, the first 128 characters are called the "ASCII'' character set.
+Of course, there is no way to fit all the characters of both the Latin and Cyrillic alphebets into 128 different numbers, much less most Asian character sets.
+For this reason, there is another character set called UNICODE that defines over 4 million possible characters, enough to satisfy human languages for some time.
+We will not go into the details of Unicode here.</p>
+</div>
+<div class="paragraph">
+<p>![ASCII Code Chart](./800px-ASCII_Code_Chart.png)</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a closer look at some features of the ASCII character set.
+First, notice that uppercase and lowercase characters are represented distinctly.
+This is why case sensitivity is important on computers.
+Second, 0 through 31 look really funky.
+These are called control characters, not printing characters.
+Most of these control characters are no longer used in today&#8217;s computers (they were used to literally control printers and other devices in the 70s and 80s), but there are some that warrant special attention.
+The first is NULL, 0.
+NULL is used in C to represent the end of an array (see Chapter 2).
+10, <code>\n</code> or Newline, is used to make the computer put a line break in a program&#8217;s output; otherwise, everything would show up on one long horizontal line.
+Second is 15, <code>\r</code> or Carriage Return.
+This goes back to when computer printers were fancy typewriters, which required a special operation to move the carriage back to the starting position.
+While I can&#8217;t think of any printers today that need this fuctionality, it is not uncommon to see <code>\r\n</code> as a legacy pair of characters in many programs.
+The last control character that is interesting to us is 9, <code>\t</code>, horizontal tab (HT).
+The horizontal tab tells the computer that we want a lot of whitespace (usually 4 or 8 spaces worth).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_strings">Strings</h5>
+<div class="paragraph">
+<p>Characters on their own aren&#8217;t particularly interesting.
+What is useful is having long runs of characters to make up words, sentences, paragraphs, and so on.
+We achieve this by using what are called strings -  which are literally just a collection of characters in a row.
+Usually strings are surrounded by double quotes in a program.
+See the workbook for a variety of examples on how strings look and work in a program.</p>
+</div>
+<div class="paragraph">
+<p>While characters really are treated as just numbers, strings have a variety of common operations that don&#8217;t make sense with numbers.
+Among these are operations to determine the length of a string (how many characters it has), to combine strings together, and to pull strings apart.
+These are also covered in detail in the workbook.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_practice_2">Practice</h5>
+<div class="paragraph">
+<p>Work with the <code>types</code> program in the language of your choice.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[Python](01_types/01_python.md)</p>
+</li>
+<li>
+<p><sub>~[CoffeeScript](01_types/02_typescript.md)</sub>~</p>
+</li>
+<li>
+<p><sub>~[C](01_types/03_c.md)</sub>~</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_control_flow">Control Flow</h3>
+<div class="paragraph">
+<p>In the last section, we talked about primitive data.
+The basic pieces of information computers work with, characters or numbers, that can combine in some interesting ways.
+It is sometimes described as the "space" dimension of your programs.
+In this section, we&#8217;re going to talk about control flow, which is the "time" aspect, and how programs gain their power to compute any new piece of data, given some rules.</p>
+</div>
+<div class="paragraph">
+<p>In broad strokes, programs will follow one sequence of operations - the sequence written in the source code.
+Control flow changes that in one of two ways: either it jumps forward somewhere else in the program based on some condition on the data, or it jumps back to repeat a section of code a certain number of times.
+These are called branches and loops, respectively.</p>
+</div>
+<div class="paragraph">
+<p>Each branch or loop is made up of many small pieces, which we want to describe.</p>
+</div>
+<div class="sect3">
+<h4 id="_blocks">Blocks</h4>
+<div class="paragraph">
+<p>A <strong>block</strong> of code is a logical collection of code, separated from the rest of the program by some syntactic construct in the programming language.
+In the "c-based" languages (languages which got their syntax from C, including C++, Java, and Javascript), blocks are grouped within '{' and '}'.
+In Python, Coffeescript, Ruby, and some others, blocks are grouped together by indenting lines of code at the same level.
+Within a block of code, each piece is executed in order.
+Each statement in the block happens one at a time, independant of other statments around it.
+The statement is made up of expressions, which are individual calculations on pieces of data.
+Like statements, expressions are evaluated (or run, or calculated) independantly of one another.
+The only way a computer takes a value from one expression or block or statment and uses it in another is by storing the results in a variable.</p>
+</div>
+<div class="sect4">
+<h5 id="_expression">Expression</h5>
+<div class="paragraph">
+<p>An <strong>expression</strong> takes some data and performs an operation.
+Adding two numbers is an expression.
+Checking if one number is greater than another number is an expression.
+Calculating one of the roots of the quadratic equation is an expression, but storing that result in a variable is not - that is a statement.</p>
+</div>
+<div class="paragraph">
+<p>Different types of expressions have different precedence - for example, what do you think would happen with the expression <code>2 + 3 &lt; 1 * 7</code>?
+In the languages in this book, the will all evaluate to <code>true</code>, because the arithmetic <code>+</code> and <code>\*</code> have priority over the relation <code>&lt;</code>.
+We introduced operators in the first half of the chapter, and here are a few more of the specific rules.</p>
+</div>
+<div class="paragraph">
+<p>There are five common arithmetic operations - <code>+</code> addition, <code>-</code> subtraction, <code>\*</code> multiplication, <code>/</code> division, and <code>%</code> modulus.
+Addition and subtraction behave as you would expect for both integers and floating point numbers.
+When mixing and integer and a float, the result will be a float.
+Subtraction with floats has some finicky details, explored in the basic types exercises.
+Multiplication between integers results in an integer, but multiplying very large numbers may have some side effects, which we explore in the exercises.
+Modulus on integers returns the remainder, and between a float and an integer behaves roughly as expected, but modulus between two floats is (for me) harder to intuit.
+There are very, very few places in programming where the modulus of two non-integers is necessary.</p>
+</div>
+<div class="paragraph">
+<p>There are six relational operations that compare numbers - <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&#8656;</code>, <code>&gt;</code>, and <code>&gt;=</code>.
+They should be pretty obvious, but <code>==</code> is equality, the numbers must be exactly the same, <code>!=</code> the numbers must not be the same, and the number must be less than, less than or equal, greater than, or greater than or equal to.
+Integers will always behave exactly as expected with the relational operators, but <code>==</code> equality rarely works correctly with floating point numbers.
+In calculations involving several steps of arithmetic in floating point numbers, the least significant part of the numbers will start to drift slightly, thus making them strictly not equal, while still being incredibly close.
+In those situations, it is common to instead of testing equality, testing if the difference of the numbers is less than some small error margin.
+More on this is in the exercises.</p>
+</div>
+<div class="paragraph">
+<p>When combining several calculations, grouping with <code>()</code> guarantees that some steps will execute first.
+In the quadratic equation example, the <code>(-b + discriminant) / (2 * c)</code> made it certain that the addition and multiplication would be performed first.
+Without those, the implicit order from the program would have been <code>- b + ((discriminant / 2) * c)</code>.
+It is always good form to use parenthesis to group operations, even if the language itself would order your operations correctly.</p>
+</div>
+<div class="paragraph">
+<p>When working with multiple logical conditions, the three operations <code>!</code> not, <code>&amp;&amp;</code> and, and <code>||</code> or are useful.
+The and operation works as expected - provided the clauses on both sides are true, the entire expression is true.
+The or operation does not behave as expected, in English.
+If I said I was going to make eggs or bacon, then I brought you eggs and bacon, you would probably be happy with getting an awesome breakfast, but still say my original statement was incorrect.
+In English, or is an exclusive logic operation.
+Either one OR the other condition should be true, but not both.
+In computers, or is an inclusive operation.
+At least one of the conditions must be true, but if both are true, the expression is still correct.
+The not operation is also a bit different.
+The operations covered to this point take two clauses, one to the right and one to the left.
+The not operation is 'unary', meaning it takes a single clause, to the right of the <code>!</code> character.</p>
+</div>
+<div class="paragraph">
+<p>The final operation, and one used in every program, is assignment <code>=</code>.
+Assignment takes the computation on the right side and stores the value in the variable on the left.
+This leads to calling the pieces the "lvalue" and the "rvalue" - the rvalue can be nearly any expression, but the lvalue must be something that can be assigned to.
+In C, that means a single variable.
+In Python and Typescript, there are ways to assign to several variables at a single time.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_statement">Statement</h5>
+<div class="paragraph">
+<p>A <strong>statement</strong> is the smallest executable chunk of code.
+In C, making a statement is as easy as adding a <code>;</code> to the end of an expression, delineating where one expression ends and the next begins.
+Usually, statements group blocks of code.
+An expression will run to check a condition of the program, and some number of blocks of code are executed in some way.
+The complete collection of the expression and the blocks are the statement.
+Of course, the blocks in the statement are statements themselves.
+Branching and looping, discussed next, are the best ways to see how statements combine to form a program.</p>
+</div>
+<div class="paragraph">
+<p>Statements are executed one at a time, in sequence, without any direct effect on other statements.
+Indirectly, they can only work with one another via storing and reading values in and from variables.
+As a statement executes, the program goes through each expression in the statement in their order of operations.
+Usually, that means following parentheses fron inside to outside, and then going from the left side to the right.
+The big exception to this is with assignments, which always are the left-most side before the <code>=</code>, and then the rest of the statement.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s look at this next line of code, which is valid in all the languages we use, and see how it goes one step at a time.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">total_cost = (item_count * cost_per_item) + shipping_cost</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Reading from the left to the right,  we see the statement starts with <code>total_cost =</code>.
+From this, we know that whatever follows the <code>=</code> will calculate some value, and then we will store that value in the variable named <code>total_cost</code>.
+After the <code>=</code>, we see our first parenthisis, so we find the ending paren and do the calculation within them, <code>item_count * cost_per_item</code>.
+By multiplying these together, we get some intermediate value.
+That sticks around for a moment longer while we look at the last piece of the expression, <code>+ shipping_cost</code>.
+We take that value we had from the multiplication, add it to the shipping cost, and then and only then take this final single value and store it in <code>total_cost</code>.
+All that in a single expression, separate from anything else in the program!</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s walk through it again with real values.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>item_count = 4
+cost_per_item = 4.25
+shipping_cost = 2.99
+total_cost = (item_count * cost_per_item) + shipping_cost</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When this executes, it goes inside the parens to outside, left to right, and finally assigns the value to the variable.
+So inside the parns, we have <code>item_count * cost_per_item</code>.
+The program looks up <code>item_count</code> first, and finds <code>4</code>, then looks up <code>cost_per_item</code>, and finds <code>4.25</code>.
+At this point, it has <code>4 * 4.25</code>.
+Only after it&#8217;s gotten the values from those variables does it do the multiplication! So it does, and we have <code>17</code>.
+Now, it keeps this value in mind (just a value, no variable to keep it around), and does the next operation, <code>+ shipping_cost</code>.
+It looks up shipping cost, <code>2.99</code>, and puts it together with the value we just got, and have <code>17 + 2.99</code>.
+This works out to <code>19.99</code>, and now we have the final value of the expression.
+We take it and store it in <code>total_cost</code>.
+Now, any time after this line, if the program uses <code>total_cost</code>, it will look it up and find <code>19.99</code> to use however it needs.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_branching">Branching</h4>
+<div class="paragraph">
+<p>With the concept of a <strong>block</strong> of code being a logical chunk of code, combining them in interesting ways gives programs their power.
+The most common piece of control flow is the logical branch.
+A logical branch examines some condition of the program&#8217;s data, and runs one or another block of code depending on whether that condition is true.</p>
+</div>
+<div class="paragraph">
+<p>A block is just a set of statements which execute in order. Typically, later statements in the</p>
+</div>
+<div class="sect4">
+<h5 id="_if_then_else">If-Then-Else</h5>
+<div class="paragraph">
+<p>This basic branch is called "If/Else", and often the "If" is set off in programs from the truthy block by the word "Then".
+Even if the "Then" is not in the programming language, it&#8217;s still discussed as such.</p>
+</div>
+<div class="paragraph">
+<p>There was an example of an "If/Else" statement in the examples for the first part of this chapter.
+In common English, the statement reads:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Check the expected result of the Transaction.
+IF the result of the transaction is greater than the account balance
+THEN warn the teller the transaction is too large
+ELSE execute the banking transaction.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If/Else statements are very regularly used when interacting with users.
+The program will ask the user for some input - "Would you like to run again? (Y/n)" IF the user types "Y", THEN the program runs again, ELSE the program says "Bye!" and exists.</p>
+</div>
+<div class="paragraph">
+<p>Many business requirements can be expressed with If/Else logic - the transaction example is common, but think about a security card scanner.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>IF the scanned card has an employee ID
+THEN
+	IF the employee id is allowed in this building,
+	THEN
+		the door is unlocked for 10 seconds
+	ELSE
+		flash "Unauthorized Access" on the keypad
+ELSE
+	Do nothing (so the thief doesn't even know they can't get in)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice how the first IF clause has a second IF inside it. By nesting these
+statements as deep as needed, any business rule that can be expressed in terms
+of true/false is valid to write a program to manage.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_looping">Looping</h4>
+<div class="paragraph">
+<p>Where branching runs a block of code based on some condition of the state of the program, looping runs the same block of code multiple times.
+Looping comes, broadly, in two flavors.
+When the number of iterations is known, the loop is a <strong>for</strong> loop.
+When the number of iterations is based on some changing condition of the program, the loop is a <strong>while</strong> loop.</p>
+</div>
+<div class="sect4">
+<h5 id="_for_range">For Range</h5>
+<div class="paragraph">
+<p>The most common looping construct repeats a block of code some discrete number
+of times, usually changing the value of one or two variables each time the loop
+repeats. Take the example of summing several numbers:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Let the variable "sum" be set to 0
+FOR i taking values between 1 and 3, inclusive
+	Set sum to be the current value of sum plus the value of i
+Print sum</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Implementing this program would print <code>6</code>. Going through it line by line, the
+program would:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set <code>sum</code> to 0</p>
+</li>
+<li>
+<p>Set <code>i</code> to 1</p>
+</li>
+<li>
+<p>Add the value of <code>i</code> (1) to <code>sum</code>, and store it - <code>sum</code> equals 1.</p>
+</li>
+<li>
+<p>Set <code>i</code> to 2 (jumping back to the next iteration).</p>
+</li>
+<li>
+<p>Add the value of <code>i</code> (2) to <code>sum</code>, and store it - <code>sum</code> equals 3.</p>
+</li>
+<li>
+<p>Set <code>i</code> to 3 (the start of the next iteration).</p>
+</li>
+<li>
+<p>Add <code>i</code> (3) to <code>sum</code> (3) - <code>sum</code> equals 6.</p>
+</li>
+<li>
+<p>There are no more numbers to iterate over</p>
+</li>
+<li>
+<p>Print <code>sum</code> (6)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This wouldn&#8217;t be too hard to write the three additions by hand.
+When the operation is taking the product of the numbers, or grows to summing hundreds of numbers, loops become very attractive.</p>
+</div>
+<div class="paragraph">
+<p>Finally, when we move to handling lists and groups of data in the next chapter, the number of iterations is unknown when writing the program but is defined when running the program.
+Loops are the only way to work on all those pieces of data.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_while">While</h5>
+<div class="paragraph">
+<p>There are other times when a program needs to perform an operation many times, but must make a decision every time it repeats.
+In the HiLo game example, the loop repeats as often as the user continues entering "yes" when asked if they want to play again.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_comments">Comments</h4>
+<div class="paragraph">
+<p>There is one last piece of a program we need to mention.
+Comments are text in our programs that are not used by the computer, but purely for a programmer to explain a particular piece of code.
+Comments have a checkered position in the software development community.
+Because comments aren&#8217;t part of the execution of a program, they have a tendency to drift from the original implementation, after programs have been in development for some time.
+Comments can also be useless - in C, <code>x = x + 1; // Add one to x</code>.
+Even with their faults, a well-written and well placed comment can be invaluable in aiding other programmers understanding some code.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_practice_3">Practice</h4>
+<div class="paragraph">
+<p>Work with the <code>control flow</code> program in the language of your choice.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tracing_program_execution">Tracing Program Execution</h3>
+<div class="paragraph">
+<p>At this point, we&#8217;ve run a few programs.
+We&#8217;ve gotten a bit of practice with programs that can take user input, perform calculations on those inputs, and then give the user some output based on the calculation.
+Whether this was rug prices, checking account balances for a transaction, or converting to roman numerals, the idea is the same for each.</p>
+</div>
+<div class="paragraph">
+<p>As we learn to program, we find ourselves in this position of having a very powerful piece of machinery that has very limited capabilities for anything outside how it was built. It has no self-reflection, and no capability to reason or intuit its own behavior. All of that is left to us, which means we need to have a very good understanding of what specifically the computer will do with all these instructions we give it.</p>
+</div>
+<div class="paragraph">
+<p>The technique we use to determine these behaviors is called tracing. When we <strong>trace</strong> a computer program, we take a piece of paper $ a pencil and, step by step, record exactly what the computer would do if it were running the program. To make a trace, we want to capture three columns of information. The first two columns are side by side - "identifier" and "value". That should be familiar, as those are the two parts of a variable! We are going to go through the program line by line and track each identifier as we come across it, and the value it has at any given time. There will be a third column, separate from the first two, called "Input/Output". Whenever the program creates output or asks for input, we&#8217;ll record that in this column before copying it to the apropriate row in the variables section.</p>
+</div>
+<div class="sect3">
+<h4 id="_tracing_types">Tracing types</h4>
+<div class="paragraph">
+<p>Let&#8217;s see how this looks! Take this snippet from the python workbook:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>i = 2
+j = 3
+k = 5
+
+print(i, j, k)
+
+m = i * j
+n = j + k
+
+print(m, n)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As we build a trace for this, we start with our paper looking like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------
+   |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We then look at the first line of our program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>i = 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We see an identifier, <code>i</code>.
+We look at our trace, and beccause we don&#8217;t have an ID yet for <code>i</code>, we add it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------
+ i |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We look on the right side of the <code>=</code> sign to find the value to assign to the
+variable, and see that it&#8217;s <code>2</code>, so we add that to the value column:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------
+ i |  2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s the entirety of that line! We can now go to the next line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>j = 3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We don&#8217;t have an id <code>j</code> yet, so we add it and its value <code>3</code> to our trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------
+ i |  2
+ j |  3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s the whole line, and we can do it one more time with <code>k = 5</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------
+ i |  2
+ j |  3
+ k |  5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next line is a bit diferent, it&#8217;s got the <code>print(i, j, k)</code> statement. For
+this, we take what the computer will output and put it under the <code>Output</code>
+column. What will it output? Well, it will print the variables <code>i</code>, <code>j</code>, and <code>k</code>
+which we can look up in the table of IDs to values! We look at the table, and
+read <code>2</code> for <code>i</code>, <code>3</code> for <code>j</code>, and <code>5</code> for <code>k</code>. Print will put those all on one
+line of output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------         2 3 5
+ i |  2
+ j |  3
+ k |  5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Moving on to the next block, we have</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>m = i * j
+n = j + k
+
+print(m, n)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first line is <code>m = i * j</code>. <code>m</code> is a new identifier, so we can add that to
+our table:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------         2 3 5
+ i |  2
+ j |  3
+ k |  5
+ m |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What value does it have? <code>i * j</code> is an operation that creates a value, not a
+value itself. So to get the value, we need to perform the operation! To do
+that, first we look at the identifiers <code>i</code> and <code>j</code>, and get their values from
+the table: <code>2 * 3</code>. Multiplying <code>2</code> by <code>3</code> is <code>6</code>, and that&#8217;s the value we
+can put in <code>m</code>!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------         2 3 5
+ i |  2
+ j |  3
+ k |  5
+ m |  6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can do the same process for the next line - note that we have a new variable
+<code>n</code>, get the values <code>j</code> and <code>k</code> for the operation, add those values together,
+and put the result in <code>n</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------         2 3 5
+ i |  2
+ j |  3
+ k |  5
+ m |  6
+ n |  8</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then we have a print statement again. Looking up the values, we have <code>6</code> and
+<code>8</code>, which we can add to our next line of output in our trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------        2 3 5
+ i |  2           6 8
+ j |  3
+ k |  5
+ m |  6
+ n |  8</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While this might feel slow and tedious, that&#8217;s a good thing at this point -
+doing these traces will help you slow down and think through what the computer
+is actually doing, which is rarely 100% in line with what you want it to do!</p>
+</div>
+<div class="paragraph">
+<p><strong>Exercise</strong>: finish tracing your <code>types</code> program in the language you&#8217;re
+using.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_changing_variables_and_control_flow">Changing variables and control flow</h4>
+<div class="paragraph">
+<p>We&#8217;ve seen how to track new variables in our program, and use identifiers to
+find the value of a variable created elsewhere to use in an operation. We will
+use this same approach to track changing values in a variable, looking at our
+control flow program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sum = 0
+for i in range(1, 6):
+	print(i)
+	sum = sum + i
+print(sum)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll make a new trace for this program</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Id | Value       _Output_
+---|------
+   |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Starting at the first line, we see a new identifier, <code>sum</code>, which gets set to
+<code>0</code> right away. (We call this immediate setting a variable to a value
+<strong>initialization</strong>, so that when we access it later we know what value it
+started with).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> Id | Value       _Output_
+----|------
+sum |  0</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On the next line, we see a <code>for &#8230;&#8203; in &#8230;&#8203;</code> loop. As discussed earlier, this
+does create a new variable, in this case <code>i</code>, and will assign a new value to it
+every time we come back through the loop. We cover <code>range(1, 6)</code> in depth in
+the next chapter; for now, just know that it will give <code>1</code> and then <code>2</code> each
+time we come to it again, up to <code>5</code> when it will be done.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> Id | Value       _Output_
+----|------
+sum |  0
+ i  |  1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now, we go inside the loop. The first line inside the loop is <code>print(i)</code>. We
+look for an identifier <code>i</code>, and read its value, <code>1</code>. We print this value, so put
+it in the <code>Output</code> column.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> Id | Value       _Output_
+----|------          1
+sum |  0
+ i  |  1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The second line in the loop body is <code>sum = sum + i</code>. We see that we already have
+an identifier for <code>sum</code>, so we don&#8217;t need to make a new one. On the right side,
+we see that we have a <code>+</code> for <code>sum</code> and <code>i</code>. This happens <strong>before</strong> the <code>=</code>, so
+we look at the values in the identifiers <code>sum</code> and <code>i</code> <em>as they are right now</em>.
+<code>sum</code> is <code>0</code> and <code>i</code> is <code>1</code>, so we add those together, getting <code>1</code>, and put that
+in the <code>sum</code> value. But wait, sum already has a value? That&#8217;s right. We&#8217;re going
+to change the value, and we do that in the trace by crossing out the old value
+and putting the new value adjacent to it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> Id | Value       _Output_
+----|------          1
+sum | ~0~ 1
+ i  |  1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we read this now, we see that <code>sum</code> started at <code>0</code>, and then later became
+<code>1</code>.</p>
+</div>
+<div class="paragraph">
+<p>So we&#8217;ve finished both lines of the loop body, which means we go back to the
+top, <code>for i in range(1, 6):</code>. We already have an <code>i</code>, so we don&#8217;t need to make
+a new one. We remember that last time <code>range</code> gave us <code>1</code>, so this time it will
+give us <code>2</code>. We assign that to the variable <code>i</code> just like we did with <code>sum</code>, and
+we end up with this trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value       _output_
+----|------          1
+sum | ~0~ 1
+ i  | ~1~ 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first line of the loop is the print. We see that the current value (the one
+furtherst to the right, that isn&#8217;t striked out) is 2. Let&#8217;s output that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value       _output_
+----|------          1
+sum | ~0~ 1          2
+ i  | ~1~ 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We then have the <code>sum = sum + i</code> line again. We just saw that <code>i</code> is currently
+<code>2</code>, and when we look at <code>sum</code> we see that it&#8217;s <code>1</code>. Adding them together, we
+store <code>3</code> back in <code>sum</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value       _output_
+----|------          1
+sum | ~0 1~ 3        2
+ i  | ~1~ 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We go back to the top of the loop. This time, <code>range</code> will give us <code>3</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value       _output_
+----|------          1
+sum | ~0 1~ 3        2
+ i  | ~1 2~ 3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And when we&#8217;ve finished the loop body, we have this trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value       _output_
+----|------          1
+sum | ~0 1 3~ 6      2
+ i  | ~1 2~ 3        3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Take a moment to check what the rest of the program will look like. Remember
+that <code>range</code> will give numbers up to 5, and then will exit the loop the next
+time it gets called.</p>
+</div>
+<div class="paragraph">
+<p>When you&#8217;ve written this out, we should see this trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value           _output_
+----|------              1
+sum | ~0 1 3 6 10~ 15    2
+ i  | ~1 2 3 4~ 5        3
+                         4
+                         5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And we&#8217;re at the end of the loop. We come back to the top, <code>range</code> already gave
+us 5, which is the last thing we used in the loop. <code>range</code> has nothing left, so
+we exit the loop body. There&#8217;s one more line - <code>print(sum)</code>, and looking at the
+final value for <code>sum</code> we get 15!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> id | value           _output_
+----|------              1
+sum | ~0 1 3 6 10~ 15    2
+ i  | ~1 2 3 4~ 5        3
+                         4
+                         5
+                         15</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So we looped 5 times, with an increasing value of <code>i</code> for each. We printed out
+that <code>i</code> each time to see where we were at in the loop, and kept adding it to
+sum. After the loop was finished, we look back at <code>sum</code> one last time, and
+output its value, <code>15</code>. Then, the program is done and ends!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tracing_input">Tracing input</h4>
+<div class="paragraph">
+<p>In the Roman Numerals program, we also have input. We can handle this one of
+two ways, whichever is more comfortable for you, but either way basically has us
+write another column for input. You can either write this separate from <code>output</code>
+and have</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> input  | output
+--------|---------
+input 1 | output 1
+input 2 | output 2
+        | output 3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and they have their own columns, or you combine them and wrte them on opposite
+sides of one column in order:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  in / out
+--- --- ---
+    output 1
+input 1
+    output 2
+input 2
+    output 3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It&#8217;s up to you which way you want to do it.</p>
+</div>
+<div class="paragraph">
+<p>So let&#8217;s look at how to do this with the roman numerals program. We&#8217;re using the
+first version we typed, not the later version that you filled in with all the
+remaining types</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>print("Decimal to Roman Numeral")
+number = int(input("Decimal integer: "))
+
+numeral = ""
+while number &gt; 0:
+    if number &gt;= 10:
+        numeral = numeral + "X"
+        number = number - 10
+    elif number &gt;= 5:
+        numeral = numeral + "V"
+        number = number - 5
+    elif number == 4:
+        numeral = numeral + "IV"
+        number = 0
+    else:
+        numeral = numeral + "I"
+        number = number - 1
+
+print(numeral)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The first thing it does is print out <code>"Decimal to Roman Numeral"</code>, so put that
+in the <code>_output</code> column of the trace.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+                             | Decimal to Roman Numeral</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To keep this from getting too long, we&#8217;re going to skip the empty print which
+just gives us an extra newline for prettier output. So the next line is
+<code>number = int(input("Decimal integer: "))</code>. This is a new variable, so we need
+to record that first:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+number |                     | Decimal to Roman Numeral</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then we have the <code>input("Decimal integer: ")</code> part. This will do two things -
+first, it will print output, and then, it will take whatever input we provide so
+that we can use that as the value for <code>number</code>. To do this, first we&#8217;ll record
+the output</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+number |                     | Decimal to Roman Numeral
+                             | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And then, we&#8217;ll decide what input we will give it, and record that in the
+<code>input</code> column.  This value comes from the user, and isn&#8217;t part of the program.
+Therefore, we will choose <code>18</code> arbitrarily as what our users has put in.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+number |                18   | Decimal to Roman Numeral
+                             | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we can finish the line of code - <code>number = int(input&#8230;&#8203;)</code> means we can take
+the value in the input column, and put it into the value for the <code>number</code>
+identifier.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+number |  18            18   | Decimal to Roman Numeral
+                             | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From here, we can continue tracing the code exactly like we did in the last
+section. The next line starts <code>numeral = ""</code>, making a new identifier and
+setting it to the empty string.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+number |  18            18   | Decimal to Roman Numeral
+numeral|  ""                 | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the <code>while number &gt; 0:</code> decision, we look up <code>number</code>, see that it is
+<code>18</code>, and do the loop body. In the loop body, the first statement is the
+first if condition, <code>if number &gt;= 10:</code>. In this <code>if</code> condition, we look up
+<code>number</code> (again), see that it is (still) <code>18</code>, and then do the first body
+ignoring the other <code>if</code> branches. The body sets <code>numeral</code> (<code>""</code>) to <code>numeral
++ "X"</code> (which with string concatenation becomes just <code>"X"</code>), and sets
+<code>number</code> (<code>18</code>) to <code>number - 10</code> (<code>8</code>). When the body is done, we have this
+trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value         input | output
+-------|------        -------|---------
+number |  ~18~ 8        18   | Decimal to Roman Numeral
+numeral|  ~""~ "X"           | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>while number &gt; 0:</code> sees <code>number</code> is <code>8</code>, which is larger than zero, and
+does the loop body. <code>if number &gt;= 10:</code> is not true, though - <code>8</code> is less than
+<code>10</code>, so this <code>if</code> condition does not apply and we do not execute its body!
+Instead, it goes to the next <code>elif</code> and checks that condition, <code>number &gt;= 5</code>.
+It is, so at this point the <code>elif</code> block gets started. Notice, though, that
+the computer did execute each <code>if</code> check individually. It did <strong>not</strong> just jump
+straight to the block we wanted to.</p>
+</div>
+<div class="paragraph">
+<p>So it has found the <code>elif</code> condition true, executes that block, and goes back
+to the top.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value             input | output
+-------|------            -------|---------
+number |  ~18 8~ 3          18   | Decimal to Roman Numeral
+numeral|  ~"" "X"~ "XV"          | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From the top again, <code>while number &gt; 0:</code> finds <code>number</code> to be <code>3</code>. The first
+if finds <code>3</code> to be less than <code>10</code>, so it doesn&#8217;t do that body. The first elif
+then gets a shot, and finds that <code>3</code> is less than <code>5</code> so again doesn&#8217;t
+execute it. The second <code>elif</code> is up, but <code>3</code> doesn&#8217;t equal <code>4</code> so no dice.
+The only thing left is the <code>else</code>, which means that the <code>else</code> body has to
+execute. But it did still first try all of the other conditions! The
+computer executes in order, it does not pick the <em>best</em> option. It&#8217;s up to
+you to put the more specific cases first, and the more general cases later.</p>
+</div>
+<div class="paragraph">
+<p>At the end of this round we have this trace:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value                   input | output
+-------|------                  -------|---------
+number |  ~18 8 3~ 2              18   | Decimal to Roman Numeral
+numeral|  ~"" "X" "XV"~ "XVI"          | Decimal integer:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It should be pretty easy for you to finish the rest of the trace. Take a minute
+to do so.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value                                  input | output
+-------|------                                 -------|---------
+number |  ~18 8 3 2 1~ 0                         18   | Decimal to Roman Numeral
+numeral|  ~"" "X" "XV" "XVI" "XVII"~ "XVIII"          | Decimal integer:
+                                                      | XVIII</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With the <code>print</code> at the end of our program, this is our finished trace!</p>
+</div>
+<div class="sect4">
+<h5 id="_traces_in_the_book">Traces in the book</h5>
+<div class="paragraph">
+<p>Through the rest of the book, we will use traces whenever we come across new and interesting control flow &amp; concepts.
+To keep the traces consistent and contained we&#8217;ll be formatting them like such:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> ID    | Value
+-------|------
+number |  ~18 8 3 2 1~ 0
+numeral|  ~"" "X" "XV" "XVI" "XVII"~ "XVIII"
+
+
+  output / input
+------------------
+Decimal to Roman Numeral
+Decimal integer:
+                       18
+XVIII</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That is, the variables will be up at the top, and we will use one column of combined output and input below.
+Output will be left justified, and input will be right justified.
+When you make traces on your own, it doesn&#8217;t matter where these pieces go.
+Find a layout for your page that works for you!</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercises">Exercises</h4>
+<div class="paragraph">
+<p>You guessed it - trace your roman numerals project with several other inputs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wrap_up">Wrap Up</h4>
+<div class="paragraph">
+<p>This is a pedagogical tool</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_project">Project</h4>
+<div class="paragraph">
+<p>Let&#8217;s use these to write our first big program - a video game called [HiLo](../03_hilo/README.md)</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hilo">HiLo</h3>
+<div class="paragraph">
+<p>An early tradition of computer programming was a series of video games published
+as source code in BASIC programming language magazines. In that tradition, the
+first big program we type is a game called HiLo. It&#8217;s a simple number guessing
+game, but has a good variety of programming functions, and serves as an
+excellent introduction to writing a mildly complex program.</p>
+</div>
+<div class="paragraph">
+<p>In the tradition of these early magazine games, you get the source code for a
+complete game here, but it&#8217;s not very functional. It&#8217;s up to you to type the
+original in, and then make any improvements or changes you feel are worthwhile.
+You might want to change the position of text, the colors on the screen, or give
+the game several difficulty levels. Like all programming, it&#8217;s all to your
+imagination!</p>
+</div>
+<div class="paragraph">
+<p>[Python](01_python.md)</p>
+</div>
+<div class="sect3">
+<h4 id="_wrap_up_2">Wrap Up</h4>
+<div class="paragraph">
+<p>Let&#8217;s take a minute to appreciate what we&#8217;ve covered and accomplished!
+We started with a code editor and a way to run a Python progam, but at the time it didn&#8217;t do much more than print "Hello, world!".
+Over the past chapter, we&#8217;ve learned about how computers represent data, taking just numbers and making them serve all sorts of different purposes.
+We&#8217;ve looked at how to control the computer, making it branch and loop based on conditions.
+We used that to write a program which converted our numbers to Roman numerals.
+You wrote your (likely) first program! That did a real thing, that is useful!
+(Ok&#8230;&#8203; questionably useful, but the next programs will really be useful!)
+Then we took that knowledge and wrote a jackpot game, that lets us test our skill at picking numbers.
+Not content at the bare rules of the game, we added color, boxes, and maybe even a little animation to snazzy it up! Be proud of yourself, you are now a computer programmer!</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Recommended:</strong> Take a detour through [Appendix 2: Source Control](../A02_source_control/README.md)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2020-11-27 20:14:03 UTC
+</div>
+</div>
+</body>
+</html>
