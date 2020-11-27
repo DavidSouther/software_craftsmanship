@@ -1,4 +1,4 @@
-# Introduction
+= Introduction
 
 Human endeavors rest on the backs of the hard-working crafters.
 From stone- movers of the Egyptian pyramids to steel-workers on today's wind farms, skilled workers built civilization with their hands.
@@ -17,7 +17,7 @@ To get the most out of the text,  I recommended readers work through the compani
 Like any craft, to get good at software development you need to develop software.
 The workbooks lead you through developing software, in a way highlights the concepts presented in the text.
 
-## Computers Are Tools
+== Computers Are Tools
 
 Information is a critical piece of today's infrastructure.
 How people  use information is part of the field of Computer Science.
@@ -39,7 +39,7 @@ The computer has no way of knowing this was an error.
 Instead, it is up to the good programmer to tell the computer to verify that any numbers typed into the financial program ends with a decimal and two numbers.
 Then, the program can warn the user before making the calculation, potentially avoiding a costly transaction.
 
-### Using this tool
+=== Using this tool
 
 Software craftsmen use this tool by writing programs.
 A program is a document both written and read by human beings, while telling the computer unambiguously what to do.
@@ -56,7 +56,7 @@ In the book [Nudge](http://nudges.org/), the authors contend the difference is i
 If you were writing a web page to take DMV registration information, the difference in those conditions is eight characters - adding "checked" to the Organ Donor input.
 With that minuscule change in a program, the software craftsman has the potential for enormous influence on the lives of millions of people.
 
-### Sharing this tool
+=== Sharing this tool
 
 There is a whole world outside your front doorstep, and as much as some programmers might want to deny it, at some point every craftsman's programming will be used by someone else.
 It is important your code be both readable and usable by these other craftsmen.
@@ -71,7 +71,7 @@ Building partnerships with other craftsmen is one of the most rewarding ways to 
 To work past this impediment, I present tools for managing and sharing your programs early in the book (Chapter 3, Source Control), and encourage you to find other programmers and technology clubs in your area and on the Internet.
 
 
-## Computer Languages
+== Computer Languages
 
 Computer languages are the tie between the world of everyday common sense conversation and the exact stupidity of the computer.
 There are hundreds, if not thousands, of different programming languages today.
@@ -98,7 +98,7 @@ These languages were chosen because they each represent a very different approac
 Each approach is correct in  its own way, and it is important to know each of the approaches to be a great software craftsman.
 Further, each of these three languages is mature, and actively used in a variety of projects today.
 
-### C
+=== C
 
 C started its life at Bell Labs in 1973.
 C was written by Dennis Kernighan and Brian Ritchie as a language to write the Unix operating system.
@@ -115,7 +115,7 @@ C is the only language used in this book that must be compiled before being run.
 This _low-level_ nature of C makes it a very powerful language, especially when faced with requirements to interact directly with hardware, or when hardware is in short supply (embedded on robots or cell phones).
 That power comes with great responsibility for writing the program correctly.
 
-### Python
+=== Python
 
 Python is a programming language developed by Guido van Rossum in the late 1980s.
 Python has gone through two major revisions since its first release, and now is widely available on nearly any computing platform.
@@ -127,7 +127,7 @@ Python was also designed to be a fun language to use - the name Python refers no
 Python has a certain culture around its use not seen in many other programming languages.
 In Python, the prevailing wisdom is "there should be one - and preferably only one - obvious way to do it."
 
-### Javascript
+=== Javascript
 
 Javascript is a programming language developed at Netscape in 1994 by Brandon Eiche over the course of a week.
 Javascript is the de-facto standard for writing programs served over the Internet to run in a user's web browser.
@@ -141,7 +141,7 @@ When combined with libraries like jQuery, javascript can be the most expressive 
 When we start working with graphical programs later in the book, Javascript's expressive power will really shine, in that the amount of code needed to do the same thing (click a button) can often be an order of magnitude less than a similar program in C.
 
 
-#### TypeScript
+==== TypeScript
 
 TypeScript is a dialect of Javascript, developed by Andres Hejlsburg at Microsoft in 2010.
 The goal of the TypeScript project is to provide a strong "type system" on top of JavaScript.
@@ -149,7 +149,7 @@ A Type System is a set of tools that allows another program, the TypeScript Comp
 For instance, if you were to write in your program `5 + "hello"`, TypeScript would say you have an error combinging a number and a string.
 TypeScript is currently the most popular variant of JavaScript, because of its tremendous benefit and value in helping teams of all sizes manage the complexity of their JavaScript code.
 
-## Using this book
+== Using this book
 
 This book is meant to be a guide on your programming journey.
 The main textbook, which you have in your hands right now, talks about software engineering concepts and ideas.
@@ -165,7 +165,7 @@ But still, you should do the Python workbook in full first.
 Finally, there is the C++ workbook.
 C++ has a level of detail above the other two, and will serve as a good final introduction to programming techniques.
 
-### Syntactic Core (1-3)
+=== Syntactic Core (1-3)
 
 The first three chapters will cover the core of writing programs.
 This will get you to the point where you can have your computer talking to you and asking questions, though perhaps not gracefully.
@@ -173,7 +173,7 @@ We will discuss how computers understand data, and how they operate on data in a
 You will also learn how to begin grouping this data and these operations into increasingly complex pieces that work in synergy with one another.
 You should also follow the first two appendicies, on using the terminal and source control, to begin learning the programming-adjacent skillsets that are necessary in software craftsmanship.
 
-### Programming Patterns (4-6)
+=== Programming Patterns (4-6)
 
 With the basics down, these chapters begin to take a look at patterns common to bigger and more robust pieces of software.
 You will learn how to write tests for their code.
@@ -182,14 +182,14 @@ Input and output are necessary for having programs which work with data sets, wh
 Chapter 6 begins to look at longer running programs, including graphical user interfaces for highly interactive programs running on local PCs and using web servers to allow people worldwide to access your work.
 Another pair of appendices augment the programming itself - a look into debugging techniques to teach how to isolate problems in a misbehaving program, and a discussion of containers, a modern technique in distributing production systems to make them available for a number of users.
 
-### Building Large Programs (7-9)
+=== Building Large Programs (7-9)
 
 The last section of the book looks at making larger programs that are fully featured.
 This includes making a space-invaders like video game, building out a painting program, and working as a team to create a board game.
 Each of these projects in the chapter should be a complete stand-alone tool that combines lessons from all the prior work in the book.
 The final appendicies discuss a technique for managing data called parsing, and a bibliography of future books & courses to consider as you continue your programming journey.
 
-## Practice
+== Practice
 
 Like any skill, software craftsmanship takes practice.
 The workbooks are designed to highlight the concepts presented in the text, while giving you an opportunity to practice these skills.
@@ -204,14 +204,14 @@ The second part of each lesson is a few exercises to work with the new concepts 
 Some of the lesson exercises will involve conducting research on the Internet.
 Being able to find help with programming questions is another invaluable skill as a software developer.
 
-### What Next?
+=== What Next?
 
 At the end of each section, there are links either to the workbook exercises in the various languages, or links from the workbook back to the textbook at the next topic section.
 So whenever you're ready, click on the link, or come back to the last section you worked on!
 
-### Exercise: Hello World
+=== Exercise: Hello World
 
-If this is your first time programming, I'd recommend doing the exercises in Python.
+If this is your first time programming, I'd recommend doing the exercises in the Python workbook.
 If you've gotten through the book, try redoing the exercises in TypeScript, then C!
 
 * [Intro: Python](./01_python/README.md)
