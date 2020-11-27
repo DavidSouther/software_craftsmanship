@@ -15,4 +15,4 @@ ifndef::backend-html5[toc::[]]
 
 include::00_introduction/01_python.adoc[]
 
-//include::01_basic_types_and_control_flow/00_python.adoc[]
+include::01_basic_types_and_control_flow/01_python.adoc[]

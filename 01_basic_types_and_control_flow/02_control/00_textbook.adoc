@@ -223,7 +223,3 @@ Even with their faults, a well-written and well placed comment can be invaluable
 == Practice
 
 Work with the `control flow` program in the language of your choice.
-
-* [Python](01_python.md)
-* ~~[TypeScript](02_typescript.md)~~
-* ~~[C](03_c.md)~~
