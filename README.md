@@ -6,4 +6,4 @@ At the same time, the computer sitting on your desk offers a fantastic opportuni
 People in nearly every profession could stand to benefit from the knowledge and ability to write programs to solve their own problems.
 This book shows the layperson how to tap this potential, taking you from being able to perform basic computing tasks, through writing your first program, on to having a basic understanding of how programs work, while being able to begin to understand the programs that are used in your profession.
 
-If you want to learn how to program as a craft, [get started](00_introduction/README.md)!
+If you want to learn how to program as a craft, [get started](http://davidsouther.com/software_craftsmanship/)!

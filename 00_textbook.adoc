@@ -5,9 +5,12 @@ David Souther <davidsouther+software-craftsmanship@gmail.com>
 ifdef::backend-html5[:toc: left]
 ifndef::backend-html5[:toc: macro]
 
-(C) 2020 David Souther
 
-NOTE: Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
+Software Craftsmanship is the study and practice of using computers as a tool in our everyday lives.
+Today's world is deeply and critically tied to the computers we use, in subtle and varied ways few would even begin to consider.
+At the same time, the computer sitting on your desk offers a fantastic opportunity to parse and trove your data.
+People in nearly every profession could stand to benefit from the knowledge and ability to write programs to solve their own problems.
+This book shows the layperson how to tap this potential, taking you from being able to perform basic computing tasks, through writing your first program, on to having a basic understanding of how programs work, while being able to begin to understand the programs that are used in your profession.
 
 This book is available online at http://davidsouther.com/software_craftsmanship, with workbooks at
 http://davidsouther.com/software_craftsmanship/python.html and others to come.
@@ -17,6 +20,10 @@ It is available for download as PDF in parts:
 * http://davidsouther.com/software_craftsmanship/textbook/software_craftsmanship.pdf[textbook]
 * http://davidsouther.com/software_craftsmanship/textbook/software_craftsmanship_python.pdf[python workbook]
 * and others to come.
+
+(C) 2020 David Souther
+
+NOTE: Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
 
 ifndef::backend-html5[toc::[]]
 
