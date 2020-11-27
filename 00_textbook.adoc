@@ -9,6 +9,15 @@ ifndef::backend-html5[:toc: macro]
 
 NOTE: Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
 
+This book is available online at http://davidsouther.com/software_craftsmanship, with workbooks at
+http://davidsouther.com/software_craftsmanship/python.html and others to come.
+
+It is available for download as PDF in parts:
+
+* http://davidsouther.com/software_craftsmanship/textbook/software_craftsmanship.pdf[textbook]
+* http://davidsouther.com/software_craftsmanship/textbook/software_craftsmanship_python.pdf[python workbook]
+* and others to come.
+
 ifndef::backend-html5[toc::[]]
 
 :leveloffset: 1
@@ -16,3 +25,5 @@ ifndef::backend-html5[toc::[]]
 include::00_introduction/00_textbook.adoc[]
 
 include::01_basic_types_and_control_flow/00_textbook.adoc[]
+
+include::02_functions_arrays_strings/00_textbook.adoc[]

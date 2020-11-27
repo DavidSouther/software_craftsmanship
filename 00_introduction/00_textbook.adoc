@@ -214,6 +214,6 @@ So whenever you're ready, click on the link, or come back to the last section yo
 If this is your first time programming, I'd recommend doing the exercises in the Python workbook.
 If you've gotten through the book, try redoing the exercises in TypeScript, then C!
 
-* [Intro: Python](./01_python/README.md)
-* ~~[Intro: TypeScript](./02_typescript/README.md)~~ Coming soon!
-* ~~[Intro: C](./03_c/README.md)~~ Coming soon!
+* link:./python.html[Python workbook]
+* Typescript workbook (Coming soon)
+* C workbook (coming soon)
