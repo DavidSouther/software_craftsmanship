@@ -1,4 +1,4 @@
-# Arrays
+= Arrays
 
 The programs we've written so far work on one piece of data at a time. Each
 variable holds a single value, and while we've looped work based on what the
@@ -37,7 +37,7 @@ and get a lot of interesting behavior. For this section, though, we're going to
 stick with good old fashioned numbers, and write some functions that calculate
 statistics about these numbers.
 
-## Changing arrays
+== Changing arrays
 
 Arrays are not static. Just like how we can assign different values to
 variables, so to can we change an array. We can do this by assigning to a single
@@ -47,4 +47,5 @@ index. We can also change the number of items in an array, adding items by
 together using concatenation. Some languages like Python and TypeScript even let
 us slice and dice chunks from the middle of an array! 
 
-[Python](./01_python.md)
+In the workbooks, we're going to start using arrays to perform statistical
+analysis of some data sets.

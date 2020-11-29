@@ -1,4 +1,4 @@
-# Python Types
+= Basic Types
 
 This exercise will give you practice typing programs that use many different...
 types!
@@ -428,7 +428,7 @@ Try putting `print(5 % 3)` in your python program, and see that it prints 2.
 
 Use the modulus operator to improve your board-foot calculations. Come up with new board-foot calculations that need remainders to be sensible.
 
-.. [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation#Basic_examples)
+.. [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation=Basic_examples)
 +
 * Calculate the standard deviation for the sample data - `2, 4, 4, 4, 5, 7, 9 = 5`
 * Given the height of an adult male in inches, calculate which deviation he is in (mean = 70, deviation = 3).
@@ -438,7 +438,7 @@ Try using the modulus operator.
 ** `78 = 2 2/3`
 
 .. *https://en.wikipedia.org/wiki/Range_of_a_projectile[Projectile Distance]*
-One of the first applied uses of computing machines was in naval https://en.wikipedia.org/wiki/Ship_gun_fire-control_system#Analogue_computed_fire_control[artillery situations].
+One of the first applied uses of computing machines was in naval https://en.wikipedia.org/wiki/Ship_gun_fire-control_system=Analogue_computed_fire_control[artillery situations].
 Write some code to calculate the range of a projectile fired at various velocities and angles (in https://en.wikipedia.org/wiki/Radian[radians]) from ground level.
 To calculate sine, use `math.sin(x)`.
 Assume velocity is in meters per second, so `g = 9.81` in the simplified formula on the wikipedia page.

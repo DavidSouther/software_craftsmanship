@@ -445,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">David Souther</span><br>
 <span id="email" class="email"><a href="mailto:davidsouther+software-craftsmanship@gmail.com">davidsouther+software-craftsmanship@gmail.com</a></span><br>
-<span id="revdate">2020-11-27</span>
+<span id="revdate">2020-11-29</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -457,11 +457,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_exercises">Exercises</a></li>
 </ul>
 </li>
-<li><a href="#_basic_types_and_control_flow_python">Basic Types and Control Flow: Python</a>
+<li><a href="#_basic_types_and_control_flow">Basic Types and Control Flow</a>
 <ul class="sectlevel2">
-<li><a href="#_python_types">Python Types</a></li>
-<li><a href="#_control">Control</a></li>
+<li><a href="#_basic_types">Basic Types</a></li>
+<li><a href="#_control_flow">Control Flow</a></li>
 <li><a href="#_hilo">HiLo</a></li>
+</ul>
+</li>
+<li><a href="#_functions_arrays_and_strings">Functions, Arrays, and Strings</a>
+<ul class="sectlevel2">
+<li><a href="#_functions">Functions</a></li>
+<li><a href="#_format_strings_in_python">Format strings in Python</a></li>
+<li><a href="#_arrays_in_python">Arrays in Python</a></li>
 </ul>
 </li>
 </ul>
@@ -674,10 +681,10 @@ Keep this page handy, because even if you don&#8217;t have any of these problems
 </div>
 </div>
 <div class="sect1">
-<h2 id="_basic_types_and_control_flow_python">Basic Types and Control Flow: Python</h2>
+<h2 id="_basic_types_and_control_flow">Basic Types and Control Flow</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_python_types">Python Types</h3>
+<h3 id="_basic_types">Basic Types</h3>
 <div class="paragraph">
 <p>This exercise will give you practice typing programs that use many different&#8230;&#8203;
 types!
@@ -1216,7 +1223,7 @@ Try putting <code>print(5 % 3)</code> in your python program, and see that it pr
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>[Standard Deviation](<a href="https://en.wikipedia.org/wiki/Standard_deviation#Basic_examples" class="bare">https://en.wikipedia.org/wiki/Standard_deviation#Basic_examples</a>)</p>
+<p>[Standard Deviation](<a href="https://en.wikipedia.org/wiki/Standard_deviation=Basic_examples" class="bare">https://en.wikipedia.org/wiki/Standard_deviation=Basic_examples</a>)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1244,7 +1251,7 @@ Try using the modulus operator.</p>
 </li>
 <li>
 <p><strong><a href="https://en.wikipedia.org/wiki/Range_of_a_projectile">Projectile Distance</a></strong>
-One of the first applied uses of computing machines was in naval <a href="https://en.wikipedia.org/wiki/Ship_gun_fire-control_system#Analogue_computed_fire_control">artillery situations</a>.
+One of the first applied uses of computing machines was in naval <a href="https://en.wikipedia.org/wiki/Ship_gun_fire-control_system=Analogue_computed_fire_control">artillery situations</a>.
 Write some code to calculate the range of a projectile fired at various velocities and angles (in <a href="https://en.wikipedia.org/wiki/Radian">radians</a>) from ground level.
 To calculate sine, use <code>math.sin(x)</code>.
 Assume velocity is in meters per second, so <code>g = 9.81</code> in the simplified formula on the wikipedia page.</p>
@@ -1271,7 +1278,7 @@ This typeing programs is usually called coding, seperate from actually figuring 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_control">Control</h3>
+<h3 id="_control_flow">Control Flow</h3>
 <div class="paragraph">
 <p>These exercises put the control flow concepts to use.
 They use the techniques from part 1, types, extensively.
@@ -1942,10 +1949,794 @@ Once you&#8217;re happy with your game, you&#8217;re ready to move on. But first
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_functions_arrays_and_strings">Functions, Arrays, and Strings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_functions">Functions</h3>
+<div class="paragraph">
+<p>Let&#8217;s start with this program, that defines a function, a reusable block of
+code, to calculate the price of our square rug from chapter 1:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def square_rug_cost(size, fringe):
+    area = size ** 2
+    cost = area * 5
+    if (fringe):
+        perimeter = size * 4
+        cost = cost + perimiter * 1.5
+    return cost
+
+print(square_rug_cost(5, False))
+print(square_rug_cost(2.5, True))</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Type this program as <code>rug_functions.py</code> and run it. You should see it print out
+the two rug costs - 125 and 46.25, respectively.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a closer look at the anatomy of this function. Recall from the
+textbook portion that a function needs four things: A name, its arguments
+(also called parameters), the body, and a return statement. In this
+<code>square_rug_cost</code> function, those look like this:</p>
+</div>
+<div class="paragraph">
+<p>![diagram of a python function](./digraph_of_a_python_function.png)</p>
+</div>
+<div class="paragraph">
+<p>In python, a function starts with the key word <code>def</code>. That&#8217;s followed by its
+name, in this case <code>square_rug_cost</code>. It then has two arguments, all inside the
+parentheses - <code>(size, fringe)</code>. Finally, in python, the function declaration
+(the name and argument list) ends with the <code>:</code> (colon). We&#8217;ve seen this in
+the chapter on control flow as well, and it indicates that we&#8217;re about to
+group a bunch of code at the next indentation level.</p>
+</div>
+<div class="paragraph">
+<p>To get an indentation level, we add a new line (press enter on our keyboard)
+and indent one level. There are several ways to indent. One is to hit the tab
+key on your keyboard. Another is to add some number of spaces - at least two,
+but four and eight are also common. A third way is to let VSCode do it for
+you! You&#8217;ve probably seen this already when working through the first
+chapter, that VSCode would automatically add the indendation for you when you
+started a new line after a <code>:</code> colon.</p>
+</div>
+<div class="paragraph">
+<p>So, why does Python have so many ways to do indentation? Mostly it&#8217;s
+historical reasons. For our purposes, we&#8217;re going to start with using 4
+spaces for indentation, because that&#8217;s VSCode&#8217;s default, and usually it&#8217;ll
+handle it for us. The only rule is to be consistent with the amount of
+indentation you use in your program.</p>
+</div>
+<div class="paragraph">
+<p>At the end of the code, we <strong>call</strong> the function twice, once with the values
+<code>5</code> and <code>False</code> for its arguments, and then a second time with the values <code>2.5</code>
+and <code>True</code>. We print out both values right away. This code is just here to
+test that the function worked, and we&#8217;ll replace it with something more
+substantial.</p>
+</div>
+<div class="sect3">
+<h4 id="_one_function_many_calculations">One function, many calculations</h4>
+<div class="paragraph">
+<p>Now that we have a function that prints a box, what else can we get? Delete the
+last two lines of file you started (the print lines), and add this code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">size = input("Rug size (empty to quit): ")
+while size != "":
+    wants_fringe = input("Does the rug have fringe (y/n)? ")
+    has_fringe = wants_fringe == "y"
+    cost = square_rug_cost(float(size), has_fringe)
+    print(cost)
+
+    = Get the size for the next rug
+    size = input("Rug size (empty to quit): ")
+print("Goodbye")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can price (square) rugs over and over!</p>
+</div>
+<div class="paragraph">
+<p>So now our program just loops as long as the user gives us a size, asks if
+they want fringe with that, and then calculates and prints the rug price.
+Instead of providing literal values for the function call, it uses two
+variables, <code>size</code> and <code>has_fringe</code>. <code>has_fringe</code> is <code>True</code> when the user
+provided <code>"y"</code> in their input, and <code>False</code> if the user provided any other
+input. When we call <code>square_rug_cost</code>, we look up the values for those
+variables and provide them to the function. We do <strong>not</strong> provide the variables
+themselves! Only the values go to the call, and the variables are unrelated!</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s good, but it actually took more lines of code than if we&#8217;d just
+written it all as one block&#8230;&#8203; We&#8217;ll come back to that. For now, bear with me
+two more steps. First, we will turn that input into its own function. Then,
+we&#8217;re going to do make two similar functions for a rectangular rug. While
+that will look like more code than we needed, it will pay off when we add
+circles and start talking about abstraction.</p>
+</div>
+<div class="paragraph">
+<p>But wait a minute, why do we have <code>cost</code> in two different places? Those are
+actually two completely separate variables, in what we call different scopes.
+Every function starts a new <strong>scope</strong>, which is a way to set a new group of
+variables it knows about. A function knows about all the variables in any scope
+outside of it, as well as all the variables it declares. However, the variables
+that get declared <em>inside</em> the function aren&#8217;t visible further out. This neatly
+allows each function to do its own work without stepping on the toes of other
+functions! Also, the base level of every file is its own scope.</p>
+</div>
+<div class="paragraph">
+<p>Aside from files, only functions with <code>def</code> define new scopes. The body of a
+<code>while</code> loop or <code>if</code> block does not create a new scope!</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take that while loop, and break it into a function and a loop. Delete
+everything you typed in the last section, and type this instead.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If you&#8217;ve gone through appendix 2 on source control, this would be a good
+time to make a commit, to keep that version of the file which does the loop &amp;
+calculation in the same block.</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def compute_square_rug():
+    size = float(input("Rug Size: "))
+    fringe = input("Does the rug have fringe (y/n)? ")
+    fringe = fringe == "y"
+    cost = square_rug_cost(size, fringe)
+    print(cost)
+
+while input("Price a rug (y/n)? ") == "y":
+    compute_square_rug()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But why are we adding more code when it just does the same thing!? ARGH!
+I asked you to stay with me one more step, before we see the pay off.
+First, delete the last two lines (the while loop that asks whether to
+price another rug), and then add the following.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Before deleting the loop, this is another good time to make a commit&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def rectangular_rug_cost(width, height, fringe):
+    area = width * height
+    cost = area * 5
+    if fringe:
+        perimeter = width * 2 + height * 2
+        cost += perimeter * 1.5
+    return cost
+
+def compute_rectangular_rug():
+    width = float(input("Rug width: "))
+    height = float(input("Rug height: "))
+    fringe = input("Fringe (y/n)?: ") == "y"
+    print(rectangular_rug_cost(width, height, fringe))
+
+while input("Price another rug (y/n)? ") == "y":
+    rug_type = input("(1) square or (2) rectangular? ")
+    if rug_type == "1":
+        compute_square_rug()
+    elif rug_type == "2":
+        compute_rectangular_rug()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, we&#8217;ve written four functions. For each rug type, we have two
+functions - one to perform the calculation, and one to perform the user
+input. So why would we write all four of these, instead of just one loop? The
+first answer is to make it easier to read and understand. One big function or
+loop body would be shorter to write, yes, but in software engineering there&#8217;s
+a somewhat paradoxical fact people read any given code many times, while they
+write it once and edit it maybe a couple more times. You&#8217;ve likely seen this
+yourself while trying to get your prior programs to work - you would run it,
+it wouldn&#8217;t work right or you&#8217;d get an error, and then you had to go back
+through many times reading it to figure out what it was doing.</p>
+</div>
+<div class="paragraph">
+<p>By separating out each task into functions like this, you are using
+<em>abstraction</em>. Each function lets us move from handling the details of getting
+input or calculating a rug size, to instead working with the <strong>idea</strong> of getting
+input or calculating the rug&#8217;s size. Why is this useful? Mainly, it means
+that now whenever I think about calculating a rug, I don&#8217;t need to remember
+the formulas for its area and perimeter, I only need to know whic arguments
+are necessary.</p>
+</div>
+<div class="paragraph">
+<p>It also gives us a good separation of concerns. That&#8217;s a fancy way of saying
+the opposite of what was in the last paragraph - from the ouside, I only need
+to know what arguments to pass the function and it does the work. I can
+delegate to it, and trust it will do the work. From the inside, I only need
+to take those arguments and do the calculation. I don&#8217;t care how I got those
+arguments! The could come from a command line interface, like here, or in
+chapter 5, they could come from a web server which provides this
+functionality to customers online. That separation is a great boon that
+abstraction using functions gives us.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_anatomy_of_a_function">Anatomy of a function</h4>
+<div class="paragraph">
+<p>Let&#8217;s cover the critical pieces of a function again.</p>
+</div>
+<div class="paragraph">
+<p>It starts with the Python keyword <code>def</code> - short for "Define", and used here
+to "define" a function. The next word, <code>square_rug_cost</code> or
+<code>calculate_rectangular_rug</code>, is the identifier which tells Python what to
+name your function. It is the word you&#8217;ll use to refer to the function in the
+future, like variables elsewhere. The parentheses mark the <strong>arguments</strong> to the
+function. Arguments are variables, but variables that are only visible and
+valid inside the function. The function declaration ends with the <code>:</code>.</p>
+</div>
+<div class="paragraph">
+<p>The definition of the function is everything happening below that line at the
+next indentation level. Remember that in Python, whitespace is important. An
+<strong>indentation level</strong> is all code which has the same amount of leading spaces -
+in our case, four. Just like in <code>if</code> and <code>for</code> and <code>while</code> loops, this code at
+the same level of indendation is the <strong>function body</strong> is what gets executed
+each time you call your function.</p>
+</div>
+<div class="paragraph">
+<p>Ok, let&#8217;s write one more function, this time to combine the two rugs we had
+before. Again, delete the "Price another rug" while loop, and add this.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def choose_rug():
+    type = input("Would you like to price a (S)quare rug or a (R)ectangular rug? ")
+    if type == "S" or type == "s":
+        compute_square_rug()
+    elif type == "R" or type == "r":
+        compute_rectangular_rug()
+
+while input("Price another rug (y/N)? ") == "Y":
+    choose_rug()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What all have we done here? We took a program that had a single flow of data,
+with variables all over the place, and found small isolated chunks of work. We
+took those isolted, self-contained bits of work and gave them names by creating
+functions. We had to create all the functions in our program before the bottom,
+when we actually call them. Overall we traded some additional global complexity
+for less local complexity.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Like a recipe</strong> If we were writing a cookbook, we have a lot of different
+ways to write recipes. We could cram all the steps together, and we could be
+very explicit about each one. "Take the onions. Remove the skins. Cut the unions
+into thin slices. Turn on the oven to medium heat. Put a sauce pan on the oven.
+Heat oil &amp; butter in the pan. When the oil and butter are hot, add the onions.
+Occaisionally stir the onions for 10 minutes for softened and translucent. For
+caramelized onions, add sugar at 10 minutes and continue stiring occaisionally
+for another 35 minutes."</p>
+</div>
+<div class="paragraph">
+<p>If this were a recipe for a steak dinner, that&#8217;s a lot of steps that aren&#8217;t
+really related to the steak itself! And are we going to repeat those steps every
+other dish that calls for softened or caramelized onions? I would hope not.
+Instead we make a new recipe, "Caramelized Onions", and whenever another dish
+calls for them we just say "2 cups caramelized onions, see page such and such."
+That&#8217;s exactly what we&#8217;re doing with the functions here! Finding self-contained
+pieces that can be used repeatedly, rather than repeating ourselves every time
+over and over again.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercises_5">Exercises</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Rugs</strong> Write functions for a circular rug and let users choose circular
+rugs in the input.</p>
+</li>
+<li>
+<p><strong>Recipe Measurements</strong> Revisit the <code>measurements.py</code> file from chapter 1.
+Create functions for common parts that are duplicated or otherwise should be
+grouped in the file. No peeking, but [here&#8217;s my breakdown](./recipe_fns.md)</p>
+</li>
+<li>
+<p>Write functions for exercises in chapter 1.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Functions are a really important concept in programming and software engineering,
+so now, let&#8217;s go back to the text book and take a close look at how they execute.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_format_strings_in_python">Format strings in Python</h3>
+<div class="paragraph">
+<p>Thus far in python, we&#8217;ve been using string concatenation to get the formatting
+and display we want. In this section, we&#8217;re going to look at python format
+string and rewrite the functional hilo we used in the last section using format
+strings. After this section, the workbook will switch entirely to using format
+strings as we go forward.</p>
+</div>
+<div class="paragraph">
+<p>A format string in python looks almost like a normal string, except it has an
+<code>f</code> (for format) before the opening quote, and inside the string, it can
+reference variables in the surrounding scope by wrapping them using curly braces
+- <code>{ }</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">balance = 372.15
+print(f'Your current balance is ${balance} dollars.')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we have the variable, <code>balance</code>, and the format string,
+<code>f&#8217;Your current balance is ${balance} dollars.'</code>. This will format the value of
+balance into the string and print it out: <code>Your current balance: $372.15.</code></p>
+</div>
+<div class="paragraph">
+<p>This approach, using <code>f&#8217;Format {data}'</code>, is actually a shorthand. The values in
+the <code>{data}</code> brackets come from variables that are available to the program.
+It&#8217;s a convenient shorthand for the longer form <code>'Format {}'.format(data)</code>.
+There are a few things to keep in mind about the longer form, but it does have
+a lot of benefits. Chiefly, by using the <code>''.format()</code> form, you can store the
+template string itself in a variable and pass it around your program. In most
+large software, this is how we handle translating user interfaces between
+languages - define all the user readable strings, and then choose the right one
+while our translators handle the hard work of getting the various forms right!</p>
+</div>
+<div class="paragraph">
+<p>The <code>format()</code> form also differs in that the arguments are positional - you can
+put as many variables into the <code>format()</code> method call as you like, and when the
+template string is filled in, values are used from left to right in the <code>{}</code>
+blocks. When you use the <code>f''</code> format, you always specify the variables that go
+into each <code>{data}</code> block.</p>
+</div>
+<div class="sect3">
+<h4 id="_formatted_hilo">Formatted HiLo</h4>
+<div class="paragraph">
+<p>Let&#8217;s look back at HiLo, but this time using format strings</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def calc_winnings(number, guesses):
+    new_winnings = (6 - guesses) * 10
+    print(f"You won {new_winnings} dollars!")
+    winnings = winnings + new_winnings
+    print(f"Your latest winnings are {winnings} dollars!")
+    return winnings
+
+def play_again():
+    again = input("Play again? (Y/n) ")
+    return again != "n"
+
+def finished(winnings):
+    print(f"Thank you for playing! Your total winnings were {winnings} dollars!")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s all there is to it! Pretty easy, right? And I thin it&#8217;s much more legible
+and it is definitely easier to work with - no need to <code>str(num)</code> all the time!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_formatting_options">Formatting Options</h4>
+<div class="paragraph">
+<p>There are a huge number of formatting options we can do. We can set a certain
+amount of padding, so if we were making a table, the output would always take
+10 spaces whether the string was 2 or 6 or however many characters wide. We can
+format numbers to always have a certain precision after the decimal point, or
+have certain types of separators between every 3 digits. Rather than listing
+them all here, I&#8217;ll recommend visiting <a href="https://pyformat.info/" class="bare">https://pyformat.info/</a> and reading their
+excellent documentation. (As you can tell, we&#8217;re using the "New" format.) That
+said, we will be using some of these as we go further in the book.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercises_6">Exercises</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Revisit some or all of your programs and make them use format strings
+instead of string concatenation.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you&#8217;ve gotten all your programs using format strings for beautiful output,
+we can learn about [multiple pieces of data with arrays](../03_arrays/README.md)</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arrays_in_python">Arrays in Python</h3>
+<div class="paragraph">
+<p>In this section, we&#8217;re going to do some math on sets of numbers. We&#8217;re going
+to write a couple functions to determine some statistics about these sets of
+numbers. Just like chapter 1, the math is NOT the interesting bit here! Focus on
+the code and the programming, and if you&#8217;re interested, you can follow up on the
+math on Wikipedia.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start a new program, <code>arrays.py</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">data = range(2, 20, 3)
+for i in data:
+    print(i)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When we run this, we get 6 lines:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>2
+5
+8
+11
+14
+17</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>`range` is a built in function that gives us an array of integers. The first
+integer in the array is `2`, the first number in the arguments. The array will
+grow up to (but not including) `20`, the second number. The last argument, `3`,
+tells the range how many to increment by each time. This argument is optional,
+and defaults to `1`. So if you just want a normal list of 20 numbers, you can
+do `range(0, 20)` to get the numbers 0 through 19, or `range(1, 21)` to get
+1 through 20. Because we set it to 3, we jump several at a time.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>This is the data we'll use to test the functions, and then we'll get a bigger
+data set to answer a real science question!</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add this code at the end of the file:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[source,python]</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> def sum(my_array):
+    total = 0
+    for val in my_array:
+        total += val
+    return total
+
+data_sum = sum(data)
+print(f"Data sums to {data_sum:.2f}")</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>When we run it, we should see the output from above, and this line as well:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> ----
+Data sums to 57.00
+ ----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, we define a new function, <code>sum</code>. It takes one argument, <code>my_array</code>,
+which will be the array of data to operate on. Sum, or summation, is just a
+really fancy way of saying "Add up all the numbers". We do that by starting
+the variable <code>total</code> with the value 0, and then we use a <code>for &#8230;&#8203; in &#8230;&#8203;</code>
+loop to get every item. With a for loop, we name the variable in the first
+area, and then provide the value to loop over as the second (before the <code>:</code>).
+So this <code>for &#8230;&#8203; in &#8230;&#8203;</code> the array to loop over is <code>my_array</code> and the
+variable for each time is <code>val</code>.</p>
+</div>
+<div class="paragraph">
+<p>The body of the loop is one line - <code>total += val</code>. We saw <code>+=</code> in the rugs and
+it&#8217;s just a short way to say <code>total = total + val</code>.</p>
+</div>
+<div class="paragraph">
+<p>The body of the loop will execute one time for every value in <code>my_array</code>. Each
+time before the body executes, python will assign the next value in <code>my_array</code>
+to the variable <code>val</code>.</p>
+</div>
+<div class="paragraph">
+<p>After the loop body (because it&#8217;s back to the first level of indendation), we
+return the total. And that&#8217;s it for the function!</p>
+</div>
+<div class="paragraph">
+<p>Back at the file level, we run the function using the data we got above, and
+the print it using a format string. This string uses <code>{data_sum:.2f}</code>, which
+takes <code>data_sum</code>, treats it as a <code>f</code>loat, and provides 2 digits of precision.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s keep going with a function to calculate the average. The average, or mean,
+of a set of numbers is found by adding all of them up and dividing by the total
+number of items in the set.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def avg(my_array):
+    total = sum(my_array)
+    length = len(my_array)
+    return total / length
+
+data_avg = avg(data)
+print(f"Data average is {data_avg:.2f}")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The new line of output should be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Data average is 9.50</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This function starts the same way as sum, by giving it the name <code>avg</code> and taking
+one parameter, my_array. But then, instead of adding up all the numbers itself,
+it just uses the function we wrote in the last exercise. Then it uses the built
+in function <code>len</code> to get the length of the array. Keep <code>len</code> in mind, as it&#8217;s
+the canonical way in python to get the size of any complex object - arrays or
+otherwise! At the end, we print out the same way.</p>
+</div>
+<div class="paragraph">
+<p>We have one last function, which is a lot more complex. The standard
+deviation of a set of numbers describes their statistical distribution. If
+the standard deviation is a larger number, it means there is more variability
+in the sample. The numbers are more different to each other than similar. If
+the standard deviation is smaller, the numbers are more clustered together.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The formal definition of the standard deviation involves taking all the
+numbers in the array, squaring the difference in the average of all values from
+the single value, summing all those squares, dividing that sum by the number of
+values in the data set, and finally taking a square root of the whole thing. Ask
+your nearest stats professor for details, and trust the math part of the code
+below :)</p>
+</div>
+</blockquote>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import math
+def std_dev(my_array):
+    my_array_average = avg(my_array)
+
+    diffs_squared = []
+    for val in my_array:
+        diff = val - my_array_average
+        diff_squared = diff ** 2
+        diffs_squared.append(diff_squared)
+
+    sum_of_squares = sum(diffs_squared)
+    length = len(my_array)
+    return math.sqrt(sum_of_squares / length)
+
+data_std_dev = std_dev(data)
+print(f"Data std dev is {data_std_dev:.2f}")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When we run this, we find quite a wide standard deviation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Data std dev is 5.12</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which makes sense. We don&#8217;t have a lot of numbers, and they have a bit of space
+between them. Let&#8217;s get a real data set, and try to answer an
+[old wive&#8217;s tale](<a href="https://www.bbc.com/future/article/20171127-the-truth-about-three-childbirth-myths" class="bare">https://www.bbc.com/future/article/20171127-the-truth-about-three-childbirth-myths</a>):
+"First babies arrive late". We&#8217;ll be using a dataset taken from the Unite States
+Center for Disease Control&#8217;s 2002 National Family Growth Survey (or US CDC 2002
+NFGS) for short. This survey captures a myriad of details about tens of
+thousands of pregnancies in the United States in the one year alone. From that
+data set, I&#8217;ve create a small file you can download and save next to your
+<code>arrays.py</code> program:
+<a href="https://raw.githubusercontent.com/DavidSouther/software_craftsmanship/master/02_functions_arrays_strings/03_arrays/data.py"><code>data.py</code></a></p>
+</div>
+<div class="paragraph">
+<p>Once this file is saved, go back to <code>arrays.py</code> and add</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">from data import PREGNANCIES
+
+# Set up the lists to calculate sums on
+preg_weeks_first_babies = []
+preg_weeks_second_babies = []
+
+for pregnacy in PREGNANCIES:
+    order = pregnacy[0]
+    weeks = pregnacy[1]
+    if order == 2:
+        preg_weeks_second_babies.append(weeks)
+    elif order == 1:
+        preg_weeks_first_babies.append(weeks)
+
+print(f"First babies are born at an average of {avg_first_babies:.2f} weeks.")
+print(f"First babies have a standard deviation of {std_dev_first_babies:.2f} weeks")
+print(f"Second babies are born at an average of {avg_second_babies:.2f} weeks.")
+print(f"Second babies have a standard deviation of {std_dev_second_babies:.2f} weeks")</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s find out if the old wive&#8217;s tale holds up to statistical scrutiny</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>First babies are born at an average of 38.58 weeks.
+First babies have a standard deviation of 2.68 weeks
+Second babies are born at an average of 38.64 weeks.
+Second babies have a standard deviation of 2.72 weeks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The verdict is in - first and second babies have some difference on the order
+of hours, certainly not the weeks claimed in the anecdote we&#8217;re questioning.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a closer look at this code we have above. First, we get the data that
+we are interested in by using <code>from data import PREGNANCIES</code>. We&#8217;ve see simple
+import statements before, like <code>import math</code>. This let us use <code>math.sqrt</code>, but
+also gave us access to <code>math.sin</code> and <code>math.atan2</code>. If we don&#8217;t ever use the
+trigonometry functions, why would we want to import all of them? The same thing
+with this file- rather than importing the whole thing and asking for
+<code>data.PREGNANCIES</code>, it&#8217;s way easier to just import the single thing we want. So
+we use this <code>from &#8230;&#8203; import &#8230;&#8203;</code> form and fill it in with the file or library,
+and the individual value that we want from that file.</p>
+</div>
+<div class="paragraph">
+<p>Now that we have our pregnancies, we&#8217;re going to keep track of two arrays, one
+for first babies and another for second babies. We saw with <code>range()</code> that we
+could create an array with integers already filled in, but now we&#8217;re going to
+start with an empty array (just like we started with empty string). The empty
+array is <code>[]</code>, which says "This is a big long list that we can add things to
+later". Later we will add to it not by using <code>+</code> like with trings, but instead
+by calling <code>append</code> which is a function the array has to add data to it.</p>
+</div>
+<div class="paragraph">
+<p>With our data keeping set up, we start our for loop over the pregnancies array.
+If you looked at the data file, you may have seen that it&#8217;s actually a bunch of
+arrays inside a big one. In python, we call a small fixed-length array (like
+these ones, with two elements) a tuple. This is useful for exactly this case -
+we want to keep pairs of data about each pregnancy in our list. The pieces of
+data here are first, the order of the pregnancy (so whether this is the woman&#8217;s
+first or second or fifth pregnancy), and second, the number of weeks into the
+pregnancy she gave birth.</p>
+</div>
+<div class="paragraph">
+<p>Inside the loop, we create two variables, <code>order</code> and <code>weeks</code>. Because each item
+in <code>PREGNANCIES</code> is an array, we access the first and second elements
+respectively. To do so, we use the <code>[index]</code> array access notation. We write the
+variable which has the array, <code>pregnancy</code>. We then add <code>[]</code> immediately after
+it. Finally, we use a variable or value to access the item we want - remember,
+indexes start at zero. So <code>pregnancy[0]</code> gives us the first item in the tuple
+(the array of two items), which our data file defines as the order of the
+pregnancy. <code>pregnancy[1]</code> gives us the weeks' duration of of the pregnancy,
+again which we know from the data file.</p>
+</div>
+<div class="paragraph">
+<p>The loop body is several <code>if &#8230;&#8203; elif &#8230;&#8203;</code> block. It looks at the order, and
+decides which of the lists we&#8217;re tracking it should append with the length of
+the next pregnancy. If the order is great than 2, we will ignore it because we
+are only interested in either a woman&#8217;s first or second pregnancy. Then if the
+order is two, we append the length to the array of numbers of weeks in a second
+pregnancy. If the order is one, we put it in the other array.</p>
+</div>
+<div class="paragraph">
+<p>After we&#8217;ve split the <code>PREGNANCIES</code> data set up this way, we exit the <code>for</code> loop
+and pass our two arrays into our functions we had defined for <code>avg</code> and
+<code>std_dev</code>. With these results back, we print them out for the user!</p>
+</div>
+<div class="sect3">
+<h4 id="_exercises_7">Exercises</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Statistics</strong></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Using the <code>sum</code> function above, trace the execution of these programs:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>print(sum([15, 15, 15, 14, 16]))</code></p>
+</li>
+<li>
+<p><code>print(sum([2, 7, 14, 22, 30]))</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Using the <code>avg</code> function above, trace the execution of these programs:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>print(avg([15, 15, 15, 14, 16]))</code></p>
+</li>
+<li>
+<p><code>print(avg([2, 7, 14, 22, 30]))</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Using the <code>std_dev</code> function above, trace the execution of these programs:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p><code>print[15, 15, 15, 14, 16]</code></p>
+</li>
+<li>
+<p><code>print(std_dev([2, 7, 14, 22, 30]))</code></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>In statistics, population <strong>variance</strong> is a part of the standard
+deviation. Specifically, it&#8217;s the part of calculating a standard
+deviation that sums the squares of differences and divides by N, before
+taking the square root. In other words, the standard deviation is the
+square root of the variance of the array of data. Rewrite your <code>std_dev</code>
+function to perform the first part of the calculation, the <code>variance</code>,
+in its own function, and then use that function to calculate the
+standard deviation.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Recipes</strong> Use arrays to store the ingredients in each recipe. For each
+ingredient, the array should have a tuple of three items, including the
+name, the default amount, and the measurement size. Instead of printing each
+ingredient specifically, use a function which loops over the array to print
+each ingredient. Don&#8217;t forget the scale parameters!</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When you&#8217;ve completed the exercises, we can wrap up this chapter in the textbook.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-27 22:52:22 UTC
+Last updated 2020-11-29 17:11:22 UTC
 </div>
 </div>
 </body>

@@ -445,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">David Souther</span><br>
 <span id="email" class="email"><a href="mailto:davidsouther+software-craftsmanship@gmail.com">davidsouther+software-craftsmanship@gmail.com</a></span><br>
-<span id="revdate">2020-11-27</span>
+<span id="revdate">2020-11-29</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -466,6 +466,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_hilo">HiLo</a></li>
 </ul>
 </li>
+<li><a href="#_functions_arrays_and_strings">Functions, Arrays, and Strings</a>
+<ul class="sectlevel2">
+<li><a href="#_functions">Functions</a></li>
+<li><a href="#_function_tracing">Function Tracing</a></li>
+<li><a href="#_strings_2">Strings</a></li>
+<li><a href="#_arrays">Arrays</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -473,19 +481,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>&#169; 2020 David Souther</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
-</td>
-</tr>
-</table>
+<p>Software Craftsmanship is the study and practice of using computers as a tool in our everyday lives.
+Today&#8217;s world is deeply and critically tied to the computers we use, in subtle and varied ways few would even begin to consider.
+At the same time, the computer sitting on your desk offers a fantastic opportunity to parse and trove your data.
+People in nearly every profession could stand to benefit from the knowledge and ability to write programs to solve their own problems.
+This book shows the layperson how to tap this potential, taking you from being able to perform basic computing tasks, through writing your first program, on to having a basic understanding of how programs work, while being able to begin to understand the programs that are used in your profession.</p>
 </div>
 <div class="paragraph">
 <p>This book is available online at <a href="http://davidsouther.com/software_craftsmanship" class="bare">http://davidsouther.com/software_craftsmanship</a>, with workbooks at
@@ -506,6 +506,21 @@ Copies of this document may be made for your own use and for distribution to oth
 <p>and others to come.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>&#169; 2020 David Souther</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Copies of this document may be made for your own use and for distribution to others, provided that you do not charge any fee for such copies and further provided that each copy contains this Copyright Notice, whether distributed in print or electronically.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1984,8 +1999,677 @@ Not content at the bare rules of the game, we added color, boxes, and maybe even
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functions_arrays_and_strings">Functions, Arrays, and Strings</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Unresolved directive in 00_textbook.adoc - include::02_functions_arrays_strings/00_textbook.adoc[]</p>
+<p>We write programs to manipulate our data. In the last chapter, we treated
+data as integers, floats, and strings. We can iterate, or repeat, an
+operation on data. We can take different branches in our programs, doing
+different things based on the value of our variables. As programs get bigger,
+much of programming is managing complexity, keeping different parts of the
+program small and logically connected. This chapter covers three tools -
+functions, ways to block sections of code together; arrays, to keep more than
+one piece of data in a variable; and more details of strings, as they are
+useful in many ways in programming.</p>
+</div>
+<div class="sect2">
+<h3 id="_functions">Functions</h3>
+<div class="paragraph">
+<p>In programming, functions allow us to "bundle up" a section of code and make it
+reusable without needing to copy and paste it anywhere we want to use it. Like
+mathematical functions, we can take an idea, write it out, give it a name, and
+use it over and over any where we need. This allows us to break our program
+into composable parts, and put those together like Legos or an erector set.</p>
+</div>
+<div class="paragraph">
+<p>Functions are made up of four pieces - an <strong>identifier</strong>, a list of
+<strong>arguments</strong>, the <strong>body</strong> of the function, and some <strong>return</strong> value. Let&#8217;s
+look at each of these!</p>
+</div>
+<div class="paragraph">
+<p>First, they need a name. Similar to variables which store data, function
+names allow us to refer to this block of code consistently and repeatedly. In
+fact, in some languages, function names are variables! When defining a function,
+choose an identifier which accurately but succintly describes what the function
+will do or what it will compute. Where variables capture things we work on,
+their identifiers generally use noun phrases. Functions do things, and so their
+identifiers will often use verb phrases to convey the actions the function will
+perform.</p>
+</div>
+<div class="paragraph">
+<p>Second, a function needs a list of arguments. If you think about a function
+we&#8217;ve already used, the square root function, you&#8217;ll remember it has a single
+variable passed to it - or one argument that&#8217;s either an int or a float. An
+argument is a variable within the function that gets its initial value from
+whatever outside code calls (or executes or invokes) the function. Functions
+can have no arguments, one, two, or as many parameters as is necessary.
+Generally, though, a function should be limited to a few arguments before it
+just gets unweildy to use and manage. Having no parameters to a function
+often means it will do some action based on outside data. We&#8217;ll use this in
+our next program to get user input for the rugs program.</p>
+</div>
+<div class="paragraph">
+<p>Third, a function needs a body. This is the computer code that will be
+executed when the function is run. It can create its own variables, it can
+use the function arguments as variables, and in some languages it can use
+data nearby the function. (This is covered in the TypeScript workbook.) Just
+like a body of a while loop or if statement, the function body will execute from
+top to bottom when the function gets called. Unlike the body of a while loop or
+if statement, the variables inside the function are in a new <strong>scope</strong>. A scope
+is a way to say that there&#8217;s a new grouping of variables, independant from other
+groups or blocks. This means that two different functions can both have a
+variable named <code>area</code>, which are completely unrelated to to one another!</p>
+</div>
+<div class="paragraph">
+<p>Finally, most functions need to produce a result. This is called returning a
+value. Almost all functions will return a value, but there are some cases
+where they work only on arguments, or only do something to cause a side
+effect (like writing a line of text). We&#8217;ll cover these as we come to them. When
+a function returns a result, the function takes whatever value is on the right
+side of the return statement and provides it to wherever the function was called
+from. The function then immediatly finishes, just like when using break inside a
+loop!</p>
+</div>
+<div class="sect3">
+<h4 id="_calling_functions">Calling Functions</h4>
+<div class="paragraph">
+<p>Once we have defined a function, we need to do something with it. On its own, it
+just sits there taking up programming space. To execute a function, from
+somewhere else in the code we will <strong>call</strong> the function. Calling a function,
+sometimes referred to as <strong>executing</strong> or <strong>invoking</strong> it, requires us to specify
+the function name and then provide a list of arguments that will be the values
+the function uses.</p>
+</div>
+<div class="paragraph">
+<p>We have now used the phrase "list of arguments" to mean two differnt things.
+In the last section, the list of arguments was what we used to name all the
+variables which the function needed to have filled in from whoever asked it to
+do work. Here, we use the same phrase to describe the values the calling
+code will hand to the function for it to work on.</p>
+</div>
+<div class="paragraph">
+<p>This process is kind of the opposite of asking for user input. When we asked for
+user input, the code waited for the user to provide data, then did calculations
+on it, and then provided the user output. For a function, we hand it all the
+data it will need right away, as input via its arguments. It then executes, and
+when it finishes it hands us data back as the function&#8217;s output via its return
+statement. Be careful, though, because while this function input and output is
+analogous to user input and output, they are still different things and we still
+use both in our programs!</p>
+</div>
+<div class="paragraph">
+<p>That was a lot of theory, so now might be a good time to head to the workbook
+and do the first section in this chaper, getting practice with this intro to
+functions.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_function_tracing">Function Tracing</h3>
+<div class="paragraph">
+<p>In chapter 1, we explored how computers execute programs and how their memory
+changed over time by making traces of their memory as we pretended to execute
+the programs in our head. The same tools work to help us understand how
+function calling and returns work, as well. We&#8217;re going to walk through this
+using the <code>square_rug_cost</code> function from the last workbook section. We are
+using the python code, but the principles work the same in any other
+languges.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def square_rug_cost(size, fringe):
+    area = size ** 2
+    cost = area * 5
+    if fringe:
+        perimeter = size * 4
+        cost +=  = perimeter * 1.5
+    return cost
+
+length_of_side = 5
+has_fringe = True
+cost = square_rug_cost(length_of_side, has_fringe)
+other_cost = square_rug_cost(length_of_side * 2, not has_fringe)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start with our trace! Because this file uses functions, in our ID and
+values table we&#8217;re going to add a third column to the left, which will have the
+name of the function scope we&#8217;re currently executing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           |                |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Every file starts with a top-level scope, and we indicate that by writing <code>file</code>
+at the top of that column. We then start reading the file top to bottom. The
+first thing we see is <code>def square_rug_cost(size, fring):</code>. This is the function
+declaration, but it isn&#8217;t the function&#8217;s execution! So we don&#8217;t do anything with
+it just yet. We make a note that this function is around, and skip down past its
+body.</p>
+</div>
+<div class="paragraph">
+<p>Skipping down takes us to a pair of lines,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">length_of_side = 5
+has_fringe = True</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which just declares two variables. This we know how to handle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We have two new variables, we record their IDs, and we note their first two
+values. The next line of code, though, gives us something new:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">cost = square_rug_cost(length_of_side, has_fringe)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Starting at the left, we see that we have a new variable, <code>cost</code>. Let&#8217;s mark
+that down.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                 | cost           |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that it doesn&#8217;t have a value yet! The next thing we see is a function call.
+We know that a function creates a new scope, so we&#8217;re going to make that new
+scope first. We do that by drawing a solid line below what we currently have and
+writing the function&#8217;s name in the Scope column. We&#8217;re also going to
+<strong>immediately</strong> draw an arrow from the name of the function in the scope and point
+the arrow at the <code>cost</code> variable we just created. We do this right away to keep
+track of where the function&#8217;s return value will go!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost           | 155
+ ---------------|-|---------------|-------
+ square_rug_cost| |               |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This has us set up now to work within the <code>square_rug_cost</code> function, in a new
+scope that is completely isolated from the variables above it. In the trace, any
+variables between a pair of horizontal lines can interact, but none of them can
+cross those horizontal lines! Ever!</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If you&#8217;re tracing this by hand, you might want to look ahead and make note
+that we do have one more variable in the file scope, so maybe we should leave
+room for one more line before the function&#8217;s scope. Just don&#8217;t fill it in yet!</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>So now we have our new scope, we can start working with it. The first thing we
+need to do is fill in the arguments. We&#8217;ll go ahead and note both arguments in
+the ID column right now</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+ ---------------|-|---------------|-------
+ square_rug_cost| | size          |
+                  | fringe        |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And now we need their values. To do that, we&#8217;re going to go back to the call
+site, <code>square_rug_cost(length_of_side, has_fringe)</code>. Remember again that
+arguments are positional. That means that to get the value for <code>size</code> inside the
+function, we go go the call site and get the first value in the calling argument
+list. The first thing in the argument list there is <code>length_of_side</code>. That&#8217;s a
+variable, but we want a value, so we go to the trace, copy down the value, <code>5</code>,
+and write that value (not the name of the variable) into <code>size</code> in the
+<code>square_rug_cost</code> scope.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+ ---------------|-|---------------|-------
+ square_rug_cost| | size          | 5
+                  | fringe        |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We then do the same thing for <code>fringe</code> in the second position. We go to the call
+site, see it uses <code>has_fringe</code>, we read <code>has_fringe</code> from the trace, get the
+value <code>True</code>, and write that into the function&#8217;s scope.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+ ---------------|-|---------------|-------
+ square_rug_cost| | size          | 5
+                  | fringe        | True</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From here, we go into the function body, but the trace proceeds exactly like
+normal just reading code from the body and getting values from the scope. Let&#8217;s
+do that through the loop, and we&#8217;ll stop before the <code>return</code> statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+                | | other_cost    | 700
+ ---------------|-|---------------|-------
+ square_rug_cost| | size          | 5
+                  | fringe        | True
+                  | area          | 25
+                  | cost          | ~125~ 155
+                  | perimeter     | 20</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We calculated the area, we computed the area cost, we got the size of the
+perimeter, and then we updated cost with its old value plus the new cost of the
+perimeter. Now we&#8217;re ready to look at how to handle <code>return cost</code>.</p>
+</div>
+<div class="paragraph">
+<p>For the return statement, we create a "virtual" variable and call it <code>return</code>.
+It will have the value of whatever is on the rest of the line, whether that&#8217;s a
+single variable like here or a complex calculation. We then take this value,
+follow the arrow from the top of the function back to whatever variable we were
+calculating, and put the return value there as well.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+ ---------------|-|---------------|-------
+ square_rug_cost| | size          | 5
+                  | fringe        | True
+                  | area          | 25
+                  | cost          | ~125~ 155
+                  | perimeter     | 20
+                  | *return*      | 155</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once this is done, the function is over. Finished. Done with all its things.
+That means that this version of the functions&#8217;s scope is forever lost to us.
+Litearlly. After we return, we can never go back to see what its values were!
+To indicate this on the trace, we&#8217;re going to write a final horizontal line at
+the bottom and then write a big X through the function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ square_rug_cost| ~ size          ~ 5
+                  ~ fringe        ~ True
+                  ~ area          ~ 25
+                  ~ cost          ~ ~125~ 155
+                  ~ perimeter     ~ 20
+                  ~ *return*      ~ 155
+ ------------------ --------------- ----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So from our trace, we remember it happened, but as far as the compute is
+concerned that work is lost. The only thing left is a final copy of the return
+value, <code>155</code>.</p>
+</div>
+<div class="paragraph">
+<p>Now that we&#8217;re back to our file execution, we can look at the next line of code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>other_cost = square_rug_cost(length_of_side * 2, not has_fringe)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We have a new variable, <code>othe_cost</code>, which calls <code>square_rug_cost</code> with some new
+values. Let&#8217;s set up the scope that we&#8217;ll be using for this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+/ -             | | other_cost    |
+|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|square_rug_cost| ~ size          ~ 5
+|                 ~ fringe        ~ True
+|                 ~ area          ~ 25
+|                 ~ cost          ~ ~125~ 155
+|                 ~ perimeter     ~ 20
+|                 ~ *return*      ~ 155
+|------------------ --------------- ----
+\square_rug_cost  | size          |
+                  | fringe        |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We did a few things here. We made a new row for the <code>othe_cost</code> variable. We
+started a new scope for the function below the old scope, which we had crossed
+out. We gave two initial rows for the <code>size</code> and <code>fringe</code> arguments. And we drew
+an arrow from the name of the function at the top of the scope back up to the
+variable which will take its value when we return.</p>
+</div>
+<div class="paragraph">
+<p>Time for the arguments! <code>size</code> takes the first argument from the call site,
+which is <code>side_length * 2</code>. Looking up <code>side_length</code> in that scope, we see it is
+<code>5</code> so we jot down the value of the calculation, <code>10</code>. Then we look at the
+second argument at the call site, <code>not fringe</code>. Since <code>fringe</code> in this scope is
+<code>True</code>, <code>not fringe</code> must be <code>False</code>. Let&#8217;s fill those in to our table:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+/ -             | | other_cost    |
+|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|square_rug_cost| ~ size          ~ 5
+|                 ~ fringe        ~ True
+|                 ~ area          ~ 25
+|                 ~ cost          ~ ~125~ 155
+|                 ~ perimeter     ~ 20
+|                 ~ *return*      ~ 155
+|~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~ ~~~~
+\square_rug_cost  | size          | 10
+                  | fringe        | False</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we can just go through the function like normal, making a fake variable in
+the trace when we get to the return statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+/ -             | | other_cost    |
+|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|square_rug_cost| ~ size          ~ 5
+|                 ~ fringe        ~ True
+|                 ~ area          ~ 25
+|                 ~ cost          ~ ~125~ 155
+|                 ~ perimeter     ~ 20
+|                 ~ *return*      ~ 155
+|~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~ ~~~~
+\square_rug_cost  | size          | 10
+                  | fringe        | False
+                  | area          | 100
+                  | cost          | 500
+                  | *return*      | 500</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice a couple things here. Because <code>fringe</code> was <code>False</code>, we never do the <code>if</code>
+block, which means we never define <code>perimeter</code> nor ever change <code>cost</code> to the
+area cost plus the fringe cost.</p>
+</div>
+<div class="paragraph">
+<p>The last thing to do, then, is copy that value <code>500</code> back to where we asked for
+it and close out the frame:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Scope            |   ID           | Value
+ ----------------| -------------- | -----
+*file*           | length_of_side | 5
+                 | has_fringe     | True
+                /-| cost          | 155
+/ -             | | other_cost    | 500
+|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+|square_rug_cost| ~ size          ~ 5
+|                 ~ fringe        ~ True
+|                 ~ area          ~ 25
+|                 ~ cost          ~ ~125~ 155
+|                 ~ perimeter     ~ 20
+|                 ~ *return*      ~ 155
+|~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~ ~~~~
+\square_rug_cost  ~ size          ~ 10
+                  ~ fringe        ~ False
+                  ~ area          ~ 100
+                  ~ cost          ~ 500
+                  ~ *return*      ~ 500
+ ~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~ ~~~~</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There you have it - a concise visual representation of how the computer memory
+keeps function scopes separate, how it returns variables from functions, and how
+once a function has finished executing, none of the memory that went into
+figuring out the calculation is left to the computer.</p>
+</div>
+<div class="sect3">
+<h4 id="_exercises_2">Exercises</h4>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="paragraph">
+<p>When you&#8217;ve had a chance to get more comfortable with traces, commit your work,
+take a break, and when you come back we&#8217;ll look at strings and string formatting
+in the textbook to improve our user messages.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_strings_2">Strings</h3>
+<div class="paragraph">
+<p>We briefly discussed strings in chapter 1. We&#8217;re going to take a deeper dive in
+this section, exploring some a few utilities that will make our lives much
+easier.</p>
+</div>
+<div class="paragraph">
+<p>A string is a (possibly empty) list of characters that are grouped together. You
+can create them manually, or get a string from what the user typed with <code>input</code>
+in Python, <code>readline</code> in TypeScript, or <code>scanf</code> in C. Once we have a string, we
+have seen how to compare it to match exactly the contents of another string.
+That does have the consequence of needing to be case sensitive, so if we want to
+check if the user typed a "y", we would probably need to check for both <code>"Y"</code>
+and <code>"y"</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once we have some strings, we&#8217;ve seen one way to put them together - using the
+<code>+</code> sign. For numbers, this adds them, but for strings, it joins them together
+into a bigger longer string. We can use that to put the result of a variable
+into a bit of text formatted for human readability. To do this, we do have to
+ensure all the things we&#8217;re concatenating in this way are themselves strings.
+Python and C have specific functions to do this, while TypeScript does it
+implicitly. There are also functions in all our languages to take a string and
+parse it (read the characters and determine the appropriate value) into any of
+our other data types, most often a number of some sort.</p>
+</div>
+<div class="paragraph">
+<p>Because this process of joining strings, and using functions to convert to and
+from strings, is tedious and error prone, we have tools that can take a
+"template string" and fill in the values per some specification. This achieves
+several benefits. For one, it means that the template string itself can be a
+single entity we pass around, rather than a complex expression. This lets us
+change the text quickly, without having to change where we <code>+</code> the strings
+together. The template strings have facilities to describe how we want our data
+formatted. When we have printed out floating point numbers, we often
+accidentally get things like <code>4.0000000000001</code> as a result of round off. With
+template strings, we can ask for at most 2 or 3 digits, and fill them in with
+<code>0</code> if the number is whole.</p>
+</div>
+<div class="paragraph">
+<p>There are a few more common operations on strings that we have libraries for.
+These usages don&#8217;t come up every day, but do show up regularly enough that we
+can discuss them &amp; see some examples, so you&#8217;ll at least have the memory they
+exist when you come across a problem that could use them.</p>
+</div>
+<div class="paragraph">
+<p>The first is the idea of substrings. A <strong>substring</strong> is exactly what it sounds
+like - a part of a larger string. Substrings are used regularly when you need
+to do any of your own parsing - any time you need to write a program that
+looks into a string and pulls content out of its data. Substrings are always
+specified as the starting index within the string, and either the end index
+(exclusive) or the number of characters to take. The ability to change and
+edit a string based on its substring depends on each language, but each
+language does provide a mechanism to do so.</p>
+</div>
+<div class="paragraph">
+<p>An <strong>index</strong> in this context is just a numerical count of number of
+characters into the string to look at. It&#8217;s important to know and remember
+that indicies start at <code>0</code> - the don&#8217;t give you the <code>1st</code> or <code>3rd</code> character
+in the string, but rather specify the number of characters to skip before it
+starts reading. So the <code>1st</code> character is at substring index <code>0</code>.</p>
+</div>
+<div class="paragraph">
+<p>Finally, there are a few methods that a string lets us use to manipulate it.
+We can take a string and make it all <strong>uppercase</strong> or all <strong>lowercase</strong> (or
+get a substring and make that substring all upper or all lower). You can
+often <strong>count</strong> the number of occurances of a character or (shorter) string
+inside another. And there are utilities to <strong>find</strong> occurances of a string in
+another, and then <strong>replace</strong> those occurances with some other value.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s a lot to cover for strings, but in the workbook, we focus on formatting
+strings for user interfaces and displays.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arrays">Arrays</h3>
+<div class="paragraph">
+<p>The programs we&#8217;ve written so far work on one piece of data at a time. Each
+variable holds a single value, and while we&#8217;ve looped work based on what the
+user wants to do, we haven&#8217;t done anything that uses multiple pieces of similar
+data. Pricing one rug is helpful, but what if I have a whole warehouse to price?</p>
+</div>
+<div class="paragraph">
+<p>We handle this by using arrays. Arrays are themselves a data type, but unlike
+the data types we&#8217;ve encountered so far, they are comprised of multiple pieces
+of some other data type. Actually, there is one type we&#8217;ve seen like this, the
+string! We can think of a string as an array of characters, and in a lot of ways
+that will help us ground our understanding.</p>
+</div>
+<div class="paragraph">
+<p>So an array is a list or collection of lots of data of the same type. Instead of
+using a different variable to access each piece of data, we use a single
+variable that references the array as a whole, and then we use an <strong>index</strong> to
+access individual elements of the array. We discussed indexes when we talked
+about substrings, but they&#8217;re really important so we&#8217;re going to repeat them
+again here!</p>
+</div>
+<div class="paragraph">
+<p>An index is an <strong>offset</strong> into an array. That means that rather than saying the
+index is the "1st" or "2nd" or "4th" element, the index is the number of
+elements to skip to get to the element we want. This means that (in any language
+we will use) the first element of an array is actually at index 0! And if you
+have an array with 20 items, if you access the element at index 20, you&#8217;ll
+actually be off the end of the list entirely! This is generally considred a Bad
+Thing, and you are discouraged from doing so.</p>
+</div>
+<div class="paragraph">
+<p>The most common thing we&#8217;ll do with an array of data is iterate or loop over it,
+doing some operation for each item in the array. This is in contrast to the
+looping we&#8217;ve done so far, which each looks for a condition to be met with a
+<code>while</code> loop. In the <code>for</code> loop, we give it an array and access every item
+sequentially, stopping when we&#8217;ve run out of items to check!</p>
+</div>
+<div class="paragraph">
+<p>Later in the book, we&#8217;ll look at arrays with all sorts of data types in them,
+and get a lot of interesting behavior. For this section, though, we&#8217;re going to
+stick with good old fashioned numbers, and write some functions that calculate
+statistics about these numbers.</p>
+</div>
+<div class="sect3">
+<h4 id="_changing_arrays">Changing arrays</h4>
+<div class="paragraph">
+<p>Arrays are not static. Just like how we can assign different values to
+variables, so to can we change an array. We can do this by assigning to a single
+index. We can also change the number of items in an array, adding items by
+<strong>appending</strong> them to the end (and making the array larger) or <strong>removing</strong> them
+(and making the array smaller). Like strings, we can join two or more arrays
+together using concatenation. Some languages like Python and TypeScript even let
+us slice and dice chunks from the middle of an array!</p>
+</div>
+<div class="paragraph">
+<p>In the workbooks, we&#8217;re going to start using arrays to perform statistical
+analysis of some data sets.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wrap_up_3">Wrap up</h4>
+<div class="paragraph">
+<p>In this chapter, we took our basic toolkit of programming fundamentals and
+added three powerful and useful items. We discussed <strong>functions</strong>, which
+allow us to bundle up chunks of code and make them generally useful in a wide
+variety of sitations, rather than only working for a single specific case.
+This includes giving <strong>identifiers</strong> or names to functions for a block of
+code, taking input as <strong>arguments</strong> to those blocks, and often <strong>returning</strong>
+a piece of data as the finished calculation from the function. We discussed
+how to augment our tracing technique to handle functions in a clear and
+direct way. We then discussed <strong>template strings</strong>, which are compact but
+powerful ways to format text in a more legible way for the users of our
+programs. Finally we took a look at <strong>arrays</strong>, the first of our data
+structures which let us work with more than a single piece of data at a time.
+We wrote several functions to calculate statistics about data sets&#8201;&#8212;&#8201;numbers
+stored in an array.</p>
+</div>
+<div class="paragraph">
+<p>In the next chapter, we will discuss objects which provide a mechanism to
+organize larger and larger amounts of data in understandable, tractable
+manners.</p>
 </div>
 </div>
 </div>
@@ -1994,7 +2678,7 @@ Not content at the bare rules of the game, we added color, boxes, and maybe even
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-27 23:30:02 UTC
+Last updated 2020-11-27 23:56:12 UTC
 </div>
 </div>
 </body>

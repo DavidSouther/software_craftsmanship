@@ -1,4 +1,4 @@
-= Basic Types and Control Flow: Python
+= Basic Types and Control Flow
 
 :leveloffset: 2
 
@@ -7,3 +7,5 @@ include::01_types/01_python.adoc[]
 include::02_control/01_python.adoc[]
 
 include::03_hilo/01_python.adoc[]
+
+:leveloffset: 1

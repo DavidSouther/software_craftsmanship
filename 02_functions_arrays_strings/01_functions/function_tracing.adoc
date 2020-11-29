@@ -1,4 +1,4 @@
-# Function Tracing
+= Function Tracing
 
 In chapter 1, we explored how computers execute programs and how their memory
 changed over time by making traces of their memory as we pretended to execute
@@ -8,7 +8,8 @@ using the `square_rug_cost` function from the last workbook section. We are
 using the python code, but the principles work the same in any other
 languges.
 
-```py
+[source,python]
+----
 def square_rug_cost(size, fringe):
     area = size ** 2
     cost = area * 5
@@ -21,17 +22,17 @@ length_of_side = 5
 has_fringe = True
 cost = square_rug_cost(length_of_side, has_fringe)
 other_cost = square_rug_cost(length_of_side * 2, not has_fringe)
-```
+----
 
 Let's start with our trace! Because this file uses functions, in our ID and
 values table we're going to add a third column to the left, which will have the
 name of the function scope we're currently executing.
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           |                |
-```
+----
 
 Every file starts with a top-level scope, and we indicate that by writing `file`
 at the top of that column. We then start reading the file top to bottom. The
@@ -42,37 +43,39 @@ body.
 
 Skipping down takes us to a pair of lines, 
 
-```py
+[source,python]
+----
 length_of_side = 5
 has_fringe = True
-```
+----
 
 Which just declares two variables. This we know how to handle:
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
-```
+----
 
 We have two new variables, we record their IDs, and we note their first two
 values. The next line of code, though, gives us something new:
 
-```py
+[source,python]
+----
 cost = square_rug_cost(length_of_side, has_fringe)
-```
+----
 
 Starting at the left, we see that we have a new variable, `cost`. Let's mark
 that down.
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                  | cost           | 
-```
+----
 
 Note that it doesn't have a value yet! The next thing we see is a function call.
 We know that a function creates a new scope, so we're going to make that new
@@ -82,15 +85,15 @@ writing the function's name in the Scope column. We're also going to
 the arrow at the `cost` variable we just created. We do this right away to keep
 track of where the function's return value will go!
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost           | 155
-----------------|-|---------------|-------
+ ---------------|-|---------------|-------
  square_rug_cost| |               | 
-```
+----
 
 This has us set up now to work within the `square_rug_cost` function, in a new
 scope that is completely isolated from the variables above it. In the trace, any
@@ -105,16 +108,16 @@ So now we have our new scope, we can start working with it. The first thing we
 need to do is fill in the arguments. We'll go ahead and note both arguments in
 the ID column right now
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
  ---------------|-|---------------|-------
  square_rug_cost| | size          |
                   | fringe        |
-```
+----
 
 And now we need their values. To do that, we're going to go back to the call
 site, `square_rug_cost(length_of_side, has_fringe)`. Remember again that
@@ -125,39 +128,39 @@ variable, but we want a value, so we go to the trace, copy down the value, `5`,
 and write that value (not the name of the variable) into `size` in the
 `square_rug_cost` scope.
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
  ---------------|-|---------------|-------
  square_rug_cost| | size          | 5
                   | fringe        |
-```
+----
 
 We then do the same thing for `fringe` in the second position. We go to the call
 site, see it uses `has_fringe`, we read `has_fringe` from the trace, get the
 value `True`, and write that into the function's scope.
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
  ---------------|-|---------------|-------
  square_rug_cost| | size          | 5
                   | fringe        | True
-```
+----
 
 From here, we go into the function body, but the trace proceeds exactly like
 normal just reading code from the body and getting values from the scope. Let's
 do that through the loop, and we'll stop before the `return` statement:
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -168,7 +171,7 @@ Scope            |   ID           | Value
                   | area          | 25
                   | cost          | ~125~ 155
                   | perimeter     | 20
-```
+----
 
 We calculated the area, we computed the area cost, we got the size of the
 perimeter, and then we updated cost with its old value plus the new cost of the
@@ -180,9 +183,9 @@ single variable like here or a complex calculation. We then take this value,
 follow the arrow from the top of the function back to whatever variable we were
 calculating, and put the return value there as well.
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -193,7 +196,7 @@ Scope            |   ID           | Value
                   | cost          | ~125~ 155
                   | perimeter     | 20
                   | *return*      | 155
-```
+----
 
 Once this is done, the function is over. Finished. Done with all its things.
 That means that this version of the functions's scope is forever lost to us.
@@ -201,9 +204,9 @@ Litearlly. After we return, we can never go back to see what its values were!
 To indicate this on the trace, we're going to write a final horizontal line at
 the bottom and then write a big X through the function.
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -215,7 +218,7 @@ Scope            |   ID           | Value
                   ~ perimeter     ~ 20
                   ~ *return*      ~ 155
  ------------------ --------------- ----
-```
+----
 
 So from our trace, we remember it happened, but as far as the compute is
 concerned that work is lost. The only thing left is a final copy of the return
@@ -223,16 +226,16 @@ value, `155`.
 
 Now that we're back to our file execution, we can look at the next line of code.
 
-```
+----
 other_cost = square_rug_cost(length_of_side * 2, not has_fringe)
-```
+----
 
 We have a new variable, `othe_cost`, which calls `square_rug_cost` with some new
 values. Let's set up the scope that we'll be using for this:
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -247,7 +250,7 @@ Scope            |   ID           | Value
 |------------------ --------------- ----
 \square_rug_cost  | size          |
                   | fringe        |
-```
+----
 
 We did a few things here. We made a new row for the `othe_cost` variable. We
 started a new scope for the function below the old scope, which we had crossed
@@ -261,9 +264,9 @@ which is `side_length * 2`. Looking up `side_length` in that scope, we see it is
 second argument at the call site, `not fringe`. Since `fringe` in this scope is
 `True`, `not fringe` must be `False`. Let's fill those in to our table:
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -278,14 +281,14 @@ Scope            |   ID           | Value
 |~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~ ~~~~
 \square_rug_cost  | size          | 10
                   | fringe        | False 
-```
+----
 
 Now we can just go through the function like normal, making a fake variable in
 the trace when we get to the return statement:
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -303,7 +306,7 @@ Scope            |   ID           | Value
                   | area          | 100
                   | cost          | 500
                   | *return*      | 500
-```
+----
 
 Notice a couple things here. Because `fringe` was `False`, we never do the `if`
 block, which means we never define `perimeter` nor ever change `cost` to the
@@ -312,9 +315,9 @@ area cost plus the fringe cost.
 The last thing to do, then, is copy that value `500` back to where we asked for
 it and close out the frame:
 
-```
+----
 Scope            |   ID           | Value
------------------| -------------- | -----
+ ----------------| -------------- | -----
 *file*           | length_of_side | 5
                  | has_fringe     | True
                 /-| cost          | 155
@@ -333,18 +336,17 @@ Scope            |   ID           | Value
                   ~ cost          ~ 500
                   ~ *return*      ~ 500
  ~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~ ~~~~
-```
+----
 
 There you have it - a concise visual representation of how the computer memory
 keeps function scopes separate, how it returns variables from functions, and how
 once a function has finished executing, none of the memory that went into
 figuring out the calculation is left to the computer.
 
-## Exercises
+== Exercises
 
 TODO
 
 When you've had a chance to get more comfortable with traces, commit your work,
-take a break, and when you come back we'll look at
-[strings and string formatting](../02_strings/README.md) to improve our user
-messages.
+take a break, and when you come back we'll look at strings and string formatting
+in the textbook to improve our user messages.

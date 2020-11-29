@@ -1,16 +1,4 @@
-# Functions, Arrays, and Strings
-
-We write programs to manipulate our data. In the last chapter, we treated
-data as integers, floats, and strings. We can iterate, or repeat, an
-operation on data. We can take different branches in our programs, doing
-different things based on the value of our variables. As programs get bigger,
-much of programming is managing complexity, keeping different parts of the
-program small and logically connected. This chapter covers three tools -
-functions, ways to block sections of code together; arrays, to keep more than
-one piece of data in a variable; and more details of strings, as they are
-useful in many ways in programming.
-
-## Functions
+= Functions
 
 In programming, functions allow us to "bundle up" a section of code and make it
 reusable without needing to copy and paste it anywhere we want to use it. Like
@@ -62,7 +50,7 @@ side of the return statement and provides it to wherever the function was called
 from. The function then immediatly finishes, just like when using break inside a
 loop! 
 
-### Calling Functions
+== Calling Functions
 
 Once we have defined a function, we need to do something with it. On its own, it
 just sits there taking up programming space. To execute a function, from
@@ -90,7 +78,4 @@ That was a lot of theory, so now might be a good time to head to the workbook
 and do the first section in this chaper, getting practice with this intro to
 functions.
 
-* [Python](./01_functions/01_python.md)
-* ~[TypeScript](./01_functions/02_typescript.md)~
-* ~[C](./01_functions/03_c.md)~
-
+include::function_tracing.adoc[]

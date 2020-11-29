@@ -1,4 +1,4 @@
-# Format strings in Python
+= Format strings in Python
 
 Thus far in python, we've been using string concatenation to get the formatting
 and display we want. In this section, we're going to look at python format
@@ -11,10 +11,11 @@ A format string in python looks almost like a normal string, except it has an
 reference variables in the surrounding scope by wrapping them using curly braces
 - `{ }`.
 
-```python3
+[source,python]
+----
 balance = 372.15
 print(f'Your current balance is ${balance} dollars.')
-```
+----
 
 Here we have the variable, `balance`, and the format string,
 `f'Your current balance is ${balance} dollars.'`. This will format the value of
@@ -36,11 +37,12 @@ template string is filled in, values are used from left to right in the `{}`
 blocks. When you use the `f''` format, you always specify the variables that go
 into each `{data}` block.
 
-## Formatted HiLo
+== Formatted HiLo
 
 Let's look back at HiLo, but this time using format strings
 
-```python
+[source,python]
+----
 def calc_winnings(number, guesses):
     new_winnings = (6 - guesses) * 10
     print(f"You won {new_winnings} dollars!")
@@ -54,12 +56,12 @@ def play_again():
 
 def finished(winnings):
     print(f"Thank you for playing! Your total winnings were {winnings} dollars!")
-```
+----
 
 That's all there is to it! Pretty easy, right? And I thin it's much more legible
 and it is definitely easier to work with - no need to `str(num)` all the time!
 
-## Formatting Options
+== Formatting Options
 
 There are a huge number of formatting options we can do. We can set a certain
 amount of padding, so if we were making a table, the output would always take
@@ -70,7 +72,7 @@ them all here, I'll recommend visiting https://pyformat.info/ and reading their
 excellent documentation. (As you can tell, we're using the "New" format.) That
 said, we will be using some of these as we go further in the book.
 
-## Exercises
+== Exercises
 
 *   Revisit some or all of your programs and make them use format strings
     instead of string concatenation.

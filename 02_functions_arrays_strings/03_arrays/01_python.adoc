@@ -1,4 +1,4 @@
-# Arrays in Python
+= Arrays in Python
 
 In this section, we're going to do some math on sets of numbers. We're going
 to write a couple functions to determine some statistics about these sets of
@@ -8,22 +8,23 @@ math on Wikipedia.
 
 Let's start a new program, `arrays.py`
 
-```python
+[source,python]
+----
 data = range(2, 20, 3)
 for i in data:
     print(i)
-```
+----
 
 When we run this, we get 6 lines:
 
-```
+----
 2
 5
 8
 11
 14
 17
-```
+----
  
  `range` is a built in function that gives us an array of integers. The first
  integer in the array is `2`, the first number in the arguments. The array will
@@ -38,7 +39,8 @@ When we run this, we get 6 lines:
 
 Add this code at the end of the file:
 
- ```python
+ [source,python]
+----
  def sum(my_array):
     total = 0
     for val in my_array:
@@ -47,13 +49,13 @@ Add this code at the end of the file:
 
 data_sum = sum(data)
 print(f"Data sums to {data_sum:.2f}")
-```
+----
  
  When we run it, we should see the output from above, and this line as well:
 
- ```
+ ----
 Data sums to 57.00
- ```
+ ----
 
 Here, we define a new function, `sum`. It takes one argument, `my_array`,
 which will be the array of data to operate on. Sum, or summation, is just a
@@ -76,13 +78,14 @@ return the total. And that's it for the function!
 
 Back at the file level, we run the function using the data we got above, and
 the print it using a format string. This string uses `{data_sum:.2f}`, which
-takes `data_sum`, treats it as a `f`loat, and provides 2 digits of precision.
+takes `data_sum`, treats it as a `f`{empty}loat, and provides 2 digits of precision.
 
 Let's keep going with a function to calculate the average. The average, or mean,
 of a set of numbers is found by adding all of them up and dividing by the total
 number of items in the set. 
 
-```py
+[source,python]
+----
 def avg(my_array):
     total = sum(my_array)
     length = len(my_array)
@@ -90,13 +93,13 @@ def avg(my_array):
 
 data_avg = avg(data)
 print(f"Data average is {data_avg:.2f}")
-```
+----
 
 The new line of output should be
 
-```
+----
 Data average is 9.50
-```
+----
 
 This function starts the same way as sum, by giving it the name `avg` and taking
 one parameter, my_array. But then, instead of adding up all the numbers itself,
@@ -119,7 +122,8 @@ your nearest stats professor for details, and trust the math part of the code
 below :)
 
 
-```py
+[source,python]
+----
 import math
 def std_dev(my_array):
     my_array_average = avg(my_array)
@@ -136,13 +140,13 @@ def std_dev(my_array):
 
 data_std_dev = std_dev(data)
 print(f"Data std dev is {data_std_dev:.2f}")
-```
+----
 
 When we run this, we find quite a wide standard deviation:
 
-```
+----
 Data std dev is 5.12
-```
+----
 
 Which makes sense. We don't have a lot of numbers, and they have a bit of space
 between them. Let's get a real data set, and try to answer an
@@ -153,11 +157,12 @@ NFGS) for short. This survey captures a myriad of details about tens of
 thousands of pregnancies in the United States in the one year alone. From that
 data set, I've create a small file you can download and save next to your
 `arrays.py` program:
-[`data.py`](https://raw.githubusercontent.com/DavidSouther/software_craftsmanship/master/02_functions_arrays_strings/03_arrays/data.py)
+https://raw.githubusercontent.com/DavidSouther/software_craftsmanship/master/02_functions_arrays_strings/03_arrays/data.py[`data.py`]
 
 Once this file is saved, go back to `arrays.py` and add
 
-```py
+[source,python]
+----
 from data import PREGNANCIES
 
 # Set up the lists to calculate sums on
@@ -176,16 +181,16 @@ print(f"First babies are born at an average of {avg_first_babies:.2f} weeks.")
 print(f"First babies have a standard deviation of {std_dev_first_babies:.2f} weeks")
 print(f"Second babies are born at an average of {avg_second_babies:.2f} weeks.")
 print(f"Second babies have a standard deviation of {std_dev_second_babies:.2f} weeks")
-```
+----
 
 Let's find out if the old wive's tale holds up to statistical scrutiny
 
-```
+----
 First babies are born at an average of 38.58 weeks.
 First babies have a standard deviation of 2.68 weeks
 Second babies are born at an average of 38.64 weeks.
 Second babies have a standard deviation of 2.72 weeks
-```
+----
 
 The verdict is in - first and second babies have some difference on the order
 of hours, certainly not the weeks claimed in the anecdote we're questioning.
@@ -238,32 +243,30 @@ After we've split the `PREGNANCIES` data set up this way, we exit the `for` loop
 and pass our two arrays into our functions we had defined for `avg` and
 `std_dev`. With these results back, we print them out for the user!
 
-## Exercises
+== Exercises
 
-*   **Statistics**
-    *   Using the `sum` function above, trace the execution of these programs:
-        *   `print(sum([15, 15, 15, 14, 16]))`
-        *   `print(sum([2, 7, 14, 22, 30]))`
-    *   Using the `avg` function above, trace the execution of these programs:
-        *   `print(avg([15, 15, 15, 14, 16]))`
-        *   `print(avg([2, 7, 14, 22, 30]))`
-    *   Using the `std_dev` function above, trace the execution of these programs:
-        *   `print(([15, 15, 15, 14, 16]))`
-        *   `print(std_dev([2, 7, 14, 22, 30]))`
-    *   In statistics, population *variance* is a part of the standard
-        deviation. Specifically, it's the part of calculating a standard
-        deviation that sums the squares of differences and divides by N, before
-        taking the square root. In other words, the standard deviation is the
-        square root of the variance of the array of data. Rewrite your `std_dev`
-        function to perform the first part of the calculation, the `variance`,
-        in its own function, and then use that function to calculate the
-        standard deviation.
-*   **Recipes** Use arrays to store the ingredients in each recipe. For each
-    ingredient, the array should have a tuple of three items, including the
-    name, the default amount, and the measurement size. Instead of printing each
-    ingredient specifically, use a function which loops over the array to print
-    each ingredient. Don't forget the scale parameters!
+. **Statistics**
+.. Using the `sum` function above, trace the execution of these programs:
+... `print(sum([15, 15, 15, 14, 16]))`
+... `print(sum([2, 7, 14, 22, 30]))`
+.. Using the `avg` function above, trace the execution of these programs:
+... `print(avg([15, 15, 15, 14, 16]))`
+... `print(avg([2, 7, 14, 22, 30]))`
+.. Using the `std_dev` function above, trace the execution of these programs:
+... `print(([15, 15, 15, 14, 16]))`
+... `print(std_dev([2, 7, 14, 22, 30]))`
+.. In statistics, population *variance* is a part of the standard
+deviation. Specifically, it's the part of calculating a standard
+deviation that sums the squares of differences and divides by N, before
+taking the square root. In other words, the standard deviation is the
+square root of the variance of the array of data. Rewrite your `std_dev`
+function to perform the first part of the calculation, the `variance`,
+in its own function, and then use that function to calculate the
+standard deviation.
+. **Recipes** Use arrays to store the ingredients in each recipe. For each
+ingredient, the array should have a tuple of three items, including the
+name, the default amount, and the measurement size. Instead of printing each
+ingredient specifically, use a function which loops over the array to print
+each ingredient. Don't forget the scale parameters!
 
-
-When you've completed the exercises, we can
-[wrap up this chapter](../wrap_up.md).
+When you've completed the exercises, we can wrap up this chapter in the textbook.

@@ -1,4 +1,24 @@
-# Functions, Strings, and Arrays
+= Functions, Arrays, and Strings
+
+We write programs to manipulate our data. In the last chapter, we treated
+data as integers, floats, and strings. We can iterate, or repeat, an
+operation on data. We can take different branches in our programs, doing
+different things based on the value of our variables. As programs get bigger,
+much of programming is managing complexity, keeping different parts of the
+program small and logically connected. This chapter covers three tools -
+functions, ways to block sections of code together; arrays, to keep more than
+one piece of data in a variable; and more details of strings, as they are
+useful in many ways in programming.
+
+:leveloffset: 2
+
+include::01_functions/00_textbook.adoc[]
+
+include::02_strings/00_textbook.adoc[]
+
+include::03_arrays/00_textbook.adoc[]
+
+== Wrap up
 
 In this chapter, we took our basic toolkit of programming fundamentals and
 added three powerful and useful items. We discussed **functions**, which
@@ -19,4 +39,4 @@ In the next chapter, we will discuss objects which provide a mechanism to
 organize larger and larger amounts of data in understandable, tractable
 manners.
 
-[Chapter 2: Objects](../03_objects/README.md)
+:leveloffset: 1

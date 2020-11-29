@@ -1,9 +1,10 @@
-# Functions
+= Functions
 
 Let's start with this program, that defines a function, a reusable block of
 code, to calculate the price of our square rug from chapter 1:
 
-```python
+[source,python]
+----
 def square_rug_cost(size, fringe):
     area = size ** 2
     cost = area * 5
@@ -14,7 +15,7 @@ def square_rug_cost(size, fringe):
 
 print(square_rug_cost(5, False))
 print(square_rug_cost(2.5, True))
-```
+----
 
 Type this program as `rug_functions.py` and run it. You should see it print out
 the two rug costs - 125 and 46.25, respectively.
@@ -53,12 +54,13 @@ and `True`. We print out both values right away. This code is just here to
 test that the function worked, and we'll replace it with something more
 substantial.
 
-## One function, many calculations
+== One function, many calculations
 
 Now that we have a function that prints a box, what else can we get? Delete the
 last two lines of file you started (the print lines), and add this code:
 
-```python
+[source,python]
+----
 size = input("Rug size (empty to quit): ")
 while size != "":
     wants_fringe = input("Does the rug have fringe (y/n)? ")
@@ -66,10 +68,10 @@ while size != "":
     cost = square_rug_cost(float(size), has_fringe)
     print(cost)
 
-    # Get the size for the next rug
+    = Get the size for the next rug
     size = input("Rug size (empty to quit): ")
 print("Goodbye")
-```
+----
 
 We can price (square) rugs over and over!
 
@@ -108,7 +110,8 @@ everything you typed in the last section, and type this instead.
 time to make a commit, to keep that version of the file which does the loop &
 calculation in the same block.
 
-```python
+[source,python]
+----
 def compute_square_rug():
     size = float(input("Rug Size: "))
     fringe = input("Does the rug have fringe (y/n)? ")
@@ -118,16 +121,19 @@ def compute_square_rug():
 
 while input("Price a rug (y/n)? ") == "y":
     compute_square_rug()
-```
+----
 
 But why are we adding more code when it just does the same thing!? ARGH!
 I asked you to stay with me one more step, before we see the pay off.
 First, delete the last two lines (the while loop that asks whether to
 price another rug), and then add the following.
 
-> Before deleting the loop, this is another good time to make a commit...
+****
+Before deleting the loop, this is another good time to make a commit...
+****
 
-```python
+[source,python]
+----
 def rectangular_rug_cost(width, height, fringe):
     area = width * height
     cost = area * 5
@@ -148,7 +154,7 @@ while input("Price another rug (y/n)? ") == "y":
         compute_square_rug()
     elif rug_type == "2":
         compute_rectangular_rug()
-```
+----
 
 At this point, we've written four functions. For each rug type, we have two
 functions - one to perform the calculation, and one to perform the user
@@ -179,7 +185,7 @@ chapter 5, they could come from a web server which provides this
 functionality to customers online. That separation is a great boon that
 abstraction using functions gives us.
 
-## Anatomy of a function
+== Anatomy of a function
 
 Let's cover the critical pieces of a function again.
 
@@ -201,7 +207,8 @@ each time you call your function.
 Ok, let's write one more function, this time to combine the two rugs we had
 before. Again, delete the "Price another rug" while loop, and add this.
 
-```python
+[source,python]
+----
 def choose_rug():
     type = input("Would you like to price a (S)quare rug or a (R)ectangular rug? ")
     if type == "S" or type == "s":
@@ -211,7 +218,7 @@ def choose_rug():
         
 while input("Price another rug (y/N)? ") == "Y":
     choose_rug()
-```
+----
 
 What all have we done here? We took a program that had a single flow of data,
 with variables all over the place, and found small isolated chunks of work. We
@@ -220,7 +227,8 @@ functions. We had to create all the functions in our program before the bottom,
 when we actually call them. Overall we traded some additional global complexity
 for less local complexity.
 
-> **Like a recipe** If we were writing a cookbook, we have a lot of different
+****
+**Like a recipe** If we were writing a cookbook, we have a lot of different
 ways to write recipes. We could cram all the steps together, and we could be
 very explicit about each one. "Take the onions. Remove the skins. Cut the unions
 into thin slices. Turn on the oven to medium heat. Put a sauce pan on the oven.
@@ -229,7 +237,7 @@ Occaisionally stir the onions for 10 minutes for softened and translucent. For
 caramelized onions, add sugar at 10 minutes and continue stiring occaisionally
 for another 35 minutes."
 
-> If this were a recipe for a steak dinner, that's a lot of steps that aren't
+If this were a recipe for a steak dinner, that's a lot of steps that aren't
 really related to the steak itself! And are we going to repeat those steps every
 other dish that calls for softened or caramelized onions? I would hope not.
 Instead we make a new recipe, "Caramelized Onions", and whenever another dish
@@ -237,18 +245,18 @@ calls for them we just say "2 cups caramelized onions, see page such and such."
 That's exactly what we're doing with the functions here! Finding self-contained
 pieces that can be used repeatedly, rather than repeating ourselves every time
 over and over again.
+****
 
-## Exercises
+== Exercises
 
-*   **Rugs** Write functions for a circular rug and let users choose circular
-    rugs in the input.
+* **Rugs** Write functions for a circular rug and let users choose circular
+rugs in the input.
 
-*   **Recipe Measurements** Revisit the `measurements.py` file from chapter 1.
-    Create functions for common parts that are duplicated or otherwise should be
-    grouped in the file. No peeking, but [here's my breakdown](./recipe_fns.md)
+* **Recipe Measurements** Revisit the `measurements.py` file from chapter 1.
+Create functions for common parts that are duplicated or otherwise should be
+grouped in the file. No peeking, but [here's my breakdown](./recipe_fns.md)
 
-*   Write functions for exercises in chapter 1.
+* Write functions for exercises in chapter 1.
 
-Functions are a really important concept in programming and software engineering
-so let's take a look at
-[a closer look at how they execute](./function_tracing.md).
+Functions are a really important concept in programming and software engineering,
+so now, let's go back to the text book and take a close look at how they execute.

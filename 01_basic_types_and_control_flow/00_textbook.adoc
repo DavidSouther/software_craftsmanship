@@ -30,3 +30,5 @@ Not content at the bare rules of the game, we added color, boxes, and maybe even
 ****
 *Recommended:* Take a detour through [Appendix 2: Source Control](../A02_source_control/README.md)
 ****
+
+:leveloffset: 1

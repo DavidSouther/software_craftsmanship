@@ -1,4 +1,4 @@
-# HiLo
+= HiLo
 
 An early tradition of computer programming was a series of video games published
 as source code in BASIC programming language magazines. In that tradition, the

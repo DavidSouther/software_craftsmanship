@@ -1,4 +1,4 @@
-= Control
+= Control Flow
 
 These exercises put the control flow concepts to use.
 They use the techniques from part 1, types, extensively.

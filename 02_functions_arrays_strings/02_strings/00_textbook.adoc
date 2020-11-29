@@ -1,4 +1,4 @@
-## Strings
+= Strings
 
 We briefly discussed strings in chapter 1. We're going to take a deeper dive in
 this section, exploring some a few utilities that will make our lives much
@@ -61,4 +61,5 @@ often **count** the number of occurances of a character or (shorter) string
 inside another. And there are utilities to **find** occurances of a string in
 another, and then **replace** those occurances with some other value.
 
-[python](./01_python.md)
+There's a lot to cover for strings, but in the workbook, we focus on formatting
+strings for user interfaces and displays.
