@@ -34,3 +34,5 @@ include::00_introduction/00_textbook.adoc[]
 include::01_basic_types_and_control_flow/00_textbook.adoc[]
 
 include::02_functions_arrays_strings/00_textbook.adoc[]
+
+include::03_objects/00_textbook.adoc[]

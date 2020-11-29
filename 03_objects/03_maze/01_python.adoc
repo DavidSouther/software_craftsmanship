@@ -1,4 +1,4 @@
-# Maze Design with Classes
+= Maze Design with Classes
 
 As we discussed in the textbook, we're going to build a program that lets us
 control a character moving through a maze. We will represent this using a
@@ -21,7 +21,8 @@ Let's start writing out this code. I'm going to do this for the base features as
 well as the north door. You will need to fill in the east, south, and west doors
 in your own `maze.py` file.
 
-```py
+[source,python]
+----
 class Room():
     def __init__(self, description, key = None):
         self.description = description
@@ -49,7 +50,7 @@ exit_room = Room("the exit")
 entry_room.add_north_door(exit_room)
 
 print(exit_room.south_door.other_side(exit_room).description)
-```
+----
 
 When you run this code, it should print out `Entrance`, which is the room on the
 other side of the south door from the exit room. The last line of code looks a
@@ -75,7 +76,7 @@ each door direction will will handle creating the door, and attaching it to both
 rooms. This type of **object creation** is common because it reduces the number
 of things necessary to remember to do to create a correct object. 
 
-## Locks and Keys and Keyrings
+== Locks and Keys and Keyrings
 
 In the next section of the code, we need to look at how the locks and keys fit
 together. We're actually going to make two classes here - one to represent the
@@ -83,7 +84,8 @@ locks themselves, and the second to represent a keyring as a whole. Later in the
 program, we'll give the player a keyring and use that to check whether some
 doors can or cannot be traveresed.
 
-```py
+[source,python]
+----
 class Lock():
     def __init__(self, fitting_key = None):
         self.fitting_key = fitting_key
@@ -117,7 +119,7 @@ keyring = Keyring()
 print(keyring.can_unlock(entry_room.north_door))
 keyring.add_key("blue")
 print(keyring.can_unlock(entry_room.north_door))
-```
+----
 
 A lock keeps track of which key fits it, and provides a simple method to check
 whether it accepts a certain key. Having this as a separate method allows more
@@ -129,14 +131,15 @@ The keyring tracks which keys have been found, and for any given door, it asks
 the lock on the door if any of its keys fit. If they do, the `can_unlock`
 method returns `True` and we know this `Keyring` lets us through that door.
 
-## Game and Player
+== Game and Player
 
 The last two pieces before our game works are a `Player` and a `Game`. `Player`
 tracks where the player currently is in the maze, keeps a `Keyring` to unlock
 doors, and a method `move_through` to check if the door is open and then update
 which room the player is in.
 
-```py
+[source,python]
+----
 class Player():
     def __init__(self, start_room):
         self.keyring = Keyring()
@@ -148,7 +151,7 @@ class Player():
             self.current_room.on_enter(self)
         else:
             print("Cannot move through that door.")
-```
+----
 
 The player starts itself in some given room, and makes itself an empty keyring.
 The `move_through` method takes a door that the player should attempt to go
@@ -164,14 +167,15 @@ to tell the player object anything that it needs to know. In this case, we're
 going to let the room tell the player about the key it has. Let's add this
 method to the room class.
 
-```py
+[source,python]
+----
 class Room():
     # ...
 
     def on_enter(self, player):
         if self.key != None:
             player.keyring.add_key(self.key)
-```
+----
 
 This type of programming is called **inversion of control** which is just a
 fancy way to say one object passing itself to another object to let the other
@@ -182,7 +186,8 @@ handles user input and output. Let's type it in, and then we'll review it. Just
 like the first `Room` class, this code includes the north door. You will need to
 do the other four directions.
 
-```py
+[source,python]
+----
 class Game():
     def __init__(self, start_room, end_room):
         self.player = Player(start_room)
@@ -214,7 +219,7 @@ class Game():
             if self.player.current_room == self.end_room:
                 print("You won the treasure!")
                 break 
-```
+----
 
 A `Game` needs the starting and ending room of the maze. Instead of storing the
 `start_room`, it instead creates a new `Player` which starts in the
@@ -232,7 +237,8 @@ loop back and play some more!
 
 Let's try it out on a bigger maze:
 
-```py
+[source,python]
+----
 room_a = Room("the entry room")
 room_b = Room("the library", "blue")
 room_c = Room("the dining room")
@@ -244,19 +250,19 @@ room_c.add_north_door(room_d, Lock("blue"))
 
 game = Game(room_a, room_d)
 game.play()
-```
+----
 
 This last block builds out a full game! We have four rooms, a locked door, and
 start the player in the entry. Give it a shot!
 
-# Exercises
+== Exercises
 
-*   Make a bigger maze!
-*   Add more items or types of keys?
-*   Provide descriptions of doors.
-*   Make rooms support as many doors as you want to give them.
+. Make a bigger maze!
+. Add more items or types of keys?
+. Provide descriptions of doors.
+. Make rooms support as many doors as you want to give them.
 
-## Recipe book
+=== Recipe book
 
 Write a program that shows a recipe book. This recipe book will let users choose
 a recipe from a list of recipes, and then when the user is reading a recipe, let

@@ -1,4 +1,4 @@
-# Classes
+= Classes
 
 In our calendar program, we used objects that we got from our language's date
 module. This is great for common features when we need them, but we also want to
@@ -62,4 +62,4 @@ those shapes.
 The end result of all of this should be code that is much more self contained,
 concise, and understandable by ourselves and any future reader.
 
-[Python](./01_python.md)
+include::tracing_objects.adoc[]

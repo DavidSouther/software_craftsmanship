@@ -1,0 +1,11 @@
+= Functions, Arrays, and Strings
+
+:leveloffset: 2
+
+include::01_calendar/01_python.adoc[]
+
+include::02_rugs/01_python.adoc[]
+
+include::03_maze/01_python.adoc[]
+
+:leveloffset: 1

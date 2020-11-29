@@ -1,4 +1,4 @@
-# Objects
+= Objects
 
 Variables in computer programs track data. We saw some of the kinds of data they
 can track in chapter 1. In chapter 2, we saw how computers can use variables to
@@ -61,5 +61,3 @@ begin building **data structures**. That's a couple chapters away - in the mean
 time, just keep in mind objects being a bundle of related data, each piece of
 which you can access from its properties. Let's get some practice looking at
 dates, objects which store information about a moment in time.
-
-[Python](./01_python.md)

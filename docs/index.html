@@ -474,6 +474,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_arrays">Arrays</a></li>
 </ul>
 </li>
+<li><a href="#_introduction_to_objects">Introduction to Objects</a>
+<ul class="sectlevel2">
+<li><a href="#_objects">Objects</a></li>
+<li><a href="#_classes">Classes</a></li>
+<li><a href="#_tracing_objects">Tracing Objects</a></li>
+<li><a href="#_software_design_and_architecture">Software Design and Architecture</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -2675,10 +2683,425 @@ manners.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_introduction_to_objects">Introduction to Objects</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this chapter, we take our understanding of programming as variables tracking
+values over time and begin to add structure that will help us manage complexity
+as our code grows. We use <strong>functions</strong> to manage the complexity of breaking out
+executable pieces of code over time. Here, we start using <strong>objects</strong> to manage
+the complexity of pieces of data with multiple facets. We begin to get an
+understanding of these by building out a program which prints a desktop
+calendar.</p>
+</div>
+<div class="paragraph">
+<p>The second project takes us from using built-in objects to building out our own
+objects. Returning to the trusty Rug Shop, <strong>classes</strong> will describe the data
+of a rug, and <strong>methods</strong> will let us cut down yet again on the code needed to
+keep all the rug types around. We will gain a large amount of flexibility in how
+rugs are stored and priced, and can use this to quickly create many more types
+of rugs.</p>
+</div>
+<div class="paragraph">
+<p>The last section will take us back to video games. We&#8217;ll build out a set of
+classes which let us have a maze or labyrinth that our intrepid player must
+navigate, collecting keys for locked doors before finding the treasure room.</p>
+</div>
+<div class="sect2">
+<h3 id="_objects">Objects</h3>
+<div class="paragraph">
+<p>Variables in computer programs track data. We saw some of the kinds of data they
+can track in chapter 1. In chapter 2, we saw how computers can use variables to
+track calculations across a number of functions. Whether this is as internal
+variables to remember an intermediate result, in arguments to take or pass data,
+or in return statements to hand data back the the caller, variables are integral
+to making programs work.</p>
+</div>
+<div class="paragraph">
+<p>Sometimes, though, we want a bit more structure than what we can get just from
+naming them differently. What we want as programs get complex is a way to bundle
+several related variables together. In this way, we can treat them as a single
+entity in our program. We can create them once, modify each part individually,
+and keep the whole thing together when passing it to another function. This also
+helps understanding - rather than talking about an area a width and a height
+which we keep in our heads as being about one rug, we can instead talk about a
+single rug, which has an area, a width, and a height. It may sound pedantic, but
+in practice it really makes tracking complex pieces of data much easier!</p>
+</div>
+<div class="paragraph">
+<p>These bundles of data are called <strong>objects</strong>. Each piece of data bundled into
+an object is a <strong>property</strong> on an object. We can think of objects having
+"shape" or "structure" based on what properties it has on it, and the types
+of data that are stored in those properties. A property is, in many ways,
+just a variable that is attached to a single object in our program. The
+property has an <strong>identifier</strong> and stores a <strong>value</strong>. It&#8217;s just that it can&#8217;t
+appear alone, and only is part of the object.</p>
+</div>
+<div class="paragraph">
+<p>As we work with objects, these pieces of data with many facets, we often want to
+talk about their "structure" or their "shape". For simple data, in the last two
+chapters, we talked about the type of a value. It could be a number, a string,
+or a boolean. For complex data, the type of the value is described by its shape
+or structure. "Shape" and "structure" in this context describe the properties on
+an object, and the types of values that go in each of those properties. Let&#8217;s
+consider a date for a moment.</p>
+</div>
+<div class="paragraph">
+<p>Usually, we write a date in one single block - 2020/08/12. We might consider
+using a string to hold the 10 characters. But when we think about the date
+again, we often want to think about the parts of the date itself. What year is
+it in? What month? Which day of the month is it? With only strings, we would be
+required to do some sort of matching and conversion, like "for the month, take
+the 6th and 7th characters, and convert them to a number." With the concept of
+objects, we would instead store each of those pieces separately. Instead of
+using a variable to store the single value <code>"2020/08/12"</code>, we can use an object
+to store three properties - <code>year: 2020, month: 8, day: 12</code>.</p>
+</div>
+<div class="paragraph">
+<p>The structure of this complex data object has three properties, year, month, and
+day, each of which have type number. We can call this structure of three
+properties with these names the <strong>type</strong> of the data object. We&#8217;ve now created a
+new data type, beyond what the programming language originally provides. Instead
+of working with a combersome single string, or needing to lug around three
+variables with numbers, we can create a single Date object and it has all the
+pieces we need to do calculations on a date as a whole.</p>
+</div>
+<div class="paragraph">
+<p>A definition of a complex object like this is called an <strong>interface</strong>. It is the
+public description of what the object is, the full description of its shape.</p>
+</div>
+<div class="paragraph">
+<p>An object is a value, which means you can assign it to a variable. You can pass
+it to a function as an argument. You can even assign an object into a property
+of another object! Building out complex objects like this is how we&#8217;ll later
+begin building <strong>data structures</strong>. That&#8217;s a couple chapters away - in the mean
+time, just keep in mind objects being a bundle of related data, each piece of
+which you can access from its properties. Let&#8217;s get some practice looking at
+dates, objects which store information about a moment in time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_classes">Classes</h3>
+<div class="paragraph">
+<p>In our calendar program, we used objects that we got from our language&#8217;s date
+module. This is great for common features when we need them, but we also want to
+define our own object types. We do this by creating a class. A <strong>class</strong> is a
+description of the type of object that we want, as well as a group of functions
+which operate specifically on this data type. These focused functions are called
+methods, which allows a class to bundle both data and the operations that
+are effective on it.</p>
+</div>
+<div class="paragraph">
+<p>Once you have a class which describes a bundle of data, we use it to get the
+object. A copy of an object created from a class like this is an <strong>instance</strong>,
+which has data specific to one copy of the class. Where the class describes the
+data in abstract, and you only have one class for any time, you can have any
+number of instances of the class. You create a new one any time you want data of
+a certain shape that matches the class, fill it in with the specific data, and
+can then use it any where that expects a value of this type. Just like some
+functions take numbers or strings, they can also take objects to operate on.</p>
+</div>
+<div class="paragraph">
+<p>All classes start with a <strong>constructor</strong>, a function which specially creates and
+initializes an object of that type. The constructor runs any time you want to
+get a new instance, and it fills in all the properties on the object.
+Constructors, as functions, can take arguments which allow it to specify any
+values it needs to correctly initialize the state of the object. Once the
+constructor has finished running, our program has a new value of this class'
+type, each of its properties filled in by the constructor.</p>
+</div>
+<div class="paragraph">
+<p>Almost all classes have methods. <strong>Methods</strong> are functions which are attached to
+the class and whenever they are called, take an argument either explicitly or
+implicitly of the instance to work on. Methods can also take additional
+arguments, and they can both change the state (values of internal properties) of
+the object as well as returning a value. Usually, a method will either change
+internal state, or it will return a value calculated from internal state.</p>
+</div>
+<div class="paragraph">
+<p>As an example of this, in the workbooks we will create classes for our rugs. We
+have been dealing with square, rectangular, and circular rugs, but all of these
+are doing basically the same set of operations - calculate area, possibly
+calculate perimeter, ask for some inputs, calculate a cost at the end based on
+the area and perimeter. In the past chapters, we&#8217;ve had functions which handle
+each of these separately. Our programs had to keep track of the inputs, add up
+the total cost, print it out, just passing values over and over.</p>
+</div>
+<div class="paragraph">
+<p>With classes, we can instead define how our general data will behave. It will
+handle asking for input in a contained way, using a <code>get_values</code> method which
+each different rug type will use to get what is important to it. We can have a
+<code>cost</code> method which delegates to <code>area</code> and <code>perimeter</code>, which can be written
+specifically to each type of rug we have.</p>
+</div>
+<div class="paragraph">
+<p>One incredibly powerful feature of classes is the idea of <strong>inheritance</strong>.
+Inheritance lets us create a class with a reference to some other class, which
+it can then add to or partially modify. This is powerful because we can describe
+general classes which cover a wide range of cases, and then make later classes
+which are more specific to their cases later.</p>
+</div>
+<div class="paragraph">
+<p>This will let us organize our rugs code even further. We&#8217;ll have a
+<strong>base class</strong> (also known as a <strong>super class</strong>), <code>Rug</code>, which knows how to
+calculate cost and ask whether it has fringe. We can then make
+<strong>derived classes</strong> specific to square rugs and rectungular rugs and circular
+rugs to handle each specific case of getting the area and perimeter for each of
+those shapes.</p>
+</div>
+<div class="paragraph">
+<p>The end result of all of this should be code that is much more self contained,
+concise, and understandable by ourselves and any future reader.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tracing_objects">Tracing Objects</h3>
+<div class="paragraph">
+<p>Now that we&#8217;re starting to develop our feel for using objects as a way to bundle
+data, let&#8217;s take a closer look at how the computer handles the data in an object
+under the hood. We&#8217;ll do that by extending the notation we use when tracing a
+program.</p>
+</div>
+<div class="paragraph">
+<p>In our traces for chapters 1 and 2, we kept a two-column table of identifiers
+and values, which represented variables in our program. We separated the rows by
+functions, and used arrows to track where return values came from and went to.</p>
+</div>
+<div class="paragraph">
+<p>For objects, we could write out the entire set of properties and their values in
+the value column, but that seems difficult as objects get larger than maybe two
+or three properties. It also doesn&#8217;t give us a reasonable picture of what is
+actually happening in memory. Instead, whever we create an object, we&#8217;re going
+to draw a T in the right half of the trace. Above the T, we&#8217;re going to write
+what type the object. And then we&#8217;re going to use the left and rigt parts as
+identifier and value - of the properties of the object! So just like each
+function has its own scope in the main table, over on the side here each object
+will also have its own little area to track its data.</p>
+</div>
+<div class="paragraph">
+<p>So what do we put in the value for the variable in the function? We&#8217;re going to
+draw an arrow from the value box and point at the object we just wrote out! This
+lets us clearly see where each variable is pointing, when it has an object value
+instead of a simple value.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_software_design_and_architecture">Software Design and Architecture</h3>
+<div class="paragraph">
+<p>On our journey into the world of Software Craftsmanship, we&#8217;ve completed our
+first steps. We have an understanding of the way computers run and store values.
+We&#8217;ve used functions to abstract reusable blocks of executable code, and we&#8217;ve
+used objects to abstract bundles of data. These core pieces are all we need to
+write software. Everything else is just using them - either built in to our
+language, from a library we include, or that we&#8217;ve written ourselves. Of course,
+you probably aren&#8217;t comfortable with that level of power yet!</p>
+</div>
+<div class="paragraph">
+<p>The rest of this book explores how to take these tools and use them in effective
+ways. How to take the objects we&#8217;re creating, and develop &amp; iterate on their
+designs so that they effectively solve our problems. How to verify the
+correctness of our objects and functions, both so they meet our original
+requirements as well as so they don&#8217;t break when someone edits them later. How
+to evaluate, learn, and utilize libraries from other developers to short cut
+lots of effort using pre-built and off-the-shelf tools. How to work in a team
+and collaborative environment to build tools that work for more people in a
+wider range of settings.</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s a lot left to cover, but in this section we&#8217;re going to start small.
+We&#8217;re going to look at a problem statement, discuss several approaches to
+designing code which will handle that problem, and then implementing one version
+based on our analysis.</p>
+</div>
+<div class="sect3">
+<h4 id="_maze">Maze</h4>
+<div class="paragraph">
+<p>We&#8217;re writing a video game called "Maze". In this game, the player starts in
+some room of a maze. Their goal is to find the exit of the maze. They can wander
+the maze going through doorways which connect rooms. Some of these doors are
+locked, and the keys to any locked doors are place in rooms throughout the maze.
+Let&#8217;s look at an almost trivial sample maze:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  012345678
+6 ┌───┐
+5 │ X │
+4 ├│B│┤
+3 │   ├───┐
+2 ├─╫─┤ B │
+1 │ E ╪   │
+0 └───┴───┘</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this maze, the player starts in the room on the bottom left marked <code>E</code>. This
+room has two doors, one to the north and one to the west. The room to the west
+is a bit larger, and has a key marked <code>(B)lue</code>. North of the entrance room,
+there&#8217;s an empty room with another door again to the north. This door is locked
+and needs the blue key to unlock it. Once through that door, the player is at
+the exit and has beaten the level! To solve the maze, the player clearly needs
+to visit the room with the blue key in order to make it out.</p>
+</div>
+<div class="paragraph">
+<p>While we don&#8217;t have much programming under our belts, we can at least start to
+think of a couple ways to represent this. One possibility, looking at the one
+drawing we have, would be to represent the maze as an array of arrays. What this
+means is that each row in the maze is an array of characters or strings, and
+each character in that array we compare against a number or the ASCII values of
+the drawing we have. We would then need some notion of a player, which would
+need to figure out how to "walk around" in this two dimensional array. Let&#8217;s
+see what this might look like for a single function, <code>move_left</code>, in Python:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def move_up(maze, player):
+    if len(maze) &lt;= player.row + 1:
+        # Can't move this direction
+        return
+    cell = maze[player.row + 1][player.column]
+    if cell == 'X':
+        print("Found the exit!")
+    if maze[player.row + 1][player.column - 1] == '|'
+            and maze[player.row + 1][player.column + 1] == '|':
+        if not player.keyring.includes(cell):
+            # The door is locked
+            return
+    if cell == ' ' or cell == '╫':
+        player.rows += 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If we call this function using the above maze and a player at row 1 column 2, we
+can see what happens. First, we check if the cell up one row is outside the
+bounds of the maze. In this case, it is not. So we look into the maze, first at
+row 2 and then inside row 2 at column 3. That cell has a ╫. It&#8217;s not an X, so we
+skip the first condition. Then we need to look to see if the cell above us is
+in a door - we do that by checking it it&#8217;s the | characters. They are not, so we
+continue to the last condition. If it&#8217;s an empty cell or the vertical open door
+we change the player so that they&#8217;re in the next row up.</p>
+</div>
+<div class="paragraph">
+<p>This&#8230;&#8203; is convoluted, to say the least. One of the most important design
+criteria in software engineering is the "single responsibility principle". It&#8217;s
+like the Occham&#8217;s Razor of programming. Any function, class, or other
+abstraction we create should choose one thing to do, and do that one thing well.
+Complexity should come from the domain the program is being written for, and not
+from the program itself.</p>
+</div>
+<div class="paragraph">
+<p>Looking at this sample code from the single responsibility principle, we can
+see several competing concerns. Each <code>if</code> block really tries to do its own thing
+with some checking for the exit, some checking for open doors, others checking
+for locked doors. On second review, we actually see that this code doesn&#8217;t do
+anything in the case of moving onto a square with a key - try tracing the
+function starting at row 1 column 6.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rooms_and_doors">Rooms and Doors</h4>
+<div class="paragraph">
+<p>Let&#8217;s try a different design. The last design tried to create a model of the
+maze with the ASCII diagram being the "source of truth". With our notion of
+classes and objects, we can take a more abstract view of the maze, which will
+lend itself to clearer, more sraightforward code to traverse the maze.</p>
+</div>
+<div class="paragraph">
+<p>Instead of looking at the maze as a grid of cells, we can create a class which
+represents each room. The room, then, knows which room it connects to, and which
+keys it has. In the future, it would provide a convenient point to logically add
+more generic items. So if we think of rooms,  instead of blindly looking around,
+we can have a player object that can just look at the room object it&#8217;s in for
+what doors are around.</p>
+</div>
+<div class="paragraph">
+<p>As we think through this, one issue pops up quickly - how do we keep track which
+doors are locked? With classes and objects, this is easy! We just introduce the
+idea of a door. A door is an object which has two sides, each being rooms, and
+a property for whether it&#8217;s locked (and which key unlocks is). Now, how does
+the <code>move_up</code> code look in python?</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def move_up(player):
+    room = player.current_room
+    door = room.north_door
+    if door == None:
+        return
+    if not door.is_unlocked_by(player.keyring):
+        return
+    player.current_room = door.other_side(room)
+    player.current_room.on_enter(player)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Comparing the two functions, it&#8217;s hopefully apparent this is a much clearer as
+to what&#8217;s happening. We know that the function is working with the north door
+(there&#8217;s a clear connection between "move up" and "north door"). The bounds
+checking is very clear - when the door to the north is not present, the function
+does nothing. The door can check itself if the player&#8217;s keyring has a key that
+fits it. And then, with the clear setup of what&#8217;s happening, the player steps
+through the door - and lets the room on the other side tell the player what they
+just found!</p>
+</div>
+<div class="paragraph">
+<p>Beyond teaching programming, a goal of this book is to teach programming in a
+way that shows how to make these types of decision, or at least where these
+decisions will arise in a setting of a larger development process. It is not an
+overstatement to say that code like the first example has grown to cause
+projects to run over time, over budget, and even to fail, while clear
+architecture and design during the software engineering process has directly led
+to projects coming in on time, in budget, and serving a long and useful life.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a look at the full example and explore this maze in depth in our
+language of choice.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wrap_up_objects_classes_and_object_oriented_design">Wrap Up: Objects, Classes, and Object Oriented Design</h4>
+<div class="paragraph">
+<p>In this chapter, we&#8217;ve looked at bundling data into objects. This allows using
+a single variable to track complex data, accessing pieces of the complex data
+via its properties. We looked at built-in objects representing dates and times,
+and used those to build a calendar that showes us the days in a month, holidays,
+weekends, and days until some event.</p>
+</div>
+<div class="paragraph">
+<p>We then explored using classes and inheritence to describe, create, and simplify
+object handling. With the rugs functions we&#8217;ve been using, we created a class
+for each type of rug. Each rug type was able to do its own calculations on its
+own contained data sets. There was still some duplication, so we introduced the
+idea of inheritance - letting one class provide foundational behavior, and
+several variations of that behavior in subclasses. This let us have clear,
+concise, contained code for each type of rug, and our input and output utilities
+didn&#8217;t need large amounts of special casing.</p>
+</div>
+<div class="paragraph">
+<p>With the understanding of creating and using objects, we added a technique to
+track objects, their properties, and their lifecycle in our program traces. &#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>We ended the chapter building a maze game. This gave us more practice with
+classes, but more importantly, we used it as a jumping point for talking about
+object and program design. We saw how using classes and objects let us write
+clear code which shows its intent.</p>
+</div>
+<div class="paragraph">
+<p>These first three chapters have given us the basic building blocks of writing
+computer programs. From here, we will look at techniques for building programs
+that are larger and more difficult to understand at one time. These tools will
+aid in developing these larger programs in a systematic and verifiable way.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-27 23:56:12 UTC
+Last updated 2020-11-29 17:36:32 UTC
 </div>
 </div>
 </body>

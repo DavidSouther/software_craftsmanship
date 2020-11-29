@@ -1,17 +1,18 @@
-# Python Classes
+= Python Classes
 
 In the last chapter, we wrote pairs of functions to calculate costs for rugs,
 and to get user input. The function declarations started to get a bit unwieldy
 and redundant.
 
-```py
+[source,python]
+----
 def square_rug_cost(size, fringe):
 def compute_square_rug():
 def rectangular_rug_cost(width, height, fringe):
 def compute_rectangular_rug():
 def circular_rug_cost(radius, fringe):
 def compute_circular_rug():
-```
+----
 
 The idea of classes will separating each of these concepts into distinct pieces.
 We can use those pieces in similar and interchangeable ways, and really free
@@ -28,7 +29,8 @@ later built the wrong thing!
 Before we start our class, then, let's remind ourselves of what we're trying to
 achieve. Looking back at our last chapter's rug functions, we have this
 
-```python
+[source,python]
+----
 def square_rug_cost(size, fringe):
     area = size ** 2
     cost = area * 5
@@ -36,7 +38,7 @@ def square_rug_cost(size, fringe):
         perimeter = size * 4
         cost = cost + perimeter * 1.5
     return cost
-```
+----
 
 A square rug needs to track two pieces of data - whether it has fringe, and the
 size of one edge. It then calculates the area, perimiter, and costs from those
@@ -46,7 +48,8 @@ It will have one method, `cost()`, which uses this same formula but gets the
 data from its properties. Let's see what this looks like in Python. Type and run
 the following code in a new file.
 
-```py
+[source,python]
+----
 class SquareRug():
     def __init__(self, size, has_fringe):
         self.size = size
@@ -66,14 +69,14 @@ square_rug_1_cost = square_rug_1.cost()
 square_rug_2_cost = square_rug_2.cost()
 print(f"Rug 1 costs ${square_rug_1_cost:.2f}")
 print(f"Rug 2 costs ${square_rug_2_cost:.2f}")
-```
+----
 
 Which gives the same output as the similar version of the functions program.
 
-```
+----
 Rug 1 costs $125.00
 Rug 2 costs $46.25
-```
+----
 
 This is our first class! I think it's time to make a commit!
 
@@ -131,7 +134,8 @@ two rugs passing `5, False` and `2.5, True` for the parameters. We call the
 
 We can do this again for the rectangle rug.
 
-```py
+[source,python]
+----
 class RectangularRug():
     def __init__(self, width, length, has_fringe):
         self.width = width 
@@ -152,14 +156,14 @@ rectangle_rug_1_cost = rectangle_rug_1.cost()
 rectangle_rug_2_cost = rectangle_rug_2.cost()
 print(f"Rug 1 costs ${rectangle_rug_1_cost:.2f}")
 print(f"Rug 2 costs ${rectangle_rug_2_cost:.2f}")
-```
+----
 
 With these test cases, we get
 
-```
+----
 Rug 1 costs $120.00
 Rug 2 costs $85.00
-```
+----
 
 This should look and feel pretty similar. We define the new class, 
 `RectangularRug`. Its constructor takes four arguments, instead of three. The
@@ -168,17 +172,18 @@ cost calculation is a little different. But otherwise, it's all still there!
 Take a few minute to write the last rug class, `CircularRug`. Using `5, False`
 and `2.5, True` you should again get
 
-```
+----
 Rug 1 costs $392.70
 Rug 2 costs $121.74
-```
+----
 
 Let's remove all the testing code and take a look at how we might ask for user
 input for each of these rugs. Naively, it'll be just like what we had in the
 functions exercises - ask the user for which type of rug, then ask them all the
 numbers for that type, and then finally create that rug and print its cost.
 
-```python
+[source,python]
+----
 def price_rug():
     print("1) Square Rug")
     print("2) Rectangular Rug")
@@ -195,7 +200,7 @@ def price_rug():
 
 while input("Price another rug? (y/n) ").lower() == 'y':
     price_rug()
-```
+----
 
 We now have a control loop and a few classes, so this might be a good time to
 make a commit. (If you've been making them more often, that's great!)
@@ -212,7 +217,8 @@ In the SquareRug class, we need to change the constructor to have default values
 for its arguments, and we need to add a get_values method which asks for input
 and stores it in the class' properties.
 
-```py
+[source,python]
+----
 class SquareRug():
     def __init__(self, size = 0, has_fringe = False):
         self.has_fringe = has_fringe
@@ -225,12 +231,13 @@ class SquareRug():
         if wants_fringe.lower().startswith('y'):
             self.has_fringe = True
         self.size = float(input("Side length of this square rug? "))
-```
+----
 
 And do the same thing for the other two classes. Now we can rewrite the control
 loop, delegating to this new get_values function!
 
-```python
+[source,python]
+----
 def get_rug():
     print("1) Square Rug")
     print("2) Rectangular Rug")
@@ -257,7 +264,7 @@ while input("Price another rug? (y/n) ").lower() == 'y':
     rug.get_values()
 
     print_rug(rug)
-```
+----
 
 Now the `get_rug` function only needs to know about the types of rugs we have in
 the program, and chooses one of them. It returns a new instance of the chosen
@@ -270,7 +277,7 @@ This feels like a great time to make a commit. You might also at this point want
 to compare this version of the program to the prior commit, and look back over
 what you've changed!
 
-## Inheritance
+== Inheritance
 
 You may have noticed some duplication starting to crop up across these classes.
 Each class has almost the same implementation of the `cost` method, and each
@@ -292,7 +299,8 @@ of doing the calculation for an area and a perimeter, it will instead have a new
 pair of methods `area` and `perimeter` to extract those calculations out. All
 together, our base `Rug` class looks like this:
 
-```py
+[source,python]
+----
 class Rug():
     def __init__(self, has_fringe = False):
         self.has_fringe = has_fringe 
@@ -316,7 +324,7 @@ class Rug():
             perimeter_cost = 0
         total_cost = area_cost + perimeter_cost
         return total_cost
-```
+----
 
 We can't really run this yet, because any time we create a `Rug` its cost will
 always come out as `0`. Instead, we need to tell Python that `SquareRug` and the
@@ -331,7 +339,8 @@ for its size, and provide new definitions for the `area` and `perimeter`
 methods. I'll give the example of `SquareRug`, and you can do the same for
 `RectangularRug` and `CircularRug`.
 
-```py
+[source,python]
+----
 class SquareRug(Rug):
     # __init__ and stays the same and is unchanged
 
@@ -347,7 +356,7 @@ class SquareRug(Rug):
 
     def perimeter(self):
         return self.size * 4
-```
+----
 
 Here, we still have our class identifier, but we added the `Rug` parent class to
 the inside of the first parenthesis. This is what tells python this is a derived
@@ -368,7 +377,7 @@ Update the Rectangular and Circular rugs to use the base class functionality!
 When you're done, make a commit! This should be much cleaner, and would be
 another great time to review the differences from the last check point.
 
-### Accessing base behavior
+=== Accessing base behavior
 
 But wait, this is missing something - how will it get whether the user wants
 fringe? Because we replaced the `get_values` method, this new version will get
@@ -377,7 +386,8 @@ case is to call a **super** method. That's a fancy way of saying we want to get
 the original version of the `get_values` method, before we changed it, and use
 that instead.
 
-```py
+[source,python]
+----
 class SquareRug(Rug):
     def __init__(self, size = 0, has_fringe = False):
         Rug.__init__(self, has_fringe)
@@ -388,7 +398,7 @@ class SquareRug(Rug):
         self.size = float(input("Side length of this square rug? "))
     
     # Other methods stay the same
-```
+----
 
 These two methods first get access to the method on the parent class by
 asking for it specifically - `Rug.__init__` and `Rug.get_values`. This treats
@@ -406,7 +416,8 @@ complex initialization behavior.
 Let's look at this for `RectangleRug`, and then you can do it yourself for
 `CircleRug`!
 
-```py
+[source,python]
+----
 class RectangularRug(Rug):
     def __init__(self, length = 0, width = 0, has_fringe = False):
         Rug.__init__(has_fringe)
@@ -423,7 +434,7 @@ class RectangularRug(Rug):
 
     def perimeter(self):
         return (self.width + self.length) * 2
-```
+----
 
 Now this is looking like it's saving us some code! Our control loop and
 functions for choosing and printing a rug are still working, because we didn't
@@ -441,7 +452,8 @@ We'll do this in two parts. First, we'll add a method `print` with no arguments
 to the base `Rug` class. Then we'll add a property `description` to each rug
 class.
 
-```py
+[source,python]
+----
 class Rug():
     def __init__(self, has_fringe = False, description = ""):
         self.has_fringe = has_fringe 
@@ -464,7 +476,7 @@ class SquareRug(Rug):
         self.size = size 
     
     # Other methods
-```
+----
 
 I think you get the point, and can handle `RectangularRug` and `CircularRug` on
 your own!
@@ -473,16 +485,17 @@ Now that `print` is in the parent rug, we can remove our entire `print_rug`
 function. Then, we need to replace the call in `price_rug` with a call to
 `rug.print()`:
 
-```py
+[source,python]
+----
 def price_rug():
     rug = get_rug()
     rug.get_values()
     rug.print()
-```
+----
 
 Here's a sample session:
 
-```
+----
 Price another rug (Y/n): Y
 1) Square Rug
 2) Rectangular Rug
@@ -501,12 +514,12 @@ Radius of this circular rug? 5
 This circular rug costs $439.82 with fringe.
 Price another rug (Y/n): n
 Goodbye!
-```
+----
 
 When you're done with all three, let's make our final commit and compare it to
 our first version with the original control loop. Quite a change, hun?
 
-## Exercises
+== Exercises
 
 *   Change the price per square foot and the price per perimeter.
 *   Refactor `SquareRug` to extend from `RectangularRug` instead of `Rug`. The
@@ -536,19 +549,19 @@ and objects let us finally have much less duplication and much clearer flow of
 operations & data. Taken together, objects allow us to abstract data in the same
 way functions allow us to abstract operations and code execution.
 
-## Exercises
+== Exercises
 
-*   **Recipe Book** Create classes for your recipes program in chapter 1. At a
-    minimum, you should have classes for `Recipe`s and `Ingredient`s. Both
-    should have a `print_for_desired_servings` method, which takes the number of
-    people to cook the recipe for, and prints the scaled ingredients for that
-    many servings.
-    *  **Measurements** Write a class hierarchy (base class and sub classes) for
-        ingredient measurements. Ingredients should take a name and a
-        measurement. Measurements should take an amount. When you write method
-        to scale the measurement to fit the serving, it should return a suitable
-        string. For instance, convert 1/8 cup to 2 tablespoons; or 1 tablespoon
-        and 1 teaspoon to 4 teaspoons.
+. **Recipe Book** Create classes for your recipes program in chapter 1. At a
+minimum, you should have classes for `Recipe`s and `Ingredient`s. Both
+should have a `print_for_desired_servings` method, which takes the number of
+people to cook the recipe for, and prints the scaled ingredients for that
+many servings.
+.. **Measurements** Write a class hierarchy (base class and sub classes) for
+ingredient measurements. Ingredients should take a name and a
+measurement. Measurements should take an amount. When you write method
+to scale the measurement to fit the serving, it should return a suitable
+string. For instance, convert 1/8 cup to 2 tablespoons; or 1 tablespoon
+and 1 teaspoon to 4 teaspoons.
 
 Now that we know the basics of programming with objects, we can look at
-[tracing objects in memory](./tracing_objets.md).
+tracing objects in memory.

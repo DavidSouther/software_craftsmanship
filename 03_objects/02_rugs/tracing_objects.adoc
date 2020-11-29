@@ -1,4 +1,4 @@
-# Tracing Objects
+= Tracing Objects
 
 Now that we're starting to develop our feel for using objects as a way to bundle
 data, let's take a closer look at how the computer handles the data in an object
@@ -25,13 +25,11 @@ lets us clearly see where each variable is pointing, when it has an object value
 instead of a simple value.
 
 
+////
 > TODO: Replace with a proper digram. Until then, instead of arrows, the text
 diagrams will use "tags" - `0x10` is the first object, `0x20` the second, etc.
 Then down below, in addition to the type, we'll track the tag of the object as
 well. When I get around to making a real graphic all the `0x..` tags will be
 replaced with arrows.
-
-```
-
-```
+////
 

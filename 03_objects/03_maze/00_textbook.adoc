@@ -1,4 +1,4 @@
-# Software Design and Architecture
+= Software Design and Architecture
 
 On our journey into the world of Software Craftsmanship, we've completed our
 first steps. We have an understanding of the way computers run and store values.
@@ -23,7 +23,7 @@ We're going to look at a problem statement, discuss several approaches to
 designing code which will handle that problem, and then implementing one version
 based on our analysis.
 
-## Maze
+== Maze
 
 We're writing a video game called "Maze". In this game, the player starts in
 some room of a maze. Their goal is to find the exit of the maze. They can wander
@@ -32,7 +32,7 @@ locked, and the keys to any locked doors are place in rooms throughout the maze.
 Let's look at an almost trivial sample maze:
 
 
-```
+----
   012345678
 6 ┌───┐
 5 │ X │
@@ -41,7 +41,7 @@ Let's look at an almost trivial sample maze:
 2 ├─╫─┤ B │
 1 │ E ╪   │
 0 └───┴───┘
-```
+----
 
 In this maze, the player starts in the room on the bottom left marked `E`. This
 room has two doors, one to the north and one to the west. The room to the west
@@ -60,7 +60,8 @@ the drawing we have. We would then need some notion of a player, which would
 need to figure out how to "walk around" in this two dimensional array. Let's
 see what this might look like for a single function, `move_left`, in Python:
 
-```python
+[source,python]
+----
 def move_up(maze, player):
     if len(maze) <= player.row + 1:
         # Can't move this direction
@@ -75,7 +76,7 @@ def move_up(maze, player):
             return
     if cell == ' ' or cell == '╫':
         player.rows += 1
-```
+----
 
 If we call this function using the above maze and a player at row 1 column 2, we
 can see what happens. First, we check if the cell up one row is outside the
@@ -100,7 +101,7 @@ for locked doors. On second review, we actually see that this code doesn't do
 anything in the case of moving onto a square with a key - try tracing the
 function starting at row 1 column 6.
 
-## Rooms and Doors
+== Rooms and Doors
 
 Let's try a different design. The last design tried to create a model of the
 maze with the ASCII diagram being the "source of truth". With our notion of
@@ -120,7 +121,8 @@ idea of a door. A door is an object which has two sides, each being rooms, and
 a property for whether it's locked (and which key unlocks is). Now, how does
 the `move_up` code look in python?
 
-```python
+[source,python]
+----
 def move_up(player):
     room = player.current_room
     door = room.north_door
@@ -130,7 +132,7 @@ def move_up(player):
         return
     player.current_room = door.other_side(room)
     player.current_room.on_enter(player)
-```
+----
 
 Comparing the two functions, it's hopefully apparent this is a much clearer as
 to what's happening. We know that the function is working with the north door
@@ -151,5 +153,3 @@ to projects coming in on time, in budget, and serving a long and useful life.
 
 Let's take a look at the full example and explore this maze in depth in our
 language of choice.
-
-[Python](./01_python.md)

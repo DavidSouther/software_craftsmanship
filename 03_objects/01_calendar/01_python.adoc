@@ -1,4 +1,4 @@
-# Objects and properties
+= Objects and properties
 
 In most of our Python up to this point, we've been using single variables to
 refer to single values. We have one variable that refers to an `area`, which we
@@ -33,7 +33,7 @@ a number, a string, an array, or even another object!
 Before we go back to our rugs example, we're going to work with a built-in
 object type first, `datetime`.
 
-## Dates
+== Dates
 
 In computer programming, handling dates can get complicated. Unlike numbers,
 dates have dozens of rules controlling how a date is handled. From different
@@ -48,11 +48,12 @@ new folder).
 
 Make a new file, `calendar.py`, and let's get going!
 
-```python
+[source,python]
+----
 import colors
 from datetime import datetime, timedelta
 from time import sleep
-```
+----
 
 These lines allow us to use `datetime` later in the program. It's similar to
 `math` from chapter 1. For us, we want the function `datetime.now()`, which gives
@@ -71,7 +72,8 @@ is what we can look at. If we want a different `datetime`, we have to call `date
 *another time*, and this time we get back a *different* datetime! It doesn't
 update the one that we had gotten before. Let's see what that looks like.
 
-```py
+[source,python]
+----
 moment_1 = datetime.now()
 sleep(0.5)
 moment_2 = datetime.now()
@@ -81,15 +83,15 @@ moment_3 = datetime.now()
 print(moment_1.hour, moment_1.minute, moment_1.second, moment_1.microsecond)
 print(moment_2.hour, moment_2.minute, moment_2.second, moment_2.microsecond)
 print(moment_3.hour, moment_3.minute, moment_3.second, moment_3.microsecond)
-```
+----
 
 Running that at a little before 3 pm I got this output:
 
-```
+----
 14 48 36 731726
 14 48 37 235577
 14 48 38 736215
-```
+----
 
 You should have something similar - the second one is about .5 seconds after the
 first, and the third is about 2 second after the first!
@@ -97,7 +99,7 @@ first, and the third is about 2 second after the first!
 > `datetime` tracks hours using 24 hours in a day. Later in this section, we'll
 see how to get AM/PM hours.
 
-### Desktop Calendar
+=== Desktop Calendar
 
 Before we dive in to the rest of this program, let's take a look at what it'll
 show us. It's going to be a program that prints a calendar of the current month.
@@ -113,12 +115,13 @@ It will look like this when we're done:
 
 Let's take a look at a function that returns the string for which month of
 the year a date is. Remove everything but the imports above, and add this
-instead. The `def` keyword starts starts *def*ining a section of code. The
-parenthesese tell python it is a function, while `month` gives it a name.
+instead. The `def` keyword starts starts *def*{empty}ining a section of code. The
+parentheses tell python it is a function, while `month` gives it a name.
 Finally, `date` names an argument for the function. This will take a
 `datetime` object, not just a number!
 
-```python
+[source,python]
+----
 def month(date):
     if date.month == 1:
         return "January"
@@ -127,7 +130,7 @@ def month(date):
     # 10 more cases for you to write out
  
 print(month(datetime.now()))
-```
+----
 
 Running that this morning, it told me it was `May` as expected!
 
@@ -140,17 +143,18 @@ on an object using a `.`. So `date.month` says go to the value in the variable
 At this point, we can do the top bar of our calendar. Replace the print line
 with this bit of code.
 
-```python
+[source,python]
+----
 moment = datetime.now()
 month_face = f"{moment.day} {month(moment)} {moment.year}"
 print(f"{month_face:^28}")
-```
+----
 
 And running that, we see
 
-```
+----
         19 May 2020        
-```
+----
 
 Let's look at this bit by bit. We get a single moment, so that we can use that
 one moment in time several times, once to get the day, once for the month, and
@@ -167,11 +171,11 @@ object returned by the `no` function (which, again, is a datetime) -- `day` and
 just wrote above.
 
 We store this in the variable `month_face` so that we can use a second format
-string to center the text we just created. We do this with the `:^` format
+string to center the text we just created. We do this with the `:\^` format
 specifier. In chapter 2, we used `:.2f` to specify the amount of precision we
 wanted in a floating point number. In the format string, the `:` marks where
 the variable ends, and when modifiers to the formatting begin. There are
-three that are useful when working with text, and those are `:<`, `:^`, and
+three that are useful when working with text, and those are `:<`, `:\^`, and
 `:>`. All three take a number after the arrow, and they fill out the text
 with extra spaces on the sides so that the final string has many characters
 (including spaces) as the number specifies. The text is padded with
@@ -180,7 +184,7 @@ whitespace after, around, or before the value it got from the left of the
 string of text. In this case, we use 28 characters because that's how wide
 our calendar will be.
 
-### Calendar Days
+=== Calendar Days
 
 Let's start to build out the calendar days part of the program. We're going to
 do it in stages, starting simple and adding to it as we go. We still want to get
@@ -204,20 +208,21 @@ weekday and week of the month to choose a row and column to print it in. Two
 separate things to do means two separate functions! Let's write ourselves a
 `print_day` function first, which takes a `datetime` and week to print it in.
 
-```python
+[source,python]
+----
 def print_day(date, row):
     column = 2 + 4 * date.weekday()
     print(colors.at(row, column), end="")
     print(date.day)
 
 print_day(datetime.now(), 1)
-```
+----
 
 For me, on Tuesday the 19th, I see a few spaces and then `19`.
 
-```
+----
      19
-```
+----
 
 `date.weekday()` is a function which will return the weekday (0 is Monday, 6
 is Sunday) for the date it's attached to. For our calendar, we want each
@@ -237,13 +242,14 @@ behavior we want, it's much easier to do it by default instead of requiring
 every time we use print to include it. This is the escape hatch for when we
 don't want the default.
 
-### Calendar Weeks
+=== Calendar Weeks
 
 Now that we can print one day, let's do the `print_month` function which will
 print an entire month for us. Delete the `print_day` testing line, and then add
 & test this `print_month` function.
 
-```py
+[source,python]
+----
 one_day = timedelta(1)
 def print_month(date, first_week_row):
     day_in_month = datetime(date.year, date.month, 1)
@@ -256,7 +262,7 @@ def print_month(date, first_week_row):
 
 print(colors.CLEAR)
 print_month(datetime.now(), 2)
-```
+----
 
 There's a bit more to this one, as we might expect when we need a loop. The
 function declaration looks about the same as for `print_day` - a `date` to
@@ -275,34 +281,36 @@ amount of time between two points in time. There are two ways to make a
 `timedelta`. The first is to subtract one date from another. (No need to type
 this next example yourself.)
 
-```py
+[source,python]
+----
 time_then = datetime.now()
 sleep(10)
 time_now = datetime.now()
 time_difference =time_then - time_now
 print(time_difference)
-```
+----
 
 Prints out
 
-```
+----
 0:00:10.001196
-```
+----
 
 Which tells us it took 10 seconds and some change between those two datetimes we
 created!
 
 Once we have a timedelta, we can go the other way around.
 
-```py
+[source,python]
+----
 print(time_now)
 print(time_now + time_difference)
-```
+----
 
-```
+----
 2020-05-20 08:08:59.351762
 2020-05-20 08:09:09.352958
-```
+----
 
 That works great for things like "How long until Christmas Day?" by creating a
 datetime for the holiday, and subtracting today. We're going to use it a bit
@@ -319,18 +327,19 @@ and then add that to the date representing the start of the month.
 
 That bit alone looks like this:
 
-```python
+[source,python]
+----
 one_day = timedelta(1)
 def print_month(date):
     monthly = datetime(date.year, date.month, 1)
     while monthly.month == date.month:
         print(monthly.day)
         monthly += one_day
-```
+----
 
 Running this with `print_month(datetime.now())`, I get this output:
 
-```
+----
 1
 2
 3
@@ -338,7 +347,7 @@ Running this with `print_month(datetime.now())`, I get this output:
 ... 25 more lines...
 30
 31
-```
+----
 
 So we have `one_day` which is the `timedelta(1)` to represent a single day. That
 is defined at the file level - we'll just use the same one every time we call
@@ -364,14 +373,15 @@ is `6`, Sunday (incrementing *after* printing).
 Run it again, and take some time to think through what we've just covered and
 how it works together.
 
-### Highlighting Days
+=== Highlighting Days
 
 Now that we have our calendar printing out, let's make it highlight each day
 based on whether it's a weekday, a weekend, a holiday, or the current day. We
 will do this by first writing a helper function for each of those cases, and
 then by using those functions in the `print_date` function we already wrote.
 
-```py
+[source,python]
+----
 def is_weekend(date):
     # Monday is 0, Sunday is 6
     return date.weekday() > 4
@@ -395,7 +405,7 @@ def is_holiday(date):
 def is_workday(date):
     return not is_weekend(date) and not is_holiday(date)
 
-```
+----
 
 The first helper, `is_weekend`, is very easy. It just checks if the `weekday()`
 is greater than 4 - remember, 0 is Monday and 5 is Saturday!
@@ -423,7 +433,8 @@ here as an exercise...
 With these helpers in hand, we can expand our `print_day` function with some
 color base on which of these conditions are true.
 
-```py
+[source,python]
+----
 def print_day(date, row):
     now = datetime.now()
     column = 2 + (4 * date.weekday())
@@ -437,14 +448,15 @@ def print_day(date, row):
     else:
         print(colors.WHITE, end="")
     print(date.day)
-```
+----
 
 Using this in place of our `print_day` before, and testing using the
 `print_month` function, should get us pretty close to the output we demoed at
 the beginning of the chapter! We just need to add a couple pieces of "pretty
 printing" before calling `print_month`.
 
-```py
+[source,python]
+----
 def print_calendar():
     now = datetime.now()
     print(colors.CLEAR, colors.at(1, 1))
@@ -452,42 +464,42 @@ def print_calendar():
     print_month(now, 3)
 
 print_calendar()
-```
+----
 
 All we do here is grab the current datetime, clear the screen, and start writing
 the calendar at the 4th row, first column. We add a row of the day of the week,
 and then use `print_month` starting at row 6 to give us the days in the calendar
 appropriately aligned. It should look like this, all said and done:
 
-```
+----
  M   Tu  W   Th  F   Sa  Su
                  1   2   3
  4   5   6   7   8   9   10
  11  12  13  14  15  16  17
  18  19  20  21  22  23  24
  25  26  27  28  29  30  31
- ```
+----
 
- ## Recap
+== Recap
 
- In this section we looked at using two builtin Python objects, `datetime` and
- `timedelta`. An object is a programming tool to group related data together.
- Instead of having a bunch of variables that are near eachother and maybe have
- the same name, we instead create an **object** that keeps all those values in
- its **properties**. We can then use the single value of the object, rather than
- needing to specify each piece of it separately every time.
+In this section we looked at using two builtin Python objects, `datetime` and
+`timedelta`. An object is a programming tool to group related data together.
+Instead of having a bunch of variables that are near eachother and maybe have
+the same name, we instead create an **object** that keeps all those values in
+its **properties**. We can then use the single value of the object, rather than
+needing to specify each piece of it separately every time.
 
- Up next, we will look at how to create our own objects, when we [revisit the
- rugshop with classes](../02_rugs/README.md) 
+Up next, we will look at how to create our own objects, when we revisit the
+rugshop with classes.
 
- ## Exercises
+== Exercises
 
-*   **Vacations** Add vacation days and give them a color.
-*   **Clock face** Look at more properties on datetime, and use them to print a
+. **Vacations** Add vacation days and give them a color.
+. **Clock face** Look at more properties on datetime, and use them to print a
     clock face. Bonus: Use the `format` function and Python's datetime format
     codes.
-*   **Days until** Using timedeltas, count the number of days between two dates.
+. **Days until** Using timedeltas, count the number of days between two dates.
     Use this and your weekend/vacation checks to print "Days until/Workdays
     until"
-*   **Tick Tick Tick** Using loops and `time.sleep`, make your clock tick by
+. **Tick Tick Tick** Using loops and `time.sleep`, make your clock tick by
     updating every 10th of a second.
