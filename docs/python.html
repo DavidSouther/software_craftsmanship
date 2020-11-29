@@ -478,6 +478,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_maze_design_with_classes">Maze Design with Classes</a></li>
 </ul>
 </li>
+<li><a href="#_unit_testing">Unit Testing</a>
+<ul class="sectlevel2">
+<li><a href="#_python_unittest">Python unittest</a></li>
+<li><a href="#_testing_maze">Testing Maze</a></li>
+<li><a href="#_advanced_topics">Advanced Topics</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -4313,10 +4320,765 @@ of things.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_unit_testing">Unit Testing</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_python_unittest">Python unittest</h3>
+<div class="paragraph">
+<p>Like <code>datetime</code> for working with dates and times, Python includes a standard
+library for writing unit tests. It&#8217;s imaginitively called <code>unittest</code>. <code>unittest</code>
+exports a few utilities, but the main feature is a base class <code>TestCase</code>. Each
+test case we write will be a class that extends <code>TestCase</code>. These test case
+classes will use methods for each test case they want to execute. We&#8217;ll write a
+test case class for each rug type, and within them write a test method for each
+of the edge cases we want to cover.</p>
+</div>
+<div class="paragraph">
+<p>We&#8217;ll write our first test in just a moment, but we do need to do a tiny bit of
+clean up and preparation. First, we want to write our test file in the same
+folder as the <code>rugs.py</code> program from chapter 3. We can either create
+<code>rugs_test.py</code> in the same folder as <code>rugs.py</code> lives now, or we can create a new
+folder, copy <code>rugs.py</code> there, and then create <code>rugs_test.py</code>. Whichever way you
+do it, we need to fix <code>rugs.py</code> a tiny little bit to make it work as a library.</p>
+</div>
+<div class="paragraph">
+<p>Right now, <code>rugs.py</code> is a <strong>script</strong>, because it executes as a single file and
+immediately runs commands to start taking user input. While we want this
+behavior when we run the program, the unit test doesn&#8217;t have user behavior. It
+just wants the class definitions from the file. But if we <code>import</code> the file
+right now, Python will find the class definitions, and then right away start
+asking whether the user wants to price a rug.</p>
+</div>
+<div class="paragraph">
+<p>What we&#8217;re going to do is put the last two lines (the <code>while</code> loop) in a
+function, and then add a couple lines of Python which will only execute that
+function when we run the file directly, as opposed to when it gets included as a
+library in another program.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">def price_rugs():
+    while not input("Price another rug (Y/n): ").lower().startswith("n"):
+        price_rug()
+
+if __name__ == "__main__":
+    price_rugs()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This last part, <code>if <em>name</em> == "<em>main</em>":</code> takes advantage of a Python feature
+that lets us know if the file we&#8217;re in is the file that we ran specifically,
+rather than a file which was included by another file. <code><em>name</em></code> is a special
+variable in Python, and when it has the value <code>"<em>main</em>"</code>, we know that the
+user wanted to run this file, rather than importing it.</p>
+</div>
+<div class="paragraph">
+<p>Now we can write our first test case! Again, in <code>rugs_test.py</code>, add this code
+and run it!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import unittest
+import rugs
+
+
+class SquareRugTestCase(unittest.TestCase):
+    def test_no_fringe(self):
+        rug = rugs.SquareRug(5, False)
+
+        area = rug.area()
+        cost = rug.cost()
+
+        self.assertEqual(area, 25)
+        self.assertEqual(cost, 125)
+
+
+if __name__ == "__main__":
+    unittest.main()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When we run it, <code>unittest</code> has some great output for us:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.
+----------------------------------------------------------------------
+Ran 1 test in 1.236s
+
+OK</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This says that it took about a second to run one test, and all the tests pass!</p>
+</div>
+<div class="paragraph">
+<p>The code to create the test starts by importing <code>unittest</code>, which we&#8217;ll use to
+coordinate and organize the tests, and <code>rugs</code>, which is the name of the file
+which has our <code>Rug</code> classes. The test suite is <code>SquareRugTestCase</code>, which
+extends the <code>unittest.TestCase</code> utilities. These are responsible for triggering
+and gathering results, and reporting the final results at the end of the run.
+<code>SquareRugtestCase</code> has no constructor (<code><em>init</em></code> method) because it doesn&#8217;t
+need to set up any contructors or do any initialization.</p>
+</div>
+<div class="paragraph">
+<p>The first test, <code>test_no_fringe</code>, makes a square rug. It uses the values <code>5</code> and
+<code>False</code> for size and fringe. With the test set up, it moves on to evaluating the
+calculations. It saves <code>area</code>, <code>perimeter</code>, and <code>cost</code> in local variables.
+Finally, the assert uses the provided helper classes to check if the values are
+what we expect. <code>self.assertEquals(cost, 125)</code> compares the two values, and if
+they are not exactly equal, print and record the failing test.</p>
+</div>
+<div class="paragraph">
+<p>To see a failing test, try changing one of the constants, and see what happens!
+Here&#8217;s an example of mine:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>F
+======================================================================
+FAIL: test_no_fringe (__main__.SquareRugTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "01_rug_tests\rug_test.py", line 14, in test_no_fringe
+    self.assertEqual(perimeter, 25)
+AssertionError: 20 != 25
+
+----------------------------------------------------------------------
+Ran 1 tests in 0.004s</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So I changed the perimeter check to be 25, which is not the correct value. I can
+read this error message and see specifically the line that was at issue, and the
+problems associated. In appendix 3, we look in depth at reading and using
+exceptions to debug our programs.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s add another two tests!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class SquareRugTestCase(unittest.TestCase):
+    def test_square_rug_no_fringe(self):
+        # ... the test from before
+
+    def test_square_rug_fringe(self):
+        rug = rugs.SquareRug(5, True)
+
+        area = rug.area()
+        perimeter = rug.perimeter()
+        cost = rug.cost()
+
+        self.assertEqual(area, 25)
+        self.assertEqual(cost, 155)
+
+    def test_square_rug_no_size(self):
+        rug = rugs.SquareRug(0, False)
+
+        area = rug.area()
+        perimeter = rug.perimeter()
+        cost = rug.cost()
+
+        self.assertEqual(area, 0)
+        self.assertEqual(perimeter, 0)
+        self.assertEqual(cost, 0)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And running this, it says we have three tests, <code>OK</code>!</p>
+</div>
+<div class="paragraph">
+<p>These tests probably don&#8217;t seem like a lot, but they give us quite a bit of
+easily verifiable information. While it looks like a long amount of code (and,
+it is&#8230;&#8203;) the code is clear and direct in what it&#8217;s doing. There&#8217;s no logic,
+only direct calls and direct comparisons. While we&#8217;ve tried to be concise and
+tight in our main program, being able to simply read the tests is a great boon.</p>
+</div>
+<div class="sect3">
+<h4 id="_writing_your_own_tests">Writing your own tests</h4>
+<div class="paragraph">
+<p>As you go to write your own unit tests, we need a way to take what we&#8217;ve done
+for rugs and apply it generally. The first thing we want to do is create a test
+file for every program file we create. In the rugs program, we had <code>rugs.py</code> and
+put the test in <code>rugs_test.py</code>. This convention, of creating a second file and
+adding <code>\_test</code> to it, is a great way to organize your project. It is clear what
+your program files are, and what the tests are.</p>
+</div>
+<div class="paragraph">
+<p>The second thing to do is to make sure our program has no behavior when it&#8217;s
+first called. That is, Python can run the file and find all the functions and
+classes and variables, but it won&#8217;t execute any code right away. It needs to
+wait until it&#8217;s told explicitly to run in a test or another file. But many of
+our programs do need to do something if we run them specifically! To achieve
+this, at the end of our python files we check if we&#8217;re running the "main" file
+that was specified on the command line.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>if __name__ == "__main__":
+    # Run the program if it was called directly</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Because we should be testing all our programs, any python file we write that does
+more than declare classes and functions should end with this block of code.</p>
+</div>
+<div class="paragraph">
+<p>Third, we can import the pieces of our program into our test. Because the test
+file lives in the same folder as the program, we can just use the file name
+(without the .py extension) in the <code>from</code> part of our import. There are two ways
+we can import our implementation. Using the rugs example, we could use either
+of these forms:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>import rugs
+
+squareRug = rugs.SquareRug()
+rectRug = rugs.RectangularRug()</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This form imports the file as an object, where the properties are all the
+functions and classes at the top level of the <code>rugs.py</code> file. Alternatively,
+you can import each item in isolation. This is useful if you only need one or
+two items from the file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>from rugs import SquareRug
+from rugs import RectangularRug
+
+squareRug = SquareRug()
+rectRug = RectangularRug()</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We have used this form before when we only wanted one or two things out of a
+much larger module, like when we did <code>from math import sqrt</code>. While we&#8217;re doing
+imports, we also want to import TestCase from the unittest module which Python
+provides.</p>
+</div>
+<div class="paragraph">
+<p>After importing the parts of our program we intend to test, we can fourthly start
+creating TestCases. A TestCase does two things - it groups together tests for
+related pieces of functionality, and it extends from the Python TestCase
+base class to get a bunch of "magic" that will actually execute the tests when
+you run the test file.</p>
+</div>
+<div class="paragraph">
+<p>To get that magic, we need to create a class structured in a very specific
+way. First, it must extend from unittest.TestCase. Second, it must have methods
+whose name begins with <code>test</code>. Python looks at classes which extend TestCase
+for any method that starts with <code>test</code>, and treats those as the specific tests
+to run and, whether they pass or fail, will report them with that name.</p>
+</div>
+<div class="paragraph">
+<p>We can look at the Rugs tests for an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import unittest
+import rugs
+
+class RectangularRugsTest(TestCase):
+    def test_rectangle_fringe(self):
+        # The body of the test</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you create tests for your own projects, it&#8217;s usually a good idea to have
+one test file per program file, and one test case in the test file per class
+or function in the program file. Each TestCase then has multiple tests methods
+to verify each part of functionality that it has. A simple function might have
+just a single test method, while a complex class could have dozens or hundreds!</p>
+</div>
+<div class="paragraph">
+<p>Our fifth step in creating a test for our programs is writing out the details
+of each possible way to run the function or class. You want to be writing a
+test method for the common ways to use it, and you realy want to write a test
+method for each of the uncommon ways! For instance, in the rugs, we tested both
+with and without fringe. These are common cases. We also tested what happens
+if a size is 0! This and other uncommon cases are <strong>edge cases</strong>, and because
+they&#8217;re dealing with things a bit wonky or out of the ordinary, we really want
+to focus on them in our tests to make sure it behaves just as we thing it should.</p>
+</div>
+<div class="paragraph">
+<p>Within our test methods, there&#8217;s a common approach: set up, execute, assert.
+It&#8217;s easiest to look at these in backwards order. Assert is how we will verify
+our program is behaving correctly. We know that if it does perform as specified,
+our program will be in some certain state. As a very simple example, let&#8217;s say
+our program is adding two numbers: <code>a = b + c</code>. After the program has completed
+this step, we expect the variable <code>a</code> to have a certain value. And to demonstrate
+that, we will <code>assert</code> that it does. We do this with the <code>assert&#8230;&#8203;</code> methods.
+In rugs, this was <code>self.assertEqual(rug.cost, 50)</code>. For this example, it would be
+<code>self.assertEqual(a, the_value_of_b_plus_c)</code>.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+We use the expected value of b + c, instead of calculating it inline!
+By manually performing the expected calculation, you save yourself from
+accidentally using a value that came from a bug in your code! And yes, most of
+the time the computation is much more complex than addition!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p><code>assertEqual</code> is the most common assertion you&#8217;ll do, but others are available
+if you check the Python documentation.</p>
+</div>
+<div class="paragraph">
+<p>To assert something about a program state, we must have executed it before.
+In the rugs test, that was calling the cost method and storing the result. In our
+simple example here, it would just be the one line of code <code>a = b + c</code>. For
+this to work, we need some values for <code>b</code> and <code>c</code>, and that&#8217;s the set up part.
+All in all, this test would look like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># Create a test case
+class ArithmeticTests(unittest.TestCase):
+  # Declare a test method
+  def test_simple_addition(self):
+    # Set up
+    b = 5
+    c = 3
+
+    # Execute
+    a = add(b, c)
+
+    # Assert
+    self.assertEqual(a, 8)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There you go! These are all the pieces of defining, creating, and implementing
+a unit test for your program. The last piece is to run it. To do that, we&#8217;re
+going to tell unittest to run when the test class is executed directly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>if __name__ == "__main__":
+  unittest.main()</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Putting that at the end of your <code>\_test.py</code> file will let you run it with python
+on the command line, and it will either tell you all the unit tests passed, or
+it will show you an error for exactly which one failed!</p>
+</div>
+<div class="paragraph">
+<p>The whole example again:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import unittest # Get the testing library
+
+from my_arithmetic import add # Get the thing we wrote and will test
+
+# Create a test case
+class ArithmeticTests(unittest.TestCase):
+  # Declare a test method
+  def test_simple_addition(self):
+    # Set up
+    b = 5
+    c = 3
+
+    # Execute
+    a = add(b, c)
+
+    # Assert
+    self.assertEqual(a, 8)
+
+# Run the tests when we execute this file
+if __name__ == "__main__":
+  unittest.main()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exercises_12">Exercises</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write tests for the other rugs types you have.</p>
+</li>
+<li>
+<p>Write tests for recipe ingredient scaling.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_testing_maze">Testing Maze</h3>
+<div class="paragraph">
+<p>The maze program is much more complex than the rugs. It involves several objects
+that interact with one another and apply logic to evaluate and validation those
+interactions. For this test, we&#8217;re going to start by thinking through our test
+suite before writing our test cases.</p>
+</div>
+<div class="paragraph">
+<p>The maze has several classes, and we&#8217;ll want one test case for each class. The
+idea will be to capture all the tests that are specific to a class in its own
+test case class, so there&#8217;s a 1:1 correspondance. This doesn&#8217;t mean we can&#8217;t use
+other classes in these tests, just that the focus will be on one individual
+class at a time.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start writing this down. Save a new file, <code>maze_test.py</code>. Make sure either
+you save it in the same folder as <code>maze.py</code>, or create a new folder and move
+<code>maze.py</code> so they&#8217;re adjacent. In this file, start with the bare minimum of a
+unit test.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import unittest
+import maze
+
+
+# Test cases will go here
+
+
+if __name__ == "__main__":
+    unittest.main()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This imports unit test and maze, and if the file is executed directly, will run
+the unit tests.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s look at our test cases. We have <code>Room</code>, <code>Door</code>, <code>Lock</code>, <code>Keyring</code>,
+<code>Player</code>, and <code>Game</code>. Because <code>Game</code> deals with input and output, we&#8217;ll cover
+its tests separately in the next section. Looking at the other five classes, we
+should start with classes who have the least dependencies on other classes, and
+write the simplest tests for that first.</p>
+</div>
+<div class="paragraph">
+<p><code>Lock</code> has no other classes that it needs for it to work. It just takes keys,
+which are strings, and checks if the key is in its list of keys that fit.
+Looking at what to test, I see four easily identifiable cases:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Can it add a key that fits at all?</p>
+</li>
+<li>
+<p>Does it handle adding a duplicate key?</p>
+</li>
+<li>
+<p>Will it accept a fitting key?</p>
+</li>
+<li>
+<p>Will it reject a key that doesn&#8217;t fit?</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We can write all these out as individual test cases. But, I don&#8217;t want to think
+about their implementation yet. I want us to take time to think about the test
+suite as a whole, before we look at writing individual tests. We can do that in
+Python by using the keyword <code>pass</code> as the body of a method - this tells Python
+that the method is really here, it just doesn&#8217;t do anything (yet). We&#8217;ve stubbed
+it out.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class LockTestCase(unittest.TestCase):
+    def test_add_fitting_key(self):
+        pass
+
+    def test_add_duplicate_fitting_key(self):
+        pass
+
+    def test_accepts_fitting_key(self):
+        pass
+
+    def test_does_not_accept_missing_key(self):
+        pass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we have our <code>LockTestCase</code> which extends <code>TestCase</code>. It has four <code>test_</code>
+methods for each of the four cases. Each of those has the body <code>pass</code> which we
+can come back to later to fill in.</p>
+</div>
+<div class="paragraph">
+<p>With the <code>Lock</code> tests sketched out, I think the <code>Keyring</code> makes sense. It&#8217;s very
+similar to the <code>Lock</code>, but also needs to understand the difference between doors
+that are locked that it has the key for, doors that are locked that it doesn&#8217;t
+have the key for, and doors that are simply unlocked.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class KeyringTestCase(unittest.TestCase):
+    def test_add_key(self):
+        pass
+
+    def test_add_duplicate_key(self):
+        pass
+
+    def test_can_unlock_door_no_lock(self):
+        pass
+
+    def test_can_unlock_door_having_key(self):
+        pass
+
+    def test_cannot_unlock_door_missing_key(self):
+        pass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We started using <code>Door`s in `KeyringTestCase</code>, so we might do their tests next.
+Most of the complexity around doors is actually in the lock. It&#8217;s not
+particularly useful to test that a constructor did or did not set a property (if
+that&#8217;s broken, we&#8217;d find out in other tests). So for the <code>Door</code>, we only need to
+test that the <code>other_side</code> function works.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class DoorTestCase(unittest.TestCase):
+    def test_tracks_other_side(self):
+        pass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Similar to the door and the lock, we won&#8217;t test that a <code>Room</code> can correctly get
+a description. But we do need to test that a <code>Room</code> can add a door in each
+direction, that it adds keys to those doors, and that when a player first enters
+the room that it uses <code>on_enter</code> appropriately.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class RoomTestCase(unittest.TestCase):
+    def test_add_north_door(self):
+        pass
+
+    # Three other directions, for you to stub out
+
+    def test_on_enter_adds_key(self):
+        pass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As we said, we&#8217;re leaving the <code>Game</code> tests to the next section, so the only one
+we have left is the <code>Player</code>. All the Player logic is around the <code>move_through</code>
+method, so we&#8217;ll write a test for each of these cases.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class PlayerTestCase(unittest.TestCase):
+    def test_can_move_through_unlocked_door(self):
+        pass
+
+    def test_can_move_through_locked_door_with_key(self):
+        pass
+
+    def test_cannot_move_through_locked_door_without_key(self):
+        pass
+
+    def test_cannot_move_through_None_door(self):
+        pass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s take a moment to look over these classes. We have tests for each of the
+individual pieces of logic. With this level of coverage, we can be pretty
+confident that our code will behave as expected, if each of these tests pass.
+All we need to do is actually write them!</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class LockTestCase(unittest.TestCase):
+    def test_add_fitting_key(self):
+        lock = maze.Lock()
+
+        lock.add_fitting_key("blue")
+
+        self.assertEqual(lock.fitting_keys, ["blue"])
+
+    def test_add_duplicate_fitting_key(self):
+        lock = maze.Lock()
+
+        lock.add_fitting_key("blue")
+        lock.add_fitting_key("blue")
+
+        self.assertEqual(lock.fitting_keys, ["blue"])
+
+    def test_accepts_fitting_key(self):
+        lock = maze.Lock()
+        lock.add_fitting_key("blue")
+
+        accepts = lock.accepts("blue")
+
+        self.assertTrue(accepts)
+
+    def test_does_not_accept_missing_key(self):
+        lock = maze.Lock()
+        lock.add_fitting_key("blue")
+
+        accepts = lock.accepts("red")
+
+        self.assertFalse(accepts)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class KeyringTestCase(unittest.TestCase):
+    def test_can_unlock_door_no_lock(self):
+        keyring = maze.Keyring()
+        door = maze.Door(maze.Room(), maze.Room())
+
+        can_unlock = keyring.can_unlock(door)
+
+        self.assertTrue(can_unlock)
+
+    def test_can_unlock_door_having_key(self):
+        key = "blue"
+        keyring = maze.Keyring()
+        lock = maze.Lock()
+        keyring.add_key(key)
+        lock.add_fitting_key(key)
+        door = maze.Door(maze.Room(), maze.Room(), lock)
+
+        can_unlock = keyring.can_unlock(door)
+
+        self.assertTrue(can_unlock)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class DoorTestCase(unittest.TestCase):
+    def test_tracks_other_side(self):
+        room_a = maze.Room("A")
+        room_b = maze.Room("B")
+        door = maze.Door(room_a, room_b)
+
+        other_size_a = door.other_side(room_a)
+        other_size_b = door.other_side(room_b)
+
+        self.assertEqual(other_size_a, room_b)
+        self.assertEqual(other_size_b, room_a)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class RoomTestCase(unittest.TestCase):
+    def test_add_north_door(self):
+        room = maze.Room("A")
+        north_room = maze.Room("B")
+
+        room.add_north_door(north_room)
+
+        self.assertEqual(room.north_door.other_side(room), north_room)
+        self.assertEqual(
+            north_room.south_door.other_side(north_room), room)
+        self.assertIsNone(north_room.north_door)
+
+    def test_on_enter_adds_key(self):
+        room = maze.Room("A", "blue")
+        player = maze.Player()
+
+        room.on_enter(player)
+
+        self.assertIn("blue", player.keyring.keys)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class PlayerTestCase(unittest.TestCase):
+    def test_can_move_through_locked_door_with_key(self):
+        key = "blue"
+        room_a = maze.Room("A")
+        room_b = maze.Room("B")
+        lock = maze.Lock()
+        lock.add_fitting_key(key)
+        room_a.add_north_door(room_b, lock)
+        player = maze.Player(room_a)
+        player.keyring.add_key(key)
+
+        player.move_through(room_a.north_door)
+
+        self.assertEqual(player.current_room, room_b)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_advanced_topics">Advanced Topics</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class GameTestCase(unittest.TestCase):
+    def setUp(self):
+        self.game = maze.basic_maze()
+
+    @unittest.mock.patch("builtins.print")
+    def test_print_room(self, mock_print):
+        self.game.print_room()
+
+        mock_print.assert_any_call("You are in the entry way.")
+        mock_print.assert_any_call("There is a door to the (n)orth.")
+        mock_print.assert_any_call("There is a door to the (e)ast.")
+
+    def test_move_player(self):
+        kitchen = self.game.end_room
+        dining_room = kitchen.south_door.other_side(kitchen)
+
+        self.game.move_player("n")
+
+        self.assertEqual(self.game.player.current_room, dining_room)
+
+    @unittest.mock.patch("builtins.print")
+    def test_move_player_no_room(self, mock_print):
+        self.game.move_player("s")
+
+        self.assertEqual(
+            self.game.player.current_room, self.game.start_room)
+
+    @unittest.mock.patch("builtins.print")
+    @unittest.mock.patch("builtins.input")
+    def skip_test_play_stuck(self, mock_print, mock_input):
+        mock_input.side_effects = ["n", "n", "q"]
+
+        self.game.play()
+
+        mock_print.assert_any_call("You are in the entry way.")
+        mock_print.assert_any_call("You are in the library.")
+        mock_print.assert_any_call("Cannot move through that door.")
+
+    @unittest.mock.patch("builtins.print")
+    @unittest.mock.patch("builtins.input")
+    def skip_test_play_win(self, mock_print, mock_input):
+        mock_input.side_effects = ["e", "w", "n", "n"]
+
+        self.game.play()
+
+        mock_print.assert_any_call("Picked up blue key")
+        mock_print.assert_any_call("You are in the library.")
+        mock_print.assert_any_call("You are in the dining room.")
+        mock_print.assert_any_call("You won the treasure")</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-29 17:37:05 UTC
+Last updated 2020-11-29 17:47:04 UTC
 </div>
 </div>
 </body>

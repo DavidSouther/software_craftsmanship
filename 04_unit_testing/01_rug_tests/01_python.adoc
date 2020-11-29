@@ -1,4 +1,4 @@
-# Python unittest
+= Python unittest
 
 Like `datetime` for working with dates and times, Python includes a standard
 library for writing unit tests. It's imaginitively called `unittest`. `unittest`
@@ -27,14 +27,15 @@ function, and then add a couple lines of Python which will only execute that
 function when we run the file directly, as opposed to when it gets included as a
 library in another program.
 
-```py
+[source,python]
+----
 def price_rugs():
     while not input("Price another rug (Y/n): ").lower().startswith("n"):
         price_rug()
 
 if __name__ == "__main__":
     price_rugs()
-```
+----
 
 This last part, `if __name__ == "__main__":` takes advantage of a Python feature
 that lets us know if the file we're in is the file that we ran specifically,
@@ -45,7 +46,8 @@ user wanted to run this file, rather than importing it.
 Now we can write our first test case! Again, in `rugs_test.py`, add this code
 and run it!
 
-```py
+[source,python]
+----
 import unittest
 import rugs
 
@@ -63,17 +65,17 @@ class SquareRugTestCase(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-```
+----
 
 When we run it, `unittest` has some great output for us:
 
-```
+----
 .
 ----------------------------------------------------------------------
 Ran 1 test in 1.236s
 
 OK
-```
+----
 
 This says that it took about a second to run one test, and all the tests pass!
 
@@ -95,7 +97,7 @@ they are not exactly equal, print and record the failing test.
 To see a failing test, try changing one of the constants, and see what happens!
 Here's an example of mine:
 
-```
+----
 F
 ======================================================================
 FAIL: test_no_fringe (__main__.SquareRugTest)
@@ -107,7 +109,7 @@ AssertionError: 20 != 25
 
 ----------------------------------------------------------------------
 Ran 1 tests in 0.004s
-```
+----
 
 So I changed the perimeter check to be 25, which is not the correct value. I can
 read this error message and see specifically the line that was at issue, and the
@@ -116,7 +118,8 @@ exceptions to debug our programs.
 
 Let's add another two tests!
 
-```py
+[source,python]
+----
 class SquareRugTestCase(unittest.TestCase):
     def test_square_rug_no_fringe(self):
         # ... the test from before
@@ -141,7 +144,7 @@ class SquareRugTestCase(unittest.TestCase):
         self.assertEqual(area, 0)
         self.assertEqual(perimeter, 0)
         self.assertEqual(cost, 0)
-```
+----
 
 And running this, it says we have three tests, `OK`!
 
@@ -151,13 +154,13 @@ it is...) the code is clear and direct in what it's doing. There's no logic,
 only direct calls and direct comparisons. While we've tried to be concise and
 tight in our main program, being able to simply read the tests is a great boon.
 
-## Writing your own tests
+== Writing your own tests
 
 As you go to write your own unit tests, we need a way to take what we've done
 for rugs and apply it generally. The first thing we want to do is create a test
 file for every program file we create. In the rugs program, we had `rugs.py` and
 put the test in `rugs_test.py`. This convention, of creating a second file and
-adding `_test` to it, is a great way to organize your project. It is clear what
+adding `\_test` to it, is a great way to organize your project. It is clear what
 your program files are, and what the tests are.
 
 The second thing to do is to make sure our program has no behavior when it's
@@ -168,10 +171,10 @@ our programs do need to do something if we run them specifically! To achieve
 this, at the end of our python files we check if we're running the "main" file
 that was specified on the command line.
 
-```
+----
 if __name__ == "__main__":
     # Run the program if it was called directly
-```
+----
 
 Because we should be testing all our programs, any python file we write that does
 more than declare classes and functions should end with this block of code.
@@ -182,25 +185,25 @@ file lives in the same folder as the program, we can just use the file name
 we can import our implementation. Using the rugs example, we could use either
 of these forms:
 
-```
+----
 import rugs
 
 squareRug = rugs.SquareRug()
 rectRug = rugs.RectangularRug()
-```
+----
 
 This form imports the file as an object, where the properties are all the
 functions and classes at the top level of the `rugs.py` file. Alternatively,
 you can import each item in isolation. This is useful if you only need one or
 two items from the file.
 
-```
+----
 from rugs import SquareRug
 from rugs import RectangularRug
 
 squareRug = SquareRug()
 rectRug = RectangularRug()
-```
+----
 
 We have used this form before when we only wanted one or two things out of a
 much larger module, like when we did `from math import sqrt`. While we're doing
@@ -221,14 +224,15 @@ to run and, whether they pass or fail, will report them with that name.
 
 We can look at the Rugs tests for an example:
 
-```python
+[source,python]
+----
 import unittest
 import rugs
 
 class RectangularRugsTest(TestCase):
     def test_rectangle_fringe(self):
         # The body of the test
-```
+----
 
 When you create tests for your own projects, it's usually a good idea to have
 one test file per program file, and one test case in the test file per class
@@ -253,12 +257,14 @@ our program is adding two numbers: `a = b + c`. After the program has completed
 this step, we expect the variable `a` to have a certain value. And to demonstrate
 that, we will `assert` that it does. We do this with the `assert...` methods.
 In rugs, this was `self.assertEqual(rug.cost, 50)`. For this example, it would be
-`self.assertEqual(a, # The value of b + c #)`. 
+`self.assertEqual(a, the_value_of_b_plus_c)`. 
 
-> NOTE: We use the expected value of b + c, instead of calculating it inline!
+****
+NOTE: We use the expected value of b + c, instead of calculating it inline!
 By manually performing the expected calculation, you save yourself from
 accidentally using a value that came from a bug in your code! And yes, most of
 the time the computation is much more complex than addition!
+****
 
 `assertEqual` is the most common assertion you'll do, but others are available
 if you check the Python documentation.
@@ -269,7 +275,7 @@ simple example here, it would just be the one line of code `a = b + c`. For
 this to work, we need some values for `b` and `c`, and that's the set up part.
 All in all, this test would look like so:
 
-```
+----
 # Create a test case
 class ArithmeticTests(unittest.TestCase):
   # Declare a test method
@@ -283,25 +289,26 @@ class ArithmeticTests(unittest.TestCase):
 
     # Assert
     self.assertEqual(a, 8)
-```
+----
     
 There you go! These are all the pieces of defining, creating, and implementing
 a unit test for your program. The last piece is to run it. To do that, we're
 going to tell unittest to run when the test class is executed directly:
 
-```
+----
 if __name__ == "__main__":
   unittest.main()
-```
+----
 
-Putting that at the end of your `_test.py` file will let you run it with python
+Putting that at the end of your `\_test.py` file will let you run it with python
 on the command line, and it will either tell you all the unit tests passed, or
 it will show you an error for exactly which one failed!
 
 The whole example again:
 
 
-```python
+[source,python]
+----
 import unittest # Get the testing library
 
 from my_arithmetic import add # Get the thing we wrote and will test
@@ -323,9 +330,9 @@ class ArithmeticTests(unittest.TestCase):
 # Run the tests when we execute this file
 if __name__ == "__main__":
   unittest.main()
-```
+----
 
-## Exercises
+== Exercises
 
-*   Write tests for the other rugs types you have.
-*   Write tests for recipe ingredient scaling.
+. Write tests for the other rugs types you have.
+. Write tests for recipe ingredient scaling.

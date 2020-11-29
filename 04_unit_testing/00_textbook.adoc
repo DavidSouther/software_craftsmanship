@@ -1,4 +1,4 @@
-# Unit Testing
+= Unit Testing
 
 For most of the programs in the first few chapters, you may have picked up that
 every time we did a bit of work, we wrote some code immediately after it to see
@@ -22,7 +22,7 @@ we later make which break the program.
 * Unit tests are small
 * Unit tests help debug as we're writing, and catch regressions later.
 
-## Anatomy of a unit test
+== Anatomy of a unit test
 
 Unit tests are built into a test suite. A **test suite** is a collection of unit
 tests around a group of functionality - for insteance, a test suite for a square
@@ -43,4 +43,12 @@ Let's see what this looks like in practice. We'll write some tests for the Rugs
 and Maze programs we wrote in Chapter 3: Objects, and then discuss some advanced
 techniques in unit testing.
 
-[Rug Tests](./01_rug_tests/)
+:leveloffset: 2
+
+include::01_rug_tests/00_textbook.adoc[]
+
+// include::02_maze_tests/00_textbook.adoc[]
+
+include::03_advanced_topics/00_textbook.adoc[]
+
+:leveloffset: 1

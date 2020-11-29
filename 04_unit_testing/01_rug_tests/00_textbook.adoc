@@ -10,10 +10,10 @@ individual tests for a rug of a certain size, with or without fringe. The tests
 will set up by create a rug of whatever type we're verifying, evaluate the
 calculatoins 
 
-* Libraries
-* Test Files
-* Square Rug Tests
-  * Area
-  * Perimeter
-  * Cost
-  * Edge cases: 0 area, 0 perimeter
+. Libraries
+. Test Files
+. Square Rug Tests
+.. Area
+.. Perimeter
+.. Cost
+.. Edge cases: 0 area, 0 perimeter

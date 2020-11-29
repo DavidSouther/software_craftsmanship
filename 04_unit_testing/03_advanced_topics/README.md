@@ -1,7 +1,0 @@
-## Advanced Topics
-
-* Before Each: Block of setup
-* Mocks: Replacing complex with simple behavior
-  * Test rugs input/output
-* Test Driven Development
-  * Red/Green/Refactor

@@ -1,5 +1,7 @@
+= Advanced Topics
 
-```py
+[source,python]
+----
 class GameTestCase(unittest.TestCase):
     def setUp(self):
         self.game = maze.basic_maze()
@@ -49,4 +51,4 @@ class GameTestCase(unittest.TestCase):
         mock_print.assert_any_call("You are in the library.")
         mock_print.assert_any_call("You are in the dining room.")
         mock_print.assert_any_call("You won the treasure")
-```
+----

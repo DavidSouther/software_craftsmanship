@@ -1,4 +1,4 @@
-# Testing Maze
+= Testing Maze
 
 The maze program is much more complex than the rugs. It involves several objects
 that interact with one another and apply logic to evaluate and validation those
@@ -16,7 +16,8 @@ you save it in the same folder as `maze.py`, or create a new folder and move
 `maze.py` so they're adjacent. In this file, start with the bare minimum of a
 unit test.
 
-```py
+[source,python]
+----
 import unittest
 import maze
 
@@ -26,7 +27,7 @@ import maze
 
 if __name__ == "__main__":
     unittest.main()
-```
+----
 
 This imports unit test and maze, and if the file is executed directly, will run
 the unit tests.
@@ -53,7 +54,8 @@ Python by using the keyword `pass` as the body of a method - this tells Python
 that the method is really here, it just doesn't do anything (yet). We've stubbed
 it out.
 
-```py
+[source,python]
+----
 class LockTestCase(unittest.TestCase):
     def test_add_fitting_key(self):
         pass
@@ -66,7 +68,7 @@ class LockTestCase(unittest.TestCase):
 
     def test_does_not_accept_missing_key(self):
         pass
-```
+----
 
 Here we have our `LockTestCase` which extends `TestCase`. It has four `test_`
 methods for each of the four cases. Each of those has the body `pass` which we
@@ -77,7 +79,8 @@ similar to the `Lock`, but also needs to understand the difference between doors
 that are locked that it has the key for, doors that are locked that it doesn't
 have the key for, and doors that are simply unlocked.
 
-```py
+[source,python]
+----
 class KeyringTestCase(unittest.TestCase):
     def test_add_key(self):
         pass
@@ -93,7 +96,7 @@ class KeyringTestCase(unittest.TestCase):
 
     def test_cannot_unlock_door_missing_key(self):
         pass
-```
+----
 
 We started using `Door`s in `KeyringTestCase`, so we might do their tests next.
 Most of the complexity around doors is actually in the lock. It's not
@@ -101,18 +104,20 @@ particularly useful to test that a constructor did or did not set a property (if
 that's broken, we'd find out in other tests). So for the `Door`, we only need to
 test that the `other_side` function works.
 
-```py
+[source,python]
+----
 class DoorTestCase(unittest.TestCase):
     def test_tracks_other_side(self):
         pass
-```
+----
 
 Similar to the door and the lock, we won't test that a `Room` can correctly get
 a description. But we do need to test that a `Room` can add a door in each
 direction, that it adds keys to those doors, and that when a player first enters
 the room that it uses `on_enter` appropriately.
 
-```py
+[source,python]
+----
 class RoomTestCase(unittest.TestCase):
     def test_add_north_door(self):
         pass
@@ -121,13 +126,14 @@ class RoomTestCase(unittest.TestCase):
 
     def test_on_enter_adds_key(self):
         pass
-```
+----
 
 As we said, we're leaving the `Game` tests to the next section, so the only one
 we have left is the `Player`. All the Player logic is around the `move_through`
 method, so we'll write a test for each of these cases.
 
-```py
+[source,python]
+----
 class PlayerTestCase(unittest.TestCase):
     def test_can_move_through_unlocked_door(self):
         pass
@@ -140,7 +146,7 @@ class PlayerTestCase(unittest.TestCase):
 
     def test_cannot_move_through_None_door(self):
         pass
-```
+----
 
 Let's take a moment to look over these classes. We have tests for each of the
 individual pieces of logic. With this level of coverage, we can be pretty
@@ -148,7 +154,8 @@ confident that our code will behave as expected, if each of these tests pass.
 All we need to do is actually write them!
 
 
-```py
+[source,python]
+----
 class LockTestCase(unittest.TestCase):
     def test_add_fitting_key(self):
         lock = maze.Lock()
@@ -180,9 +187,10 @@ class LockTestCase(unittest.TestCase):
         accepts = lock.accepts("red")
 
         self.assertFalse(accepts)
-```
+----
 
-```py
+[source,python]
+----
 class KeyringTestCase(unittest.TestCase):
     def test_can_unlock_door_no_lock(self):
         keyring = maze.Keyring()
@@ -203,9 +211,10 @@ class KeyringTestCase(unittest.TestCase):
         can_unlock = keyring.can_unlock(door)
 
         self.assertTrue(can_unlock)
-```
+----
 
-```py
+[source,python]
+----
 class DoorTestCase(unittest.TestCase):
     def test_tracks_other_side(self):
         room_a = maze.Room("A")
@@ -217,9 +226,10 @@ class DoorTestCase(unittest.TestCase):
 
         self.assertEqual(other_size_a, room_b)
         self.assertEqual(other_size_b, room_a)
-```
+----
 
-```py
+[source,python]
+----
 class RoomTestCase(unittest.TestCase):
     def test_add_north_door(self):
         room = maze.Room("A")
@@ -239,9 +249,10 @@ class RoomTestCase(unittest.TestCase):
         room.on_enter(player)
 
         self.assertIn("blue", player.keyring.keys)
-```
+----
 
-```py
+[source,python]
+----
 class PlayerTestCase(unittest.TestCase):
     def test_can_move_through_locked_door_with_key(self):
         key = "blue"
@@ -256,4 +267,4 @@ class PlayerTestCase(unittest.TestCase):
         player.move_through(room_a.north_door)
 
         self.assertEqual(player.current_room, room_b)
-```
+----

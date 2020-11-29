@@ -20,3 +20,5 @@ include::01_basic_types_and_control_flow/01_python.adoc[]
 include::02_functions_arrays_strings/01_python.adoc[]
 
 include::03_objects/01_python.adoc[]
+
+include::04_unit_testing/01_python.adoc[]
