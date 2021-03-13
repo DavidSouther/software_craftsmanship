@@ -9,9 +9,11 @@ https://www.khanacademy.org/computing/computer-programming
 
 ## Must Reads
 
+There is no single route through your coding career. The field is just too big! You might be interested in medical devices or robotics. Or you want to get a job writing insurance analysis - more difficult than it sounds, lucrative, and stable! Love video games? Making a mobile game might be the way for you to expand that passion. No matter where you go, there is no one book that is a must read. So pick and choose from the selection below, or blaze your own path!
+
 ## Projects & Practice:
-*   [Impractical Python Projects](https://smile.amazon.com/dp/159327890X)
-*   [Cracking the Coding Interview](https://smile.amazon.com/dp/0984782850)
+*   [Impractical Python Projects](https://smile.amazon.com/dp/159327890X). These whimsical projects cover a wide range of useful and problems that software is good at solving. If you want to take a tour of what's possible with programs, this book has you covered.
+*   [Cracking the Coding Interview](https://smile.amazon.com/dp/0984782850). There are many ways to approach this book. It is often bandied as the go-to for preparing for a programming job interview. While it is the best resource for that prep, I like to look at it as a brain teazer or puzzler. If I want to learn a new language, I often find myself using a tutorial from that language, and then working through a few problems in CtCI to guide myself around.
 
 ## Data Science & Machine Learning
 *   [Python Data Science Handbook](https://smile.amazon.com/dp/1491912057)
@@ -60,3 +62,4 @@ https://www.khanacademy.org/computing/computer-programming
 ## Computer Science History
 *   [Broad Band: The Untold Story of the Women Who Made the Internet](https://smile.amazon.com/dp/0735211752)
 *   [The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution](https://smile.amazon.com/dp/B00JGAS65Q)
+*   [Code: The Hidden Language of Computer Hardware and Software](https://smile.amazon.com/dp/B00JDMPOK2)
