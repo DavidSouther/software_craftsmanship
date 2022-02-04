@@ -9,11 +9,10 @@ Yet even as professional carpenters build masterwork cabinetry for law firms and
 This is no less true for computers  -  the relatively low cost of consumer software gives hobbyist programmers the same tools to work with as the professional.
 
 This book is aimed at those who are interested in this new medium as a potential hobby or curiosity.
-The book begins assuming the reader knows how to turn on and use their computer for basic tasks -- email, word processing, image editing, and video games; and takes them to a level where they will be comfortable and confident in using and controlling their computers.
-This book is very fast paced.
+The book begins assuming the reader knows how to turn on and use their computer for basic tasks -- email, word processing, image editing, or video games -- and takes them to a level where they will be comfortable and confident in creating programs that are useful to themselves.
 Software development is a field which has undergone active development for the past 80 years, yet did not exist beyond a dream before then.
-There is a lot to learn about this craft, but readers who want to become truly skilled at this craft will hopefully find this book gives them many of the tools they need to feel comfortable working their computer.
-To get the most out of the text,  I recommended readers work through the companion workbook.
+There is a lot to learn about this craft, but readers who want to become truly skilled at this craft will hopefully find this book gives them the tools they need to begin this journey with confidence.
+To get the most out of the text, readers must work through the companion workbook.
 Like any craft, to get good at software development you need to develop software.
 The workbooks lead you through developing software, in a way highlights the concepts presented in the text.
 
@@ -21,9 +20,9 @@ The workbooks lead you through developing software, in a way highlights the conc
 
 Information is a critical piece of today's infrastructure.
 How people  use information is part of the field of Computer Science.
-Computer Science is on the one hand deeply seated in mathematics, and on the other, firmly rooted in practicality.
-The computer itself is simply a tool, like a band saw or plasma torch, which does amazing things with this data.
-Whether used in large-scale data mining and predictions for financial institutions, determining exactly what websites have what content, or creating a side show of family photos.
+Computer Science is on one hand deeply seated in mathematics, and on the other, firmly rooted in practicality.
+The computer itself is simply a tool, like a band saw or knitting needles or a suture kit, which does amazing things with this data.
+Whether used in large-scale data mining and predictions for financial institutions, searching which websites have what content, or creating a side show of family photos - all this is data that you can manipulate.
 At the end of the day, the laptop or desktop sitting in front of you is just a piece of silicone, copper, and plastic, capable of doing only exactly what it is told.
 
 The task of the computer programmer is to tell the computer what to do.
@@ -33,26 +32,27 @@ We can find issues or errors in our assumptions, and change them on the fly.
 Computers cannot do this.
 Every condition must be considered before hand.
 Say you're balancing your check book.
-You add up $12.57, $52.45, and $1.99, but miss the decimal on the $52.45, and end up with $5249.56  -  clearly an error.
+You add up on a pocket calculator $12.57, $52.45, and $1.99, but miss the decimal on the $52.45, and end up with $5249.56  -  clearly an error.
 On paper, it is obvious what you did wrong.
-The computer has no way of knowing this was an error.
+The pocket calculator has no way of knowing this was an error.
 Instead, it is up to the good programmer to tell the computer to verify that any numbers typed into the financial program ends with a decimal and two numbers.
 Then, the program can warn the user before making the calculation, potentially avoiding a costly transaction.
 
 === Using this tool
 
-Software craftsmen use this tool by writing programs.
-A program is a document both written and read by human beings, while telling the computer unambiguously what to do.
+Software developers use this tool by writing programs.
+A program is a document that is both written and read by human beings, while simultaneously telling the computer unambiguously what to do.
 Take this example: `4 + 6 / 2`.
 Is the answer 7 or 5? If you remembered something like "Please Remember My Dear Aunt Sally" from grade school, you would say 7.
 If you were a desk calculator in an accountant's office, you would say 5.
 This statement is *ambiguous*  -  it could mean more than one thing.
 The programmer's job is to decide if the statement should be `(4 + 6) / 2 = 5` or `4 + (6 / 2) = 7`.
 
-This is a pedantic exercise.
-As software gets more complex, software engineers are responsible for deciding how the computer helps people interact with their data.
+This is a pedantic example.
+As software gets more complex, software developers are responsible for deciding how the computer helps people interact with their data.
 Consider the difference in organ donor rates between the United States and Sweden.
-In the book [Nudge](http://nudges.org/), the authors contend the difference is in "presumed consent" - that is, DMVs in the United States require drivers to Opt In to being an organ donor, while Swedish DMVs require patients to Opt Out.
+In the book [Nudge](http://nudges.org/), the authors contend the difference is in "presumed consent".
+DMVs in the United States require drivers to Opt In to being an organ donor, while Swedish DMVs require patients to Opt Out.
 If you were writing a web page to take DMV registration information, the difference in those conditions is eight characters - adding "checked" to the Organ Donor input.
 With that minuscule change in a program, the software craftsman has the potential for enormous influence on the lives of millions of people.
 
@@ -66,10 +66,9 @@ Even at companies like Microsoft, the largest proprietary software development c
 
 Many computer science courses ignore this aspect of programming, which I believe is a real detriment to the students.
 Many computer science students can go their entire undergraduate careers without ever looking at their peers' code, and only having their program reviewed by the instructors.
-Craftsman of all fields can drastically improve their work by meeting and sharing ideas.
-Building partnerships with other craftsmen is one of the most rewarding ways to practice a trade, but can also be a harrowing experience learning how to work and interact with a completely new group of people.
-To work past this impediment, I present tools for managing and sharing your programs early in the book (Chapter 3, Source Control), and encourage you to find other programmers and technology clubs in your area and on the Internet.
-
+Practitioners of all fields can drastically improve their work by meeting and sharing ideas.
+Building partnerships with other practitioners is one of the most rewarding ways to practice a trade, but can also be a harrowing experience learning how to work and interact with a completely new group of people.
+To work past this impediment, I present tools for managing and sharing your programs early in the book, and encourage you to find other programmers and technology clubs in your area and on the Internet.
 
 == Computer Languages
 
@@ -127,6 +126,22 @@ Python was also designed to be a fun language to use - the name Python refers no
 Python has a certain culture around its use not seen in many other programming languages.
 In Python, the prevailing wisdom is "there should be one - and preferably only one - obvious way to do it."
 
+=== Rust
+
+While C (and its successor, C++), are some of the most widely used "systems" programming languages, their early history has left an indelible imprint on their usage today.
+Put bluntly, we have built a tremendous body of knowledge that points to C and C++ having made early design decisions that were wrong, and lead to a number of catastrophic but preventable software bugs.
+In light of this, engineers led by Graydon Hoare at Mozilla Research in the early 2010s set out to explore a number of alternative approaches to programming language design that would reduce or eliminate these classes of errors.
+The language they created is Rust.
+
+Progress on Rust went quickly, and interest across the software engineering world spread.
+Rust is now used as a core language by a number of today's largest tech companies, with commensurate investment.
+Rust changes the way programmers approach memory management.
+In C and C++, programmers must handle their memory explicitly; in Python and Javascript, memory is handle implicitly while the program is executing. 
+The former places significant burden on the programmer, and mistakes often become catastrophic bugs that affect the security of millions or billions of people!
+The later makes programs much slower, because they must handle the safety checks on the programmer's behalf every time the program is run.
+Rust strikes a middle ground by moving the safety checks into the "compile" part of the program, when a separate program goes through all the source code, verifies it for correctness,
+and creates the final program that users will run.
+
 === Javascript
 
 Javascript is a programming language developed at Netscape in 1994 by Brandon Eiche over the course of a week.
@@ -140,10 +155,9 @@ The programmer has few worries about memory management, and no capabilities to a
 When combined with libraries like jQuery, javascript can be the most expressive of the three languages presented.
 When we start working with graphical programs later in the book, Javascript's expressive power will really shine, in that the amount of code needed to do the same thing (click a button) can often be an order of magnitude less than a similar program in C.
 
-
 ==== TypeScript
 
-TypeScript is a dialect of Javascript, developed by Andres Hejlsburg at Microsoft in 2010.
+TypeScript is a dialect of Javascript, developed by Andres Hejlsburg at Microsoft in the early 2010s.
 The goal of the TypeScript project is to provide a strong "type system" on top of JavaScript.
 A Type System is a set of tools that allows another program, the TypeScript Compiler, to analyze your program to prove various properties and check for common errors.
 For instance, if you were to write in your program `5 + "hello"`, TypeScript would say you have an error combinging a number and a string.
@@ -216,4 +230,4 @@ If you've gotten through the book, try redoing the exercises in TypeScript, then
 
 * link:./python.html[Python workbook]
 * Typescript workbook (Coming soon)
-* C workbook (coming soon)
+* Rust workbook (coming soon)
