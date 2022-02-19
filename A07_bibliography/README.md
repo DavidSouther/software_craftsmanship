@@ -32,6 +32,11 @@ There is no single route through your coding career. The field is just too big! 
 *   [Purely Functional Data Structures](https://smile.amazon.com/dp/0521663504)
 *   [Understanding Computation](https://smile.amazon.com/dp/1449329276)
 
+## Cloud
+*   [Architecture Patterns with Python: Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices _Harry Percival & Bob Gregory_](https://smile.amazon.com/dp/1492052205)
+*   [Building Microservices _Sam Newman_](https://smile.amazon.com/dp/1492034029)
+*   [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems _Martin Kleppmann_](https://smile.amazon.com/dp/B06XPJML5D)
+
 ## Games
 *   [Learning C# with Unity ](https://smile.amazon.com/dp/B07Q85GR5Q/)
 *   [Beginning C++ through Game Programming](https://smile.amazon.com/dp/1435457420)
@@ -50,6 +55,7 @@ There is no single route through your coding career. The field is just too big! 
 *   [The Elements of Computing Systems](https://smile.amazon.com/dp/0262640686)
 
 ## Software engineering
+*   [A Philosophy of Software Design _John K. Ousterhout_](https://smile.amazon.com/dp/B07N1XLQ7D)
 *   [The Mythical Man Month](https://smile.amazon.com/dp/0201835959)
 *   [Clean Code](https://smile.amazon.com/dp/0132350882)
 *   [Site Reliability Engineering](https://smile.amazon.com/dp/149192912X)
@@ -60,6 +66,7 @@ There is no single route through your coding career. The field is just too big! 
 *   [How Google Tests Software](https://smile.amazon.com/dp/B007MQLMF2/)
 
 ## Computer Science History
-*   [Broad Band: The Untold Story of the Women Who Made the Internet](https://smile.amazon.com/dp/0735211752)
+*   [Broad Band: The Untold Story of the Women Who Made the Internet _Claire L. Evans_](https://smile.amazon.com/dp/0735211752)
 *   [The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution](https://smile.amazon.com/dp/B00JGAS65Q)
-*   [Code: The Hidden Language of Computer Hardware and Software](https://smile.amazon.com/dp/B00JDMPOK2)
+*   [Code: The Hidden Language of Computer Hardware and Software _Petzold Charles_](https://smile.amazon.com/dp/B00JDMPOK2)
+*   [Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence _Kate Crawford_](https://smile.amazon.com/dp/0300209576)
