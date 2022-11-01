@@ -5,7 +5,10 @@
 
 ## Try it from another angle
 
-https://www.khanacademy.org/computing/computer-programming
+*   https://www.khanacademy.org/computing/computer-programming
+*   [Coursera: JavaScript](https://www.coursera.org/courses?query=javascript)
+*   [Coursera: Python](https://www.coursera.org/courses?query=python)
+*   [Coursera: Rust](https://www.coursera.org/courses?query=rust)
 
 ## Must Reads
 
@@ -27,6 +30,7 @@ There is no single route through your coding career. The field is just too big! 
 *   [Full Stack React Projects](https://smile.amazon.com/dp/1839215410)
 *   [Ruby on Rails Tutorial](https://smile.amazon.com/dp/0136702651)
 *   [Test Driven Development](https://smile.amazon.com/dp/1491958707) _Henry Pierceval_ Test Driven Development (TDD) is a programming practice that sounds like a fraud from its practitioners. It promises so much benefit for so little cost, it cannot possibly be anything but snake oil. Obey the Testing Goat walks you through actually using it in practice for a project, and inducts you into the cult of TDD. While the book itself is Python, the lessons are cross-applicable to any language. I have used this book for several undergraduate programming courses - feedback was universally positive, and described as "the missing link to industry that our academic professors don't cover".
+*   [Zero to Production: Rust](https://www.amazon.com/dp/B0BHLDMFDQ) _Luca Palmieri_
 
 ## Data Structures & Computer Science
 *   [Data Structures and Algorithms Python](https://smile.amazon.com/dp/1118290275)
@@ -38,7 +42,7 @@ There is no single route through your coding career. The field is just too big! 
 ## Cloud
 *   [Architecture Patterns with Python: Enabling Test-Driven Development, Domain-Driven Design, and Event-Driven Microservices ](https://smile.amazon.com/dp/1492052205) _Harry Percival & Bob Gregory_ Many books discuss systems design. Very few books guide you through designing a system. In the same way that Obey the Testing Goat guides you to becoming a lean mean testing machine, Cosmic Python does the same for a production-ready system that serves thousands of queries per second. Moreover, it does it in a sustainable, scalable way such that the "astronaut architecture" diagram at the beginning of the project actually describes the architecture at the end, without collapsing into a big ball of mud. Part I is the critical walkthrough and should be required project work for all SWEs. Part II is initially intellectually validating for how it grows from Part I and reinforces those lessons, while being another critical reading before switching to an event-driven system designed to scale indefinitely.
 *   [Building Microservices _Sam Newman_](https://smile.amazon.com/dp/1492034029)
-*   [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems](https://smile.amazon.com/dp/B06XPJML5D) _Martin Kleppmann_ DDIA is a "modern" (2017-2020) and in-depth overview on a number of global scale data storage and processing systems. This includes the general and specific problems these systems encountered, along with their solutions.
+*   [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems](https://smile.amazon.com/dp/B06XPJML5D) _Martin Kleppmann_ DDIA is a "modern" (2017-2020) and in-depth overview on a number of global scale data storage and processing systems. This includes the general and specific problems these systems encountered, along with their solutions
 *   [Site Reliability Engineering](https://smile.amazon.com/dp/149192912X)
 
 ## Games
@@ -54,24 +58,31 @@ There is no single route through your coding career. The field is just too big! 
 
 ## Advanced Topics
 *   [Computer Systems Architecture](https://smile.amazon.com/dp/0131755633)
-*   [Modern Compiler Implementation](https://smile.amazon.com/dp/052182060X)
+*   [Crafting Interpreters](https://smile.amazon.com/dp/0990582930) _Robert Nystrom_ ([online](https://craftinginterpreters.com/))
 *   [Operating System Design and Implementation](https://smile.amazon.com/dp/B009TELWBE)
 *   [Computer Networking: A Top Down Approach](https://smile.amazon.com/dp/0133594149)
 *   [The Elements of Computing Systems](https://smile.amazon.com/dp/0262640686)
 
 ## Software engineering
+
+### Theory
 *   [A Philosophy of Software Design](https://smile.amazon.com/dp/173210221X) _John K. Ousterhout_
-*   [The Mythical Man Month](https://smile.amazon.com/dp/0201835959)
-*   [Software Engineering at Google](https://smile.amazon.com/dp/1492082791) Google has many faults. The maturity of their software engineering lifecycle is one of their strengths. This volume focuses entirely on the "principles and techniques" side of SWE, with no programming and little systems design. It is presented as a front-to-back read, but I find it works better as a book of essays. Each provides specific, valuable insight into a portion of the SWE landscape but none are strictly dependent on one another. Chapters I'd especially highlight are "1. What is Software Engineering?", "2. How to work well on teams", "4. Engineering for equity", "9. Code Review", "15. Deprecation", and "21. Dependency Management". At the time of their publishing, these chapters advance the state of the art of the SWE discipline. Other chapters are also valuable, but many are better covered by other resources on this list.
-*   [How Google Tests Software](https://smile.amazon.com/dp/B007MQLMF2/)
-*   [Unit Testing Principles, Practices, and Patterns](https://smile.amazon.com/dp/1617296279) _Vladimir Khorikov_
-*   [Test Driven Development: By Example](https://smile.amazon.com/dp/0321146530) _Kent Beck_
+*   [The Mythical Man Month](https://smile.amazon.com/dp/0201835959) _Frederick P. Brooks, Jr_
+*   [Software Engineering at Google](https://smile.amazon.com/dp/1492082791)
+
+### Practice
 *   [Refactoring](https://smile.amazon.com/dp/0201485672) _Martin Fowler_
 *   [Clean Code](https://smile.amazon.com/dp/0132350882) _Robert Martin_
 *   [Clean Architecture](https://smile.amazon.com/dp/0134494164) _Robert Martin_
+*   [Pragmatic Programmer](https://smile.amazon.com/dp/0135957052) _David Thomas_, _Andrew Hunt_
+
+## Testing
+*   [Unit Testing Principles, Practices, and Patterns](https://smile.amazon.com/dp/1617296279) _Vladimir Khorikov_
+*   [Test Driven Development: By Example](https://smile.amazon.com/dp/0321146530) _Kent Beck_
+*   [How Google Tests Software](https://smile.amazon.com/dp/B007MQLMF2/)
 
 ## Computer Science History
 *   [Broad Band: The Untold Story of the Women Who Made the Internet](https://smile.amazon.com/dp/0735211752) _Claire L. Evans_
-*   [The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution](https://smile.amazon.com/dp/B00JGAS65Q)
+*   [The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution](https://smile.amazon.com/dp/B00JGAS65Q) _Walter Isaacson_
 *   [Code: The Hidden Language of Computer Hardware and Software](https://smile.amazon.com/dp/B00JDMPOK2) _Petzold Charles_
 *   [Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence](https://smile.amazon.com/dp/0300209576) _Kate Crawford_
