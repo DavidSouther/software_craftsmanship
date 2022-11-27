@@ -1,14 +1,15 @@
 = Functions, Arrays, and Strings
 
-We write programs to manipulate our data. In the last chapter, we treated
-data as integers, floats, and strings. We can iterate, or repeat, an
-operation on data. We can take different branches in our programs, doing
-different things based on the value of our variables. As programs get bigger,
-much of programming is managing complexity, keeping different parts of the
-program small and logically connected. This chapter covers three tools -
-functions, ways to block sections of code together; arrays, to keep more than
-one piece of data in a variable; and more details of strings, as they are
-useful in many ways in programming.
+We write programs to manipulate our data.
+In the last chapter, we treated data as integers, floats, and strings.
+We can iterate, or repeat, an operation on data.
+We can take different branches in our programs, doing different things based on the value of our variables.
+As programs get bigger, much of programming is managing complexity.
+Part of a programmer's job is keeping different parts of the program small and logically connected.
+This chapter covers three tools:
+    *functions*, ways to block sections of code together;
+    more details of strings, as they are useful in most ways in programming;
+    and *arrays*, to keep track of lists of data of the same type.
 
 :leveloffset: 2
 
@@ -20,23 +21,14 @@ include::03_arrays/00_textbook.adoc[]
 
 == Wrap up
 
-In this chapter, we took our basic toolkit of programming fundamentals and
-added three powerful and useful items. We discussed **functions**, which
-allow us to bundle up chunks of code and make them generally useful in a wide
-variety of sitations, rather than only working for a single specific case.
-This includes giving **identifiers** or names to functions for a block of
-code, taking input as **arguments** to those blocks, and often **returning**
-a piece of data as the finished calculation from the function. We discussed
-how to augment our tracing technique to handle functions in a clear and
-direct way. We then discussed **template strings**, which are compact but
-powerful ways to format text in a more legible way for the users of our
-programs. Finally we took a look at **arrays**, the first of our data
-structures which let us work with more than a single piece of data at a time.
-We wrote several functions to calculate statistics about data sets -- numbers
-stored in an array.
+In this chapter, we took our basic toolkit of programming fundamentals and added three powerful and useful items.
+We discussed **functions**, which allow us to bundle up chunks of code and make them generally useful in a wide variety of sitations, rather than only working for a single specific case.
+This includes giving **identifiers** or names to functions for a block of code, taking input as **arguments** to those blocks, and often **returning** a piece of data as the finished calculation from the function.
+We discussed how to augment our tracing technique to handle functions in a clear and direct way.
+We then discussed **template strings**, which are compact but powerful ways to format text in a more legible way for the users of our programs.
+Finally we took a looked at **arrays**, the first of our data structures which let us work with more than a single piece of data at a time.
+We wrote several functions to calculate statistics about data sets -- numbers stored in an array.
 
-In the next chapter, we will discuss objects which provide a mechanism to
-organize larger and larger amounts of data in understandable, tractable
-manners.
+In the next chapter, we will discuss objects which provide a mechanism to organize larger and larger amounts of data in understandable, tractable manners.
 
 :leveloffset: 1

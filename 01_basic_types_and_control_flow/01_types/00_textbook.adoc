@@ -2,18 +2,19 @@
 
 Computers work with data.
 At the lowest level, this data is just 'on' and 'off' in a transistor.
-Software craftsmen don't work at this level.
+The software craft doesn't work at this level.
 Instead, our programming languages give us the tools to work with this data in a much more intuitive fashion.
 In broad strokes, this is achieved with two concepts: data types and control flow.
 Data types describe the data our program is working with, whether it be a number, a bank account, or an image.
 Control flow describes the operations that occur on the data over time, like adding numbers, checking the balance of a bank account, or cropping an image.
 
 You can think of data types as the space of a program.
-At any one point in time, we will have certain sets of data we are working with.
+At any one point in time, we will have certain data we are working with.
 We can stop the program, look at the data, and carry on.
-While we think of three dimensions in space,  up/down, left/right, and front/back, there are many more dimensions we could talk about for different things.
-A table has a color, along with its position.
-Our programs represent these properties in different ways, but we as programmers abstract them, and the term we use to talk about these properties is data types.
+While we think of three dimensions in space, say, vertical, horizontal, and depth, there are many more dimensions we could talk about for different things.
+A table has a color, along with its position in three dimensions of spcae.
+Our programs represent these properties in different ways.
+As programmers, we abstract them, and the term we use to talk about these properties is data types.
 
 Control flow would then be the time aspect of a program.
 As the program runs, it does different things to the data.
@@ -105,8 +106,6 @@ On today's computers, that range is either `2\^32` or `2\^64` possible values.
 The 32 and 64 refer to the number of *bits* your computer handles.
 When the IT guy asks whether your computer is 32 or 64 bit, this is what we're talking about.
 
-////
-
 #### Integers
 
 Integers in computer programming are Whole Numbers from elementary school  - 1, 5, -15, 47.
@@ -130,29 +129,36 @@ At this point, we must take a detour into the world of mathematics in order to u
 ##### Floating Point Arithmetic
 
 This section explains some complicated math.
+Understanding it deeply isn't necessary for working through the book.
+When examples or sections come up that are likely to cause floating-point issues, they will be called out explicitly.
 
-Our everyday number system is a base-10 number system. When you write your numbers, you write `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12` ... . Notice how starting at 10 we use two characters to represent the number- 1 and 0. "Well, duh" you might say. In fact, there is a very specific reason we need two numbers at this point. What 10 means is `(1 * 10\^1) + (0 * 10^0)`. This is the base-10 system- each character in the numer means `a * 10 ^ p` where `a` is the number, and `p` is its position (starting from 0). So, the number `347` is `(3 * 10 ^ 2) + (4 * 10 ^ 1) + (7 * 10^0)`. A computer uses binary, or a base-2 number  system. Instead of writing numbers as `a * 10^p`, we write them as `a * 2 ^ p`. So, to get 12, we need to write 1100, or
+Our everyday number system is a base-10 number system.
+When you write your numbers, you write `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12` ... .
+Notice how starting at 10 we use two characters to represent the number- 1 and 0.
+"Well, duh" you might say.
+In fact, there is a very specific reason we need two numbers at this point.
+What 10 means is `(1 * 10\^1) + (0 * 10^0)`.
+This is the base-10 system- each character in the numer means `a * 10 ^ p` where `a` is the number, and `p` is its position (starting from 0).
+So, the number `347` is `(3 * 10 ^ 2) + (4 * 10 ^ 1) + (7 * 10^0)`.
+A computer uses binary, or a base-2 number  system.
+Instead of writing numbers as `a * 10^p`, we write them as `a * 2 ^ p`.
+So, to get 12, we need to write 1100, or
 
-`(1 * 2 \^ 3) + (1 * 2^2) + (0*2^1) + (0 * 2 ^ 0)`
- `(1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)`
- `8 + 4 + 0 + 0`
- `12 (base 10)`
+* `(1 * 2 \^ 3) + (1 * 2^2) + (0*2^1) + (0 * 2 ^ 0)`
+* `(1 * 8) + (1 * 4) + (0 * 2) + (0 * 1)`
+* `8 + 4 + 0 + 0`
+* `12 (base 10)`
 
 We can talk about decimal numbers like 1.56 in the same way -
 
-`(1 * 10 \^ 0) + (5 * 10 ^ -1) * (6 * 10 ^ -2)`
- `1 + 5/10 + 6/100`
- `100/100 + 50/100 + 6/100`
- `156 / 100` = `39/25`.
+* `(1 * 10 \^ 0) + (5 * 10 ^ -1) * (6 * 10 ^ -2)`
+*  `1 + 5/10 + 6/100`
+*  `100/100 + 50/100 + 6/100`
+* `156 / 100` = `39/25`.
 
-While this math might be disheartening, it is important to remember that
-computers do work in this fashion under the hood. That said, this is the only
-time this will be discussed in the main book (though some advanced exercises
-in the workbook will deal with computer arithmetic in more depth, and appendix
-3 is devoted to a discussion of just how the computer does work under the
-hood).
-
-////
+While this math might be disheartening, it is important to remember that computers do work in this fashion under the hood.
+When samples or exercise 
+Some advanced exercises in the workbook will deal with computer arithmetic in more depth.
 
 === Characters
 
