@@ -14,23 +14,40 @@
 
 There is no single route through your coding career. The field is just too big! You might be interested in medical devices or robotics. Or you want to get a job writing insurance analysis - more difficult than it sounds, lucrative, and stable! Love video games? Making a mobile game might be the way for you to expand that passion. No matter where you go, there is no one book that is a must read. So pick and choose from the selection below, or blaze your own path!
 
+## Languages
+
+|Language|Usage|Book|See Also|
+|---|---|---|---|
+|_Core Languages_| | | |
+|**TypeScript**|Browser front ends; Async NodeJS backends| |Python, PHP, Ruby|
+|**Python**|API Development; Data Science & Machine Learning| |TypeScript, Ruby|
+|**Java**|Enterprise API; Android Mobile| |C#, Golang, Rust|
+|**C#**|.NET enterprise solutions| |Java, Golang, Rust|
+|_Focused Languages_
+|**Kotlin**|Android Mobile| |Swift|
+|**Swift**|iOS Mobile Development| |Kotlin|
+|**PHP**|Web Applications| |TypeScript, Python, Ruby|
+|**Ruby**|Command Line tools; Web Applications| |TypeScript, Python, PHP|
+|**C**|Embedded programs| |Rust, C++|
+|**C++**|Games; Systems Programming| |C, Golang, Rust|
+|**Rust**|Systems Programming; | |C, C++, Java, Golang|
+|**Golang**|Systems Programming; Network APIs| |Java, C#, Rust|
+|_Shell Languages_
+|**Bash**| | | |
+|**Batch**| | | |
+|**PowerShell**| | | |
+
 ## Projects & Practice:
 *   [Impractical Python Projects](https://smile.amazon.com/dp/159327890X). These whimsical projects cover a wide range of useful and problems that software is good at solving. If you want to take a tour of what's possible with programs, this book has you covered.
 *   [Cracking the Coding Interview](https://smile.amazon.com/dp/0984782850). There are many ways to approach this book. It is often bandied as the go-to for preparing for a programming job interview. While it is the best resource for that prep, I like to look at it as a brain teazer or puzzler. If I want to learn a new language, I often find myself using a tutorial from that language, and then working through a few problems in CtCI to guide myself around.
 *   [500 Lines or Less](https://smile.amazon.com/dp/1329871278) _Michael Dibernardo_
 
-## Data Science & Machine Learning
-*   [Python Data Science Handbook](https://smile.amazon.com/dp/1491912057)
-*   [Hands On Machine Learning with SciKit](https://smile.amazon.com/dp/1491962291)
-*   [Getting Started with SQL](https://smile.amazon.com/dp/1491938617)
-
 ## Full Stack Development
 *   [Learning PHP, MySQL, and Javascript](https://smile.amazon.com/dp/1492093823) _Rob Nixon_ PHP+MySQL is a mainstay of web programming. In many ways, it is the most direct "full stack" of an HTML/JavaScript front end, a PHP application for program logic, and MySQL as a relational database. This book does not shy away from teaching SQL as a core toolset for the PHP developer, and that's a strong plus. Many other books and resources prefer using Object-Relational Mappers (ORMs) to handle database access, hiding the SQL from the programmer. However, this book does not cover "software engineering" - there is no mention of testing, frameworks, or tools to assist in the long-term management of software projects.
 *   [Python API Development Fundamentals](https://smile.amazon.com/dp/1838983996)
-*   [Full Stack React Projects](https://smile.amazon.com/dp/1839215410)
+*   [Full Stack React Projects](https://smile.amazon.com/dp/1839215410) _Shama Hoque_ Covering an impressive range of fully built out "real world" applications, this book is a solid resource for exploring the breadth of functionality a full stack JavaScript application can cover. That said, I would love to see a some changes in future editions. The intro chapter covers setting up a MERN stack, which should be streamlined by using Create React App or Vite. The chapter on authentication should be dropped in favor of a third-party authentication solution, like Auth0. I would like to see more coverage of using MongoDB as a tool, rather than relying on mongoose for connections and queries. Finally, the book would be excellent if it migrated to TypeScript & included sections on automated testing for each of the applications.
 *   [Ruby on Rails Tutorial](https://smile.amazon.com/dp/0136702651)
-*   [Test Driven Development](https://smile.amazon.com/dp/1491958707) _Henry Pierceval_ Test Driven Development (TDD) is a programming practice that sounds like a fraud from its practitioners. It promises so much benefit for so little cost, it cannot possibly be anything but snake oil. Obey the Testing Goat walks you through actually using it in practice for a project, and inducts you into the cult of TDD. While the book itself is Python, the lessons are cross-applicable to any language. I have used this book for several undergraduate programming courses - feedback was universally positive, and described as "the missing link to industry that our academic professors don't cover".
-*   [Zero to Production: Rust](https://www.amazon.com/dp/B0BHLDMFDQ) _Luca Palmieri_ Rust is a demanding programming language, that will pay dividends in correctness and performance. Zero2Prod shows how to take a rigorous approach to using Rust in a web application stack, building out a robust application with enough complexity to be useful and interesting, rather than superficially touching concepts.
+*   [Zero to Production: Rust](https://smile.amazon.com/dp/B0BHLDMFDQ) _Luca Palmieri_ Rust is a demanding programming language, that will pay dividends in correctness and performance. Zero2Prod shows how to take a rigorous approach to using Rust in a web application stack, building out a robust application with enough complexity to be useful and interesting, rather than superficially touching concepts. This complexity comes by adding depth to a single worked example with several subsystems, showing the hallmark of good software engineering - ease of change over time.
 
 ## Data Structures & Computer Science
 *   [Data Structures and Algorithms Python](https://smile.amazon.com/dp/1118290275)
@@ -46,16 +63,21 @@ There is no single route through your coding career. The field is just too big! 
 *   [Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems](https://smile.amazon.com/dp/B06XPJML5D) _Martin Kleppmann_ DDIA is a "modern" (2017-2020) and in-depth overview on a number of global scale data storage and processing systems. This includes the general and specific problems these systems encountered, along with their solutions. While it is unable to dive into any single topic at great depth, the breadth of this work gives the reader many focused branches to follow up on and go down.
 *   [Site Reliability Engineering](https://smile.amazon.com/dp/149192912X)
 
+## Data Science & Machine Learning
+*   [Python Data Science Handbook](https://smile.amazon.com/dp/1491912057)
+*   [Hands On Machine Learning with SciKit](https://smile.amazon.com/dp/1491962291)
+*   [Getting Started with SQL](https://smile.amazon.com/dp/1491938617)
+
+## Mobile
+*   [Android Development with Kotlin](https://smile.amazon.com/dp/1787123685)
+*   [iOS Development with Swift](https://smile.amazon.com/dp/dp/1617294071)
+
 ## Games
 *   [Learning C# with Unity ](https://smile.amazon.com/dp/B07Q85GR5Q/)
 *   [Beginning C++ through Game Programming](https://smile.amazon.com/dp/1435457420)
 *   [3D Math Primer for Graphics and Games](https://smile.amazon.com/dp/1568817231) _Fletcher Dunn, Ian Parberry_ Math is hard. Dunn and Parberry make it a bit easier in two ways - first, they count with silly sheep. Second, they have a ton of experience in implementing math for games, and show only what is needed. However, it is still math, and the book would be better if they added code equivalents for a lot of the algebra.
 *   [Game Programming Patterns](https://smile.amazon.com/dp/0990582906) _Bob Nystrom_ While this book is in the games section, it has the best coverage of the topic of design patterns on this list. Typical design patterns books take the design patterns and create arbitary and often oversimplified examples to show the patterns. Game Programming Patterns keeps it real by rooting the examples in real problems from game development.
 *   [Going the Distance with Babylon.js](https://smile.amazon.com/dp/1801076588) _Josh Elster_
-
-## Mobile
-*   [Android Development with Kotlin](https://smile.amazon.com/dp/1787123685)
-*   [iOS Development with Swift](https://smile.amazon.com/dp/dp/1617294071)
 
 ## Advanced Topics
 *   [Computer Systems Architecture](https://smile.amazon.com/dp/0131755633)
@@ -64,23 +86,24 @@ There is no single route through your coding career. The field is just too big! 
 *   [Computer Networking: A Top Down Approach](https://smile.amazon.com/dp/0133594149)
 *   [The Elements of Computing Systems](https://smile.amazon.com/dp/0262640686)
 
-## Software engineering
-
-### Theory
+## Software engineering Theory
 *   [A Philosophy of Software Design](https://smile.amazon.com/dp/173210221X) _John K. Ousterhout_
 *   [The Mythical Man Month](https://smile.amazon.com/dp/0201835959) _Frederick P. Brooks, Jr_
 *   [Software Engineering at Google](https://smile.amazon.com/dp/1492082791)
 
-### Practice
+## Software engineering Practice
 *   [Refactoring](https://smile.amazon.com/dp/0201485672) _Martin Fowler_
 *   [Clean Code](https://smile.amazon.com/dp/0132350882) _Robert Martin_
 *   [Clean Architecture](https://smile.amazon.com/dp/0134494164) _Robert Martin_
 *   [Pragmatic Programmer](https://smile.amazon.com/dp/0135957052) _David Thomas_, _Andrew Hunt_
 
 ## Testing
+*   [Test Driven Development](https://smile.amazon.com/dp/1491958707) _Henry Pierceval_ Test Driven Development (TDD) is a programming practice that sounds like a fraud from its practitioners. It promises so much benefit for so little cost, it cannot possibly be anything but snake oil. Obey the Testing Goat walks you through actually using it in practice for a project, and inducts you into the cult of TDD. While the book itself is Python, the lessons are cross-applicable to any language. I have used this book for several undergraduate programming courses - feedback was universally positive, and described as "the missing link to industry that our academic professors don't cover".
 *   [Unit Testing Principles, Practices, and Patterns](https://smile.amazon.com/dp/1617296279) _Vladimir Khorikov_
 *   [Test Driven Development: By Example](https://smile.amazon.com/dp/0321146530) _Kent Beck_
 *   [How Google Tests Software](https://smile.amazon.com/dp/B007MQLMF2/)
+
+## Security
 
 ## Computer Science History
 *   [Broad Band: The Untold Story of the Women Who Made the Internet](https://smile.amazon.com/dp/0735211752) _Claire L. Evans_
