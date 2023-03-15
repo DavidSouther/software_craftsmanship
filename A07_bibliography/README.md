@@ -19,12 +19,12 @@ There is no single route through your coding career. The field is just too big! 
 |Language|Usage|Book|See Also|
 |---|---|---|---|
 |_Core Languages_| | | |
-|**TypeScript**|Browser front ends; Async NodeJS backends| |Python, PHP, Ruby|
-|**Python**|API Development; Data Science & Machine Learning| |TypeScript, Ruby|
-|**Java**|Enterprise API; Android Mobile| |C#, Golang, Rust|
+|**TypeScript**|Browser front ends; Async NodeJS backends|[Programming Typescript](https://www.amazon.com/dp/1492037656) _Boris Cherny_ |Python, PHP, Ruby|
+|**Python**|API Development; Data Science & Machine Learning|[Fluent Python](https://www.amazon.com/dp/1492056359) _Luciano Ramalho_ |TypeScript, Ruby|
+|**Java**|Enterprise API; Android Mobile|[Effective Java](https://www.amazon.com/dp/0134685997) _Josh Bloch_|C#, Golang, Rust|
 |**C#**|.NET enterprise solutions| |Java, Golang, Rust|
 |_Focused Languages_
-|**Kotlin**|Android Mobile| |Swift|
+|**Kotlin**|Android Mobile Development| |Swift|
 |**Swift**|iOS Mobile Development| |Kotlin|
 |**PHP**|Web Applications| |TypeScript, Python, Ruby|
 |**Ruby**|Command Line tools; Web Applications| |TypeScript, Python, PHP|
@@ -33,9 +33,9 @@ There is no single route through your coding career. The field is just too big! 
 |**Rust**|Systems Programming; | |C, C++, Java, Golang|
 |**Golang**|Systems Programming; Network APIs| |Java, C#, Rust|
 |_Shell Languages_
-|**Bash**| | | |
-|**Batch**| | | |
-|**PowerShell**| | | |
+|**Bash**|Linux & MacOS Shell Scripting| | |
+|**Batch**|Historical Windows Shell Scripting| | |
+|**PowerShell**|Modern Windows Shell Scripting| | |
 
 ## Projects & Practice:
 *   [Impractical Python Projects](https://smile.amazon.com/dp/159327890X). These whimsical projects cover a wide range of useful and problems that software is good at solving. If you want to take a tour of what's possible with programs, this book has you covered.
