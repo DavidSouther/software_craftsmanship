@@ -160,7 +160,7 @@ When we start working with graphical programs later in the book, Javascript's ex
 TypeScript is a dialect of Javascript, developed by Andres Hejlsburg at Microsoft in the early 2010s.
 The goal of the TypeScript project is to provide a strong "type system" on top of JavaScript.
 A Type System is a set of tools that allows another program, the TypeScript Compiler, to analyze your program to prove various properties and check for common errors.
-For instance, if you were to write in your program `5 + "hello"`, TypeScript would say you have an error combinging a number and a string.
+For instance, if you were to write in your program `5 + "hello"`, TypeScript would say you have an error combining a number and a string.
 TypeScript is currently the most popular variant of JavaScript, because of its tremendous benefit and value in helping teams of all sizes manage the complexity of their JavaScript code.
 
 == Using this book
