@@ -133,3 +133,4 @@ These are the most commonly used & most employable programming languages today. 
 - **The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution** ([Amazon](https://www.amazon.com/dp/B00JGAS65Q)) _Walter Isaacson_
 - **Broad Band: The Untold Story of the Women Who Made the Internet** ([Amazon](https://www.amazon.com/dp/0735211752)) _Claire L. Evans_
 - **Atlas of AI: Power, Politics, and the Planetary Costs of Artificial Intelligence** ([Amazon](https://www.amazon.com/dp/0300209576)) _Kate Crawford_
+- **Blown to Bits: Your Life, Liberty, and Happiness After the Digital Explosion** ([Amazon](https://www.amazon.com/dp/0134850017), [bitsbook.com](https://www.bitsbook.com)) _Hal Abelson, Ken Ledeen, Harry Lewis_
